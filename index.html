@@ -195,32 +195,43 @@
 		</div>
 	</div>
 </section>
+<br>
+<br>
+<section class="hero is-light is-small">
+	<div class="hero-body has-text-centered">
+		<!-- <h1 class="title is-1 mathvista"><img src="static/images/mathvista.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>MathVista Dataset</h1> -->
+		<h1 class="title is-1 mathvista">
+			<!--<img src="static/images/mathvista.png" style="width:1em;vertical-align: middle" alt="Logo"/>-->
+			<span class="mathvista" style="vertical-align: middle" id="introduction">Introduction</span>
+		</h1>
+	</div>
+</section>
 <section class="section">
 	<div class="container" style="margin-bottom: 2vh;">
 		<div class="columns is-centered has-text-centered">
 			<div class="column is-four-fifths">
-				<h2 class="title is-3" id="Introduction">Introduction</h2>
-				<div class="content has-text-justified">
-					<div>
-						<blockquote style="border:1px solid #ccc; padding:10px; background:#f9f9f9; margin:20px 0; text-align:center; font-style:italic; font-size:regular;"> How to improve <strong style="color:#8B0000;">multi-turn</strong> interleaved <strong
-								style="color:#00008B;">understanding</strong>-<strong style="color:#006400;">generation</strong> alignment via human feedback? </blockquote>
-						<div style="width: 75%; margin: 0 auto; text-align: justify;">
-							<p>Multimodal interactions involve text, images, and more. Existing models focus on either understanding or generation, but integrating both across multiple turns remains a challenge.</p>
-							<h5 style="width: 75%; margin: 0 auto; text-align: center;">Key Issues</h5>
-							<ul style="width: 75%; margin: 0 auto; text-align: justify;">
-								<li><strong>Modality Fusion:</strong> Systems must handle both perception and generation to effectively communicate.</li>
-								<li><strong>Long-Horizon Interactions:</strong> Real-world interactions require sustained context management.</li>
-								<li><strong>Dynamic Feedback:</strong> User preferences evolve, demanding continuous human feedback.</li>
-							</ul>
-							<h5 style="width: 75%; margin: 0 auto; text-align: center;">Contributions</h5>
-							<ul style="width: 75%; margin: 0 auto; text-align: justify;">
-								<li><strong>First Multi-turn Dataset:</strong> Capturing human preferences in interleaved multimodal settings.</li>
-								<li><strong>Agent-based Workflow:</strong> Simulating realistic multi-turn interactions using strong models.</li>
-								<li><strong>Helpfulness Evaluation:</strong> Assessing both turn-level and conversation-level feedback.</li>
-							</ul>
-						</div>
-					</div>
-				</div>
+				<p>Humans perceive the world through dynamic, multimodal interactions involving text, images, audio, video, and more. Building on the success of multimodal large language models (MLLMs), recent efforts aim to develop general-purpose AI assistants that handle multiple mixed
+					modalities. A key feature of such assistants is to engage in natural multi-turn conversations, perceive, and generate any modality, enabling smoother interaction and grounded understanding.</p>
+				<p>Recent years have seen community efforts in transplanting alignment techniques such as Reinforcement Learning from Human Feedback (RLHF) from the text modality to multiple modality settings. Within this line of research, most studies focus exclusively on either understanding or
+					generation. The lack of alignment considerations for multimodal mixed input-output settings exacerbates the imbalance across modalities, a phenomenon referred to as modality disequilibrium. Furthermore, existing methods primarily focus on single-turn interactions, where an AI
+					generates a response based on a prompt and receives immediate alignment feedback.</p>
+				<p>However, real-world interactions typically occur in long-horizon conversations involving interleaved multimodal inputs and outputs. Addressing this gap, we propose a novel dataset that focuses on capturing human preferences in multi-turn, multimodal interaction settings.</p>
+				<blockquote style="border:1px solid #ccc; padding:10px; background:#f9f9f9; margin:20px 0; text-align:center; font-style:italic; font-size:regular;"> How to improve <strong style="color:#8B0000;">multi-turn</strong> interleaved <strong
+						style="color:#00008B;">understanding</strong>-<strong style="color:#006400;">generation</strong> alignment via human feedback? </blockquote>
+				<h3 style="text-decoration: underline;"><strong>Key Issues in MLLM Alignment:</strong></h3>
+				<ul>
+					<li><strong>Modality Fusion via Harmonizing Understanding and Generation:</strong> Effective AI systems should not only perceive and understand multimodal content but also generate multimodal outputs to communicate naturally and contextually.</li>
+					<li><strong>Modeling Long-Horizon, Interleaved Multimodal Interactions:</strong> Real-world exchanges span multiple turns and interleave various modalities, demanding sustained attention and reasoning over evolving contexts.</li>
+					<li><strong>Dynamic Human-in-the-Loop Alignment:</strong> In multi-turn interactions, user preferences evolve dynamically. Capturing and aligning with these emergent preferences requires continuous, iterative human feedback.</li>
+				</ul>
+				<h3 style="text-decoration: underline;"><strong>Contributions:</strong></h3>
+				<ul>
+					<li><strong>First Multi-turn Interleaved Preference Dataset:</strong> We introduce a dataset that captures real human preferences for tasks involving multi-turn and interleaved multimodal understanding and generation.</li>
+					<li><strong>Agent-based Construction Workflow:</strong> The dataset is constructed using a multi-turn QA workflow that leverages strong MLLMs augmented with external tools to simulate realistic interactions.</li>
+					<li><strong>Decoupled Helpfulness in Multi-turn Scenarios:</strong> Helpfulness is assessed at both local (turn-level) and global (conversation-level) scales, with 9 specific dimensions of evaluation.</li>
+					<li><strong>Multi-turn Alignment Insights:</strong> We investigate how multi-turn interactions facilitate preference modeling, revealing phenomena such as preference transfer and multi-turn scaling effects.</li>
+					<li><strong>Evaluation of MLLMs as Judge Models:</strong> We introduce a framework to assess MLLMs' capabilities as judges in multi-turn, multimodal tasks, focusing on scoring, pair comparison, and crucial step recognition.</li>
+				</ul>
 			</div>
 		</div>
 	</div>
@@ -297,7 +308,11 @@
 </section>
 <section class="hero is-light is-small">
 	<div class="hero-body has-text-centered">
-		<h1 class="title is-1 mathvista_other">Experiment Analysis</h1>
+		<!-- <h1 class="title is-1 mathvista"><img src="static/images/mathvista.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>MathVista Dataset</h1> -->
+		<h1 class="title is-1 mathvista">
+			<!--<img src="static/images/mathvista.png" style="width:1em;vertical-align: middle" alt="Logo"/>-->
+			<span class="mathvista" style="vertical-align: middle" id="Experiment Analysis">Experiment Analysis</span>
+		</h1>
 	</div>
 </section>
 <section class="section">
