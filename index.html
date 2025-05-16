@@ -618,63 +618,68 @@
 							<b>InterMT</b>
 						</p>
 						<style>
+							/* 全局样式 */
 							body {
-																																											        font-family: Arial, sans-serif;
-																																											        margin: 20px;
-																																											    }
-																																											
-																																											    .data-table {
-																																											        width: 100%;
-																																											        border-collapse: collapse;
-																																											        margin: 20px 0;
-																																											        background-color: white;
-																																											    }
-																																											
-																																											    .data-table th, .data-table td {
-																																											        padding: 12px 15px;
-																																											        text-align: center;
-																																											        vertical-align: middle; /* 修复垂直居中 */
-																																											        border: 1px solid #e1e1e1;
-																																											    }
-																																											
-																																											    .data-table thead {
-																																											        background-color: #2c3e50;
-																																											    }
-																																											
-																																											    .data-table th {
-																																											        font-weight: bold;
-																																											        font-size: 14px;
-																																											        color: #ffffff; /* 修复表头字体颜色 */
-																																											    }
-																																											
-																																											    .data-table tbody tr:nth-child(even) {
-																																											        background-color: #f9f9f9;
-																																											    }
-																																											
-																																											    .data-table tbody tr:hover {
-																																											        background-color: #f1f1f1;
-																																											    }
-																																											
-																																											    .data-table td {
-																																											        font-size: 13px;
-																																											    }
-																																											
-																																											    .bold {
-																																											        font-weight: bold;
-																																											    }
-																																											
-																																											    .highlight {
-																																											        background-color: #fffde7;
-																																											    }
-																																											
-																																											    .center-table {
-																																											        margin-left: auto;
-																																											        margin-right: auto;
-																																											    }
-																																											
-																																											    .data-table {
-																																											        border: none;
-																																											    }
+								font-family: Arial, sans-serif;
+								margin: 20px;
+							}
+
+							/* 表格基础样式 */
+							.data-table {
+								width: 100%;
+								border-collapse: collapse;
+								margin: 20px 0;
+								background-color: white;
+							}
+
+							/* 表格布局 */
+							.data-table th,
+							.data-table td {
+								padding: 12px 15px;
+								text-align: center;
+								vertical-align: middle;
+								border: 1px solid #e1e1e1;
+							}
+
+							/* 表头样式 */
+							.data-table thead {
+								background-color: #2c3e50;
+							}
+
+							.data-table th {
+								font-weight: bold;
+								font-size: 14px;
+								color: #ffffff;
+							}
+
+							/* 表格行样式 */
+							.data-table tbody tr:nth-child(even) {
+								background-color: #f9f9f9;
+							}
+
+							.data-table tbody tr:hover {
+								background-color: #f1f1f1;
+							}
+
+							/* 单元格字体大小 */
+							.data-table td {
+								font-size: 13px;
+							}
+
+							/* 特殊样式类 */
+							.bold {
+								font-weight: bold;
+							}
+
+							.highlight {
+								background-color: #fffde7;
+							}
+
+							/* 表格对齐 */
+							.center-table {
+								margin-left: auto;
+								margin-right: auto;
+							}
 						</style>
 						<table class="data-table center-table">
 							<thead>
@@ -1127,7 +1132,7 @@
 			<h2 class="title is-3"
 				id="Evaluation"
 				style="text-align: center;">
-				Dialog Sample
+				Data Sample
 			</h2>
 			<div id="dialog-sample-container"></div>
 
