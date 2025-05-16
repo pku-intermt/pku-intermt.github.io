@@ -202,52 +202,28 @@
 				<h2 class="title is-3" id="Introduction">Introduction</h2>
 				<div class="content has-text-justified">
 					<div>
-						<p>Humans perceive the world through dynamic, multimodal interactions involving text, images, audio, video, and more. Building on the success of multimodal large language models (MLLMs), recent efforts aim to develop general-purpose AI assistants that handle multiple mixed
-							modalities. A key feature of such general-purpose assistants is to engage in natural <strong>multi-turn</strong> conversations, perceive and generate any modality (<em>i.e.,</em>
-							<strong>single-turn</strong>), to enable smoother interaction and grounded understanding.
-						</p>
 						<blockquote style="border:1px solid #ccc; padding:10px; background:#f9f9f9; margin:20px 0; text-align:center; font-style:italic; font-size:regular;"> How to improve <strong style="color:#8B0000;">multi-turn</strong> interleaved <strong
 								style="color:#00008B;">understanding</strong>-<strong style="color:#006400;">generation</strong> alignment via human feedback? </blockquote>
-						<p>placeholder</p>
-						<!-- <p>Our reflections highlight several key issues in the alignment of MLLMs:</p>
-								<ul>
-									<li>
-										<strong>Modality Fusion via Harmonizing Understanding and Generation.</strong> To build general-purpose AI assistants, high-fidelity perception and understanding alone are not sufficient. The system should also support the selective generation of multimodal outputs (e.g., images) to effectively communicate, instruct, or interact with users in a natural and contextually appropriate manner.
-									</li>
-									<li>
-										<strong>Modeling Long‐Horizon, Interleaved Multimodal Interactions.</strong> Real‐world user–AI exchanges typically span many turns and interleave text, vision, and other modalities. Such interactions demand not only precise instruction following but also sustained attention and reasoning over an evolving context, approaching near‐human in‐context reasoning capabilities.
-									</li>
-									<li>
-										<strong>Dynamic Human‐in‐the‐Loop Alignment.</strong> In extended, multimodal interactions, user preferences continually evolve. For example, a user may first ask the assistant to draw a vase, then—after inspecting the rendered image—request that the vase be repositioned or restyled for greater emphasis. Capturing and aligning with these emergent, dynamic preferences calls for genuine, iterative human feedback throughout the interaction.
-									</li>
-								</ul>
-
-								<p>In response, we introduce <strong>InterMT</strong>, a human preference dataset designed to capture the complexity and diversity of human intent in <strong>multi-turn</strong> settings. Specifically, <strong>InterMT</strong> targets vision-language interaction scenarios involving interleaved <strong>understanding</strong> and <strong>generation</strong>. To model fine-grained, dynamic human preferences, <strong>InterMT</strong> comprises <em>25,437</em> seed questions that elicit multi-turn, multimodal conversations spanning 15+ domains. Helpfulness is further decomposed into 9 sub-dimensions, capturing both global (overall conversation-level) and local (turn-level) aspects of human feedback.</p>
-
-								<p>Our key contributions are summarized as follows:</p>
-								<ul>
-									<li>
-										<strong>The First Multi-turn Interleaved Preference Dataset:</strong> To the best of our knowledge, InterMT is the first dataset that captures real human preferences for tasks involving multi-turn and interleaved multimodal understanding and generation. It contains 25,437 unique seed questions across diverse categories, 100,000 multi-turn interleaved vision-language QA instances, and 51,691 sets of multi-dimensional human preference annotations.
-									</li>
-									<li>
-										<strong>Agent-based Construction Workflow:</strong> InterMT employs a carefully designed agent-based multi-turn QA construction workflow that leverages strong MLLMs augmented with external tools (e.g., image editing, generation and retrieval) to simulate high-quality real multi-turn interactions.
-									</li>
-									<li>
-										<strong>Decoupled Helpfulness in Multi-turn Multi-modal Scenarios:</strong> InterMT decomposes the helpfulness for multi-turn single-turn settings into finer dimensions (e.g., contextual consistency, image-text coherence etc.). It further provides both local (per-turn) and global (overall) feedback to capture fine-grained human preferences throughout the conversation.
-									</li>
-									<li>
-										<strong>Effective for Multi-turn Alignment:</strong> Building on InterMT, we investigate methods to model long-horizon values and align dynamic human values. Our findings reveal the phenomenon of preference transfer in multi-turn multimodal communications, which facilitates preference modeling for predicting human judgments. Additionally, we identify a scaling phenomenon in multi-turn judge moderation.
-									</li>
-									<li>
-										<strong>One More Thing:</strong> We introduce OUREVAL to assess the ability of MLLMs in assisting judges across multi-turn, multi-modalities, encompassing three distinct tasks: Scoring Evaluation, Pair Comparison and Crucial Step Recognition.
-									</li>
-								</ul>
-							</div> -->
+						<div style="width: 75%; margin: 0 auto; text-align: justify;">
+							<p>Multimodal interactions involve text, images, and more. Existing models focus on either understanding or generation, but integrating both across multiple turns remains a challenge.</p>
+							<h5 style="width: 75%; margin: 0 auto; text-align: center;">Key Issues</h5>
+							<ul style="width: 75%; margin: 0 auto; text-align: justify;">
+								<li><strong>Modality Fusion:</strong> Systems must handle both perception and generation to effectively communicate.</li>
+								<li><strong>Long-Horizon Interactions:</strong> Real-world interactions require sustained context management.</li>
+								<li><strong>Dynamic Feedback:</strong> User preferences evolve, demanding continuous human feedback.</li>
+							</ul>
+							<h5 style="width: 75%; margin: 0 auto; text-align: center;">Contributions</h5>
+							<ul style="width: 75%; margin: 0 auto; text-align: justify;">
+								<li><strong>First Multi-turn Dataset:</strong> Capturing human preferences in interleaved multimodal settings.</li>
+								<li><strong>Agent-based Workflow:</strong> Simulating realistic multi-turn interactions using strong models.</li>
+								<li><strong>Helpfulness Evaluation:</strong> Assessing both turn-level and conversation-level feedback.</li>
+							</ul>
+						</div>
 					</div>
 				</div>
 			</div>
-			<!--/ Abstract. -->
 		</div>
+	</div>
 </section>
 <!-- DATASET SECTION -->
 <section class="hero is-light is-small">
