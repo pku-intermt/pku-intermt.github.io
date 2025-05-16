@@ -1,0 +1,1279 @@
+<!DOCTYPE html>
+<html class="fontawesome-i2svg-active fontawesome-i2svg-complete">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<style data-merge-styles="true"></style>
+		<style data-merge-styles="true"></style>
+		<style data-merge-styles="true"></style>
+		<meta name="description" content="Multi-Turn Interleaved Preference Alignment with Human Feedback">
+		<meta name="keywords" content="Multi-Turn, Multi-Modality">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Multi-Turn Interleaved Preference Alignment with Human Feedback</title>
+		<link rel="icon" href="./assets/project_logo.png" type="image/png">
+		<!-- 引入css文件 -->
+		<link href="./assets/css" rel="stylesheet">
+		<link rel="stylesheet" href="./assets/bulma.min.css">
+		<link rel="stylesheet" href="./assets/bulma-carousel.min.css">
+		<link rel="stylesheet" href="./assets/font-face.css">
+		<link rel="stylesheet" href="./assets/bulma-slider.min.css">
+		<link rel="stylesheet" href="./assets/fontawesome.all.min.css">
+		<link rel="stylesheet" href="./assets/academicons.min.css">
+		<link rel="stylesheet" href="./assets/index.css">
+		<link rel="stylesheet" href="./assets/leaderboard.css">
+		<!-- 引入js文件 -->
+		<script type="text/javascript" src="./assets/sort-table.js" defer=""></script>
+		<script src="./assets/jquery.min.js"></script>
+		<script defer="" src="./assets/fontawesome.all.min.js"></script>
+		<script src="./assets/bulma-carousel.min.js"></script>
+		<script src="./assets/bulma-slider.min.js"></script>
+		<script src="./assets/explorer-index.js"></script>
+		<script src="./assets/question_card.js"></script>
+		<script src="./assets/leaderboard_testmini.js"></script>
+		<script src="./assets/output_folders.js" defer=""></script>
+		<script src="./assets/model_scores.js" defer=""></script>
+		<script src="./assets/data_public.js" defer=""></script>
+	</head>
+	<nav2 class="navbar" role="navigation" aria-label="main navigation">
+		<div class="navbar-brand">
+			<a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+				<span aria-hidden="true"></span>
+				<span aria-hidden="true"></span>
+				<span aria-hidden="true"></span>
+			</a>
+		</div>
+		<div class="navbar-menu">
+			<div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+				<!-- @PAN TODO: consider adding links? -->
+				<div class="navbar-item has-dropdown is-hoverable">
+					<a class="navbar-link"> More Research </a>
+					<div class="navbar-dropdown">
+						<a class="navbar-item" href="https://github.com/PKU-Alignment/safe-rlhf">
+							<b>PKU-SafeRLHF (ACL2025 Main)</b>
+						</a>
+						<a class="navbar-item" href="https://github.com/PKU-Alignment/aligner">
+							<b>Aligner (NeurIPS 2024 Oral)</b>
+						</a>
+						<a class="navbar-item" href="https://github.com/PKU-Alignment/safe-sora">
+							<b>SafeSora (NeurIPS 2024 DB Track)</b>
+						</a>
+						<a class="navbar-item" href="https://github.com/PKU-Alignment/beavertails">
+							<b>BeaverTails (NeurIPS 2024 DB Track)</b>
+						</a>
+						<a class="navbar-item" href="https://align-anything.readthedocs.io/en/latest/index.html">
+							<b>Align-Anything🔥🔥🔥</b>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</nav2>
+	<section class="hero">
+		<div class="hero-body">
+			<div class="container is-max-desktop">
+				<div class="columns is-centered">
+					<div class="column has-text-centered">
+						<h1 class="title is-1 publication-title">Multi-Turn Interleaved Preference Alignment with Human Feedback</h1>
+						<div class="is-size-5 publication-authors">
+							<div class="is-size-5 publication-authors">
+								<span class="author-block"> Boyuan Chen<sup>1*</sup>， </span>
+								<span class="author-block"> Donghai Hong<sup>1*</sup>， </span>
+								<span class="author-block"> Jiaming Ji<sup>1*</sup>， </span>
+								<span class="author-block"> Jiacheng Zheng<sup>2</sup>， </span>
+								<span class="author-block"> Bowen Dong<sup>1</sup>， </span>
+								<span class="author-block"> Jiayi Zhou<sup>1</sup>， </span>
+								<span class="author-block"> Kaile Wang<sup>1</sup>， </span>
+								<span class="author-block"> Josef Dai<sup>1</sup>， </span>
+								<span class="author-block"> Xuyao Wang<sup>1</sup>， </span>
+								<span class="author-block"> Wenqi Chen<sup>1</sup>， </span>
+								<span class="author-block"> Qirui Zheng<sup>1</sup>， </span>
+								<span class="author-block"> Wenxin Li<sup>1</sup>， </span>
+								<span class="author-block"> Sirui Han<sup>2</sup>， </span>
+								<span class="author-block"> Yike Guo<sup>2</sup>， </span>
+								<span class="author-block"> Yaodong Yang<sup>1†</sup>， </span>
+							</div>
+							<div class="is-size-5 publication-authors">
+								<span class="author-block">
+									<sup>1</sup>
+									<em>Peking University</em>
+								</span>
+								<span class="author-block">
+									<sup>2</sup>
+									<em>The Hong Kong University of Science and Technology</em>
+								</span>
+							</div>
+							<p>
+								<small> * Equal contribution, <sup>†</sup> corresponding author. </small>
+							</p>
+							<br>
+						</div>
+						<div class="column has-text-centered">
+							<div class="publication-links">
+								<!-- PDF Link. -->
+								<span class="link-block">
+									<a href="#" class="external-link button is-normal is-rounded is-dark">
+										<span class="icon">
+											<svg class="svg-inline--fa fa-file-pdf fa-w-12" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="file-pdf" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" data-fa-i2svg="">
+												<path fill="currentColor"
+													  d="M181.9 256.1c-5-16-4.9-46.9-2-46.9 8.4 0 7.6 36.9 2 46.9zm-1.7 47.2c-7.7 20.2-17.3 43.3-28.4 62.7 18.3-7 39-17.2 62.9-21.9-12.7-9.6-24.9-23.4-34.5-40.8zM86.1 428.1c0 .8 13.2-5.4 34.9-40.2-6.7 6.3-29.1 24.5-34.9 40.2zM248 160h136v328c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V24C0 10.7 10.7 0 24 0h200v136c0 13.2 10.8 24 24 24zm-8 171.8c-20-12.2-33.3-29-42.7-53.8 4.5-18.5 11.6-46.6 6.2-64.2-4.7-29.4-42.4-26.5-47.8-6.8-5 18.3-.4 44.1 8.1 77-11.6 27.6-28.7 64.6-40.8 85.8-.1 0-.1.1-.2.1-27.1 13.9-73.6 44.5-54.5 68 5.6 6.9 16 10 21.5 10 17.9 0 35.7-18 61.1-61.8 25.8-8.5 54.1-19.1 79-23.2 21.7 11.8 47.1 19.5 64 19.5 29.2 0 31.2-32 19.7-43.4-13.9-13.6-54.3-9.7-73.6-7.2zM377 105L279 7c-4.5-4.5-10.6-7-17-7h-6v128h128v-6.1c0-6.3-2.5-12.4-7-16.9zm-74.1 255.3c4.1-2.7-2.5-11.9-42.8-9 37.1 15.8 42.8 9 42.8 9z">
+												</path>
+											</svg><!-- <i class="fas fa-file-pdf"></i> Font Awesome fontawesome.com -->
+										</span>
+										<span>Paper</span>
+									</a>
+								</span>
+								<span class="link-block">
+									<a href="https://huggingface.co/datasets/PKU-Alignment/INTERMT" class="external-link button is-normal is-rounded is-dark">
+										<span class="icon">
+											<img src="./assets/huggingface-color.svg" alt="HuggingFace" style="width: 1em; height: 1em;" />
+										</span>
+										<span>HuggingFace</span>
+									</a>
+								</span>
+								<!-- Video Link. -->
+								<span class="link-block">
+									<a href="https://github.com/cby-pku/INTERMT" class="external-link button is-normal is-rounded is-dark">
+										<span class="icon">
+											<svg class="svg-inline--fa fa-github fa-w-16" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" data-fa-i2svg="">
+												<path fill="currentColor"
+													  d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z">
+												</path>
+											</svg><!-- <i class="fab fa-github"></i> Font Awesome fontawesome.com -->
+										</span>
+										<span>GitHub</span>
+									</a>
+								</span>
+								<!-- Code Link. -->
+								<span class="link-block">
+									<a href="https://huggingface.co/PKU-Alignment/INTERMT-Judge" class="external-link button is-normal is-rounded is-dark">
+										<span class="icon">
+											<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
+												<!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+												<path fill="#ffffff"
+													  d="M0 96C0 60.7 28.7 32 64 32l320 0c35.3 0 64 28.7 64 64l0 320c0 35.3-28.7 64-64 64L64 480c-35.3 0-64-28.7-64-64L0 96zm144 4c-24.3 0-44 19.7-44 44l0 48c0 24.3 19.7 44 44 44l32 0c24.3 0 44-19.7 44-44l0-48c0-24.3-19.7-44-44-44l-32 0zm-4 44c0-2.2 1.8-4 4-4l32 0c2.2 0 4 1.8 4 4l0 48c0 2.2-1.8 4-4 4l-32 0c-2.2 0-4-1.8-4-4l0-48zm140-44c-11 0-20 9-20 20c0 9.7 6.9 17.7 16 19.6l0 76.4c0 11 9 20 20 20s20-9 20-20l0-96c0-11-9-20-20-20l-16 0zM132 296c0 9.7 6.9 17.7 16 19.6l0 76.4c0 11 9 20 20 20s20-9 20-20l0-96c0-11-9-20-20-20l-16 0c-11 0-20 9-20 20zm96 24l0 48c0 24.3 19.7 44 44 44l32 0c24.3 0 44-19.7 44-44l0-48c0-24.3-19.7-44-44-44l-32 0c-24.3 0-44 19.7-44 44zm44-4l32 0c2.2 0 4 1.8 4 4l0 48c0 2.2-1.8 4-4 4l-32 0c-2.2 0-4-1.8-4-4l0-48c0-2.2 1.8-4 4-4z" />
+											</svg>
+										</span>
+										<span>Model</span>
+									</a>
+								</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="hero teaser">
+		<div class="container is-max-desktop">
+			<div class="content has-text-centered">
+				<img src="./assets/figure1_0515.png" alt="geometric reasoning" width="100%" style="box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); border-radius: 8px;">
+				<h2 style="text-align: center;">Abstract</h2>
+				<p style="text-align: justify;">
+					As multimodal large models (MLLMs) continue to advance across challenging tasks, a key question emerges:
+					<strong>
+						<em>What essential capabilities are still missing?</em>
+					</strong>
+					A critical aspect of human learning is continuous interaction with the environment – not limited to language, but also involving multimodal understanding and generation.
+					To move closer to human-level intelligence, models must similarly support <strong>multi-turn</strong>, <strong>multimodal interaction</strong>. In particular, they should comprehend interleaved multimodal contexts and respond coherently in ongoing exchanges.
+					In this work, we present <strong>an initial exploration</strong> through the <strong>InterMT</strong> – <strong>the first preference dataset for <em>multi-turn</em> multimodal interaction</strong>, grounded in real human feedback. In this exploration, we particularly emphasize the importance of human oversight, introducing expert annotations to guide the process, motivated by the fact that current MLLMs lack such complex interactive capabilities.
+					<strong>InterMT</strong> captures human preferences at both global and local levels into nine sub-dimensions, consists of 5,437 prompts, 2.6k multi-turn dialogue instances, and 2.1k human-labeled preference pairs.
+					To compensate for the lack of capability for multi-modal understanding and generation, we introduce an agentic workflow that leverages tool-augmented MLLMs to construct multi-turn QA instances.
+					We further this goal by introducing <strong>InterMT-Bench</strong> to assess the ability of MLLMs in assisting judges with multi-turn, multimodal tasks.
+					We demonstrate the utility of <strong>InterMT</strong> through applications such as judge moderation and further reveal the <em>multi-turn scaling law</em> of judge model.
+					We hope the open-source of our data can help facilitate further research on aligning current MLLMs to the next step.
+				</p>
+			</div>
+		</div>
+	</section>
+	<section class="section">
+		<div class="container" style="margin-bottom: 2vh;">
+			<!-- Abstract. -->
+			<div class="columns is-centered has-text-centered">
+				<div class="column is-four-fifths">
+					<h2 class="title is-3" id="Introduction">Introduction</h2>
+					<div class="content has-text-justified">
+						<div>
+							<p>Humans perceive the world through dynamic, multimodal interactions involving text, images, audio, video, and more. Building on the success of multimodal large language models (MLLMs), recent efforts aim to develop general-purpose AI assistants that handle multiple mixed
+								modalities. A key feature of such general-purpose assistants is to engage in natural <strong>multi-turn</strong> conversations, perceive and generate any modality (<em>i.e.,</em>
+								<strong>single-turn</strong>), to enable smoother interaction and grounded understanding.
+							</p>
+							<blockquote style="border:1px solid #ccc; padding:10px; background:#f9f9f9; margin:20px 0; text-align:center; font-style:italic; font-size:regular;"> How to improve <strong style="color:#8B0000;">multi-turn</strong> interleaved <strong
+										style="color:#00008B;">understanding</strong>-<strong style="color:#006400;">generation</strong> alignment via human feedback? </blockquote>
+							<p>placeholder</p>
+							<!-- <p>Our reflections highlight several key issues in the alignment of MLLMs:</p>
+								<ul>
+									<li>
+										<strong>Modality Fusion via Harmonizing Understanding and Generation.</strong> To build general-purpose AI assistants, high-fidelity perception and understanding alone are not sufficient. The system should also support the selective generation of multimodal outputs (e.g., images) to effectively communicate, instruct, or interact with users in a natural and contextually appropriate manner.
+									</li>
+									<li>
+										<strong>Modeling Long‐Horizon, Interleaved Multimodal Interactions.</strong> Real‐world user–AI exchanges typically span many turns and interleave text, vision, and other modalities. Such interactions demand not only precise instruction following but also sustained attention and reasoning over an evolving context, approaching near‐human in‐context reasoning capabilities.
+									</li>
+									<li>
+										<strong>Dynamic Human‐in‐the‐Loop Alignment.</strong> In extended, multimodal interactions, user preferences continually evolve. For example, a user may first ask the assistant to draw a vase, then—after inspecting the rendered image—request that the vase be repositioned or restyled for greater emphasis. Capturing and aligning with these emergent, dynamic preferences calls for genuine, iterative human feedback throughout the interaction.
+									</li>
+								</ul>
+
+								<p>In response, we introduce <strong>InterMT</strong>, a human preference dataset designed to capture the complexity and diversity of human intent in <strong>multi-turn</strong> settings. Specifically, <strong>InterMT</strong> targets vision-language interaction scenarios involving interleaved <strong>understanding</strong> and <strong>generation</strong>. To model fine-grained, dynamic human preferences, <strong>InterMT</strong> comprises <em>25,437</em> seed questions that elicit multi-turn, multimodal conversations spanning 15+ domains. Helpfulness is further decomposed into 9 sub-dimensions, capturing both global (overall conversation-level) and local (turn-level) aspects of human feedback.</p>
+
+								<p>Our key contributions are summarized as follows:</p>
+								<ul>
+									<li>
+										<strong>The First Multi-turn Interleaved Preference Dataset:</strong> To the best of our knowledge, InterMT is the first dataset that captures real human preferences for tasks involving multi-turn and interleaved multimodal understanding and generation. It contains 25,437 unique seed questions across diverse categories, 100,000 multi-turn interleaved vision-language QA instances, and 51,691 sets of multi-dimensional human preference annotations.
+									</li>
+									<li>
+										<strong>Agent-based Construction Workflow:</strong> InterMT employs a carefully designed agent-based multi-turn QA construction workflow that leverages strong MLLMs augmented with external tools (e.g., image editing, generation and retrieval) to simulate high-quality real multi-turn interactions.
+									</li>
+									<li>
+										<strong>Decoupled Helpfulness in Multi-turn Multi-modal Scenarios:</strong> InterMT decomposes the helpfulness for multi-turn single-turn settings into finer dimensions (e.g., contextual consistency, image-text coherence etc.). It further provides both local (per-turn) and global (overall) feedback to capture fine-grained human preferences throughout the conversation.
+									</li>
+									<li>
+										<strong>Effective for Multi-turn Alignment:</strong> Building on InterMT, we investigate methods to model long-horizon values and align dynamic human values. Our findings reveal the phenomenon of preference transfer in multi-turn multimodal communications, which facilitates preference modeling for predicting human judgments. Additionally, we identify a scaling phenomenon in multi-turn judge moderation.
+									</li>
+									<li>
+										<strong>One More Thing:</strong> We introduce OUREVAL to assess the ability of MLLMs in assisting judges across multi-turn, multi-modalities, encompassing three distinct tasks: Scoring Evaluation, Pair Comparison and Crucial Step Recognition.
+									</li>
+								</ul>
+							</div> -->
+						</div>
+					</div>
+				</div>
+				<!--/ Abstract. -->
+			</div>
+	</section>
+	<!-- DATASET SECTION -->
+	<section class="hero is-light is-small">
+		<div class="hero-body has-text-centered">
+			<!-- <h1 class="title is-1 mathvista"><img src="static/images/mathvista.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>MathVista Dataset</h1> -->
+			<h1 class="title is-1 mathvista">
+				<!--<img src="static/images/mathvista.png" style="width:1em;vertical-align: middle" alt="Logo"/>-->
+				<span class="mathvista" style="vertical-align: middle" id="Dataset">InterMT Dataset</span>
+			</h1>
+		</div>
+	</section>
+	<section class="section">
+		<div class="container">
+			<center>
+				<h2 class="title is-3">Overview</h2>
+			</center>
+			<div class="columns is-centered">
+				<div class="column is-half">
+					<div class="content has-text-justified">
+						<section id="dataset">
+							<h2>Dataset</h2>
+							<p>Our core contribution is the introduction of a human preference dataset designed for <span style="color:#8B0000;">multi-turn</span>, multimodal <span style="color:#00008B;">understanding</span> and <span style="color:#006400;">generation</span> tasks. This section outlines
+								the dataset's composition, the collection of prompts and multi-turn QA instances, and the human annotation process.</p>
+							<section id="composition">
+								<h3>Dataset Composition</h3>
+								<p>The dataset comprises two primary data types: (1) <em>Seed Questions</em> for initiating <span style="color:#8B0000;">multi-turn</span> conversations, and (2) human preference annotations at both the local and global levels. Prompts are refined using principles from
+									linguistics and cognitive psychology to simulate realistic multimodal <span style="color:#8B0000;">multi-turn</span> tasks effectively.</p>
+							</section>
+							<section id="qa-construction">
+								<h3>Multi-turn QA Construction</h3>
+								<p>A tool-augmented workflow is employed to simulate human-like dialogues across various <span style="color:#8B0000;">multi-turn</span> tasks, integrating large models (e.g., GPT-4o, Qwen2.5-VL) with multimodal tools for image generation, editing, and retrieval.</p>
+							</section>
+							<section id="annotation">
+								<h3>Preference Annotation</h3>
+								<p>Human annotation includes local and global evaluations of conversation quality, focusing on <span style="color:#00008B;">understanding</span>-<span style="color:#006400;">generation</span> alignment, coherence, and completeness.</p>
+							</section>
+						</section>
+					</div>
+				</div>
+				<div class="column is-half">
+					<div class="carousel results-carousel">
+						<div class="carousel-item">
+							<div class="box m-5">
+								<div class="content has-text-centered">
+									<img src="./assets/Figure2.png" style="width: 100%;">
+									<p style="margin-bottom: 30px;">
+										<span class="icon">
+											<img src="./assets/logo_transp.png" alt="HuggingFace" style="width: 1em; height: 1em;" />
+										</span>
+										<b>InterMT</b> includes over 15 tasks in vision-language scenarios, capturing communication examples across diverse multi-turn settings.
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="carousel-item">
+							<div class="box m-5">
+								<div class="content has-text-centered">
+									<img src="./assets/Figure3-0515_00.png" style="width: 100%;">
+									<p style="margin-bottom: 30px;">Overview of the four-stage pipeline for constructing <span class="icon">
+											<img src="./assets/logo_transp.png" alt="HuggingFace" style="width: 1em; height: 1em;" />
+										</span>
+										<b>InterMT</b>. The pipeline covers data harvesting, model-generated expansion, human annotation, and final QA tree assembly.
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="hero is-light is-small">
+		<div class="hero-body has-text-centered">
+			<h1 class="title is-1 mathvista_other">Experiment Analysis</h1>
+		</div>
+	</section>
+	<!-- <section class="section">
+				<div class="container">
+					<div class="columns is-centered has-text-centered">
+						<div class="column is-four-fifths"
+							 style="width: 100%;">
+							<h2 class="title is-3">Main Analysis</h2>
+							<div class="content has-text-justified">
+								<div id="results-carousel"
+									 class="carousel results-carousel">
+									<div class="content has-text-centered">
+										<img src="./assets/Figure5-1.png" style="width: 75%;">
+										<p style="text-align: justify; margin-left: auto; margin-right: auto; width: 75%;">
+											Since the dataset captures <em>real</em> human preferences across multiple dimensions at both <em>global</em> and <em>local</em> levels, it is meaningful to analyze the correlations among these dimensions, examine the relationship between per-turn preferences and overall evaluation, and further compare human feedback with AI feedback.
+											<br>
+											<br>
+
+											<strong>Correlation Analysis</strong>
+											<br>
+											Three key findings from the analysis:
+											<br>
+											1. <strong>Modality perception precedes effective modality fusion:</strong> The evaluation of image-text consistency is strongly correlated with visual perceptual quality, indicating that clear perception of individual modalities is a prerequisite for reliable multimodal judgment.
+											<br>
+											2. <strong>Long-horizon evaluations hinge on coherence and temporal consistency:</strong> Metrics such as helpfulness and completeness strongly align with context awareness and global visual consistency, underscoring the importance of maintaining coherent semantics across extended interactions.
+											<br>
+											3. <strong>Intent grounding drives long-horizon crucial step recognition:</strong> In multi-turn scenarios, models may produce plausible outputs but deviate from core user intentions, leading to stylistic drift and omission of key steps.
+											<br>
+											<br>
+
+											<strong>Human Feedback vs. AI Feedback</strong>
+											<br>
+											Our analysis reveals that while AI annotators achieve reasonable agreement with human annotators at the local level (60%), their agreement drops significantly at the global level, particularly in long-horizon, multi-turn tasks. This indicates a current gap in AI's ability to align with human judgments in extended interactions.
+										</p>
+									</div>
+
+									<div class="content has-text-centered">
+										<img src="./assets/Figure5.png"
+											 style="width: 55%;">
+										<p style="text-align: justify; margin-left: auto; margin-right: auto; width: 75%;">
+											Since the dataset captures <em>real</em> human preferences across multiple dimensions at both <em>global</em> and <em>local</em> levels, it is meaningful to analyze the correlations among these dimensions, examine the relationship between per-turn preferences and overall evaluation, and further compare human feedback with AI feedback.
+											<br>
+											<br>
+
+											<strong>Correlation Analysis</strong>
+											<br>
+											Three key findings from the analysis:
+											<br>
+											1. <strong>Modality perception precedes effective modality fusion:</strong> The evaluation of image-text consistency is strongly correlated with visual perceptual quality, indicating that clear perception of individual modalities is a prerequisite for reliable multimodal judgment.
+											<br>
+											2. <strong>Long-horizon evaluations hinge on coherence and temporal consistency:</strong> Metrics such as helpfulness and completeness strongly align with context awareness and global visual consistency, underscoring the importance of maintaining coherent semantics across extended interactions.
+											<br>
+											3. <strong>Intent grounding drives long-horizon crucial step recognition:</strong> In multi-turn scenarios, models may produce plausible outputs but deviate from core user intentions, leading to stylistic drift and omission of key steps.
+											<br>
+											<br>
+
+											<strong>Human Feedback vs. AI Feedback</strong>
+											<br>
+											Our analysis reveals that while AI annotators achieve reasonable agreement with human annotators at the local level (60%), their agreement drops significantly at the global level, particularly in long-horizon, multi-turn tasks. This indicates a current gap in AI's ability to align with human judgments in extended interactions.
+										</p>
+									</div>
+									<div class="content has-text-centered">
+										<img src="./assets/Figure5-1.png"
+											 style="width: 75%;">
+										<p style="text-align: justify; margin-left: auto; margin-right: auto; width: 75%;">
+											Since the dataset captures <em>real</em> human preferences across multiple dimensions at both <em>global</em> and <em>local</em> levels, it is meaningful to analyze the correlations among these dimensions, examine the relationship between per-turn preferences and overall evaluation, and further compare human feedback with AI feedback.
+											<br>
+											<br>
+
+											<strong>Correlation Analysis</strong>
+											<br>
+											Three key findings from the analysis:
+											<br>
+											1. <strong>Modality perception precedes effective modality fusion:</strong> The evaluation of image-text consistency is strongly correlated with visual perceptual quality, indicating that clear perception of individual modalities is a prerequisite for reliable multimodal judgment.
+											<br>
+											2. <strong>Long-horizon evaluations hinge on coherence and temporal consistency:</strong> Metrics such as helpfulness and completeness strongly align with context awareness and global visual consistency, underscoring the importance of maintaining coherent semantics across extended interactions.
+											<br>
+											3. <strong>Intent grounding drives long-horizon crucial step recognition:</strong> In multi-turn scenarios, models may produce plausible outputs but deviate from core user intentions, leading to stylistic drift and omission of key steps.
+											<br>
+											<br>
+
+											<strong>Human Feedback vs. AI Feedback</strong>
+											<br>
+											Our analysis reveals that while AI annotators achieve reasonable agreement with human annotators at the local level (60%), their agreement drops significantly at the global level, particularly in long-horizon, multi-turn tasks. This indicates a current gap in AI's ability to align with human judgments in extended interactions.
+										</p>
+									</div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div> -->
+	<section class="section">
+		<div class="container">
+			<div class="columns is-centered has-text-centered">
+				<div class="column is-four-fifths" style="width: 100%;">
+					<h2 class="title is-3">Main Analysis</h2>
+					<div class="content has-text-justified">
+						<div id="results-carousel" class="carousel results-carousel">
+							<div class="content has-text-centered">
+								<img src="./assets/Figure5-1.png" style="width: 75%;">
+								<p style="text-align: justify; margin-left: auto; margin-right: auto; width: 75%;"> Since the dataset captures <em>real</em> human preferences across multiple dimensions at both <em>global</em> and <em>local</em> levels, it is meaningful to analyze the correlations among
+									these dimensions, examine the relationship between per-turn preferences and overall evaluation, and further compare human feedback with AI feedback.
+									<br>
+									<br>
+									<strong>Correlation Analysis</strong>
+									<br> Three key findings from the analysis:
+									<br> 1. <strong>Modality perception precedes effective modality fusion:</strong> The evaluation of image-text consistency is strongly correlated with visual perceptual quality, indicating that clear perception of individual
+									modalities is a prerequisite for reliable multimodal judgment.
+									<br> 2. <strong>Long-horizon evaluations hinge on coherence and temporal consistency:</strong> Metrics such as helpfulness and completeness strongly align with context awareness and global visual
+									consistency, underscoring the importance of maintaining coherent semantics across extended interactions.
+									<br> 3. <strong>Intent grounding drives long-horizon crucial step recognition:</strong> In multi-turn scenarios, models may produce plausible outputs but deviate
+									from core user intentions, leading to stylistic drift and omission of key steps.
+									<br>
+									<br>
+									<strong>Human Feedback vs. AI Feedback</strong>
+									<br> Our analysis reveals that while AI annotators achieve reasonable agreement with human annotators at the local level (60%), their agreement drops significantly at the global level, particularly in long-horizon, multi-turn tasks. This indicates a current gap in
+									AI's ability to align with human judgments in extended interactions.
+								</p>
+							</div>
+							<div class="content has-text-centered">
+								<img src="./assets/Figure5.png" style="width: 55%;">
+								<p style="text-align: justify; margin-left: auto; margin-right: auto; width: 75%;"> Since the dataset captures <em>real</em> human preferences across multiple dimensions at both <em>global</em> and <em>local</em> levels, it is meaningful to analyze the correlations among
+									these dimensions, examine the relationship between per-turn preferences and overall evaluation, and further compare human feedback with AI feedback.
+									<br>
+									<br>
+									<strong>Correlation Analysis</strong>
+									<br> Three key findings from the analysis:
+									<br> 1. <strong>Modality perception precedes effective modality fusion:</strong> The evaluation of image-text consistency is strongly correlated with visual perceptual quality, indicating that clear perception of individual
+									modalities is a prerequisite for reliable multimodal judgment.
+									<br> 2. <strong>Long-horizon evaluations hinge on coherence and temporal consistency:</strong> Metrics such as helpfulness and completeness strongly align with context awareness and global visual
+									consistency, underscoring the importance of maintaining coherent semantics across extended interactions.
+									<br> 3. <strong>Intent grounding drives long-horizon crucial step recognition:</strong> In multi-turn scenarios, models may produce plausible outputs but deviate
+									from core user intentions, leading to stylistic drift and omission of key steps.
+									<br>
+									<br>
+									<strong>Human Feedback vs. AI Feedback</strong>
+									<br> Our analysis reveals that while AI annotators achieve reasonable agreement with human annotators at the local level (60%), their agreement drops significantly at the global level, particularly in long-horizon, multi-turn tasks. This indicates a current gap in
+									AI's ability to align with human judgments in extended interactions.
+								</p>
+							</div>
+							<div class="content has-text-centered">
+								<img src="./assets/Figure5-1.png" style="width: 75%;">
+								<p style="text-align: justify; margin-left: auto; margin-right: auto; width: 75%;"> Since the dataset captures <em>real</em> human preferences across multiple dimensions at both <em>global</em> and <em>local</em> levels, it is meaningful to analyze the correlations among
+									these dimensions, examine the relationship between per-turn preferences and overall evaluation, and further compare human feedback with AI feedback.
+									<br>
+									<br>
+									<strong>Correlation Analysis</strong>
+									<br> Three key findings from the analysis:
+									<br> 1. <strong>Modality perception precedes effective modality fusion:</strong> The evaluation of image-text consistency is strongly correlated with visual perceptual quality, indicating that clear perception of individual
+									modalities is a prerequisite for reliable multimodal judgment.
+									<br> 2. <strong>Long-horizon evaluations hinge on coherence and temporal consistency:</strong> Metrics such as helpfulness and completeness strongly align with context awareness and global visual
+									consistency, underscoring the importance of maintaining coherent semantics across extended interactions.
+									<br> 3. <strong>Intent grounding drives long-horizon crucial step recognition:</strong> In multi-turn scenarios, models may produce plausible outputs but deviate
+									from core user intentions, leading to stylistic drift and omission of key steps.
+									<br>
+									<br>
+									<strong>Human Feedback vs. AI Feedback</strong>
+									<br> Our analysis reveals that while AI annotators achieve reasonable agreement with human annotators at the local level (60%), their agreement drops significantly at the global level, particularly in long-horizon, multi-turn tasks. This indicates a current gap in
+									AI's ability to align with human judgments in extended interactions.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="columns is-centered m-6">
+			<div class="column is-full has-text-centered content">
+				<h2 class="title is-3" id="Results">More Results</h2>
+				<div class="box m-5">
+					<div class="content has-text-centered">
+						<img src="./assets/Figure5.png" alt="grade-lv" width="60%">
+						<p style="text-align: justify; margin-left: auto; margin-right: auto; width: 75%;"> Since the dataset captures <em>real</em> human preferences across multiple dimensions at both <em>global</em> and <em>local</em> levels, it is meaningful to analyze the correlations among these
+							dimensions, examine the relationship between per-turn preferences and overall evaluation, and further compare human feedback with AI feedback.
+							<br>
+							<br>
+							<strong>Correlation Analysis</strong>
+							<br> Three key findings from the analysis:
+							<br> 1. <strong>Modality perception precedes effective modality fusion:</strong> The evaluation of image-text consistency is strongly correlated with visual perceptual quality, indicating that clear perception of individual
+							modalities is a prerequisite for reliable multimodal judgment.
+							<br> 2. <strong>Long-horizon evaluations hinge on coherence and temporal consistency:</strong> Metrics such as helpfulness and completeness strongly align with context awareness and global visual consistency,
+							underscoring the importance of maintaining coherent semantics across extended interactions.
+							<br> 3. <strong>Intent grounding drives long-horizon crucial step recognition:</strong> In multi-turn scenarios, models may produce plausible outputs but deviate from core user
+							intentions, leading to stylistic drift and omission of key steps.
+							<br>
+							<br>
+							<strong>Human Feedback vs. AI Feedback</strong>
+							<br> Our analysis reveals that while AI annotators achieve reasonable agreement with human annotators at the local level (60%), their agreement drops significantly at the global level, particularly in long-horizon, multi-turn tasks. This indicates a current gap in AI's
+							ability to align with human judgments in extended interactions.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+	</section>
+
+	<section class="section">
+		<div class="container">
+			<div class="columns is-centered">
+				<div class="column is-full has-text-centered content">
+					<h2 class="title is-3" id="Evaluation">
+						<span class="icon">
+							<img src="./assets/logo_transp.png" alt="HuggingFace" style="width: 1em; height: 1em;" />
+						</span>
+						<b>InterMT</b> Performance Evaluation
+					</h2>
+					<div class="content">
+						<p class="mt-3">What does <span class="icon">
+								<img src="./assets/logo_transp.png" alt="HuggingFace" style="width: 1em; height: 1em;" />
+							</span>
+							<b>InterMT</b> include and overview of the four-stage pipeline for constructing <span class="icon">
+								<img src="./assets/logo_transp.png" alt="HuggingFace" style="width: 1em; height: 1em;" />
+							</span>
+							<b>InterMT</b>
+						</p>
+						<style>
+							body {
+																													        font-family: Arial, sans-serif;
+																													        margin: 20px;
+																													    }
+																													
+																													    .data-table {
+																													        width: 100%;
+																													        border-collapse: collapse;
+																													        margin: 20px 0;
+																													        background-color: white;
+																													    }
+																													
+																													    .data-table th, .data-table td {
+																													        padding: 12px 15px;
+																													        text-align: center;
+																													        vertical-align: middle; /* 修复垂直居中 */
+																													        border: 1px solid #e1e1e1;
+																													    }
+																													
+																													    .data-table thead {
+																													        background-color: #2c3e50;
+																													    }
+																													
+																													    .data-table th {
+																													        font-weight: bold;
+																													        font-size: 14px;
+																													        color: #ffffff; /* 修复表头字体颜色 */
+																													    }
+																													
+																													    .data-table tbody tr:nth-child(even) {
+																													        background-color: #f9f9f9;
+																													    }
+																													
+																													    .data-table tbody tr:hover {
+																													        background-color: #f1f1f1;
+																													    }
+																													
+																													    .data-table td {
+																													        font-size: 13px;
+																													    }
+																													
+																													    .bold {
+																													        font-weight: bold;
+																													    }
+																													
+																													    .highlight {
+																													        background-color: #fffde7;
+																													    }
+																													
+																													    .center-table {
+																													        margin-left: auto;
+																													        margin-right: auto;
+																													    }
+																													
+																													    .data-table {
+																													        border: none;
+																													    }
+						</style>
+						<table class="data-table center-table">
+							<thead>
+								<tr>
+									<th rowspan="2" style="color: #ffffff;">Settings</th>
+									<th rowspan="2" style="color: #ffffff;">MLLMs</th>
+									<th colspan="5" style="color: #ffffff;">Local Setting</th>
+									<th colspan="6" style="color: #ffffff;">Global Setting</th>
+								</tr>
+								<tr>
+									<th style="color: #ffffff;">L1</th>
+									<th style="color: #ffffff;">L2</th>
+									<th style="color: #ffffff;">L3</th>
+									<th style="color: #ffffff;">L4</th>
+									<th style="color: #ffffff;">Avg.</th>
+									<th style="color: #ffffff;">G1</th>
+									<th style="color: #ffffff;">G2</th>
+									<th style="color: #ffffff;">G3</th>
+									<th style="color: #ffffff;">G4</th>
+									<th style="color: #ffffff;">G5</th>
+									<th style="color: #ffffff;">Avg.</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td rowspan="12" class="bold">Scoring Evaluation</td>
+									<td>Gemini-Flash* †</td>
+									<td>0.346</td>
+									<td>0.107</td>
+									<td>0.119</td>
+									<td>0.173</td>
+									<td>0.186</td>
+									<td>0.163</td>
+									<td>0.042</td>
+									<td>0.051</td>
+									<td>
+										<strong>0.246</strong>
+									</td>
+									<td>0.005</td>
+									<td>0.101</td>
+								</tr>
+								<tr>
+									<td>Gemini-Flash* (+reason)</td>
+									<td>
+										<strong>0.361</strong>
+									</td>
+									<td>0.072</td>
+									<td>0.122</td>
+									<td>0.168</td>
+									<td>0.181</td>
+									<td>-0.038</td>
+									<td>0.083</td>
+									<td>0.139</td>
+									<td>0.199</td>
+									<td>0.048</td>
+									<td>0.086</td>
+								</tr>
+								<tr>
+									<td>GPT-4.1</td>
+									<td>0.264</td>
+									<td>0.095</td>
+									<td>0.242</td>
+									<td>0.269</td>
+									<td>0.218</td>
+									<td>0.215</td>
+									<td>0.216</td>
+									<td>0.084</td>
+									<td>0.044</td>
+									<td>0.049</td>
+									<td>0.122</td>
+								</tr>
+								<tr>
+									<td>GPT-4.1 (+reason)</td>
+									<td>0.281</td>
+									<td>0.094</td>
+									<td>0.272</td>
+									<td>0.271</td>
+									<td>0.229</td>
+									<td>0.215</td>
+									<td>0.255</td>
+									<td>0.217</td>
+									<td>0.216</td>
+									<td>0.050</td>
+									<td>
+										<strong>0.191</strong>
+									</td>
+								</tr>
+								<tr>
+									<td>GPT-4o</td>
+									<td>0.291</td>
+									<td>
+										<strong>0.131</strong>
+									</td>
+									<td>0.277</td>
+									<td>0.268</td>
+									<td>
+										<strong>0.242</strong>
+									</td>
+									<td>0.254</td>
+									<td>0.167</td>
+									<td>0.137</td>
+									<td>0.139</td>
+									<td>0.069</td>
+									<td>0.153</td>
+								</tr>
+								<tr>
+									<td>GPT-4o (+reason)</td>
+									<td>0.290</td>
+									<td>0.091</td>
+									<td>0.252</td>
+									<td>
+										<strong>0.280</strong>
+									</td>
+									<td>0.228</td>
+									<td>0.183</td>
+									<td>0.243</td>
+									<td>0.194</td>
+									<td>0.086</td>
+									<td>0.072</td>
+									<td>0.156</td>
+								</tr>
+								<tr>
+									<td>Gemini-Pro*</td>
+									<td>0.273</td>
+									<td>0.079</td>
+									<td>0.258</td>
+									<td>0.168</td>
+									<td>0.194</td>
+									<td>
+										<strong>0.285</strong>
+									</td>
+									<td>0.240</td>
+									<td>-0.024</td>
+									<td>0.235</td>
+									<td>
+										<strong>0.145</strong>
+									</td>
+									<td>0.176</td>
+								</tr>
+								<tr>
+									<td>Gemini-Pro* (+reason)</td>
+									<td>0.274</td>
+									<td>0.070</td>
+									<td>0.304</td>
+									<td>0.211</td>
+									<td>0.215</td>
+									<td>0.239</td>
+									<td>
+										<strong>0.267</strong>
+									</td>
+									<td>0.195</td>
+									<td>0.129</td>
+									<td>0.060</td>
+									<td>0.178</td>
+								</tr>
+								<tr>
+									<td>Claude-thinking*</td>
+									<td>0.299</td>
+									<td>0.044</td>
+									<td>0.262</td>
+									<td>0.229</td>
+									<td>0.209</td>
+									<td>0.172</td>
+									<td>0.140</td>
+									<td>0.175</td>
+									<td>0.150</td>
+									<td>0.069</td>
+									<td>0.141</td>
+								</tr>
+								<tr>
+									<td>Claude-thinking* (+reason)</td>
+									<td>0.291</td>
+									<td>0.023</td>
+									<td>0.254</td>
+									<td>0.214</td>
+									<td>0.196</td>
+									<td>0.207</td>
+									<td>0.260</td>
+									<td>0.183</td>
+									<td>0.155</td>
+									<td>-0.001</td>
+									<td>0.161</td>
+								</tr>
+								<tr>
+									<td>o4-mini</td>
+									<td>0.334</td>
+									<td>0.062</td>
+									<td>0.306</td>
+									<td>0.134</td>
+									<td>0.209</td>
+									<td>0.169</td>
+									<td>0.161</td>
+									<td>0.120</td>
+									<td>0.096</td>
+									<td>0.028</td>
+									<td>0.115</td>
+								</tr>
+								<tr>
+									<td>o4-mini (+reason)</td>
+									<td>0.326</td>
+									<td>0.056</td>
+									<td>
+										<strong>0.322</strong>
+									</td>
+									<td>0.151</td>
+									<td>0.214</td>
+									<td>0.215</td>
+									<td>0.229</td>
+									<td>
+										<strong>0.347</strong>
+									</td>
+									<td>0.137</td>
+									<td>0.016</td>
+									<td>0.189</td>
+								</tr>
+								<tr>
+									<td rowspan="10" class="bold">Pair Comparison</td>
+									<td>GPT-4.1</td>
+									<td>0.541</td>
+									<td>
+										<strong>0.589</strong>
+									</td>
+									<td>0.508</td>
+									<td>0.484</td>
+									<td>0.531</td>
+									<td>0.540</td>
+									<td>0.520</td>
+									<td>0.530</td>
+									<td>
+										<strong>0.590</strong>
+									</td>
+									<td>
+										<strong>0.563</strong>
+									</td>
+									<td>
+										<strong>0.549</strong>
+									</td>
+								</tr>
+								<tr>
+									<td>GPT-4.1 (+reason)</td>
+									<td>0.550</td>
+									<td>0.584</td>
+									<td>0.501</td>
+									<td>0.521</td>
+									<td>
+										<strong>0.539</strong>
+									</td>
+									<td>0.520</td>
+									<td>0.520</td>
+									<td>0.477</td>
+									<td>0.513</td>
+									<td>0.540</td>
+									<td>0.514</td>
+								</tr>
+								<tr>
+									<td>GPT-4o</td>
+									<td>0.513</td>
+									<td>0.488</td>
+									<td>0.499</td>
+									<td>0.510</td>
+									<td>0.503</td>
+									<td>0.560</td>
+									<td>0.517</td>
+									<td>
+										<strong>0.550</strong>
+									</td>
+									<td>0.543</td>
+									<td>0.470</td>
+									<td>0.528</td>
+								</tr>
+								<tr>
+									<td>GPT-4o (+reason)</td>
+									<td>0.500</td>
+									<td>0.537</td>
+									<td>
+										<strong>0.511</strong>
+									</td>
+									<td>0.509</td>
+									<td>0.514</td>
+									<td>0.542</td>
+									<td>0.490</td>
+									<td>0.545</td>
+									<td>0.522</td>
+									<td>0.528</td>
+									<td>0.525</td>
+								</tr>
+								<tr>
+									<td>Gemini-Pro*</td>
+									<td>0.533</td>
+									<td>0.521</td>
+									<td>0.496</td>
+									<td>0.533</td>
+									<td>0.521</td>
+									<td>
+										<strong>0.562</strong>
+									</td>
+									<td>
+										<strong>0.566</strong>
+									</td>
+									<td>0.523</td>
+									<td>0.505</td>
+									<td>0.505</td>
+									<td>0.532</td>
+								</tr>
+								<tr>
+									<td>Gemini-Pro* (+reason)</td>
+									<td>0.526</td>
+									<td>0.528</td>
+									<td>0.513</td>
+									<td>0.514</td>
+									<td>0.520</td>
+									<td>0.548</td>
+									<td>0.562</td>
+									<td>0.495</td>
+									<td>0.522</td>
+									<td>0.538</td>
+									<td>0.533</td>
+								</tr>
+								<tr>
+									<td>Claude-thinking*</td>
+									<td>0.561</td>
+									<td>0.568</td>
+									<td>0.508</td>
+									<td>0.502</td>
+									<td>0.535</td>
+									<td>0.539</td>
+									<td>0.523</td>
+									<td>0.518</td>
+									<td>0.521</td>
+									<td>0.528</td>
+									<td>0.526</td>
+								</tr>
+								<tr>
+									<td>Claude-thinking* (+reason)</td>
+									<td>
+										<strong>0.567</strong>
+									</td>
+									<td>0.550</td>
+									<td>0.506</td>
+									<td>0.519</td>
+									<td>0.536</td>
+									<td>0.512</td>
+									<td>0.522</td>
+									<td>0.512</td>
+									<td>0.547</td>
+									<td>0.512</td>
+									<td>0.521</td>
+								</tr>
+								<tr>
+									<td>o4-mini</td>
+									<td>0.556</td>
+									<td>0.549</td>
+									<td>0.508</td>
+									<td>
+										<strong>0.536</strong>
+									</td>
+									<td>0.537</td>
+									<td>0.552</td>
+									<td>0.498</td>
+									<td>0.522</td>
+									<td>0.518</td>
+									<td>0.495</td>
+									<td>0.517</td>
+								</tr>
+								<tr>
+									<td>o4-mini (+reason)</td>
+									<td>0.521</td>
+									<td>0.564</td>
+									<td>0.522</td>
+									<td>0.513</td>
+									<td>0.530</td>
+									<td>0.534</td>
+									<td>0.510</td>
+									<td>0.507</td>
+									<td>0.512</td>
+									<td>0.483</td>
+									<td>0.509</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+	</section>
+
+	<section class="hero is-light is-small">
+		<div class="hero-body has-text-centered">
+			<h1 class="title is-1 mathvista_other">Data Examples</h1>
+		</div>
+	</section>
+
+	<style>
+		body {
+		    font-family: Arial, sans-serif;
+		    background-color: #f0f2f5;
+		    margin: 20px;
+		  }
+		  .dialog-container {
+		    display: flex;
+		    gap: 20px;
+		  }
+		  .dialog-group {
+		    flex: 1;
+		    background-color: #fff;
+		    border-radius: 10px;
+		    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+		    padding: 15px;
+		    display: flex;
+		    flex-direction: column;
+		    gap: 10px;
+		  }
+		  .dialog-header {
+		    background-color: #d0eaff;
+		    padding: 10px;
+		    border-radius: 8px;
+		    cursor: pointer;
+		    font-weight: bold;
+		    text-align: left;
+		  }
+		  .dialog-content {
+		    display: none;
+		    flex-direction: column;
+		    gap: 15px;
+		    padding-top: 10px;
+		  }
+		  .dialog-item {
+		    background-color: #f0f0f0;
+		    padding: 10px;
+		    border-radius: 8px;
+		    text-align: left;
+		  }
+		  .dialog-item p {
+		    margin: 0 0 10px 0;
+		  }
+		  .dialog-item .answer {
+		    margin-left: 15px; /* 回答文本左边距 */
+		  }
+		  .dialog-item img {
+		    width: 100%;
+		    max-width: 300px;
+		    height: auto;
+		    object-fit: cover;
+		    border-radius: 8px;
+		    background-color: #ccc;
+		    margin-top: 10px;
+		  }
+		  .dialog-item ol {
+		    margin-left: 40px;
+		    padding-left: 15px;
+		  }
+	</style>
+	</head>
+	<body>
+		</section>
+
+		<section class="section">
+			<div class="container">
+				<div class="columns is-centered has-text-centered">
+					<div class="column is-four-fifths" style="width: 100%;">
+						<h2 class="title is-3" id="Examples">Sample Dialogue Janus & Gemini</h2>
+						<div class="dialog-container" id="dialog-container"></div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<script>
+			const data = {
+			  "group": "Group 1",
+			  "examples": [
+			    {
+			      "model": "Janus",
+			      "title": "Example 1",
+			      "prompt": "What immediate actions would you recommend for the local authorities to take in response to the situation depicted in the image, and why?",
+			      "response": "The image depicts a flooded area, with water covering the street and reflecting surrounding trees and buildings. The floodwater appears to be at a significant depth, potentially affecting traffic and access to homes. Immediate actions for local authorities to take in response to this situation would include: 1. Evacuation and Safety Measures, 2. Flood Control and Drainage, 3. Communication and Coordination, 4. Damage Assessment and Repair, 5. Environmental Monitoring.",
+			      "image": "./assets/diag_sample/image1.jpg"
+			    },
+			    {
+			      "model": "Janus",
+			      "title": "Example 2",
+			      "prompt": "Please tell me how to build temporary roads or bridges, and generate one in the diagram.",
+			      "response": "To build temporary roads or bridges, follow these steps: 1. Assessment and Planning, 2. Materials and Equipment, 3. Foundation Preparation, 4. Construction, 5. Testing and Maintenance.",
+			      "image": "./assets/diag_sample/image2.jpg"
+			    },
+			    {
+			      "model": "Janus",
+			      "title": "Example 3",
+			      "prompt": "How long does it take to build such a bridge?",
+			      "response": "The time taken depends on the complexity of the structure, water depth, and availability of materials and equipment. It typically ranges from a few weeks to several months.",
+			      "image": "./assets/diag_sample/image3.png"
+			    },
+			    {
+			      "model": "Gemini",
+			      "title": "Example 4",
+			      "prompt": "What immediate actions would you recommend for the local authorities to take in response to the situation depicted in the image, and why?",
+			      "response": "1. Issue Emergency Alerts and Warnings, 2. Activate Emergency Response Teams, 3. Establish Shelters, 4. Assess the Situation and Infrastructure, 5. Block Off Affected Roads.",
+			      "image": "./assets/diag_sample/image4.png"
+			    },
+			    {
+			      "model": "Gemini",
+			      "title": "Example 5",
+			      "prompt": "In addition to these immediate actions, what long-term strategies could the local authorities implement to prevent or mitigate future flooding incidents in this area?",
+			      "response": "Implementing flood-prevention measures such as improving drainage systems, raising roads, emergency response plans, and regular maintenance checks.",
+			      "image": "./assets/diag_sample/image5.png"
+			    },
+			    {
+			      "model": "Gemini",
+			      "title": "Example 6",
+			      "prompt": "Could you elaborate on how the local authorities might go about 'improving the city's drainage system'?",
+			      "response": "1. Upgrading and Expanding Drainage Infrastructure, 2. Implementing Green Infrastructure, 3. Advanced Hydrological Modeling, 4. Sensor-Based Monitoring Systems, 5. Public Awareness and Engagement.",
+			      "image": "./assets/diag_sample/image6.png"
+			    }
+			  ]
+			};
+			
+			// 拆分内嵌编号列表（数字点）成intro + 列表
+			function splitInlineNumberedList(text) {
+			  const listStart = text.search(/\d+\.\s/);
+			  if (listStart === -1) return { intro: text, list: null };
+			
+			  const intro = text.slice(0, listStart).trim();
+			  const pointsStr = text.slice(listStart);
+			
+			  const regex = /\d+\.\s([^0-9]+?)(?=\d+\.|$)/g;
+			  let match;
+			  const list = [];
+			  while ((match = regex.exec(pointsStr)) !== null) {
+			    list.push(match[1].trim().replace(/[,，]\s*$/, ''));
+			  }
+			
+			  return { intro, list };
+			}
+			
+			// 打字机效果函数，支持HTML字符串
+			function typeWriter(target, text, speed = 20, callback = null) {
+			  let i = 0;
+			  target.innerHTML = '';
+			  function type() {
+			    if (i < text.length) {
+			      target.innerHTML += text.charAt(i);
+			      i++;
+			      setTimeout(type, speed);
+			    } else if (callback) {
+			      callback();
+			    }
+			  }
+			  type();
+			}
+			
+			// 渲染单条对话，带打字机和列表拆分
+			function renderDialogItem(item, container, doneCallback) {
+			  const dialogItem = document.createElement('div');
+			  dialogItem.className = 'dialog-item';
+			
+			  const promptP = document.createElement('p');
+			  promptP.innerHTML = `<strong>Q:</strong> ${item.prompt}`;
+			  dialogItem.appendChild(promptP);
+			
+			  const answerDiv = document.createElement('div');
+			  answerDiv.innerHTML = '<strong>A:</strong> ';
+			  dialogItem.appendChild(answerDiv);
+			
+			  const { intro, list } = splitInlineNumberedList(item.response);
+			
+			  if (!list) {
+			    const span = document.createElement('span');
+			    answerDiv.appendChild(span);
+			    typeWriter(span, intro, 20, () => {
+			      const img = document.createElement('img');
+			      img.src = item.image;
+			      img.alt = 'Response Image';
+			      dialogItem.appendChild(img);
+			      doneCallback();
+			    });
+			  } else {
+			    const span = document.createElement('span');
+			    answerDiv.appendChild(span);
+			    typeWriter(span, intro + ' ', 20, () => {
+			      const ol = document.createElement('ol');
+			      list.forEach(point => {
+			        const li = document.createElement('li');
+			        li.textContent = point;
+			        ol.appendChild(li);
+			      });
+			      answerDiv.appendChild(ol);
+			      const img = document.createElement('img');
+			      img.src = item.image;
+			      img.alt = 'Response Image';
+			      dialogItem.appendChild(img);
+			      doneCallback();
+			    });
+			  }
+			
+			  container.appendChild(dialogItem);
+			}
+			
+			function renderDialogs() {
+			  const container = document.getElementById('dialog-container');
+			  container.innerHTML = '';
+			
+			  // 分模型分类
+			  const models = ["Janus", "Gemini"];
+			  models.forEach(model => {
+			    const group = document.createElement('div');
+			    group.className = 'dialog-group';
+			
+			    const header = document.createElement('div');
+			    header.className = 'dialog-header';
+			    header.textContent = `${model} - Click to Expand`;
+			
+			    const content = document.createElement('div');
+			    content.className = 'dialog-content';
+			
+			    group.appendChild(header);
+			    group.appendChild(content);
+			    container.appendChild(group);
+			
+			    header.addEventListener('click', () => {
+			      if (content.style.display === 'flex') {
+			        content.style.display = 'none';
+			      } else {
+			        content.style.display = 'flex';
+			        if (!content.hasChildNodes()) {
+			          let index = 0;
+			          function next() {
+			            if (index >= data.examples.length) return;
+			            if (data.examples[index].model !== model) {
+			              index++;
+			              next();
+			              return;
+			            }
+			            renderDialogItem(data.examples[index], content, () => {
+			              index++;
+			              next();
+			            });
+			          }
+			          next();
+			        }
+			      }
+			    });
+			  });
+			}
+			
+			window.onload = renderDialogs;
+		</script>
+
+
+		<!-- @PAN TODO: bibtex -->
+		<section class="section" id="BibTeX">
+			<div class="container is-max-desktop content">
+				<h2 class="title is-3 has-text-centered">BibTeX</h2>
+				<pre><code>@article{chen2025intermt,
+  title={InterMT: Multi-Turn Interleaved Preference Alignment with Human Feedback},
+  author={Boyuan Chen and Donghai Hong and Jiaming Ji and Jiacheng Zheng and Bowen Dong and Jiayi Zhou and Kaile Wang and Josef Dai and Xuyao Wang and Wenqi Chen and Qirui Zheng and Wenxin Li and Sirui Han and Yike Guo and Yaodong Yang},
+  year={2025},
+  institution={Peking University and Hong Kong University of Science and Technology},
+  url={https://pku-intermt.github.io},
+  keywords={Multimodal Learning, Multi-Turn Interaction, Human Feedback, Preference Alignment}
+}</code></pre>
+			</div>
+		</section>
+		<section>
+			<div class="section" id="org-banners" style="display: flex; align-items: center;">
+				<a href="https://www.pku.edu.cn/" target="_blank" rel="external" style="margin-right: 20px;">
+					<img class="center-block org-banner" src="./assets/PKU_logo.png" style="width: 150px; height: 150px;">
+				</a>
+				<a href="https://hkust.edu.hk/" target="_blank" class="ext-link" style="margin-left: 20px;">
+					<img class="center-block org-banner" src="./assets/HKUST-STD.svg" style="width: 400px; height: 200px;">
+				</a>
+			</div>
+		</section>
+		<footer class="footer">
+			<!-- <div class="container"> -->
+			<div class="content has-text-centered">
+			</div>
+			<div class="columns is-centered">
+				<div class="column is-8">
+					<div class="content">
+						<p> This website is website adapted from <a href="https://nerfies.github.io/">Nerfies</a>, licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>. </p>
+					</div>
+				</div>
+			</div>
+			<!-- </div> -->
+		</footer>
+		</div>
+		</section>
+	</body>
+</html>
