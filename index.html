@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html class="fontawesome-i2svg-active fontawesome-i2svg-complete">
 <head>
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<style data-merge-styles="true"></style>
 	<style data-merge-styles="true"></style>
@@ -12,7 +9,7 @@
 	<meta name="keywords" content="Multi-Turn, Multi-Modality">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Multi-Turn Interleaved Preference Alignment with Human Feedback</title>
-	<link rel="icon" href="./assets/project_logo.png" type="image/png">
+	<link rel="icon" href="./assets/logo_transp.png" type="image/png">
 	<!-- 引入css文件 -->
 	<link href="./assets/css" rel="stylesheet">
 	<link rel="stylesheet" href="./assets/bulma.min.css">
@@ -29,9 +26,159 @@
 		    margin-left: auto;
 		    margin-right: auto;
 		    width: 75%;
+			margin-bottom: 10px; /* 设置段落之间的间距 */
 		}
 		li {
 		    margin-bottom: 10px;
+		}
+	</style>
+	<!-- 表格样式css文件 -->
+	<style>
+		/* 表格基础样式 */
+		.data-table {
+			width: 100%;
+			border-collapse: collapse;
+			margin: 20px 0;
+			background-color: white;
+		}
+		
+		/* 表格布局 */
+		.data-table th,
+		.data-table td {
+			padding: 12px 15px;
+			text-align: center;
+			vertical-align: middle;
+			border: 1px solid #e1e1e1;
+		}
+		
+		/* 表头样式 */
+		.data-table thead {
+			background-color: #2c3e50;
+		}
+		
+		.data-table th {
+			font-weight: bold;
+			font-size: 14px;
+			color: #ffffff;
+		}
+		
+		/* 表格行样式 */
+		.data-table tbody tr:nth-child(even) {
+			background-color: #f9f9f9;
+		}
+		
+		.data-table tbody tr:hover {
+			background-color: #f1f1f1;
+		}
+		
+		/* 单元格字体大小 */
+		.data-table td {
+			font-size: 13px;
+		}
+		
+		/* 特殊样式类 */
+		.bold {
+			font-weight: bold;
+		}
+		
+		.highlight {
+			background-color: #fffde7;
+		}
+		
+		/* 表格对齐 */
+		.center-table {
+			margin-left: auto;
+			margin-right: auto;
+		}
+	</style>
+	<!-- 对话示例css文件 -->
+	<style>
+		.dialog-sample-group {
+			margin-bottom: 20px;
+		}
+		.dialog-sample-header {
+			background: #0b6293;
+			padding: 10px;
+			cursor: pointer;
+			user-select: none;
+			width: 100%;
+			/* 宽度撑满父容器 */
+			color: white;
+			/* 字体颜色白色 */
+			border-radius: 4px;
+			margin-bottom: 10px;
+			font-weight: bold;
+			/* 这里我加个字体加粗，看起来更醒目 */
+			box-sizing: border-box;
+			/* 确保padding算在宽度内 */
+		}
+		.dialog-content {
+			display: flex;
+			overflow-x: auto;
+			/* 横向滚动 */
+			padding-bottom: 10px;
+		}
+		.dialog-sample-item {
+			flex: 0 0 280px;
+			/* 固定宽度 */
+			max-height: 400px;
+			overflow-y: auto;
+			/* 垂直滚动 */
+			border: 1px solid #ccc;
+			border-radius: 6px;
+			padding: 10px;
+			margin-right: 10px;
+			background: #fff;
+			box-sizing: border-box;
+		}
+		.dialog-sample-item p {
+			margin: 8px 0;
+			white-space: normal;
+			word-break: break-word;
+		}
+		.dialog-sample-item ol {
+			padding-left: 20px;
+			margin-top: 5px;
+		}
+		.dialog-sample-item img {
+			max-width: 100%;
+			margin-top: 8px;
+			border-radius: 4px;
+		}
+	</style>
+	<style>
+		.modal {
+		    display: none;
+		    position: fixed;
+		    z-index: 1;
+		    left: 0;
+		    top: 0;
+		    width: 100%;
+		    height: 100%;
+		    overflow: auto;
+		    background-color: rgb(0,0,0);
+		    background-color: rgba(0,0,0,0.9);
+		}
+		
+		.modal-content {
+		    margin: 15% auto;
+		    padding: 20px;
+		    width: 80%;
+		    max-width: 700px;
+		}
+		
+		.close {
+		    color: #f1f1f1;
+		    float: right;
+		    font-size: 28px;
+		    font-weight: bold;
+		}
+		
+		.close:hover,
+		.close:focus {
+		    color: #000;
+		    text-decoration: none;
+		    cursor: pointer;
 		}
 	</style>
 	<!-- 引入js文件 -->
@@ -83,7 +230,7 @@
 		</div>
 	</div>
 </nav2>
-<section class="hero">
+<section class="hero" style="background-color: #ffca58;">
 	<div class="hero-body">
 		<div class="container is-max-desktop">
 			<div class="columns is-centered">
@@ -178,20 +325,25 @@
 		</div>
 	</div>
 </section>
+<br>
 <section class="hero teaser">
 	<div class="container is-max-desktop">
 		<div class="content has-text-centered">
 			<img src="./assets/figure1_0515.png" alt="geometric reasoning" width="100%" style="box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); border-radius: 8px;">
 			<h2 style="text-align: center;">Abstract</h2>
-			<p style="text-align: justify;"> As multimodal large models (MLLMs) continue to advance across challenging tasks, a key question emerges: <strong>
-					<em>What essential capabilities are still missing?</em>
-				</strong> A critical aspect of human learning is continuous interaction with the environment – not limited to language, but also involving multimodal understanding and generation. To move closer to human-level intelligence, models must similarly support <strong>multi-turn</strong>,
-				<strong>multimodal interaction</strong>. In particular, they should comprehend interleaved multimodal contexts and respond coherently in ongoing exchanges. In this work, we present <strong>an initial exploration</strong> through the <strong>InterMT</strong> – <strong>the first
-					preference dataset for <em>multi-turn</em> multimodal interaction</strong>, grounded in real human feedback. In this exploration, we particularly emphasize the importance of human oversight, introducing expert annotations to guide the process, motivated by the fact that current
-				MLLMs lack such complex interactive capabilities. <strong>InterMT</strong> captures human preferences at both global and local levels into nine sub-dimensions, consists of 5,437 prompts, 2.6k multi-turn dialogue instances, and 2.1k human-labeled preference pairs. To compensate for
-				the lack of capability for multi-modal understanding and generation, we introduce an agentic workflow that leverages tool-augmented MLLMs to construct multi-turn QA instances. We further this goal by introducing <strong>InterMT-Bench</strong> to assess the ability of MLLMs in
-				assisting judges with multi-turn, multimodal tasks. We demonstrate the utility of <strong>InterMT</strong> through applications such as judge moderation and further reveal the <em>multi-turn scaling law</em> of judge model. We hope the open-source of our data can help facilitate
-				further research on aligning current MLLMs to the next step. </p>
+			<p style="text-align: justify;"> As multimodal large models (MLLMs) continue to advance across challenging tasks, a key question emerges: <strong><em>What essential capabilities are still missing?</em></strong> A critical aspect of human learning is continuous interaction with the
+				environment -- not limited to language, but also involving multimodal understanding and generation. To move closer to human-level intelligence, models must similarly support <strong>multi-turn</strong>, <strong>multimodal interaction</strong>. In particular, they should comprehend
+				interleaved multimodal contexts and respond coherently in ongoing exchanges. In this work, we present <strong>an initial exploration</strong> through the <span class="icon">
+					<img src="./assets/logo_transp.png" alt="HuggingFace" style="width: 1em; height: 1em;" />
+				</span><strong>InterMT</strong> -- <strong>the first preference dataset for <em>multi-turn</em> multimodal interaction</strong>, grounded in real human feedback. In this exploration, we particularly emphasize the importance of human oversight, introducing expert annotations to guide
+				the process, motivated by the fact that current MLLMs lack such complex interactive capabilities. <span class="icon">
+					<img src="./assets/logo_transp.png" alt="HuggingFace" style="width: 1em; height: 1em;" />
+				</span><strong>InterMT</strong> captures human preferences at both global and local levels into nine sub-dimensions, consists of 15.6k prompts, 52.6k multi-turn dialogue instances, and 32.4k human-labeled preference pairs. To compensate for the lack of capability for multi-modal
+				understanding and generation, we introduce an agentic workflow that leverages tool-augmented MLLMs to construct multi-turn QA instances. To further this goal, we introduce <span class="icon">
+					<img src="./assets/logo_transp.png" alt="HuggingFace" style="width: 1em; height: 1em;" />
+				</span><strong>InterMT-Bench</strong> to assess the ability of MLLMs in assisting judges with multi-turn, multimodal tasks. We demonstrate the utility of <span class="icon">
+					<img src="./assets/logo_transp.png" alt="HuggingFace" style="width: 1em; height: 1em;" />
+				</span><strong>InterMT</strong> through applications such as judge moderation and further reveal the <em>multi-turn scaling law</em> of judge model. We hope the open-source of our data can help facilitate further research on aligning current MLLMs to the next step.</p>
 		</div>
 	</div>
 </section>
@@ -211,26 +363,55 @@
 		<div class="columns is-centered has-text-centered">
 			<div class="column is-four-fifths">
 				<p>Humans perceive the world through dynamic, multimodal interactions involving text, images, audio, video, and more. Building on the success of multimodal large language models (MLLMs), recent efforts aim to develop general-purpose AI assistants that handle multiple mixed
-					modalities. A key feature of such assistants is to engage in natural multi-turn conversations, perceive, and generate any modality, enabling smoother interaction and grounded understanding.</p>
-				<p>Recent years have seen community efforts in transplanting alignment techniques such as Reinforcement Learning from Human Feedback (RLHF) from the text modality to multiple modality settings. Within this line of research, most studies focus exclusively on either understanding or
-					generation. The lack of alignment considerations for multimodal mixed input-output settings exacerbates the imbalance across modalities, a phenomenon referred to as modality disequilibrium. Furthermore, existing methods primarily focus on single-turn interactions, where an AI
-					generates a response based on a prompt and receives immediate alignment feedback.</p>
-				<p>However, real-world interactions typically occur in long-horizon conversations involving interleaved multimodal inputs and outputs. Addressing this gap, we propose a novel dataset that focuses on capturing human preferences in multi-turn, multimodal interaction settings.</p>
+					modalities. A key feature of such general-purpose assistants is to engage in natural multi-turn conversations, perceive and generate any modality, to enable more smooth interaction and grounded understanding.</p>
+				<p>Recent years have seen community efforts in transplanting alignment techniques, such as Reinforcement Learning from Human Feedback (RLHF), from the text modality to multiple modalities settings. Within this line of research, most studies focus exclusively on either understanding
+					or generation. The lack of alignment considerations for multimodal mixed input-output settings exacerbates the imbalance across modalities, i.e., modality disequilibrium. Furthermore, existing methods primarily focus on single-turn interactions, where an LLM generates a response
+					from a prompt and receives immediate alignment feedback. However, real-world interactions typically occur in long-horizon conversations and often feature interleaved multimodal inputs and outputs.</p>
 				<blockquote style="border:1px solid #ccc; padding:10px; background:#f9f9f9; margin:20px 0; text-align:center; font-style:italic; font-size:regular;"> How to improve <strong style="color:#8B0000;">multi-turn</strong> interleaved <strong
 						style="color:#00008B;">understanding</strong>-<strong style="color:#006400;">generation</strong> alignment via human feedback? </blockquote>
-				<h3 style="text-decoration: underline;"><strong>Key Issues in MLLM Alignment:</strong></h3>
+				<p><strong><u style="color:#C6011F">Our reflections highlight several key issues in the alignment of MLLMs:<svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+								<path
+									d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+							</svg>
+						</u></strong></p>
 				<ul>
-					<li><strong>Modality Fusion via Harmonizing Understanding and Generation:</strong> Effective AI systems should not only perceive and understand multimodal content but also generate multimodal outputs to communicate naturally and contextually.</li>
-					<li><strong>Modeling Long-Horizon, Interleaved Multimodal Interactions:</strong> Real-world exchanges span multiple turns and interleave various modalities, demanding sustained attention and reasoning over evolving contexts.</li>
-					<li><strong>Dynamic Human-in-the-Loop Alignment:</strong> In multi-turn interactions, user preferences evolve dynamically. Capturing and aligning with these emergent preferences requires continuous, iterative human feedback.</li>
+					<li><strong>Modality Fusion via Harmonizing Understanding and Generation.</strong> To build general-purpose AI assistants, high-fidelity perception and understanding alone are not sufficient. The system should also support the selective generation of multimodal outputs to
+						effectively communicate, instruct, or interact with users in a natural and contextually appropriate manner.</li>
+					<li><strong>Modeling Long‐Horizon, Interleaved Multimodal Interactions.</strong> Real‐world user–AI exchanges typically span many turns and interleave text, vision, and other modalities. Such interactions demand not only precise instruction following but also sustained attention
+						and reasoning over an evolving context, approaching near‐human in‐context reasoning capabilities.</li>
+					<li><strong>Dynamic Human‐in‐the‐Loop Alignment.</strong> In extended, multimodal interactions, user preferences continually evolve. Capturing and aligning with these emergent, dynamic preferences calls for genuine, iterative human feedback throughout the interaction.</li>
 				</ul>
-				<h3 style="text-decoration: underline;"><strong>Contributions:</strong></h3>
+				<p>In response, we introduce <span class="icon">
+						<img src="./assets/logo_transp.png" alt="HuggingFace" style="width: 1em; height: 1em;" />
+					</span>InterMT, a human preference dataset designed to capture the complexity and diversity of human intent in multi-turn settings. Specifically, <span class="icon">
+						<img src="./assets/logo_transp.png" alt="HuggingFace" style="width: 1em; height: 1em;" />
+					</span>InterMT targets vision-language interaction scenarios involving interleaved understanding and generation. To model dynamic human preferences, <span class="icon">
+						<img src="./assets/logo_transp.png" alt="HuggingFace" style="width: 1em; height: 1em;" />
+					</span>InterMT comprises 15604 seed questions that elicit multi-turn, multimodal conversations spanning 15+ domains. Helpfulness is then decomposed into 9 sub-dimensions, capturing both global (conversation-level) and local (turn-level) aspects of human feedback.</p>
+				<p><strong><u style="color:#C6011F">Our key contributions are summarized as follows:<svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+								<path
+									d="M13.09 3.294c1.924.95 3.422 1.69 5.472.692a1 1 0 0 1 1.438.9v9.54a1 1 0 0 1-.562.9c-2.981 1.45-5.382.24-7.25-.701a38.739 38.739 0 0 0-.622-.31c-1.033-.497-1.887-.812-2.756-.77-.76.036-1.672.357-2.81 1.396V21a1 1 0 1 1-2 0V4.971a1 1 0 0 1 .297-.71c1.522-1.506 2.967-2.185 4.417-2.255 1.407-.068 2.653.453 3.72.967.225.108.443.216.655.32Z" />
+							</svg>
+						</u></strong></p>
 				<ul>
-					<li><strong>First Multi-turn Interleaved Preference Dataset:</strong> We introduce a dataset that captures real human preferences for tasks involving multi-turn and interleaved multimodal understanding and generation.</li>
-					<li><strong>Agent-based Construction Workflow:</strong> The dataset is constructed using a multi-turn QA workflow that leverages strong MLLMs augmented with external tools to simulate realistic interactions.</li>
-					<li><strong>Decoupled Helpfulness in Multi-turn Scenarios:</strong> Helpfulness is assessed at both local (turn-level) and global (conversation-level) scales, with 9 specific dimensions of evaluation.</li>
-					<li><strong>Multi-turn Alignment Insights:</strong> We investigate how multi-turn interactions facilitate preference modeling, revealing phenomena such as preference transfer and multi-turn scaling effects.</li>
-					<li><strong>Evaluation of MLLMs as Judge Models:</strong> We introduce a framework to assess MLLMs' capabilities as judges in multi-turn, multimodal tasks, focusing on scoring, pair comparison, and crucial step recognition.</li>
+					<li><strong>The First Multi-turn Interleaved Preference Dataset:</strong> To the best of our knowledge, <span class="icon">
+							<img src="./assets/logo_transp.png" alt="HuggingFace" style="width: 1em; height: 1em;" />
+						</span>InterMT is the first dataset that captures real human preferences for tasks involving multi-turn and interleaved multimodal understanding and generation. It contains 15604 unique seed questions across diverse categories, 52.6k multi-turn interleaved vision-language QA
+						instances, and 32,459 sets of multi-dimensional human preference annotations.</li>
+					<li><strong>Agent-based Construction Workflow:</strong> <span class="icon">
+							<img src="./assets/logo_transp.png" alt="HuggingFace" style="width: 1em; height: 1em;" />
+						</span>InterMT employs a carefully designed agent-based multi-turn QA construction workflow that leverages strong MLLMs augmented with external tools to simulate high-quality real multi-turn interactions.</li>
+					<li><strong>Decoupled Helpfulness in Multi-turn Multimodal Scenarios:</strong> <span class="icon">
+							<img src="./assets/logo_transp.png" alt="HuggingFace" style="width: 1em; height: 1em;" />
+						</span>InterMT decomposes the concept of helpfulness for multi-turn, multimodal interactions into two distinct levels: local (turn-level) and global (conversation-level). Furthermore, <span class="icon">
+							<img src="./assets/logo_transp.png" alt="HuggingFace" style="width: 1em; height: 1em;" />
+						</span>InterMT breaks down helpfulness into 9 specific dimensions, allowing for a detailed and nuanced evaluation of multi-turn, multi-modal interactions.</li>
+					<li><strong>Effective for Multi-turn Alignment:</strong> Building on <span class="icon">
+							<img src="./assets/logo_transp.png" alt="HuggingFace" style="width: 1em; height: 1em;" />
+						</span>InterMT, we investigate methods to model long-horizon values and align dynamic human values. Our findings reveal the phenomenon of preference transfer in multi-turn multimodal interactions, which facilitates preference modeling for predicting human judgments.
+						Additionally, we identify a scaling phenomenon in multi-turn multimodal judge moderation.</li>
+					<li><strong>One More Thing</strong> We introduce \oureval{} to evaluate the ability of MLLMs in assisting judges across multi-turn, multimodal tasks, encompassing three parts: Scoring Evaluation, Pair Comparison, and Crucial Step Recognition. Despite strong reasoning
+						capabilities, advanced MLLMs fail to align with human values in judgment tasks. However, they show potential in identifying crucial steps in long-context scenarios.</li>
 				</ul>
 			</div>
 		</div>
@@ -242,7 +423,9 @@
 		<!-- <h1 class="title is-1 mathvista"><img src="static/images/mathvista.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>MathVista Dataset</h1> -->
 		<h1 class="title is-1 mathvista">
 			<!--<img src="static/images/mathvista.png" style="width:1em;vertical-align: middle" alt="Logo"/>-->
-			<span class="mathvista" style="vertical-align: middle" id="Dataset">InterMT Dataset</span>
+			<span class="mathvista" style="vertical-align: middle" id="Dataset"><span class="icon">
+					<img src="./assets/logo_transp.png" alt="HuggingFace" style="width: 1em; height: 1em;" />
+				</span>InterMT Dataset</span>
 		</h1>
 	</div>
 </section>
@@ -279,7 +462,7 @@
 					<div class="carousel-item">
 						<div class="box m-5">
 							<div class="content has-text-centered">
-								<img src="./assets/Figure2.png" style="width: 100%;">
+								<img src="./assets/Figure2.png" style="width: 100%;" onclick="openFullscreenImage(this.src)">
 								<p style="margin-bottom: 30px;">
 									<span class="icon">
 										<img src="./assets/logo_transp.png" alt="HuggingFace" style="width: 1em; height: 1em;" />
@@ -292,7 +475,7 @@
 					<div class="carousel-item">
 						<div class="box m-5">
 							<div class="content has-text-centered">
-								<img src="./assets/Figure3-0515_00.png" style="width: 100%;">
+								<img src="./assets/Figure3-0515_00.png" style="width: 100%;" onclick="openFullscreenImage(this.src)">
 								<p style="margin-bottom: 30px;">Overview of the four-stage pipeline for constructing <span class="icon">
 										<img src="./assets/logo_transp.png" alt="HuggingFace" style="width: 1em; height: 1em;" />
 									</span>
@@ -303,8 +486,24 @@
 					</div>
 				</div>
 			</div>
+			<!-- Fullscreen Image Modal -->
+			<div id="fullscreen-image-modal" class="modal" style="display: none;">
+				<div class="modal-content">
+					<span class="close" onclick="closeFullscreenImage()">&times;</span>
+					<img id="fullscreen-image" src="" style="width: 100%; height: auto;">
+				</div>
+			</div>
+			<script>
+				function openFullscreenImage(imageSrc) {
+				    document.getElementById('fullscreen-image').src = imageSrc;
+				    document.getElementById('fullscreen-image-modal').style.display = 'block';
+				}
+				
+				function closeFullscreenImage() {
+				    document.getElementById('fullscreen-image-modal').style.display = 'none';
+				}
+			</script>
 		</div>
-	</div>
 </section>
 <section class="hero is-light is-small">
 	<div class="hero-body has-text-centered">
@@ -339,16 +538,28 @@
 							</p>
 						</div>
 						<div class="content has-text-centered">
-							<img src="./assets/Figure5.png" style="width: 65%;">
+							<img src="./assets/Figure4-0516_00.jpg" style="width: 75%;">
+							<p>This figure illustrates the relationship between global and local preference annotation dimensions. We identify three key findings: <br><strong>(1) Modality perception precedes effective modality fusion</strong>: for both the local-local and local-global correlation,
+								the evaluation of image-text consistency is strongly correlated with visual perceptual quality (up to 0.81). This suggests that before assessing multimodal information, human evaluators tend to prioritize a clear understanding of each individual modality, indicating
+								that a clear perception of individual modalities is a prerequisite for reliable multimodal judgment. <br><strong>(2) Long-horizon evaluations hinge on coherence and temporal consistency</strong>: for the global-global correlation, metrics such as helpfulness and
+								completeness strongly align with context awareness and global visual consistency, underscoring the importance of maintaining coherent semantics, multimodal information, and consistency with prior conversational context over extended interactions. <br><strong>(3)
+									Intent grounding drives long-horizon crucial step recognition</strong>: in multi-turn scenarios, models may deviate from the user’s core intentions, producing self-directed responses. Despite locally high-scoring and plausible outputs, this leads to stylistic
+								drift and omission of key steps over extended interactions, as demonstrated in the local-global setting.</p>
+						</div>
+						<div class="content has-text-centered">
+							<img src="./assets/Figure5.png" style="width: 60%;">
 							<p style="text-align: justify; margin-left: auto; margin-right: auto; width: 75%;"> This figure presents an analysis of the agreement among human annotators, AI annotators, and human verifiers. Our observations reveal that while AI annotators achieved an average score
-								agreement of approximately 60\% on \textit{local} evaluation tasks, their agreement with humans is considerably lower for <em>global</em>, namely, longer-horizon, evaluation tasks. This finding partly indicates that current advanced models struggle to reach consensus
+								agreement of approximately 60% on <em>local</em> evaluation tasks, their agreement with humans is considerably lower for <em>global</em>, namely, longer-horizon, evaluation tasks. This finding partly indicates that current advanced models struggle to reach consensus
 								with human judgments when performing score evaluations in multi-turn, multi-modal conversation tasks. We further conduct a broader investigation of the ability of MLLMs to assist human judges in three types of tasks. Consequently, until further validation of AI
 								feedback's efficacy, we maintain a conservative position, considering the replacement of human annotation to be presently challenging. </p>
 						</div>
 						<div class="content has-text-centered">
 							<img src="./assets/Figure6_00.jpg" style="width: 65%;">
-							<p style="text-align: justify; margin-left: auto; margin-right: auto; width: 75%;"> Our findings suggest that modeling fine-grained <em>local (turn-level)</em> preferences is more effective in capturing human values and achieving better alignment. In contrast, directly
-								modeling <em>global (conversation-level)</em> preferences often fails to reflect these nuanced preferences, especially in complex, long-horizon dialogue scenarios.</p>
+							<p style="text-align: justify; margin-left: auto; margin-right: auto; width: 75%;">Our findings, presented in this figure, suggest that modeling fine-grained <em>local (turn-level)</em> preferences is more effective in capturing human values and achieving better
+								alignment. In contrast, directly modeling <em>global (conversation-level)</em> preferences often fails to reflect these nuanced preferences, especially in complex, long-horizon scenarios. We examine the bidirectional transfer between turn-level (<em>local</em>) and
+								conversation-level (<em>global</em>) human preferences. Both <em>local-to-global</em> and <em>global-to-local</em> transfers are effective, since multi-turn questions typically hinge on the seed question’s intent. However, <em>global-to-local</em> transfer is
+								consistently easier and better aligned with actual preferences. We attribute this to the greater stability of global preferences—reflecting users’ overarching tendencies—whereas local preferences are short-term and more context-dependent, making
+								<em>local-to-global</em> transfer more challenging.</p>
 						</div>
 					</div>
 				</div>
@@ -385,6 +596,15 @@
 								<p style="text-align: justify; margin-left: auto; margin-right: auto; width: 75%;"><em>Crucial Step Recognition</em> addresses a key challenge in multi-turn conversations: accurately identifying the user’s intent and determining whether it has been fulfilled,
 									evaluated by the score provided by the judge according to the human-annotated reference answers.</p>
 							</div>
+							<div class="content has-text-centered">
+								<img src="./assets/model_scores_00.jpg" style="width: 65%;">
+								<p style="text-align: justify; margin-left: auto; margin-right: auto; width: 75%;">We evaluated 6 advanced MLLMs for their ability to assist in judgment for multi-turn multimodal interactions, considering the nine dimensions proposed above. The results reveal key
+									observations: <strong>Existing models still face challenges in aligning with long-horizon human values, but they perform more accurately in evaluating local, fine-grained preferences</strong>. As shown in Table below(<span class="icon">
+										<img src="./assets/logo_transp.png" alt="HuggingFace" style="width: 1em; height: 1em;" />
+									</span><strong>InterMT Performance Evaluation</strong>), all models exhibit significant gaps in performance compared to humans in both Score Evaluation and Pair Comparison tasks. However, the models demonstrate better accuracy when assessing local dimensions
+									rather than global dimensions, suggesting that capturing fine-grained (<em>e.g.</em>, turn-level) human preferences is crucial for both evaluation and alignment with human dynamic and long-horizon values. However, there is cause for optimism: current MLLMs exhibit
+									near-human-level performance (4.38/5) in recognizing task completion and aligning with human intent (<em>i.e.</em>, <em>Crucial Step Recognition</em>), providing potential solutions for long-term value alignment.</p>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -401,78 +621,6 @@
 							<b>InterMT</b> Performance Evaluation
 						</h2>
 						<div class="content">
-							<p class="mt-3">What does <span class="icon">
-									<img src="./assets/logo_transp.png" alt="HuggingFace" style="width: 1em; height: 1em;" />
-								</span>
-								<b>InterMT</b> include and overview of the four-stage pipeline for constructing <span class="icon">
-									<img src="./assets/logo_transp.png" alt="HuggingFace" style="width: 1em; height: 1em;" />
-								</span>
-								<b>InterMT</b>
-							</p>
-							<style>
-								/* 全局样式 */
-								body {
-									font-family: Arial, sans-serif;
-									margin: 20px;
-								}
-								
-								/* 表格基础样式 */
-								.data-table {
-									width: 100%;
-									border-collapse: collapse;
-									margin: 20px 0;
-									background-color: white;
-								}
-								
-								/* 表格布局 */
-								.data-table th,
-								.data-table td {
-									padding: 12px 15px;
-									text-align: center;
-									vertical-align: middle;
-									border: 1px solid #e1e1e1;
-								}
-								
-								/* 表头样式 */
-								.data-table thead {
-									background-color: #2c3e50;
-								}
-								
-								.data-table th {
-									font-weight: bold;
-									font-size: 14px;
-									color: #ffffff;
-								}
-								
-								/* 表格行样式 */
-								.data-table tbody tr:nth-child(even) {
-									background-color: #f9f9f9;
-								}
-								
-								.data-table tbody tr:hover {
-									background-color: #f1f1f1;
-								}
-								
-								/* 单元格字体大小 */
-								.data-table td {
-									font-size: 13px;
-								}
-								
-								/* 特殊样式类 */
-								.bold {
-									font-weight: bold;
-								}
-								
-								.highlight {
-									background-color: #fffde7;
-								}
-								
-								/* 表格对齐 */
-								.center-table {
-									margin-left: auto;
-									margin-right: auto;
-								}
-							</style>
 							<table class="data-table center-table">
 								<thead>
 									<tr>
@@ -508,7 +656,11 @@
 										<td>0.042</td>
 										<td>0.051</td>
 										<td>
-											<strong>0.246</strong>
+											<strong style="color:#C6011F">0.246</strong><svg style="color:#C6011F" class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" viewBox="0 0 24 24">
+												<path fill-rule="evenodd"
+													d="M12 2c-.791 0-1.55.314-2.11.874l-.893.893a.985.985 0 0 1-.696.288H7.04A2.984 2.984 0 0 0 4.055 7.04v1.262a.986.986 0 0 1-.288.696l-.893.893a2.984 2.984 0 0 0 0 4.22l.893.893a.985.985 0 0 1 .288.696v1.262a2.984 2.984 0 0 0 2.984 2.984h1.262c.261 0 .512.104.696.288l.893.893a2.984 2.984 0 0 0 4.22 0l.893-.893a.985.985 0 0 1 .696-.288h1.262a2.984 2.984 0 0 0 2.984-2.984V15.7c0-.261.104-.512.288-.696l.893-.893a2.984 2.984 0 0 0 0-4.22l-.893-.893a.985.985 0 0 1-.288-.696V7.04a2.984 2.984 0 0 0-2.984-2.984h-1.262a.985.985 0 0 1-.696-.288l-.893-.893A2.984 2.984 0 0 0 12 2Zm3.683 7.73a1 1 0 1 0-1.414-1.413l-4.253 4.253-1.277-1.277a1 1 0 0 0-1.415 1.414l1.985 1.984a1 1 0 0 0 1.414 0l4.96-4.96Z"
+													clip-rule="evenodd" />
+											</svg>
 										</td>
 										<td>0.005</td>
 										<td>0.101</td>
@@ -516,7 +668,11 @@
 									<tr>
 										<td>Gemini-Flash* (+reason)</td>
 										<td>
-											<strong>0.361</strong>
+											<strong style="color:#C6011F">0.361</strong><svg style="color:#C6011F" class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" viewBox="0 0 24 24">
+												<path fill-rule="evenodd"
+													d="M12 2c-.791 0-1.55.314-2.11.874l-.893.893a.985.985 0 0 1-.696.288H7.04A2.984 2.984 0 0 0 4.055 7.04v1.262a.986.986 0 0 1-.288.696l-.893.893a2.984 2.984 0 0 0 0 4.22l.893.893a.985.985 0 0 1 .288.696v1.262a2.984 2.984 0 0 0 2.984 2.984h1.262c.261 0 .512.104.696.288l.893.893a2.984 2.984 0 0 0 4.22 0l.893-.893a.985.985 0 0 1 .696-.288h1.262a2.984 2.984 0 0 0 2.984-2.984V15.7c0-.261.104-.512.288-.696l.893-.893a2.984 2.984 0 0 0 0-4.22l-.893-.893a.985.985 0 0 1-.288-.696V7.04a2.984 2.984 0 0 0-2.984-2.984h-1.262a.985.985 0 0 1-.696-.288l-.893-.893A2.984 2.984 0 0 0 12 2Zm3.683 7.73a1 1 0 1 0-1.414-1.413l-4.253 4.253-1.277-1.277a1 1 0 0 0-1.415 1.414l1.985 1.984a1 1 0 0 0 1.414 0l4.96-4.96Z"
+													clip-rule="evenodd" />
+											</svg>
 										</td>
 										<td>0.072</td>
 										<td>0.122</td>
@@ -556,19 +712,31 @@
 										<td>0.216</td>
 										<td>0.050</td>
 										<td>
-											<strong>0.191</strong>
+											<strong style="color:#C6011F">0.191</strong><svg style="color:#C6011F" class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" viewBox="0 0 24 24">
+												<path fill-rule="evenodd"
+													d="M12 2c-.791 0-1.55.314-2.11.874l-.893.893a.985.985 0 0 1-.696.288H7.04A2.984 2.984 0 0 0 4.055 7.04v1.262a.986.986 0 0 1-.288.696l-.893.893a2.984 2.984 0 0 0 0 4.22l.893.893a.985.985 0 0 1 .288.696v1.262a2.984 2.984 0 0 0 2.984 2.984h1.262c.261 0 .512.104.696.288l.893.893a2.984 2.984 0 0 0 4.22 0l.893-.893a.985.985 0 0 1 .696-.288h1.262a2.984 2.984 0 0 0 2.984-2.984V15.7c0-.261.104-.512.288-.696l.893-.893a2.984 2.984 0 0 0 0-4.22l-.893-.893a.985.985 0 0 1-.288-.696V7.04a2.984 2.984 0 0 0-2.984-2.984h-1.262a.985.985 0 0 1-.696-.288l-.893-.893A2.984 2.984 0 0 0 12 2Zm3.683 7.73a1 1 0 1 0-1.414-1.413l-4.253 4.253-1.277-1.277a1 1 0 0 0-1.415 1.414l1.985 1.984a1 1 0 0 0 1.414 0l4.96-4.96Z"
+													clip-rule="evenodd" />
+											</svg>
 										</td>
 									</tr>
 									<tr>
 										<td>GPT-4o</td>
 										<td>0.291</td>
 										<td>
-											<strong>0.131</strong>
+											<strong style="color:#C6011F">0.131</strong><svg style="color:#C6011F" class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" viewBox="0 0 24 24">
+												<path fill-rule="evenodd"
+													d="M12 2c-.791 0-1.55.314-2.11.874l-.893.893a.985.985 0 0 1-.696.288H7.04A2.984 2.984 0 0 0 4.055 7.04v1.262a.986.986 0 0 1-.288.696l-.893.893a2.984 2.984 0 0 0 0 4.22l.893.893a.985.985 0 0 1 .288.696v1.262a2.984 2.984 0 0 0 2.984 2.984h1.262c.261 0 .512.104.696.288l.893.893a2.984 2.984 0 0 0 4.22 0l.893-.893a.985.985 0 0 1 .696-.288h1.262a2.984 2.984 0 0 0 2.984-2.984V15.7c0-.261.104-.512.288-.696l.893-.893a2.984 2.984 0 0 0 0-4.22l-.893-.893a.985.985 0 0 1-.288-.696V7.04a2.984 2.984 0 0 0-2.984-2.984h-1.262a.985.985 0 0 1-.696-.288l-.893-.893A2.984 2.984 0 0 0 12 2Zm3.683 7.73a1 1 0 1 0-1.414-1.413l-4.253 4.253-1.277-1.277a1 1 0 0 0-1.415 1.414l1.985 1.984a1 1 0 0 0 1.414 0l4.96-4.96Z"
+													clip-rule="evenodd" />
+											</svg>
 										</td>
 										<td>0.277</td>
 										<td>0.268</td>
 										<td>
-											<strong>0.242</strong>
+											<strong style="color:#C6011F">0.242</strong><svg style="color:#C6011F" class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" viewBox="0 0 24 24">
+												<path fill-rule="evenodd"
+													d="M12 2c-.791 0-1.55.314-2.11.874l-.893.893a.985.985 0 0 1-.696.288H7.04A2.984 2.984 0 0 0 4.055 7.04v1.262a.986.986 0 0 1-.288.696l-.893.893a2.984 2.984 0 0 0 0 4.22l.893.893a.985.985 0 0 1 .288.696v1.262a2.984 2.984 0 0 0 2.984 2.984h1.262c.261 0 .512.104.696.288l.893.893a2.984 2.984 0 0 0 4.22 0l.893-.893a.985.985 0 0 1 .696-.288h1.262a2.984 2.984 0 0 0 2.984-2.984V15.7c0-.261.104-.512.288-.696l.893-.893a2.984 2.984 0 0 0 0-4.22l-.893-.893a.985.985 0 0 1-.288-.696V7.04a2.984 2.984 0 0 0-2.984-2.984h-1.262a.985.985 0 0 1-.696-.288l-.893-.893A2.984 2.984 0 0 0 12 2Zm3.683 7.73a1 1 0 1 0-1.414-1.413l-4.253 4.253-1.277-1.277a1 1 0 0 0-1.415 1.414l1.985 1.984a1 1 0 0 0 1.414 0l4.96-4.96Z"
+													clip-rule="evenodd" />
+											</svg>
 										</td>
 										<td>0.254</td>
 										<td>0.167</td>
@@ -583,7 +751,11 @@
 										<td>0.091</td>
 										<td>0.252</td>
 										<td>
-											<strong>0.280</strong>
+											<strong style="color:#C6011F">0.280</strong><svg style="color:#C6011F" class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" viewBox="0 0 24 24">
+												<path fill-rule="evenodd"
+													d="M12 2c-.791 0-1.55.314-2.11.874l-.893.893a.985.985 0 0 1-.696.288H7.04A2.984 2.984 0 0 0 4.055 7.04v1.262a.986.986 0 0 1-.288.696l-.893.893a2.984 2.984 0 0 0 0 4.22l.893.893a.985.985 0 0 1 .288.696v1.262a2.984 2.984 0 0 0 2.984 2.984h1.262c.261 0 .512.104.696.288l.893.893a2.984 2.984 0 0 0 4.22 0l.893-.893a.985.985 0 0 1 .696-.288h1.262a2.984 2.984 0 0 0 2.984-2.984V15.7c0-.261.104-.512.288-.696l.893-.893a2.984 2.984 0 0 0 0-4.22l-.893-.893a.985.985 0 0 1-.288-.696V7.04a2.984 2.984 0 0 0-2.984-2.984h-1.262a.985.985 0 0 1-.696-.288l-.893-.893A2.984 2.984 0 0 0 12 2Zm3.683 7.73a1 1 0 1 0-1.414-1.413l-4.253 4.253-1.277-1.277a1 1 0 0 0-1.415 1.414l1.985 1.984a1 1 0 0 0 1.414 0l4.96-4.96Z"
+													clip-rule="evenodd" />
+											</svg>
 										</td>
 										<td>0.228</td>
 										<td>0.183</td>
@@ -601,13 +773,21 @@
 										<td>0.168</td>
 										<td>0.194</td>
 										<td>
-											<strong>0.285</strong>
+											<strong style="color:#C6011F">0.285</strong><svg style="color:#C6011F" class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" viewBox="0 0 24 24">
+												<path fill-rule="evenodd"
+													d="M12 2c-.791 0-1.55.314-2.11.874l-.893.893a.985.985 0 0 1-.696.288H7.04A2.984 2.984 0 0 0 4.055 7.04v1.262a.986.986 0 0 1-.288.696l-.893.893a2.984 2.984 0 0 0 0 4.22l.893.893a.985.985 0 0 1 .288.696v1.262a2.984 2.984 0 0 0 2.984 2.984h1.262c.261 0 .512.104.696.288l.893.893a2.984 2.984 0 0 0 4.22 0l.893-.893a.985.985 0 0 1 .696-.288h1.262a2.984 2.984 0 0 0 2.984-2.984V15.7c0-.261.104-.512.288-.696l.893-.893a2.984 2.984 0 0 0 0-4.22l-.893-.893a.985.985 0 0 1-.288-.696V7.04a2.984 2.984 0 0 0-2.984-2.984h-1.262a.985.985 0 0 1-.696-.288l-.893-.893A2.984 2.984 0 0 0 12 2Zm3.683 7.73a1 1 0 1 0-1.414-1.413l-4.253 4.253-1.277-1.277a1 1 0 0 0-1.415 1.414l1.985 1.984a1 1 0 0 0 1.414 0l4.96-4.96Z"
+													clip-rule="evenodd" />
+											</svg>
 										</td>
 										<td>0.240</td>
 										<td>-0.024</td>
 										<td>0.235</td>
 										<td>
-											<strong>0.145</strong>
+											<strong style="color:#C6011F">0.145</strong><svg style="color:#C6011F" class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" viewBox="0 0 24 24">
+												<path fill-rule="evenodd"
+													d="M12 2c-.791 0-1.55.314-2.11.874l-.893.893a.985.985 0 0 1-.696.288H7.04A2.984 2.984 0 0 0 4.055 7.04v1.262a.986.986 0 0 1-.288.696l-.893.893a2.984 2.984 0 0 0 0 4.22l.893.893a.985.985 0 0 1 .288.696v1.262a2.984 2.984 0 0 0 2.984 2.984h1.262c.261 0 .512.104.696.288l.893.893a2.984 2.984 0 0 0 4.22 0l.893-.893a.985.985 0 0 1 .696-.288h1.262a2.984 2.984 0 0 0 2.984-2.984V15.7c0-.261.104-.512.288-.696l.893-.893a2.984 2.984 0 0 0 0-4.22l-.893-.893a.985.985 0 0 1-.288-.696V7.04a2.984 2.984 0 0 0-2.984-2.984h-1.262a.985.985 0 0 1-.696-.288l-.893-.893A2.984 2.984 0 0 0 12 2Zm3.683 7.73a1 1 0 1 0-1.414-1.413l-4.253 4.253-1.277-1.277a1 1 0 0 0-1.415 1.414l1.985 1.984a1 1 0 0 0 1.414 0l4.96-4.96Z"
+													clip-rule="evenodd" />
+											</svg>
 										</td>
 										<td>0.176</td>
 									</tr>
@@ -620,7 +800,11 @@
 										<td>0.215</td>
 										<td>0.239</td>
 										<td>
-											<strong>0.267</strong>
+											<strong style="color:#C6011F">0.267</strong><svg style="color:#C6011F" class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" viewBox="0 0 24 24">
+												<path fill-rule="evenodd"
+													d="M12 2c-.791 0-1.55.314-2.11.874l-.893.893a.985.985 0 0 1-.696.288H7.04A2.984 2.984 0 0 0 4.055 7.04v1.262a.986.986 0 0 1-.288.696l-.893.893a2.984 2.984 0 0 0 0 4.22l.893.893a.985.985 0 0 1 .288.696v1.262a2.984 2.984 0 0 0 2.984 2.984h1.262c.261 0 .512.104.696.288l.893.893a2.984 2.984 0 0 0 4.22 0l.893-.893a.985.985 0 0 1 .696-.288h1.262a2.984 2.984 0 0 0 2.984-2.984V15.7c0-.261.104-.512.288-.696l.893-.893a2.984 2.984 0 0 0 0-4.22l-.893-.893a.985.985 0 0 1-.288-.696V7.04a2.984 2.984 0 0 0-2.984-2.984h-1.262a.985.985 0 0 1-.696-.288l-.893-.893A2.984 2.984 0 0 0 12 2Zm3.683 7.73a1 1 0 1 0-1.414-1.413l-4.253 4.253-1.277-1.277a1 1 0 0 0-1.415 1.414l1.985 1.984a1 1 0 0 0 1.414 0l4.96-4.96Z"
+													clip-rule="evenodd" />
+											</svg>
 										</td>
 										<td>0.195</td>
 										<td>0.129</td>
@@ -674,14 +858,22 @@
 										<td>0.326</td>
 										<td>0.056</td>
 										<td>
-											<strong>0.322</strong>
+											<strong style="color:#C6011F">0.322</strong><svg style="color:#C6011F" class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" viewBox="0 0 24 24">
+												<path fill-rule="evenodd"
+													d="M12 2c-.791 0-1.55.314-2.11.874l-.893.893a.985.985 0 0 1-.696.288H7.04A2.984 2.984 0 0 0 4.055 7.04v1.262a.986.986 0 0 1-.288.696l-.893.893a2.984 2.984 0 0 0 0 4.22l.893.893a.985.985 0 0 1 .288.696v1.262a2.984 2.984 0 0 0 2.984 2.984h1.262c.261 0 .512.104.696.288l.893.893a2.984 2.984 0 0 0 4.22 0l.893-.893a.985.985 0 0 1 .696-.288h1.262a2.984 2.984 0 0 0 2.984-2.984V15.7c0-.261.104-.512.288-.696l.893-.893a2.984 2.984 0 0 0 0-4.22l-.893-.893a.985.985 0 0 1-.288-.696V7.04a2.984 2.984 0 0 0-2.984-2.984h-1.262a.985.985 0 0 1-.696-.288l-.893-.893A2.984 2.984 0 0 0 12 2Zm3.683 7.73a1 1 0 1 0-1.414-1.413l-4.253 4.253-1.277-1.277a1 1 0 0 0-1.415 1.414l1.985 1.984a1 1 0 0 0 1.414 0l4.96-4.96Z"
+													clip-rule="evenodd" />
+											</svg>
 										</td>
 										<td>0.151</td>
 										<td>0.214</td>
 										<td>0.215</td>
 										<td>0.229</td>
 										<td>
-											<strong>0.347</strong>
+											<strong style="color:#C6011F">0.347</strong><svg style="color:#C6011F" class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" viewBox="0 0 24 24">
+												<path fill-rule="evenodd"
+													d="M12 2c-.791 0-1.55.314-2.11.874l-.893.893a.985.985 0 0 1-.696.288H7.04A2.984 2.984 0 0 0 4.055 7.04v1.262a.986.986 0 0 1-.288.696l-.893.893a2.984 2.984 0 0 0 0 4.22l.893.893a.985.985 0 0 1 .288.696v1.262a2.984 2.984 0 0 0 2.984 2.984h1.262c.261 0 .512.104.696.288l.893.893a2.984 2.984 0 0 0 4.22 0l.893-.893a.985.985 0 0 1 .696-.288h1.262a2.984 2.984 0 0 0 2.984-2.984V15.7c0-.261.104-.512.288-.696l.893-.893a2.984 2.984 0 0 0 0-4.22l-.893-.893a.985.985 0 0 1-.288-.696V7.04a2.984 2.984 0 0 0-2.984-2.984h-1.262a.985.985 0 0 1-.696-.288l-.893-.893A2.984 2.984 0 0 0 12 2Zm3.683 7.73a1 1 0 1 0-1.414-1.413l-4.253 4.253-1.277-1.277a1 1 0 0 0-1.415 1.414l1.985 1.984a1 1 0 0 0 1.414 0l4.96-4.96Z"
+													clip-rule="evenodd" />
+											</svg>
 										</td>
 										<td>0.137</td>
 										<td>0.016</td>
@@ -692,7 +884,11 @@
 										<td>GPT-4.1</td>
 										<td>0.541</td>
 										<td>
-											<strong>0.589</strong>
+											<strong style="color:#C6011F">0.589</strong><svg style="color:#C6011F" class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" viewBox="0 0 24 24">
+												<path fill-rule="evenodd"
+													d="M12 2c-.791 0-1.55.314-2.11.874l-.893.893a.985.985 0 0 1-.696.288H7.04A2.984 2.984 0 0 0 4.055 7.04v1.262a.986.986 0 0 1-.288.696l-.893.893a2.984 2.984 0 0 0 0 4.22l.893.893a.985.985 0 0 1 .288.696v1.262a2.984 2.984 0 0 0 2.984 2.984h1.262c.261 0 .512.104.696.288l.893.893a2.984 2.984 0 0 0 4.22 0l.893-.893a.985.985 0 0 1 .696-.288h1.262a2.984 2.984 0 0 0 2.984-2.984V15.7c0-.261.104-.512.288-.696l.893-.893a2.984 2.984 0 0 0 0-4.22l-.893-.893a.985.985 0 0 1-.288-.696V7.04a2.984 2.984 0 0 0-2.984-2.984h-1.262a.985.985 0 0 1-.696-.288l-.893-.893A2.984 2.984 0 0 0 12 2Zm3.683 7.73a1 1 0 1 0-1.414-1.413l-4.253 4.253-1.277-1.277a1 1 0 0 0-1.415 1.414l1.985 1.984a1 1 0 0 0 1.414 0l4.96-4.96Z"
+													clip-rule="evenodd" />
+											</svg>
 										</td>
 										<td>0.508</td>
 										<td>0.484</td>
@@ -701,13 +897,25 @@
 										<td>0.520</td>
 										<td>0.530</td>
 										<td>
-											<strong>0.590</strong>
+											<strong style="color:#C6011F">0.590</strong><svg style="color:#C6011F" class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" viewBox="0 0 24 24">
+												<path fill-rule="evenodd"
+													d="M12 2c-.791 0-1.55.314-2.11.874l-.893.893a.985.985 0 0 1-.696.288H7.04A2.984 2.984 0 0 0 4.055 7.04v1.262a.986.986 0 0 1-.288.696l-.893.893a2.984 2.984 0 0 0 0 4.22l.893.893a.985.985 0 0 1 .288.696v1.262a2.984 2.984 0 0 0 2.984 2.984h1.262c.261 0 .512.104.696.288l.893.893a2.984 2.984 0 0 0 4.22 0l.893-.893a.985.985 0 0 1 .696-.288h1.262a2.984 2.984 0 0 0 2.984-2.984V15.7c0-.261.104-.512.288-.696l.893-.893a2.984 2.984 0 0 0 0-4.22l-.893-.893a.985.985 0 0 1-.288-.696V7.04a2.984 2.984 0 0 0-2.984-2.984h-1.262a.985.985 0 0 1-.696-.288l-.893-.893A2.984 2.984 0 0 0 12 2Zm3.683 7.73a1 1 0 1 0-1.414-1.413l-4.253 4.253-1.277-1.277a1 1 0 0 0-1.415 1.414l1.985 1.984a1 1 0 0 0 1.414 0l4.96-4.96Z"
+													clip-rule="evenodd" />
+											</svg>
 										</td>
 										<td>
-											<strong>0.563</strong>
+											<strong style="color:#C6011F">0.563</strong><svg style="color:#C6011F" class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" viewBox="0 0 24 24">
+												<path fill-rule="evenodd"
+													d="M12 2c-.791 0-1.55.314-2.11.874l-.893.893a.985.985 0 0 1-.696.288H7.04A2.984 2.984 0 0 0 4.055 7.04v1.262a.986.986 0 0 1-.288.696l-.893.893a2.984 2.984 0 0 0 0 4.22l.893.893a.985.985 0 0 1 .288.696v1.262a2.984 2.984 0 0 0 2.984 2.984h1.262c.261 0 .512.104.696.288l.893.893a2.984 2.984 0 0 0 4.22 0l.893-.893a.985.985 0 0 1 .696-.288h1.262a2.984 2.984 0 0 0 2.984-2.984V15.7c0-.261.104-.512.288-.696l.893-.893a2.984 2.984 0 0 0 0-4.22l-.893-.893a.985.985 0 0 1-.288-.696V7.04a2.984 2.984 0 0 0-2.984-2.984h-1.262a.985.985 0 0 1-.696-.288l-.893-.893A2.984 2.984 0 0 0 12 2Zm3.683 7.73a1 1 0 1 0-1.414-1.413l-4.253 4.253-1.277-1.277a1 1 0 0 0-1.415 1.414l1.985 1.984a1 1 0 0 0 1.414 0l4.96-4.96Z"
+													clip-rule="evenodd" />
+											</svg>
 										</td>
 										<td>
-											<strong>0.549</strong>
+											<strong style="color:#C6011F">0.549</strong><svg style="color:#C6011F" class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" viewBox="0 0 24 24">
+												<path fill-rule="evenodd"
+													d="M12 2c-.791 0-1.55.314-2.11.874l-.893.893a.985.985 0 0 1-.696.288H7.04A2.984 2.984 0 0 0 4.055 7.04v1.262a.986.986 0 0 1-.288.696l-.893.893a2.984 2.984 0 0 0 0 4.22l.893.893a.985.985 0 0 1 .288.696v1.262a2.984 2.984 0 0 0 2.984 2.984h1.262c.261 0 .512.104.696.288l.893.893a2.984 2.984 0 0 0 4.22 0l.893-.893a.985.985 0 0 1 .696-.288h1.262a2.984 2.984 0 0 0 2.984-2.984V15.7c0-.261.104-.512.288-.696l.893-.893a2.984 2.984 0 0 0 0-4.22l-.893-.893a.985.985 0 0 1-.288-.696V7.04a2.984 2.984 0 0 0-2.984-2.984h-1.262a.985.985 0 0 1-.696-.288l-.893-.893A2.984 2.984 0 0 0 12 2Zm3.683 7.73a1 1 0 1 0-1.414-1.413l-4.253 4.253-1.277-1.277a1 1 0 0 0-1.415 1.414l1.985 1.984a1 1 0 0 0 1.414 0l4.96-4.96Z"
+													clip-rule="evenodd" />
+											</svg>
 										</td>
 									</tr>
 									<tr>
@@ -717,7 +925,11 @@
 										<td>0.501</td>
 										<td>0.521</td>
 										<td>
-											<strong>0.539</strong>
+											<strong style="color:#C6011F">0.539</strong><svg style="color:#C6011F" class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" viewBox="0 0 24 24">
+												<path fill-rule="evenodd"
+													d="M12 2c-.791 0-1.55.314-2.11.874l-.893.893a.985.985 0 0 1-.696.288H7.04A2.984 2.984 0 0 0 4.055 7.04v1.262a.986.986 0 0 1-.288.696l-.893.893a2.984 2.984 0 0 0 0 4.22l.893.893a.985.985 0 0 1 .288.696v1.262a2.984 2.984 0 0 0 2.984 2.984h1.262c.261 0 .512.104.696.288l.893.893a2.984 2.984 0 0 0 4.22 0l.893-.893a.985.985 0 0 1 .696-.288h1.262a2.984 2.984 0 0 0 2.984-2.984V15.7c0-.261.104-.512.288-.696l.893-.893a2.984 2.984 0 0 0 0-4.22l-.893-.893a.985.985 0 0 1-.288-.696V7.04a2.984 2.984 0 0 0-2.984-2.984h-1.262a.985.985 0 0 1-.696-.288l-.893-.893A2.984 2.984 0 0 0 12 2Zm3.683 7.73a1 1 0 1 0-1.414-1.413l-4.253 4.253-1.277-1.277a1 1 0 0 0-1.415 1.414l1.985 1.984a1 1 0 0 0 1.414 0l4.96-4.96Z"
+													clip-rule="evenodd" />
+											</svg>
 										</td>
 										<td>0.520</td>
 										<td>0.520</td>
@@ -736,7 +948,11 @@
 										<td>0.560</td>
 										<td>0.517</td>
 										<td>
-											<strong>0.550</strong>
+											<strong style="color:#C6011F">0.550</strong><svg style="color:#C6011F" class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" viewBox="0 0 24 24">
+												<path fill-rule="evenodd"
+													d="M12 2c-.791 0-1.55.314-2.11.874l-.893.893a.985.985 0 0 1-.696.288H7.04A2.984 2.984 0 0 0 4.055 7.04v1.262a.986.986 0 0 1-.288.696l-.893.893a2.984 2.984 0 0 0 0 4.22l.893.893a.985.985 0 0 1 .288.696v1.262a2.984 2.984 0 0 0 2.984 2.984h1.262c.261 0 .512.104.696.288l.893.893a2.984 2.984 0 0 0 4.22 0l.893-.893a.985.985 0 0 1 .696-.288h1.262a2.984 2.984 0 0 0 2.984-2.984V15.7c0-.261.104-.512.288-.696l.893-.893a2.984 2.984 0 0 0 0-4.22l-.893-.893a.985.985 0 0 1-.288-.696V7.04a2.984 2.984 0 0 0-2.984-2.984h-1.262a.985.985 0 0 1-.696-.288l-.893-.893A2.984 2.984 0 0 0 12 2Zm3.683 7.73a1 1 0 1 0-1.414-1.413l-4.253 4.253-1.277-1.277a1 1 0 0 0-1.415 1.414l1.985 1.984a1 1 0 0 0 1.414 0l4.96-4.96Z"
+													clip-rule="evenodd" />
+											</svg>
 										</td>
 										<td>0.543</td>
 										<td>0.470</td>
@@ -747,7 +963,11 @@
 										<td>0.500</td>
 										<td>0.537</td>
 										<td>
-											<strong>0.511</strong>
+											<strong style="color:#C6011F">0.511</strong><svg style="color:#C6011F" class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" viewBox="0 0 24 24">
+												<path fill-rule="evenodd"
+													d="M12 2c-.791 0-1.55.314-2.11.874l-.893.893a.985.985 0 0 1-.696.288H7.04A2.984 2.984 0 0 0 4.055 7.04v1.262a.986.986 0 0 1-.288.696l-.893.893a2.984 2.984 0 0 0 0 4.22l.893.893a.985.985 0 0 1 .288.696v1.262a2.984 2.984 0 0 0 2.984 2.984h1.262c.261 0 .512.104.696.288l.893.893a2.984 2.984 0 0 0 4.22 0l.893-.893a.985.985 0 0 1 .696-.288h1.262a2.984 2.984 0 0 0 2.984-2.984V15.7c0-.261.104-.512.288-.696l.893-.893a2.984 2.984 0 0 0 0-4.22l-.893-.893a.985.985 0 0 1-.288-.696V7.04a2.984 2.984 0 0 0-2.984-2.984h-1.262a.985.985 0 0 1-.696-.288l-.893-.893A2.984 2.984 0 0 0 12 2Zm3.683 7.73a1 1 0 1 0-1.414-1.413l-4.253 4.253-1.277-1.277a1 1 0 0 0-1.415 1.414l1.985 1.984a1 1 0 0 0 1.414 0l4.96-4.96Z"
+													clip-rule="evenodd" />
+											</svg>
 										</td>
 										<td>0.509</td>
 										<td>0.514</td>
@@ -766,10 +986,18 @@
 										<td>0.533</td>
 										<td>0.521</td>
 										<td>
-											<strong>0.562</strong>
+											<strong style="color:#C6011F">0.562</strong><svg style="color:#C6011F" class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" viewBox="0 0 24 24">
+												<path fill-rule="evenodd"
+													d="M12 2c-.791 0-1.55.314-2.11.874l-.893.893a.985.985 0 0 1-.696.288H7.04A2.984 2.984 0 0 0 4.055 7.04v1.262a.986.986 0 0 1-.288.696l-.893.893a2.984 2.984 0 0 0 0 4.22l.893.893a.985.985 0 0 1 .288.696v1.262a2.984 2.984 0 0 0 2.984 2.984h1.262c.261 0 .512.104.696.288l.893.893a2.984 2.984 0 0 0 4.22 0l.893-.893a.985.985 0 0 1 .696-.288h1.262a2.984 2.984 0 0 0 2.984-2.984V15.7c0-.261.104-.512.288-.696l.893-.893a2.984 2.984 0 0 0 0-4.22l-.893-.893a.985.985 0 0 1-.288-.696V7.04a2.984 2.984 0 0 0-2.984-2.984h-1.262a.985.985 0 0 1-.696-.288l-.893-.893A2.984 2.984 0 0 0 12 2Zm3.683 7.73a1 1 0 1 0-1.414-1.413l-4.253 4.253-1.277-1.277a1 1 0 0 0-1.415 1.414l1.985 1.984a1 1 0 0 0 1.414 0l4.96-4.96Z"
+													clip-rule="evenodd" />
+											</svg>
 										</td>
 										<td>
-											<strong>0.566</strong>
+											<strong style="color:#C6011F">0.566</strong><svg style="color:#C6011F" class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" viewBox="0 0 24 24">
+												<path fill-rule="evenodd"
+													d="M12 2c-.791 0-1.55.314-2.11.874l-.893.893a.985.985 0 0 1-.696.288H7.04A2.984 2.984 0 0 0 4.055 7.04v1.262a.986.986 0 0 1-.288.696l-.893.893a2.984 2.984 0 0 0 0 4.22l.893.893a.985.985 0 0 1 .288.696v1.262a2.984 2.984 0 0 0 2.984 2.984h1.262c.261 0 .512.104.696.288l.893.893a2.984 2.984 0 0 0 4.22 0l.893-.893a.985.985 0 0 1 .696-.288h1.262a2.984 2.984 0 0 0 2.984-2.984V15.7c0-.261.104-.512.288-.696l.893-.893a2.984 2.984 0 0 0 0-4.22l-.893-.893a.985.985 0 0 1-.288-.696V7.04a2.984 2.984 0 0 0-2.984-2.984h-1.262a.985.985 0 0 1-.696-.288l-.893-.893A2.984 2.984 0 0 0 12 2Zm3.683 7.73a1 1 0 1 0-1.414-1.413l-4.253 4.253-1.277-1.277a1 1 0 0 0-1.415 1.414l1.985 1.984a1 1 0 0 0 1.414 0l4.96-4.96Z"
+													clip-rule="evenodd" />
+											</svg>
 										</td>
 										<td>0.523</td>
 										<td>0.505</td>
@@ -807,7 +1035,11 @@
 									<tr>
 										<td>Claude-thinking* (+reason)</td>
 										<td>
-											<strong>0.567</strong>
+											<strong style="color:#C6011F">0.567</strong><svg style="color:#C6011F" class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" viewBox="0 0 24 24">
+												<path fill-rule="evenodd"
+													d="M12 2c-.791 0-1.55.314-2.11.874l-.893.893a.985.985 0 0 1-.696.288H7.04A2.984 2.984 0 0 0 4.055 7.04v1.262a.986.986 0 0 1-.288.696l-.893.893a2.984 2.984 0 0 0 0 4.22l.893.893a.985.985 0 0 1 .288.696v1.262a2.984 2.984 0 0 0 2.984 2.984h1.262c.261 0 .512.104.696.288l.893.893a2.984 2.984 0 0 0 4.22 0l.893-.893a.985.985 0 0 1 .696-.288h1.262a2.984 2.984 0 0 0 2.984-2.984V15.7c0-.261.104-.512.288-.696l.893-.893a2.984 2.984 0 0 0 0-4.22l-.893-.893a.985.985 0 0 1-.288-.696V7.04a2.984 2.984 0 0 0-2.984-2.984h-1.262a.985.985 0 0 1-.696-.288l-.893-.893A2.984 2.984 0 0 0 12 2Zm3.683 7.73a1 1 0 1 0-1.414-1.413l-4.253 4.253-1.277-1.277a1 1 0 0 0-1.415 1.414l1.985 1.984a1 1 0 0 0 1.414 0l4.96-4.96Z"
+													clip-rule="evenodd" />
+											</svg>
 										</td>
 										<td>0.550</td>
 										<td>0.506</td>
@@ -826,7 +1058,11 @@
 										<td>0.549</td>
 										<td>0.508</td>
 										<td>
-											<strong>0.536</strong>
+											<strong style="color:#C6011F">0.536</strong><svg style="color:#C6011F" class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" viewBox="0 0 24 24">
+												<path fill-rule="evenodd"
+													d="M12 2c-.791 0-1.55.314-2.11.874l-.893.893a.985.985 0 0 1-.696.288H7.04A2.984 2.984 0 0 0 4.055 7.04v1.262a.986.986 0 0 1-.288.696l-.893.893a2.984 2.984 0 0 0 0 4.22l.893.893a.985.985 0 0 1 .288.696v1.262a2.984 2.984 0 0 0 2.984 2.984h1.262c.261 0 .512.104.696.288l.893.893a2.984 2.984 0 0 0 4.22 0l.893-.893a.985.985 0 0 1 .696-.288h1.262a2.984 2.984 0 0 0 2.984-2.984V15.7c0-.261.104-.512.288-.696l.893-.893a2.984 2.984 0 0 0 0-4.22l-.893-.893a.985.985 0 0 1-.288-.696V7.04a2.984 2.984 0 0 0-2.984-2.984h-1.262a.985.985 0 0 1-.696-.288l-.893-.893A2.984 2.984 0 0 0 12 2Zm3.683 7.73a1 1 0 1 0-1.414-1.413l-4.253 4.253-1.277-1.277a1 1 0 0 0-1.415 1.414l1.985 1.984a1 1 0 0 0 1.414 0l4.96-4.96Z"
+													clip-rule="evenodd" />
+											</svg>
 										</td>
 										<td>0.537</td>
 										<td>0.552</td>
@@ -858,61 +1094,6 @@
 			</div>
 			</div>
 			<section>
-				<style>
-					body {
-					    font-family: Arial, sans-serif;
-					    margin: 20px;
-					  }
-					  h1 {
-					    margin-bottom: 20px;
-					  }
-					  .dialog-sample-group {
-					    margin-bottom: 20px;
-					  }
-					  .dialog-sample-header {
-						background: #0b6293;
-						padding: 10px;
-						cursor: pointer;
-						user-select: none;
-						width: 100%;       /* 宽度撑满父容器 */
-						color: white;      /* 字体颜色白色 */
-						border-radius: 4px;
-						margin-bottom: 10px;
-						font-weight: bold; /* 这里我加个字体加粗，看起来更醒目 */
-						box-sizing: border-box; /* 确保padding算在宽度内 */
-						}
-					
-					  .dialog-content {
-					    display: flex;
-					    overflow-x: auto; /* 横向滚动 */
-					    padding-bottom: 10px;
-					  }
-					  .dialog-sample-item {
-					    flex: 0 0 280px; /* 固定宽度 */
-					    max-height: 400px;
-					    overflow-y: auto; /* 垂直滚动 */
-					    border: 1px solid #ccc;
-					    border-radius: 6px;
-					    padding: 10px;
-					    margin-right: 10px;
-					    background: #fff;
-					    box-sizing: border-box;
-					  }
-					  .dialog-sample-item p {
-					    margin: 8px 0;
-					    white-space: normal;
-					    word-break: break-word;
-					  }
-					  .dialog-sample-item ol {
-					    padding-left: 20px;
-					    margin-top: 5px;
-					  }
-					  .dialog-sample-item img {
-					    max-width: 100%;
-					    margin-top: 8px;
-					    border-radius: 4px;
-					  }
-				</style>
 				<h2 class="title is-3" id="Evaluation" style="text-align: center;"> Data Sample </h2>
 				<div id="dialog-sample-container"></div>
 				<script>
