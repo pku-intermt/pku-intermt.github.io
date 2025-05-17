@@ -92,59 +92,136 @@
 			margin-right: auto;
 		}
 	</style>
-	<!-- 对话示例css文件 -->
+	<!-- 对话css文件 -->
 	<style>
-		.dialog-sample-group {
-			margin-bottom: 20px;
+		/* body {
+		  font-family: Arial, sans-serif;
+		  margin: 20px;
+		  background-color: #f0f0f0;
+		} */
+		.diag-dropdown-container {
+		  margin-bottom: 15px;
+		  padding: 10px;
+		  background-color: #fff;
+		  border-radius: 8px;
+		  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 		}
-		.dialog-sample-header {
-			background: #0b6293;
-			padding: 10px;
-			cursor: pointer;
-			user-select: none;
-			width: 100%;
-			/* 宽度撑满父容器 */
-			color: white;
-			/* 字体颜色白色 */
-			border-radius: 4px;
-			margin-bottom: 10px;
-			font-weight: bold;
-			/* 这里我加个字体加粗，看起来更醒目 */
-			box-sizing: border-box;
-			/* 确保padding算在宽度内 */
+		select {
+		  padding: 8px 12px;
+		  font-size: 16px;
+		  border-radius: 4px;
+		  border: 1px solid #ccc;
 		}
-		.dialog-content {
-			display: flex;
-			overflow-x: auto;
-			/* 横向滚动 */
-			padding-bottom: 10px;
+		.diag-container {
+		  display: flex;
+		  gap: 15px;
 		}
-		.dialog-sample-item {
-			flex: 0 0 280px;
-			/* 固定宽度 */
-			max-height: 400px;
-			overflow-y: auto;
-			/* 垂直滚动 */
-			border: 1px solid #ccc;
-			border-radius: 6px;
-			padding: 10px;
-			margin-right: 10px;
-			background: #fff;
-			box-sizing: border-box;
+		.diag-section {
+		  flex: 1;
+		  border: 1px solid #ccc;
+		  border-radius: 8px;
+		  overflow: hidden;
+		  max-height: 85vh;
+		  display: flex;
+		  flex-direction: column;
+		  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 		}
-		.dialog-sample-item p {
-			margin: 8px 0;
-			white-space: normal;
-			word-break: break-word;
+		.diag-section.diag-orange { background: #fff4e5; border-color: orange; }
+		.diag-section.diag-default { background: #f9f9f9; border-color: #999; }
+		.diag-section.diag-blue { background: #e7f3ff; border-color: #99c2ff; }
+		
+		
+		.diag-section-header {
+		  padding: 12px 15px;
+		  font-weight: bold;
+		  cursor: pointer;
+		  user-select: none;
+		  background-color: #ddd;
+		  border-bottom: 1px solid #bbb;
+		  display: flex;
+		  align-items: center;
 		}
-		.dialog-sample-item ol {
-			padding-left: 20px;
-			margin-top: 5px;
+		.diag-section-header svg, .diag-section-header img { /* SVGs/images within header */
+		  margin-right: 8px;
+		  width: 20px;
+		  height: 20px;
+		  vertical-align: middle;
 		}
-		.dialog-sample-item img {
-			max-width: 100%;
-			margin-top: 8px;
-			border-radius: 4px;
+		.diag-section-header.diag-orange { background-color: #f7d399; border-color: orange; }
+		.diag-section-header.diag-default { background-color: #e0e0e0; border-color: #ccc; }
+		.diag-section-header.diag-blue { background-color: #b3d7ff; border-color: #99c2ff;}
+		
+		
+		.diag-content {
+		  padding: 15px;
+		  overflow-y: auto;
+		  flex-grow: 1;
+		  background-color: #fff;
+		}
+		
+		.diag-dialogue {
+		  margin-bottom: 20px;
+		}
+		
+		.diag-prompt {
+		  text-align: right;
+		  background: #d0e6ff;
+		  padding: 10px 14px;
+		  border-radius: 15px 15px 0 15px;
+		  margin-bottom: 8px;
+		  max-width: 85%;
+		  margin-left: auto;
+		  font-weight: 600;
+		  word-wrap: break-word;
+		}
+		
+		.diag-response {
+		  text-align: left;
+		  background: #eaeaea;
+		  padding: 10px 14px;
+		  border-radius: 15px 15px 15px 0;
+		  max-width: 85%;
+		  position: relative;
+		  white-space: normal;
+		  font-size: 14px;
+		  word-wrap: break-word;
+		}
+		.diag-response-text-area {
+		   white-space: pre-wrap;
+		}
+		
+		
+		.diag-prompt img, .diag-response img {
+		  max-width: 100%;
+		  margin-top: 10px;
+		  border-radius: 6px;
+		  display: block;
+		}
+		
+		ol {
+		  padding-left: 25px;
+		  margin-top: 5px;
+		  margin-bottom: 5px;
+		}
+		ol li {
+		  margin-bottom: 5px;
+		}
+		p {
+		  margin-top: 5px;
+		  margin-bottom: 10px;
+		}
+		strong {
+		  font-weight: bold;
+		}
+		
+		.diag-typing-caret::after {
+		  content: '|';
+		  animation: blink 1s step-end infinite;
+		  margin-left: 2px;
+		  font-weight: bold;
+		}
+		@keyframes blink {
+		  50% { opacity: 0; }
 		}
 	</style>
 	<style>
@@ -492,38 +569,35 @@
 					</div>
 				</div>
 			</div>
-
-<!-- Fullscreen Image Modal -->
-<div id="fullscreen-image-modal" class="modal" style="display: none;">
-    <div class="modal-content" style="position: relative;">
-        <span class="close" onclick="closeFullscreenImage()" style="position: absolute; top: 10px; right: 10px; cursor: pointer; font-size: 24px;">&times;</span>
-        <img id="fullscreen-image" src="" style="width: 100%; height: auto;">
-    </div>
-</div>
-
-<script>
-    function openFullscreenImage(imageSrc) {
-        const modal = document.getElementById('fullscreen-image-modal');
-        const fullscreenImage = document.getElementById('fullscreen-image');
-        fullscreenImage.src = imageSrc;
-        modal.style.display = 'block';
-    }
-    
-    function closeFullscreenImage() {
-        const modal = document.getElementById('fullscreen-image-modal');
-        modal.style.display = 'none';
-    }
-
-    // Close the modal when clicking outside the modal content
-    window.onclick = function(event) {
-        const modal = document.getElementById('fullscreen-image-modal');
-        if (event.target === modal) {
-            modal.style.display = 'none';
-        }
-    }
-</script>
+			<!-- Fullscreen Image Modal -->
+			<div id="fullscreen-image-modal" class="modal" style="display: none;">
+				<div class="modal-content" style="position: relative;">
+					<span class="close" onclick="closeFullscreenImage()" style="position: absolute; top: 10px; right: 10px; cursor: pointer; font-size: 24px;">&times;</span>
+					<img id="fullscreen-image" src="" style="width: 100%; height: auto;">
+				</div>
+			</div>
+			<script>
+				function openFullscreenImage(imageSrc) {
+				    const modal = document.getElementById('fullscreen-image-modal');
+				    const fullscreenImage = document.getElementById('fullscreen-image');
+				    fullscreenImage.src = imageSrc;
+				    modal.style.display = 'block';
+				}
+				
+				function closeFullscreenImage() {
+				    const modal = document.getElementById('fullscreen-image-modal');
+				    modal.style.display = 'none';
+				}
+				
+				// Close the modal when clicking outside the modal content
+				window.onclick = function(event) {
+				    const modal = document.getElementById('fullscreen-image-modal');
+				    if (event.target === modal) {
+				        modal.style.display = 'none';
+				    }
+				}
+			</script>
 </section>
-
 <section class="hero is-light is-small">
 	<div class="hero-body has-text-centered">
 		<!-- <h1 class="title is-1 mathvista"><img src="static/images/mathvista.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>MathVista Dataset</h1> -->
@@ -1115,284 +1189,494 @@
 		<section>
 			<h2 class="title is-3" id="Evaluation" style="text-align: center;"> Case Study </h2>
 			<div id="dialog-sample-container"></div>
+			<svg style="display:none;">
+				<symbol id="icon-gemini" viewBox="0 0 24 24">
+					<?xml version="1.0" ?><svg id="Apple" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+						<defs>
+							<style>
+								.cls-1{fill:#f0432c;}.cls-2{fill:#ffbf00;}.cls-3{fill:#24aa49;}.cls-4{fill:#3384fc;}
+							</style>
+						</defs>
+						<title />
+						<path class="cls-1" d="M90,93.25l65.06,65.06a140.31,140.31,0,0,1,201-1v0l65-65.09a232.33,232.33,0,0,0-331,1Z" />
+						<path class="cls-2" d="M90.85,419.76l65-65a140.34,140.34,0,0,1,1-198.71L91.81,91a232.35,232.35,0,0,0-1,328.8Z" />
+						<polygon class="cls-3" points="301.98 301.84 301.98 302.8 302.94 302.8 301.98 301.84" />
+						<path class="cls-3" d="M255.5,488.21a231.65,231.65,0,0,0,164.55-68.3L355,354.84a140.3,140.3,0,0,1-199,0l-65,65A231.65,231.65,0,0,0,255.5,488.21Z" />
+						<path class="cls-4" d="M484.36,210.33l-181.42.25V302.8h85.84a140.7,140.7,0,0,1-33.69,52.91l65.05,65.06a232.65,232.65,0,0,0,64.22-210.44Z" />
+					</svg>
+				</symbol>
+				<symbol id="icon-janus" viewBox="0 0 24 24">
+					<svg xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 512 509.64">
+						<path fill="#fff" d="M115.612 0h280.775C459.974 0 512 52.026 512 115.612v278.415c0 63.587-52.026 115.613-115.613 115.613H115.612C52.026 509.64 0 457.614 0 394.027V115.612C0 52.026 52.026 0 115.612 0z" />
+						<path fill="#4D6BFE" fill-rule="nonzero"
+							d="M440.898 139.167c-4.001-1.961-5.723 1.776-8.062 3.673-.801.612-1.479 1.407-2.154 2.141-5.848 6.246-12.681 10.349-21.607 9.859-13.048-.734-24.192 3.368-34.04 13.348-2.093-12.307-9.048-19.658-19.635-24.37-5.54-2.449-11.141-4.9-15.02-10.227-2.708-3.795-3.447-8.021-4.801-12.185-.861-2.509-1.725-5.082-4.618-5.512-3.139-.49-4.372 2.142-5.601 4.349-4.925 9.002-6.833 18.921-6.647 28.962.432 22.597 9.972 40.597 28.932 53.397 2.154 1.47 2.707 2.939 2.032 5.082-1.293 4.41-2.832 8.695-4.186 13.105-.862 2.817-2.157 3.429-5.172 2.205-10.402-4.346-19.391-10.778-27.332-18.553-13.481-13.044-25.668-27.434-40.873-38.702a177.614 177.614 0 00-10.834-7.409c-15.512-15.063 2.032-27.434 6.094-28.902 4.247-1.532 1.478-6.797-12.251-6.736-13.727.061-26.285 4.653-42.288 10.777-2.34.92-4.801 1.593-7.326 2.142-14.527-2.756-29.608-3.368-45.367-1.593-29.671 3.305-53.368 17.329-70.788 41.272-20.928 28.785-25.854 61.482-19.821 95.59 6.34 35.943 24.683 65.704 52.876 88.974 29.239 24.123 62.911 35.943 101.32 33.677 23.329-1.346 49.307-4.468 78.607-29.27 7.387 3.673 15.142 5.144 28.008 6.246 9.911.92 19.452-.49 26.839-2.019 11.573-2.449 10.773-13.166 6.586-15.124-33.915-15.797-26.47-9.368-33.24-14.573 17.235-20.39 43.213-41.577 53.369-110.222.8-5.448.121-8.877 0-13.287-.061-2.692.553-3.734 3.632-4.041 8.494-.981 16.742-3.305 24.314-7.471 21.975-12.002 30.84-31.719 32.933-55.355.307-3.612-.061-7.348-3.879-9.245v-.003zM249.4 351.89c-32.872-25.838-48.814-34.352-55.4-33.984-6.155.368-5.048 7.41-3.694 12.002 1.415 4.532 3.264 7.654 5.848 11.634 1.785 2.634 3.017 6.551-1.784 9.493-10.587 6.55-28.993-2.205-29.856-2.635-21.421-12.614-39.334-29.269-51.954-52.047-12.187-21.924-19.267-45.435-20.435-70.542-.308-6.061 1.478-8.207 7.509-9.307 7.94-1.471 16.127-1.778 24.068-.615 33.547 4.9 62.108 19.902 86.054 43.66 13.666 13.531 24.007 29.699 34.658 45.496 11.326 16.778 23.514 32.761 39.026 45.865 5.479 4.592 9.848 8.083 14.035 10.656-12.62 1.407-33.673 1.714-48.075-9.676zm15.899-102.519c.521-2.111 2.421-3.658 4.722-3.658a4.74 4.74 0 011.661.305c.678.246 1.293.614 1.786 1.163.861.859 1.354 2.083 1.354 3.368 0 2.695-2.154 4.837-4.862 4.837a4.748 4.748 0 01-4.738-4.034 5.01 5.01 0 01.077-1.981zm47.208 26.915c-2.606.996-5.2 1.778-7.707 1.88-4.679.244-9.787-1.654-12.556-3.981-4.308-3.612-7.386-5.631-8.679-11.941-.554-2.695-.247-6.858.246-9.246 1.108-5.144-.124-8.451-3.754-11.451-2.954-2.449-6.711-3.122-10.834-3.122-1.539 0-2.954-.673-4.001-1.224-1.724-.856-3.139-3-1.785-5.634.432-.856 2.525-2.939 3.018-3.305 5.6-3.185 12.065-2.144 18.034.244 5.54 2.266 9.727 6.429 15.759 12.307 6.155 7.102 7.263 9.063 10.773 14.39 2.771 4.163 5.294 8.451 7.018 13.348.877 2.561.071 4.74-2.341 6.277-.981.625-2.109 1.044-3.191 1.458z" />
+					</svg>
+				</symbol>
+				<symbol id="icon-dataset" viewBox="0 0 24 24" fill="currentColor">
+					<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 122.88 116.41">
+						<defs>
+							<style>
+								.cls-1{fill-rule:evenodd;}
+							</style>
+						</defs>
+						<title>database-table</title>
+						<path class="cls-1"
+							d="M16.49,24.88C24.05,27.41,34.57,29,46.26,29S68.48,27.41,76,24.88c6.63-2.22,10.73-4.9,10.73-7.52S82.67,12.06,76,9.84C68.48,7.33,58,5.75,46.27,5.75S24.06,7.33,16.49,9.84c-14.06,4.7-14.46,10.21,0,15ZM64.91,55.34h48.73a9.27,9.27,0,0,1,9.24,9.24v42.58a9.27,9.27,0,0,1-9.24,9.25H64.91a9.27,9.27,0,0,1-9.24-9.25V64.58a9.27,9.27,0,0,1,9.24-9.24ZM91.09,99.18H118v12H91.09v-12Zm-30.89,0H87.13v12H60.2v-12Zm0-31.89H87.13v12H60.2v-12Zm0,15.94H87.13v12H60.2v-12ZM91.09,67.29H118v12H91.09v-12Zm0,15.94H118v12H91.09v-12ZM5.82,45.77c.52,2.45,4.5,4.91,10.68,7,7.22,2.42,17.16,3.95,28.24,4.08v5.77c-11.67-.13-22.25-1.78-30.05-4.39A35.86,35.86,0,0,1,5.84,54V71.27c.52,2.45,4.5,4.91,10.68,7,7.22,2.4,17.15,3.94,28.22,4.07v5.75c-11.67-.14-22.25-1.78-30.05-4.4A36.08,36.08,0,0,1,5.83,79.5V96.75c.52,2.45,4.51,4.91,10.68,7,7.22,2.41,17.16,4,28.23,4.08v5.75c-11.67-.13-22.24-1.78-30-4.4C10.4,107.72,0,103,0,97.38V95.55C0,69.86,0,43.06,0,17.41c0-5.43,5.61-10,14.66-13C22.82,1.68,34,0,46.27,0S69.7,1.68,77.87,4.41s13.64,6.78,14.55,11.53a3,3,0,0,1,.16,1v28.6H86.8V26.09a36.69,36.69,0,0,1-8.93,4.22c-8.15,2.75-19.31,4.41-31.58,4.41S22.83,33,14.66,30.31A36.26,36.26,0,0,1,5.8,26.14V45.77Z" />
+					</svg>
+				</symbol>
+			</svg>
+			<div class="diag-dropdown-container">
+				<label for="exampleSelect">Select Cases: </label>
+				<select id="exampleSelect"></select>
+			</div>
+			<div class="diag-container">
+				<div id="Gemini" class="diag-section diag-default">
+					<div class="diag-section-header diag-default">
+						<svg>
+							<use xlink:href="#icon-gemini"></use>
+						</svg>
+						<span>Gemini ▼</span>
+					</div>
+					<div class="diag-content"></div>
+				</div>
+				<div id="Janus" class="diag-section diag-default">
+					<div class="diag-section-header diag-default">
+						<svg>
+							<use xlink:href="#icon-janus"></use>
+						</svg>
+						<span>Janus ▼</span>
+					</div>
+					<div class="diag-content"></div>
+				</div>
+				<div id="Ours" class="diag-section diag-orange">
+					<div class="diag-section-header diag-orange">
+						<svg>
+							<use xlink:href="#icon-dataset"></use>
+						</svg>
+						<span>Ours ▼</span>
+					</div>
+					<div class="diag-content"></div>
+				</div>
+			</div>
 			<script>
 				const data = [
 				    {
-				        "group": "Group 1",
-				        "examples": [
-				          {
-				            "model": "Janus",
-				            "title": "Example 1",
-				            "prompt": "What immediate actions would you recommend for the local authorities to take in response to the situation depicted in the image, and why?",
-				            "response": "The image depicts a flooded area, with water covering the street and reflecting surrounding trees and buildings. The floodwater appears to be at a significant depth, potentially affecting traffic and access to homes. Immediate actions for local authorities to take in response to this situation would include: 1. Evacuation and Safety Measures: Ensure the safety of residents by providing alternative shelters and evacuation routes. This includes setting up emergency shelters and coordinating with local emergency services. 2. Flood Control and Drainage: Activate flood control measures such as opening storm drains and releasing water from nearby reservoirs or flood management systems to reduce water accumulation. 3. Communication and Coordination: Establish communication channels with affected residents to provide updates on the flood situation, safety instructions, and resources available. 4. Damage Assessment and Repair: Send teams to assess the extent of the damage and initiate repair efforts to restore infrastructure, such as roads, bridges, and utilities. 5. Environmental Monitoring: Monitor water quality and potential contamination risks to ensure public health and safety.",
-				            "image": ".\\assets\\diag_sample\\image1.jpg"
-				          },
-				          {
-				            "model": "Janus",
-				            "title": "Example 2",
-				            "prompt": "Please tell me how to build temporary roads or bridges, and generate one in the diagram.",
-				            "response": "To build temporary roads or bridges, follow these steps: 1. Assessment and Planning: Evaluate the flood-affected area to determine the most suitable locations for temporary roads or bridges. Consider factors such as water depth, flow velocity, and structural stability. 2. Materials and Equipment: Gather materials like steel beams, concrete blocks, and construction tools. Ensure that the equipment is suitable for the water conditions, such as using waterproof materials and equipment. 3. Foundation Preparation: Prepare the ground by clearing debris and leveling the surface. Ensure that the foundation is stable and can support the weight of the temporary structure. 4. Construction: Construct the temporary road or bridge using the prepared materials. Use strong materials to ensure durability and safety. 5. Testing and Maintenance: Test the temporary structure for stability and safety. Regularly maintain it to ensure it remains functional and safe for use.",
-				            "image": ".\\assets\\diag_sample\\image2.jpg"
-				          },
-				          {
-				            "model": "Janus",
-				            "title": "Example 3",
-				            "prompt": "How long does it take to build such a bridge?",
-				            "response": "Building a temporary bridge or road in flood-affected areas requires careful planning and execution. The time taken depends on several factors, including the complexity of the structure, the depth of the water, and the availability of materials and equipment. 1. Planning and Assessment: This phase typically takes a few days to a week. It involves assessing the flood conditions, determining the best location for the bridge or road, and planning the construction process. 2. Material Procurement: Gathering materials such as steel beams, concrete blocks, and construction tools can take a few days. 3. Construction: Building the bridge or road can take several weeks to a few months, depending on the complexity and the number of workers involved. 4. Testing and Maintenance: Once completed, the bridge or road needs to be tested for safety and durability. Regular maintenance is required to ensure its longevity. Overall, the construction of a temporary bridge or road in flood-affected areas can take anywhere from a few weeks to several months.",
-				            "image": ".\\assets\\diag_sample\\image3.png"
-				          },
-				          {
-				            "model": "Gemini",
-				            "title": "Example 4",
-				            "prompt": "What immediate actions would you recommend for the local authorities to take in response to the situation depicted in the image, and why?",
-				            "response": "1. Issue Emergency Alerts and Warnings: Utilize all available channels (sirens, SMS, social media, radio, television) to inform residents about the dangerous flooding and advise them to seek higher ground immediately. Emphasize the risks of driving or walking through floodwaters. 2. Activate Emergency Response Teams: Deploy police, fire department, and emergency medical services to the affected areas. Their immediate priorities should be: Life Safety: Conducting search and rescue operations for individuals trapped in homes or vehicles; Medical Assistance: Providing aid to anyone injured; Security: Securing the flooded areas to prevent looting and ensure public safety. 3. Establish Shelters: Open designated emergency shelters (schools, community centers, etc.) for displaced residents, providing them with temporary housing, food, water, and essential supplies. 4. Assess the Situation and Infrastructure: Begin assessing the extent of the damage to roads, bridges, power lines, and other critical infrastructure. This will help in understanding the scope of the disaster and planning the subsequent response. 5. Block Off Affected Roads: Close roads leading into and within the flooded areas to prevent further traffic and potential accidents in the dangerous conditions.",
-				            "image": ".\\assets\\diag_sample\\image4.png"
-				          },
-				          {
-				            "model": "Gemini",
-				            "title": "Example 5",
-				            "prompt": "In addition to these immediate actions, what long-term strategies could the local authorities implement to prevent or mitigate future flooding incidents in this area?",
-				            "response": "Implementing flood-prevention measures such as improving drainage systems, raising roads, emergency response plans, and regular maintenance checks.",
-				            "image": ".\\assets\\diag_sample\\image5.png"
-				          },
-				          {
-				            "model": "Gemini",
-				            "title": "Example 6",
-				            "prompt": "Could you elaborate on how the local authorities might go about 'improving the city’s drainage system'?",
-				            "response": "1. Upgrading and Expanding Drainage Infrastructure, 2. Implementing Green Infrastructure, 3. Advanced Hydrological Modeling, 4. Sensor-Based Monitoring Systems, 5. Public Awareness and Engagement.",
-				            "image": ".\\assets\\diag_sample\\image6.png"
-				          }
-				        ]
-				    },
-				    {
-				        "group": "Group 2",
-				        "examples": [
-				          {
-				            "model": "From Dataset",
-				            "title": "Example 7",
-				            "prompt": "What immediate actions would you recommend for the local authorities to take in response to the situation depicted in the image, and why?",
-				            "response": "The image shows a flooded street with water reaching the curb and partially submerging parked vehicles. Prompt and coordinated evacuation is essential to ensure resident safety. Emergency services should be deployed to assist vulnerable populations, while barriers and signage can prevent vehicles from entering hazardous areas. In parallel, assessing drainage system blockages and deploying pumps could help reduce water levels and restore access. Continuous monitoring of water quality is also necessary to prevent health risks.",
-				            "image": "#"
-				          },
-				          {
-				            "model": "From Dataset",
-				            "title": "Example 8",
-				            "prompt": "In addition to these immediate actions, what long-term strategies could the local authorities implement to prevent or mitigate future flooding incidents in this area?",
-				            "response": "Based on the previous response, I would recommend a combination of gray and green infrastructure upgrades. This includes enlarging stormwater drains, constructing retention basins, and restoring wetlands to act as natural buffers. Implementing permeable pavements and urban green spaces can help absorb runoff. Regular maintenance schedules for clearing debris and public education campaigns on proper waste disposal will further ensure the resilience of the flood management system.",
-				            "image": "#"
-				          },
-				          {
-				            "model": "From Dataset",
-				            "title": "Example 9",
-				            "prompt": "That's a great overview. Could you elaborate on how the local authorities might go about 'improving the city's drainage system'? What specific improvements or technologies might be considered?",
-				            "response": "To improve the city's drainage system, authorities can retrofit existing pipes with larger-diameter conduits and install smart sensors to monitor flow rates in real time. Incorporating automated pump stations that activate during peak flows ensures rapid response. Advanced hydrological modeling can identify bottlenecks, guiding targeted upgrades. Finally, integrating rainwater harvesting systems in public buildings can reduce the burden on sewers during heavy storms.",
-				            "image": ".\\assets\\diag_sample\\image6.png"
-				          },
-				          {
-				            "model": "Gemini",
-				            "title": "Example 10",
-				            "prompt": "Considering the cleanliness and arrangement, what can you infer about the maintenance of this bathroom?",
-				            "response": "The bathroom appears meticulously cleaned and well-organized, with spotless surfaces and neatly arranged toiletries. The grout lines are free of mold, and no clutter is visible on countertops, indicating regular upkeep by diligent maintenance staff or homeowners. Such attention to detail suggests a strong commitment to hygiene and order.",
-				            "image":".\\assets\\diag_sample\\image7.png"
-				          },
-				          {
-				            "model": "Gemini",
-				            "title": "Example 11",
-				            "prompt": "The bathroom image you generated looks a bit cluttered and cramped. What additions could enhance the bathroom's functionality or aesthetics?",
-				            "response": "To improve functionality and aesthetics, consider adding wall-mounted shelving or recessed niches for storage to clear countertop space. A larger mirror with integrated LED lighting can visually expand the space and boost illumination. Slimline cabinets under the sink would hide essentials, while decorative accents—such as a stylish soap dispenser or potted plant—add personality without overcrowding.",
-				            "image": ".\\assets\\diag_sample\\image8.png"
-				          },
-				          {
-				            "model": "Gemini",
-				            "title": "Example 12",
-				            "prompt": "That's helpful! Considering the potential for adding items, how would you prioritize these additions based on cost-effectiveness and impact on the bathroom's overall appeal?",
-				            "response": "First, install wall-mounted shelves or storage niches—these are low-cost but free up valuable counter space. Next, upgrade lighting with an LED-backlit mirror to enhance brightness and modernize the look. Then, add slimline cabinetry under the sink for hidden storage. Decorative touches like a soap dispenser and small plant come last, as they have lower impact on functionality but boost aesthetic appeal.",
-				            "image": ".\\assets\\diag_sample\\image9.png"
-				          },
-				          {
-				            "model": "Janus",
-				            "title": "Example 13",
-				            "prompt": "Considering the cleanliness and arrangement, what can you infer about the maintenance of this bathroom?",
-				            "response": "The bathroom appears to be well-maintained, with uniformly clean surfaces and minimal clutter. The arrangement of toiletries and towels is orderly, suggesting that regular cleaning routines are followed. Overall, the space reflects a high standard of hygiene and organization.",
-				            "image": ".\\assets\\diag_sample\\image10.png"
-				          },
-				          {
-				            "model": "Janus",
-				            "title": "Example 14",
-				            "prompt": "The toilet picture you generated looks dark and plain. What additions could enhance the bathroom's functionality or aesthetics?",
-				            "response": "To enhance the space:\n1. **Lighting:** Add a brighter, modern fixture above the mirror to improve visibility.\n2. **Storage Solutions:** Install floating shelves or a slim cabinet for toiletries.\n3. **Decorative Elements:** Introduce a framed mirror or artwork to add character.\n4. **Color Scheme:** Apply an accent tile backsplash or fresh paint to liven the walls.\n5. **Mirror Frame:** Add a decorative frame around the mirror for a cohesive, elegant look.",
-				            "image": ".\\assets\\diag_sample\\image11.png"
-				          },
-				          {
-				            "model": "Janus",
-				            "title": "Example 15",
-				            "prompt": "Please present the complete scene of this toilet to me, not just the sink.",
-				            "response": "The complete scene includes a compact vanity with a sleek faucet, a pedestal toilet with a soft-close lid, and a corner-mounted towel rack. The floor features light-gray porcelain tiles, while walls are painted in a soft off-white. A small potted plant sits on the windowsill to add a touch of greenery, making the space both functional and inviting.",
-				            "image":".\\assets\\diag_sample\\image12.png"
-				          },
-				          {
-				            "model": "From Dataset",
-				            "title": "Example 16",
-				            "prompt": "Considering the cleanliness and arrangement, what can you infer about the maintenance of this bathroom?",
-				            "response": "Based on the cleanliness of the sink area and the orderly arrangement of items, the bathroom seems to be maintained regularly. Surfaces are free of stains, and fixtures show no signs of wear, indicating consistent care and upkeep.",
-				            "image": ".\\assets\\diag_sample\\image13.png"
-				          },
-				          {
-				            "model": "From Dataset",
-				            "title": "Example 17",
-				            "prompt": "You mentioned that the bathroom might need to be updated. What additions could enhance the bathroom's functionality or aesthetics?",
-				            "response": "Updating or finishing the empty wall space with floating shelves or a slim cabinet could add storage without crowding the floor. A new mirror above the sink would improve both function and visual space. Simple decorative elements—like a patterned rug or matching soap dispenser—can add warmth and personality.",
-				            "image": ".\\assets\\diag_sample\\image14.png"
-				          },
-				          {
-				            "model": "From Dataset",
-				            "title": "Example 18",
-				            "prompt": "That's helpful! Considering the potential for adding items, how would you prioritize these additions based on cost-effectiveness and impact on the bathroom's overall appeal?",
-				            "response": "1. **Additional Storage:** Floating shelves offer high utility at low cost.\n2. **Mirror Above Sink:** Increases perceived space and brightness.\n3. **Decorative Elements:** Small accents like soap dispensers add style affordably.\n4. **Lighting Upgrade:** LED fixtures save energy and improve ambiance.\n5. **Tile Accents:** A backsplash refreshes the look without full renovation.",
-				            "image": ".\\assets\\diag_sample\\image15.jpg"
-				          }
-				        ]
+				        "model": "Janus",
+				        "title": "Case 1",
+				        "figures": 1,
+				        "prompt": "What immediate actions would you recommend for the local authorities to take in response to the situation depicted in the image, and why?",
+				        "response": "The image depicts a flooded area, with water covering the street and reflecting surrounding trees and buildings. The floodwater appears to be at a significant depth, potentially affecting traffic and access to homes. Immediate actions for local authorities to take in response to this situation would include:\n1. **Evacuation and Safety Measures**: Ensure the safety of residents by providing alternative shelters and evacuation routes. This includes setting up emergency shelters and coordinating with local emergency services.\n2. **Flood Control and Drainage**: Activate flood control measures such as opening storm drains and releasing water from nearby reservoirs or flood management systems to reduce water accumulation.\n3. **Communication and Coordination**: Establish communication channels with affected residents to provide updates on the flood situation, safety instructions, and resources available.\n4. **Damage Assessment and Repair**: Send teams to assess the extent of the damage and initiate repair efforts to restore infrastructure, such as roads, bridges, and utilities.\n5. **Environmental Monitoring**: Monitor water quality and potential contamination risks to ensure public health and safety.",
+				        "imageR": "./assets/diag_sample/image1.jpg",
+				        "imageP": "#",
+				        "color": "default" // Note: 'color' in data is not directly used for class assignment anymore, classes are hardcoded by model
+				      },
+				      {
+				        "model": "Janus",
+				        "title": "Case 2",
+				        "figures": 1,
+				        "prompt": "Please tell me how to build temporary roads or bridges, and generate one in the diagram.",
+				        "response": "To build temporary roads or bridges, follow these steps:\n1. **Assessment and Planning**: Evaluate the flood-affected area to determine the most suitable locations for temporary roads or bridges. Consider factors such as water depth, flow velocity, and structural stability.\n2. **Materials and Equipment**: Gather materials like steel beams, concrete blocks, and construction tools. Ensure that the equipment is suitable for the water conditions, such as using waterproof materials and equipment.\n3. **Foundation Preparation**: Prepare the ground by clearing debris and leveling the surface. Ensure that the foundation is stable and can support the weight of the temporary structure.\n4. **Construction**: Construct the temporary road or bridge using the prepared materials. Use strong materials to ensure durability and safety.\n5. **Testing and Maintenance**: Test the temporary structure for stability and safety. Regularly maintain it to ensure it remains functional and safe for use.",
+				        "imageR": "./assets/diag_sample/image2.jpg",
+				        "imageP": "#",
+				        "color": "default"
+				      },
+				      {
+				        "model": "Janus",
+				        "title": "Case 3",
+				        "figures": 3,
+				        "prompt": "How long does it take to build such a bridge?",
+				        "response": "Building a temporary bridge or road in flood-affected areas requires careful planning and execution. The time taken depends on several factors, including the complexity of the structure, the depth of the water, and the availability of materials and equipment.\n1. **Planning and Assessment**: This phase typically takes a few days to a week. It involves assessing the flood conditions, determining the best location for the bridge or road, and planning the construction process.\n2. **Material Procurement**: Gathering materials such as steel beams, concrete blocks, and construction tools can take a few days.\n3. **Construction**: Building the bridge or road can take several weeks to a few months, depending on the complexity and the number of workers involved.\n4. **Testing and Maintenance**: Once completed, the bridge or road needs to be tested for safety and durability. Regular maintenance is required to ensure its longevity.\nOverall, the construction of a temporary bridge or road in flood-affected areas can take anywhere from a few weeks to several months.",
+				        "imageR": "#",
+				        "imageP": "#",
+				        "color": "default"
+				      },
+				      {
+				        "model": "Gemini",
+				        "title": "Case 1",
+				        "figures": 1,
+				        "prompt": "What immediate actions would you recommend for the local authorities to take in response to the situation depicted in the image, and why?",
+				        "response": "The image depicts a street scene with significant floodwater inundating buildings and vehicles. Some vehicles appear partially submerged. **Immediate Actions for Local Authorities:**\n1. **Issue Emergency Alerts and Warnings:** Utilize all available channels (sirens, SMS, social media, radio, television) to inform residents about the dangerous flooding and advise them to seek higher ground immediately. Emphasize the risks of driving or walking through floodwaters.\n2. **Activate Emergency Response Teams:** Deploy police, fire department, and emergency medical services to the affected areas. Their immediate priorities should be:\n  * **Life Safety:** Conducting search and rescue operations for individuals trapped in homes or vehicles.\n  * **Medical Assistance:** Providing aid to anyone injured.\n  * **Security:** Securing the flooded areas to prevent looting and ensure public safety.\n3. **Establish Shelters:** Open designated emergency shelters (schools, community centers, etc.) for displaced residents, providing them with temporary housing, food, water, and essential supplies.\n4. **Assess the Situation and Infrastructure:** Begin assessing the extent of the damage to roads, bridges, power lines, and other critical infrastructure. This will help in understanding the scope of the disaster and planning the subsequent response.\n5. **Block Off Affected Roads:** Close roads leading into and within the flooded areas to prevent further traffic and potential accidents in the dangerous conditions.\n\n**Why These Actions Are Crucial:**\nThese immediate actions prioritize the safety and well-being of the affected population. Swift warnings and the deployment of emergency services are essential to minimize casualties and injuries. Providing shelter addresses the immediate needs of those displaced from their homes. Assessing the damage and securing the area lays the groundwork for a coordinated and effective longer-term recovery effort. Preventing access to flooded areas reduces the risk of further harm and allows emergency responders to work more efficiently.",
+				        "imageR": "./assets/diag_sample/image3.png",
+				        "imageP": "#",
+				        "color": "default"
+				      },
+				      {
+				        "model": "Gemini",
+				        "title": "Case 2",
+				        "figures": 1,
+				        "prompt": "In addition to these immediate actions, what long-term strategies could the local authorities implement to prevent or mitigate future flooding incidents in this area?",
+				        "response": "I will generate an image depicting a flooded street scene to help illustrate potential immediate actions for local authorities.",
+				        "imageR": "./assets/diag_sample/image4.png",
+				        "imageP": "#",
+				        "color": "default"
+				      },
+				      {
+				        "model": "Gemini",
+				        "title": "Case 3",
+				        "figures": 1,
+				        "prompt": "It seems that your image does not show any long-term strategies, please supplement with textual description.",
+				        "response": "Immediate Actions:\n* Emergency Response Activation: Deploy emergency services, including police, fire department, and ambulance, to the affected areas.\n* Evacuation and Shelter: Initiate evacuation procedures for residents in high-risk zones, providing safe shelter and essential supplies.\n* Road Closure and Traffic Management: Close flooded roads and manage traffic flow to ensure safety and allow access for emergency vehicles.\n* Damage Assessment: Begin preliminary assessments of the extent of the flooding and damage to infrastructure and property.\n* Communication and Information: Keep the public informed about the situation, safety measures, and available assistance through various channels.\n* Resource Mobilization: Activate and coordinate resources, including personnel, equipment, and supplies, for rescue and relief efforts.",
+				        "imageR": "./assets/diag_sample/image5.png",
+				        "imageP": "#",
+				        "color": "default"
+				      },
+				      {
+				        "model": "Ours",
+				        "title": "Case 1",
+				        "figures": 3,
+				        "prompt": "What immediate actions would you recommend for the local authorities to take in response to the situation depicted in the image, and why?",
+				        "response": "The image shows a flooded street with a traffic light and power lines submerged in water. Based on the current state, I would recommend that the local authorities take immediate actions to ensure the safety of residents and maintain traffic flow.\n\nFirst and foremost, they should deploy emergency personnel to the affected areas to rescue people that might be in danger and ensure their safety. Given the possible risk of electrocution from the submerged power lines, it is vital to shut off and secure the power supply to the area.\n\nNext, the local authorities should assess the traffic light's functionality and ensure it remains operational to manage the flow of vehicles and pedestrians. If necessary, they may need to replace or repair the damaged traffic light and lines to restore proper functionality.\n\nFurthermore, they should work on clearing and draining the water accumulated in the streets to minimize the risk of infections and to restore normality to daily life. They might consider using specialized machinery and personnel for this task, if the situation is severe or widespread.\n\nLastly, the local authorities should communicate their actions and plans effectively to the public via social media, emergency alerts, and notifications to keep residents informed about the situation and any assistance or resources available.\n\nConclusion: Look for opportunities to improve the traffic flow, safety, and well-being of the community during the recovery process.",
+				        "imageR": "#",
+				        "imageP": "#",
+				        "color": "yellow"
+				      },
+				      {
+				        "model": "Ours",
+				        "title": "Case 2",
+				        "figures": 3,
+				        "prompt": "In addition to these immediate actions, what long-term strategies could the local authorities implement to prevent or mitigate future flooding incidents in this area?",
+				        "response": "Based on the previous response, I would recommend that the local authorities in the area take immediate actions to ensure the safety of residents and maintain traffic flow in the flooded street. To achieve this, they should deploy emergency personnel to rescue people that may be in danger and ensure their safety. Given the possible risk of electrocution from the submerged power lines, it is crucial to shut off and secure the power supply to the area. \n\nIn addition to these immediate actions, long-term strategies could include implementing flood-prevention measures, such as improving the city's drainage system, raising roads and infrastructure to minimize the impact of flooding, creating emergency response plans, and conducting regular maintenance checks on traffic lights and power lines to reduce the risk of damage during extreme weather events.\n\nThe implementation of these measures can help prevent or mitigate future flooding incidents in the area, ensuring the safety and well-being of residents and minimizing the disruption to daily life.",
+				        "imageR": "#",
+				        "imageP": "#",
+				        "color": "yellow"
+				      },
+				      {
+				        "model": "Ours",
+				        "title": "Case 3",
+				        "figures": 1,
+				        "prompt": "That's a great overview. Could you elaborate on how the local authorities might go about 'improving the city's drainage system'? What specific improvements or technologies might be considered?",
+				        "response": "To improve the city's drainage system and mitigate future flooding effectively, local authorities can consider several specific improvements and technologies:\n\n1. **Upgrading and Expanding Drainage Infrastructure**: By increasing the capacity of existing drainage systems and constructing additional channels, the city can better accommodate heavy rainfall and reduce flood risk. This might involve widening culverts, enlarging stormwater pipes, and constructing detention basins to manage water flow more effectively.\n2. **Implementing Green Infrastructure**: Integrating green technology such as rain gardens, permeable pavements, and green roofs can help absorb and divert rainwater naturally. These solutions not only reduce immediate drainage loads but also improve urban aesthetics and biodiversity.\n3. **Advanced Hydrological Modeling**: Utilizing sophisticated software to simulate rainfall scenarios can help identify potential weaknesses in drainage and plan infrastructure improvements more strategically. This modeling aids in efficient planning and resource allocation.\n4. **Sensor-Based Monitoring Systems**: Implementing sensor technology in critical drainage locations can provide real-time data on water levels and system performance. This allows for proactive management and quick responses during heavy rain events.\n5. **Public Awareness and Engagement**: Educating citizens about flood risks and encouraging practices that reduce blockage in drainage systems, like proper disposal of waste, can significantly improve overall efficiency.\n6. **Regular Maintenance and Cleaning**: Conducting frequent checks and cleaning of drainage systems ensures they remain clear of debris, reducing the likelihood of blockages during storms.\n7. **Infrastructure Integration**: Consideration of multi-use designs that integrate drainage systems with urban features can both save space and enhance functionality, such as park spaces that double as flood basins.\n\nThese strategies, when combined, can create a robust drainage system tailored to the city's unique needs, reducing the impact of future flooding events. \n\n<Image, diagram showing improved drainage system and green infrastructure technologies> \n\nWould you like more information on the benefits of green infrastructure?",
+				        "imageR": "./assets/diag_sample/image6.png",
+				        "imageP": "#",
+				        "color": "yellow"
+				      },
+				      {
+				        "model": "Gemini",
+				        "title": "Case 4",
+				        "figures": 2,
+				        "prompt": "Considering the cleanliness and arrangement, what can you infer about the maintenance of this bathroom?",
+				        "response": "The bathroom appears to be meticulously maintained. The surfaces are clear of clutter and look clean, suggesting regular tidying. The arrangement of items seems deliberate and organized, further indicating a commitment to upkeep.",
+				        "imageR": "./assets/diag_sample/image8.png",
+				        "imageP": "./assets/diag_sample/image7.png",
+				        "color": "default"
+				      },
+				      {
+				        "model": "Gemini",
+				        "title": "Case 5",
+				        "figures": 0,
+				        "prompt": "The bathroom image you generated looks a bit cluttered. What kind of updates or additions could enhance the bathroom's functionality or aesthetics?",
+				        "response": "The current image shows a bathroom with some items on the counter and a few things in the shower area. Updates to enhance functionality and aesthetics could include adding closed storage like drawers or cabinets to reduce visible clutter, incorporating a consistent color scheme for towels and accessories, and perhaps a larger mirror to visually expand the space.",
+				        "imageR": "#",
+				        "imageP": "./assets/diag_sample/image9.png",
+				        "color": "default"
+				      },
+				      {
+				        "model": "Gemini",
+				        "title": "Case 6",
+				        "figures": 1,
+				        "prompt": "That's helpful! Considering the potential for adding storage or decorative elements, how would you prioritize these additions based on cost-effectiveness and impact on the bathroom's overall appeal?",
+				        "response": "The image displays a clean and relatively well-maintained bathroom. The sink area is tidy, and the surfaces appear to be clear of excessive clutter. This suggests a regular cleaning routine. The presence of what looks like a toothbrush holder and a neatly placed hand towel indicates attention to organization.",
+				        "imageR": "./assets/diag_sample/image10.png",
+				        "imageP": "#",
+				        "color": "default"
+				      },
+				      {
+				        "model": "Janus",
+				        "title": "Case 4",
+				        "figures": 2,
+				        "prompt": "Considering the cleanliness and arrangement, what can you infer about the maintenance of this bathroom?",
+				        "response": "The bathroom appears to be well-maintained, as evidenced by the cleanliness of the tiles, the organized placement of items, and the absence of visible dirt or clutter. The mirror is clean, and the sink and surrounding area are tidy, suggesting regular upkeep. The presence of a trash bin and a toilet paper holder further indicates attention to cleanliness and organization.",
+				        "imageR": "./assets/diag_sample/image12.png",
+				        "imageP": "./assets/diag_sample/image11.png",
+				        "color": "default"
+				      },
+				      {
+				        "model": "Janus",
+				        "title": "Case 5",
+				        "figures": 1,
+				        "prompt": "The toilet picture you generated looks dark and plain. What kind of updates or additions could enhance the bathroom's functionality or aesthetics?",
+				        "response": "To enhance the functionality and aesthetics of the bathroom, several updates or additions could be considered:\n\n1. Lighting: Adding a brighter or more modern light fixture above the mirror could improve visibility and create a more inviting atmosphere.\n2. Storage Solutions: Installing additional shelves or cabinets could provide more storage space for toiletries and other bathroom essentials.\n3. Decorative Elements: Introducing decorative elements such as a small plant, artwork, or a stylish soap dispenser could add personality and warmth to the space.\n4. Color Scheme: Updating the tiles or adding colorful accents could refresh the overall look and feel of the bathroom.\n5. Mirror Frame: A decorative frame for the mirror could add a touch of elegance and make the space feel more cohesive.",
+				        "imageR": "./assets/diag_sample/image13.png",
+				        "imageP": "#",
+				        "color": "default"
+				      },
+				      {
+				        "model": "Janus",
+				        "title": "Case 6",
+				        "figures": 3,
+				        "prompt": "Please present the complete scene of this toilet to me, not just the sink.",
+				        "response": "The complete scene of this toilet includes a white ceramic toilet with a standard flush mechanism, positioned against tiled walls. Above the toilet, there is a rectangular mirror with a simple frame, reflecting part of the room. To the right of the toilet, there is a wall-mounted metal rack with a wire basket, likely intended for holding toilet paper rolls. The floor is tiled in a light color, matching the walls, and there is a small trash bin with a lid located near the toilet. The overall design is functional and minimalistic, with a focus on cleanliness and practicality.",
+				        "imageR": "#",
+				        "imageP": "#",
+				        "color": "default"
+				      },
+				      {
+				        "model": "Ours",
+				        "title": "Case 4",
+				        "figures": 1,
+				        "prompt": "Considering the cleanliness and arrangement, what can you infer about the maintenance of this bathroom?",
+				        "response": "Based on the cleanliness of the sink area, bright white room, and mirror, it can be inferred that the bathroom is well-maintained. The white sink, white tiles, and white curtains contribute to a clean and organized appearance, which suggests that the space is cared for. Another notable aspect of the bathroom is the empty wall space, also shown in the image, which could indicate that the bathroom might need to be updated or finished. Overall, the cleanliness and arrangement of the bathroom seem to show good maintenance practices.",
+				        "imageR": "#",
+				        "imageP": "./assets/diag_sample/image14.png",
+				        "color": "yellow"
+				      },
+				      {
+				        "model": "Ours",
+				        "title": "Case 5",
+				        "figures": 1,
+				        "prompt": "You mentioned that the bathroom might need to be updated or finished due to the empty wall space. What kind of updates or additions could enhance the bathroom's functionality or aesthetics?",
+				        "response": "Updating or finishing the empty wall space in the bathroom could enhance its functionality and aesthetics. Some possible additions or updates could include installing additional storage, such as shelves or cabinets, to organize toiletries and accessories; installing a mirror above the sink to create the illusion of a larger space; or even incorporating decorative elements like artwork or plants to add visual interest and make the bathroom feel more inviting.",
+				        "imageR": "./assets/diag_sample/image15.png",
+				        "imageP": "#",
+				        "color": "yellow"
+				      },
+				      {
+				        "model": "Ours",
+				        "title": "Case 6",
+				        "figures": 3,
+				        "prompt": "That's helpful! Considering the potential for adding storage or decorative elements, how would you prioritize these additions based on cost-effectiveness and impact on the bathroom's overall appeal?",
+				        "response": "To prioritize additions based on cost-effectiveness and impact on the bathroom's overall appeal, I recommend starting with functional improvements that also enhance aesthetics. Here are some suggestions:\n\n1. Additional Storage: Installing floating shelves or a vanity with built-in cabinets can provide much-needed storage while maintaining a sleek look. This is both practical and visually appealing.\n\n2. Mirror Above Sink: Adding a mirror above the sink not only serves a practical purpose but also makes the space feel larger and brighter.\n\n3. Decorative Elements: Incorporating small, affordable items like a plant or a piece of artwork can add personality and warmth to the bathroom without breaking the bank.\n\n4. Lighting: Upgrading the lighting fixture can significantly improve the ambiance of the bathroom. Opt for energy-efficient LED lights that offer both cost savings and better illumination.\n\n5. Tile Accents: Adding a tile backsplash or border can give the bathroom a fresh look without requiring a full renovation.\n\nEach of these additions can be tailored to fit your budget and style preferences, ensuring a balanced approach to enhancing both functionality and aesthetics. Would you like to see some visual examples of these ideas?",
+				        "imageR": "#",
+				        "imageP": "#",
+				        "color": "yellow"
 				      }
-				      
-				];
+				    ];
 				
-				// 解析内嵌编号列表（例如“1. xxx 2. xxx”）
-				function splitInlineNumberedList(text) {
-				  const listStart = text.search(/\d+\.\s/);
-				  if (listStart === -1) return { intro: text.trim(), list: null };
+				const exampleSelect = document.getElementById('exampleSelect');
+				const uniqueTitles = [...new Set(data.map(item => item.title))];
+				uniqueTitles.forEach(title => {
+				  const option = document.createElement('option');
+				  option.value = title;
+				  option.textContent = title;
+				  exampleSelect.appendChild(option);
+				});
 				
-				  const intro = text.slice(0, listStart).trim();
-				  const pointsStr = text.slice(listStart);
-				
-				  // 使用正则匹配编号项，支持换行和中文逗号结尾清理
-				  const regex = /\d+\.\s([\s\S]*?)(?=\d+\.|$)/g;
-				  let match;
-				  const list = [];
-				  while ((match = regex.exec(pointsStr)) !== null) {
-				    list.push(match[1].trim().replace(/[,，]\s*$/, ''));
-				  }
-				  return { intro, list };
+				function parseBold(text) {
+				  return text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
 				}
 				
-				// 打字机效果，支持简单HTML标签（不拆分标签，仅处理文本）
-				function typeWriter(target, htmlText, speed = 20, callback = null) {
-				  let i = 0;
-				  const text = htmlText;
-				  target.innerHTML = '';
+				function parseOrderedList(text) {
+				    const lines = text.split('\n');
+				    let htmlOutput = '';
+				    let currentListItemContent = [];
+				    let inListScope = false;
 				
-				  function type() {
-				    if (i < text.length) {
-				      target.innerHTML += text.charAt(i);
-				      i++;
-				      setTimeout(type, speed);
-				    } else if (callback) {
-				      callback();
+				    function flushListItem() {
+				        if (currentListItemContent.length > 0) {
+				            htmlOutput += `<li>${parseBold(currentListItemContent.join('<br>'))}</li>`;
+				            currentListItemContent = [];
+				        }
 				    }
-				  }
-				  type();
+				
+				    function startList() {
+				        if (!inListScope) {
+				            htmlOutput += '<ol>';
+				            inListScope = true;
+				        }
+				    }
+				
+				    function endList() {
+				        if (inListScope) {
+				            flushListItem();
+				            htmlOutput += '</ol>';
+				            inListScope = false;
+				        }
+				    }
+				
+				    for (const line of lines) {
+				        if (/^\d+\.\s/.test(line)) {
+				            startList();
+				            flushListItem();
+				            currentListItemContent.push(line.replace(/^\d+\.\s/, ''));
+				        } else if (inListScope && line.trim() === '' && currentListItemContent.length > 0) {
+				            currentListItemContent.push('');
+				        } else if (inListScope && currentListItemContent.length > 0) {
+				             currentListItemContent.push(line);
+				        } else {
+				            endList();
+				            if (line.trim() !== '') {
+				                htmlOutput += `<p>${parseBold(line)}</p>`;
+				            }
+				        }
+				    }
+				    endList();
+				    if (htmlOutput.trim() === '' && text.trim() !== '') {
+				        return '<p>' + parseBold(text.replace(/\n/g, '<br>')) + '</p>';
+				    }
+				    return htmlOutput;
 				}
 				
-				// 渲染单条对话，打字机后显示图片和列表
-				function renderDialogItem(item, container, doneCallback) {
-				  const dialogItem = document.createElement('div');
-				  dialogItem.className = 'dialog-sample-item';
+				function typeWriter(html, el, callback) {
+				  el.innerHTML = '';
+				  const tempDiv = document.createElement('div');
+				  tempDiv.innerHTML = html;
+				  let charDelay = 5;
 				
-				  const promptP = document.createElement('p');
-				  promptP.innerHTML = `<strong>Q:</strong> ${item.prompt}`;
-				  dialogItem.appendChild(promptP);
-				
-				  const answerDiv = document.createElement('div');
-				  answerDiv.innerHTML = '<strong>A:</strong> ';
-				  dialogItem.appendChild(answerDiv);
-				
-				  const { intro, list } = splitInlineNumberedList(item.response);
-				
-				  const span = document.createElement('span');
-				  answerDiv.appendChild(span);
-				
-				  typeWriter(span, intro + (list ? ' ' : ''), 20, () => {
-				    if (list) {
-				      const ol = document.createElement('ol');
-				      list.forEach(point => {
-				        const li = document.createElement('li');
-				        li.textContent = point;
-				        ol.appendChild(li);
+				  let currentNode = tempDiv.firstChild;
+				  function processNextRootNode() {
+				    if (currentNode) {
+				      const next = currentNode.nextSibling;
+				      typeNodeRecursive(currentNode, el, () => {
+				        currentNode = next;
+				        processNextRootNode();
 				      });
-				      answerDiv.appendChild(ol);
+				    } else {
+				      callback && callback();
 				    }
-				    if (item.image && item.image !== "#") {
-				      const img = document.createElement('img');
-				      img.src = item.image;
-				      img.alt = 'Response Image';
-				      dialogItem.appendChild(img);
-				    }
-				    doneCallback();
-				  });
+				  }
 				
-				  container.appendChild(dialogItem);
-				}
-				
-				// 根据模型分类，生成折叠面板，点击加载内容
-				function renderDialogs() {
-				  const container = document.getElementById('dialog-sample-container');
-				  container.innerHTML = '';
-				
-				  // 收集所有示例到一个数组，方便过滤
-				  let allExamples = [];
-				  data.forEach(group => {
-				    group.examples.forEach(ex => {
-				      allExamples.push(ex);
-				    });
-				  });
-				
-				  // 需要展示的模型列表
-				  const models = ["Janus", "Gemini"];
-				
-				  models.forEach(model => {
-				    const groupDiv = document.createElement('div');
-				    groupDiv.className = 'dialog-sample-group';
-				
-				    const header = document.createElement('div');
-				    header.className = 'dialog-sample-header';
-				    header.textContent = `${model} - Click to Expand`;
-				
-				    const content = document.createElement('div');
-				    content.className = 'dialog-content';
-				    content.style.display = 'none'; // 默认折叠
-				
-				    groupDiv.appendChild(header);
-				    groupDiv.appendChild(content);
-				    container.appendChild(groupDiv);
-				
-				    let loaded = false;  // 防止多次加载
-				
-				    header.addEventListener('click', () => {
-				      if (content.style.display === 'flex') {
-				        content.style.display = 'none';
-				      } else {
-				        content.style.display = 'flex';
-				        if (!loaded) {
-				          // 按模型过滤数据
-				          const filteredExamples = allExamples.filter(e => e.model === model);
-				          let index = 0;
-				
-				          function next() {
-				            if (index >= filteredExamples.length) return;
-				            renderDialogItem(filteredExamples[index], content, () => {
-				              index++;
-				              next();
-				            });
-				          }
-				          next();
-				          loaded = true;
+				  function typeNodeRecursive(sourceNode, targetParent, doneCallback) {
+				    if (sourceNode.nodeType === Node.TEXT_NODE) {
+				      let text = sourceNode.textContent;
+				      let i = 0;
+				      function typeChar() {
+				        if (i < text.length) {
+				          targetParent.appendChild(document.createTextNode(text[i]));
+				          i++;
+				          setTimeout(typeChar, charDelay);
+				        } else {
+				          doneCallback();
 				        }
 				      }
-				    });
+				      typeChar();
+				    } else if (sourceNode.nodeType === Node.ELEMENT_NODE) {
+				      const newElement = document.createElement(sourceNode.nodeName);
+				      for (let attr of sourceNode.attributes) {
+				        newElement.setAttribute(attr.name, attr.value);
+				      }
+				      targetParent.appendChild(newElement);
+				
+				      let childNode = sourceNode.firstChild;
+				      function processChildren() {
+				        if (childNode) {
+				          const nextChild = childNode.nextSibling;
+				          typeNodeRecursive(childNode, newElement, () => {
+				            childNode = nextChild;
+				            processChildren();
+				          });
+				        } else {
+				          doneCallback();
+				        }
+				      }
+				      processChildren();
+				    } else {
+				      doneCallback();
+				    }
+				  }
+				  processNextRootNode();
+				}
+				
+				function createDialogueElement(item) {
+				  const dialogueContainer = document.createElement('div');
+				  dialogueContainer.className = 'diag-dialogue';
+				
+				  const promptDiv = document.createElement('div');
+				  promptDiv.className = 'diag-prompt';
+				  promptDiv.textContent = item.prompt;
+				  dialogueContainer.appendChild(promptDiv);
+				
+				  if (item.imageP && item.imageP !== '#') {
+				    const promptImg = document.createElement('img');
+				    promptImg.src = item.imageP;
+				    promptImg.alt = "Prompt image";
+				    promptDiv.appendChild(promptImg);
+				  }
+				
+				  const responseContainer = document.createElement('div');
+				  responseContainer.className = 'diag-response';
+				
+				  const responseTextDiv = document.createElement('div');
+				  responseTextDiv.className = 'diag-response-text-area diag-typing-caret';
+				  
+				  let responseImgElement = null;
+				  if (item.imageR && item.imageR !== '#') {
+				    responseImgElement = document.createElement('img');
+				    responseImgElement.src = item.imageR;
+				    responseImgElement.alt = "Response image";
+				    responseImgElement.style.display = 'none';
+				  }
+				
+				  responseContainer.appendChild(responseTextDiv);
+				  if (responseImgElement) {
+				      responseContainer.appendChild(responseImgElement);
+				  }
+				  
+				  dialogueContainer.appendChild(responseContainer);
+				
+				  const processedResponseText = parseOrderedList(item.response);
+				
+				  typeWriter(processedResponseText, responseTextDiv, () => {
+				    responseTextDiv.classList.remove('diag-typing-caret');
+				    if (responseImgElement) {
+				      responseImgElement.style.display = 'block';
+				    }
+				  });
+				
+				  return dialogueContainer;
+				}
+				
+				function renderExample(title) {
+				  const sections = {
+				    Gemini: document.querySelector('#Gemini .diag-content'), // Prefixed
+				    Janus: document.querySelector('#Janus .diag-content'),  // Prefixed
+				    Ours: document.querySelector('#Ours .diag-content')     // Prefixed
+				  };
+				
+				  document.getElementById('Gemini').className = 'diag-section diag-default'; // Prefixed
+				  document.querySelector('#Gemini .diag-section-header').className = 'diag-section-header diag-default'; // Prefixed
+				  document.querySelector('#Gemini .diag-section-header span').textContent = 'Gemini ▼';
+				
+				  document.getElementById('Janus').className = 'diag-section diag-default'; // Prefixed
+				  document.querySelector('#Janus .diag-section-header').className = 'diag-section-header diag-default'; // Prefixed
+				  document.querySelector('#Janus .diag-section-header span').textContent = 'Janus ▼';
+				
+				  document.getElementById('Ours').className = 'diag-section diag-orange'; // Prefixed
+				  document.querySelector('#Ours .diag-section-header').className = 'diag-section-header diag-orange'; // Prefixed
+				  document.querySelector('#Ours .diag-section-header span').textContent = 'Ours ▼';
+				
+				  Object.values(sections).forEach(section => section.innerHTML = '');
+				
+				  const filtered = data.filter(d => d.title === title);
+				
+				  ['Gemini', 'Janus', 'Ours'].forEach(model => {
+				    const items = filtered.filter(item => item.model === model);
+				    const modelSectionContent = sections[model];
+				    if (modelSectionContent) {
+				        if (items.length === 0) {
+				            modelSectionContent.innerHTML = '<p><i>No data for this example.</i></p>';
+				        } else {
+				            items.forEach(item => {
+				                const el = createDialogueElement(item);
+				                modelSectionContent.appendChild(el);
+				            });
+				        }
+				    }
 				  });
 				}
 				
-				// 页面DOM加载完成后执行
-				document.addEventListener('DOMContentLoaded', renderDialogs);
+				document.querySelectorAll('.diag-section-header').forEach(header => { // Prefixed
+				  header.addEventListener('click', () => {
+				    const content = header.nextElementSibling;
+				    const currentSpan = header.querySelector('span');
+				    if (content.style.display === 'none' || content.style.display === '') {
+				      content.style.display = 'block';
+				      if(currentSpan) currentSpan.textContent = currentSpan.textContent.replace('▶', '▼');
+				    } else {
+				      content.style.display = 'none';
+				      if(currentSpan) currentSpan.textContent = currentSpan.textContent.replace('▼', '▶');
+				    }
+				  });
+				});
+				
+				exampleSelect.addEventListener('change', e => {
+				  renderExample(e.target.value);
+				});
+				
+				if (uniqueTitles.length > 0) {
+				    exampleSelect.value = uniqueTitles[0];
+				    renderExample(uniqueTitles[0]);
+				}
+				
 			</script>
 		</section>
 		<!-- @PAN TODO: bibtex -->
