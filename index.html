@@ -10,7 +10,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Multi-Turn Interleaved Preference Alignment with Human Feedback</title>
 	<link rel="icon" href="./assets/logo_transp.png" type="image/png">
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 	<!-- 引入css文件 -->
 	<link href="./assets/css" rel="stylesheet">
 	<link rel="stylesheet" href="./assets/bulma.min.css">
@@ -493,25 +492,38 @@
 					</div>
 				</div>
 			</div>
-			<!-- Fullscreen Image Modal -->
-			<div id="fullscreen-image-modal" class="modal" style="display: none;">
-				<div class="modal-content">
-					<span class="close" onclick="closeFullscreenImage()">&times;</span>
-					<img id="fullscreen-image" src="" style="width: 100%; height: auto;">
-				</div>
-			</div>
-			<script>
-				function openFullscreenImage(imageSrc) {
-				    document.getElementById('fullscreen-image').src = imageSrc;
-				    document.getElementById('fullscreen-image-modal').style.display = 'block';
-				}
-				
-				function closeFullscreenImage() {
-				    document.getElementById('fullscreen-image-modal').style.display = 'none';
-				}
-			</script>
-		</div>
+
+<!-- Fullscreen Image Modal -->
+<div id="fullscreen-image-modal" class="modal" style="display: none;">
+    <div class="modal-content" style="position: relative;">
+        <span class="close" onclick="closeFullscreenImage()" style="position: absolute; top: 10px; right: 10px; cursor: pointer; font-size: 24px;">&times;</span>
+        <img id="fullscreen-image" src="" style="width: 100%; height: auto;">
+    </div>
+</div>
+
+<script>
+    function openFullscreenImage(imageSrc) {
+        const modal = document.getElementById('fullscreen-image-modal');
+        const fullscreenImage = document.getElementById('fullscreen-image');
+        fullscreenImage.src = imageSrc;
+        modal.style.display = 'block';
+    }
+    
+    function closeFullscreenImage() {
+        const modal = document.getElementById('fullscreen-image-modal');
+        modal.style.display = 'none';
+    }
+
+    // Close the modal when clicking outside the modal content
+    window.onclick = function(event) {
+        const modal = document.getElementById('fullscreen-image-modal');
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    }
+</script>
 </section>
+
 <section class="hero is-light is-small">
 	<div class="hero-body has-text-centered">
 		<!-- <h1 class="title is-1 mathvista"><img src="static/images/mathvista.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>MathVista Dataset</h1> -->
@@ -1101,7 +1113,7 @@
 			</div>
 		</section>
 		<section>
-			<h2 class="title is-3" id="Evaluation" style="text-align: center;"> Data Sample </h2>
+			<h2 class="title is-3" id="Evaluation" style="text-align: center;"> Case Study </h2>
 			<div id="dialog-sample-container"></div>
 			<script>
 				const data = [
