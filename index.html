@@ -40,6 +40,7 @@
 			border-collapse: collapse;
 			margin: 20px 0;
 			background-color: white;
+			border: none;
 		}
 		
 		/* 表格布局 */
@@ -48,7 +49,7 @@
 			padding: 12px 15px;
 			text-align: center;
 			vertical-align: middle;
-			border: 1px solid #e1e1e1;
+			border: none;
 		}
 		
 		/* 表头样式 */
@@ -180,6 +181,11 @@
 		    text-decoration: none;
 		    cursor: pointer;
 		}
+	</style>
+	<style>
+		p, li, strong {
+		text-align: left;
+			}
 	</style>
 	<!-- 引入js文件 -->
 	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
@@ -331,9 +337,9 @@
 		<div class="content has-text-centered">
 			<img src="./assets/figure1_0515.png" alt="geometric reasoning" width="100%" style="box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); border-radius: 8px;">
 			<h2 style="text-align: center;">Abstract</h2>
-			<p style="text-align: justify;"> As multimodal large models (MLLMs) continue to advance across challenging tasks, a key question emerges: <strong><em>What essential capabilities are still missing?</em></strong> A critical aspect of human learning is continuous interaction with the
-				environment -- not limited to language, but also involving multimodal understanding and generation. To move closer to human-level intelligence, models must similarly support <strong>multi-turn</strong>, <strong>multimodal interaction</strong>. In particular, they should comprehend
-				interleaved multimodal contexts and respond coherently in ongoing exchanges. In this work, we present <strong>an initial exploration</strong> through the <span class="icon">
+			<p> As multimodal large models (MLLMs) continue to advance across challenging tasks, a key question emerges: <strong><em>What essential capabilities are still missing?</em></strong> A critical aspect of human learning is continuous interaction with the environment -- not limited to
+				language, but also involving multimodal understanding and generation. To move closer to human-level intelligence, models must similarly support <strong>multi-turn</strong>, <strong>multimodal interaction</strong>. In particular, they should comprehend interleaved multimodal contexts
+				and respond coherently in ongoing exchanges. In this work, we present <strong>an initial exploration</strong> through the <span class="icon">
 					<img src="./assets/logo_transp.png" alt="HuggingFace" style="width: 1em; height: 1em;" />
 				</span><strong>InterMT</strong> -- <strong>the first preference dataset for <em>multi-turn</em> multimodal interaction</strong>, grounded in real human feedback. In this exploration, we particularly emphasize the importance of human oversight, introducing expert annotations to guide
 				the process, motivated by the fact that current MLLMs lack such complex interactive capabilities. <span class="icon">
@@ -523,8 +529,8 @@
 					<div id="results-carousel" class="carousel results-carousel">
 						<div class="content has-text-centered">
 							<img src="./assets/Figure5-1.png" style="width: 65%;">
-							<p style="text-align: justify; margin-left: auto; margin-right: auto; width: 75%;"> Since the dataset captures <em>real</em> human preferences across multiple dimensions at both <em>global</em> and <em>local</em> levels, it is meaningful to analyze the correlations among
-								these dimensions, examine the relationship between per-turn preferences and overall evaluation, and further compare human feedback with AI feedback. <br>
+							<p style="margin-left: auto; margin-right: auto; width: 75%;"> Since the dataset captures <em>real</em> human preferences across multiple dimensions at both <em>global</em> and <em>local</em> levels, it is meaningful to analyze the correlations among these dimensions,
+								examine the relationship between per-turn preferences and overall evaluation, and further compare human feedback with AI feedback. <br>
 								<br>
 								<strong>Correlation Analysis</strong>
 								<br> Three key findings from the analysis: <br> 1. <strong>Modality perception precedes effective modality fusion:</strong> The evaluation of image-text consistency is strongly correlated with visual perceptual quality, indicating that clear perception of individual
@@ -548,18 +554,18 @@
 						</div>
 						<div class="content has-text-centered">
 							<img src="./assets/Figure5.png" style="width: 60%;">
-							<p style="text-align: justify; margin-left: auto; margin-right: auto; width: 75%;"> This figure presents an analysis of the agreement among human annotators, AI annotators, and human verifiers. Our observations reveal that while AI annotators achieved an average score
-								agreement of approximately 60% on <em>local</em> evaluation tasks, their agreement with humans is considerably lower for <em>global</em>, namely, longer-horizon, evaluation tasks. This finding partly indicates that current advanced models struggle to reach consensus
-								with human judgments when performing score evaluations in multi-turn, multi-modal conversation tasks. We further conduct a broader investigation of the ability of MLLMs to assist human judges in three types of tasks. Consequently, until further validation of AI
-								feedback's efficacy, we maintain a conservative position, considering the replacement of human annotation to be presently challenging. </p>
+							<p style="margin-left: auto; margin-right: auto; width: 75%;"> This figure presents an analysis of the agreement among human annotators, AI annotators, and human verifiers. Our observations reveal that while AI annotators achieved an average score agreement of
+								approximately 60% on <em>local</em> evaluation tasks, their agreement with humans is considerably lower for <em>global</em>, namely, longer-horizon, evaluation tasks. This finding partly indicates that current advanced models struggle to reach consensus with human
+								judgments when performing score evaluations in multi-turn, multi-modal conversation tasks. We further conduct a broader investigation of the ability of MLLMs to assist human judges in three types of tasks. Consequently, until further validation of AI feedback's
+								efficacy, we maintain a conservative position, considering the replacement of human annotation to be presently challenging. </p>
 						</div>
 						<div class="content has-text-centered">
 							<img src="./assets/Figure6_00.jpg" style="width: 65%;">
-							<p style="text-align: justify; margin-left: auto; margin-right: auto; width: 75%;">Our findings, presented in this figure, suggest that modeling fine-grained <em>local (turn-level)</em> preferences is more effective in capturing human values and achieving better
-								alignment. In contrast, directly modeling <em>global (conversation-level)</em> preferences often fails to reflect these nuanced preferences, especially in complex, long-horizon scenarios. We examine the bidirectional transfer between turn-level (<em>local</em>) and
-								conversation-level (<em>global</em>) human preferences. Both <em>local-to-global</em> and <em>global-to-local</em> transfers are effective, since multi-turn questions typically hinge on the seed question’s intent. However, <em>global-to-local</em> transfer is
-								consistently easier and better aligned with actual preferences. We attribute this to the greater stability of global preferences—reflecting users’ overarching tendencies—whereas local preferences are short-term and more context-dependent, making
-								<em>local-to-global</em> transfer more challenging.</p>
+							<p style="margin-left: auto; margin-right: auto; width: 75%;">Our findings, presented in this figure, suggest that modeling fine-grained <em>local (turn-level)</em> preferences is more effective in capturing human values and achieving better alignment. In contrast,
+								directly modeling <em>global (conversation-level)</em> preferences often fails to reflect these nuanced preferences, especially in complex, long-horizon scenarios. We examine the bidirectional transfer between turn-level (<em>local</em>) and conversation-level
+								(<em>global</em>) human preferences. Both <em>local-to-global</em> and <em>global-to-local</em> transfers are effective, since multi-turn questions typically hinge on the seed question’s intent. However, <em>global-to-local</em> transfer is consistently easier and
+								better aligned with actual preferences. We attribute this to the greater stability of global preferences—reflecting users’ overarching tendencies—whereas local preferences are short-term and more context-dependent, making <em>local-to-global</em> transfer more
+								challenging.</p>
 						</div>
 					</div>
 				</div>
@@ -575,31 +581,30 @@
 						<div id="results-carousel" class="carousel results-carousel">
 							<div class="content has-text-centered">
 								<img src="./assets/Figure7_00.jpg" style="width: 70%;">
-								<p style="text-align: justify; margin-left: auto; margin-right: auto; width: 75%;"> As shown in the Figure, for evaluation turn \( k \), as the number of preceding turns increases from 1 to \( k-1 \), the model's accuracy continues to improve, with average future
-									performance rising, indicating that training on multi-turn data with a limited number of turns can generalize to longer horizons.</p>
-								<p style="text-align: justify; margin-left: auto; margin-right: auto; width: 75%;"> Regarding the number of turns in the training data, the generalization effect shows a diminishing trend. As demonstrated in the Figure, training with \( k \) turns does improve
-									performance for \( k+1 \rightarrow T \) turns, but this effect diminishes as the number of turns increases. This decline can be attributed to three factors:</p>
-								<ul style="text-align: justify; margin-left: auto; margin-right: auto; width: 100%;">
-									<li style="text-align: justify; margin-left: auto; margin-right: auto; width: 75%;"> <em>Diminishing returns:</em> As the number of turns increases, the model's ability to capture long-term preferences weakens, leading to a performance plateau beyond a certain
-										threshold.</li>
-									<li style="text-align: justify; margin-left: auto; margin-right: auto; width: 75%;"> <em>Contextual drift:</em> As the conversation progresses, earlier turns lose relevance, causing the model to lose context and negatively affecting later predictions.</li>
-									<li style="text-align: justify; margin-left: auto; margin-right: auto; width: 75%;"> <em>Intention-preference interaction:</em> The evolving relationship between user intentions (e.g., task-oriented goals) and latent preferences (e.g., personal preferences) may
-										complicate the model's ability to distinguish between the two, with the conversational structure influencing predictive accuracy.</li>
+								<p style="margin-left: auto; margin-right: auto; width: 75%;"> As shown in the Figure, for evaluation turn \( k \), as the number of preceding turns increases from 1 to \( k-1 \), the model's accuracy continues to improve, with average future performance rising,
+									indicating that training on multi-turn data with a limited number of turns can generalize to longer horizons.</p>
+								<p style="margin-left: auto; margin-right: auto; width: 75%;"> Regarding the number of turns in the training data, the generalization effect shows a diminishing trend. As demonstrated in the Figure, training with \( k \) turns does improve performance for \( k+1
+									\rightarrow T \) turns, but this effect diminishes as the number of turns increases. This decline can be attributed to three factors:</p>
+								<ul style="margin-left: auto; margin-right: auto; width: 100%;">
+									<li style="margin-left: auto; margin-right: auto; width: 75%;"> <em>Diminishing returns:</em> As the number of turns increases, the model's ability to capture long-term preferences weakens, leading to a performance plateau beyond a certain threshold.</li>
+									<li style="margin-left: auto; margin-right: auto; width: 75%;"> <em>Contextual drift:</em> As the conversation progresses, earlier turns lose relevance, causing the model to lose context and negatively affecting later predictions.</li>
+									<li style="margin-left: auto; margin-right: auto; width: 75%;"> <em>Intention-preference interaction:</em> The evolving relationship between user intentions (e.g., task-oriented goals) and latent preferences (e.g., personal preferences) may complicate the model's
+										ability to distinguish between the two, with the conversational structure influencing predictive accuracy.</li>
 								</ul>
 							</div>
 							<div class="content has-text-centered">
 								<img src="./assets/Figure8-v1_00.jpg" style="width: 75%;">
-								<p style="text-align: justify; margin-left: auto; margin-right: auto; width: 75%;"> The dataset includes multi-turn multimodal interleaved communication histories and human-annotated ground truth. Evaluated models must assess the conversation at both the turn and
-									conversation levels across nine dimensions, following a set of guidelines.</p>
-								<p style="text-align: justify; margin-left: auto; margin-right: auto; width: 75%;"><em>Scoring Evaluation</em> requires the model to assign scores on a 0-3 scale, with evaluation based on agreement and Pearson similarity.</p>
-								<p style="text-align: justify; margin-left: auto; margin-right: auto; width: 75%;"><em>Pair Comparison</em> directly compares two individual turns or entire conversations, without considering ties, and is evaluated for accuracy against human judgments.</p>
-								<p style="text-align: justify; margin-left: auto; margin-right: auto; width: 75%;"><em>Crucial Step Recognition</em> addresses a key challenge in multi-turn conversations: accurately identifying the user’s intent and determining whether it has been fulfilled,
-									evaluated by the score provided by the judge according to the human-annotated reference answers.</p>
+								<p style="margin-left: auto; margin-right: auto; width: 75%;"> The dataset includes multi-turn multimodal interleaved communication histories and human-annotated ground truth. Evaluated models must assess the conversation at both the turn and conversation levels
+									across nine dimensions, following a set of guidelines.</p>
+								<p style="margin-left: auto; margin-right: auto; width: 75%;"><em>Scoring Evaluation</em> requires the model to assign scores on a 0-3 scale, with evaluation based on agreement and Pearson similarity.</p>
+								<p style="margin-left: auto; margin-right: auto; width: 75%;"><em>Pair Comparison</em> directly compares two individual turns or entire conversations, without considering ties, and is evaluated for accuracy against human judgments.</p>
+								<p style="margin-left: auto; margin-right: auto; width: 75%;"><em>Crucial Step Recognition</em> addresses a key challenge in multi-turn conversations: accurately identifying the user’s intent and determining whether it has been fulfilled, evaluated by the score
+									provided by the judge according to the human-annotated reference answers.</p>
 							</div>
 							<div class="content has-text-centered">
 								<img src="./assets/model_scores_00.jpg" style="width: 65%;">
-								<p style="text-align: justify; margin-left: auto; margin-right: auto; width: 75%;">We evaluated 6 advanced MLLMs for their ability to assist in judgment for multi-turn multimodal interactions, considering the nine dimensions proposed above. The results reveal key
-									observations: <strong>Existing models still face challenges in aligning with long-horizon human values, but they perform more accurately in evaluating local, fine-grained preferences</strong>. As shown in Table below(<span class="icon">
+								<p style="margin-left: auto; margin-right: auto; width: 75%;">We evaluated 6 advanced MLLMs for their ability to assist in judgment for multi-turn multimodal interactions, considering the nine dimensions proposed above. The results reveal key observations:
+									<strong>Existing models still face challenges in aligning with long-horizon human values, but they perform more accurately in evaluating local, fine-grained preferences</strong>. As shown in Table below(<span class="icon">
 										<img src="./assets/logo_transp.png" alt="HuggingFace" style="width: 1em; height: 1em;" />
 									</span><strong>InterMT Performance Evaluation</strong>), all models exhibit significant gaps in performance compared to humans in both Score Evaluation and Pair Comparison tasks. However, the models demonstrate better accuracy when assessing local dimensions
 									rather than global dimensions, suggesting that capturing fine-grained (<em>e.g.</em>, turn-level) human preferences is crucial for both evaluation and alignment with human dynamic and long-horizon values. However, there is cause for optimism: current MLLMs exhibit
@@ -1093,294 +1098,295 @@
 				</div>
 			</div>
 			</div>
-			<section>
-				<h2 class="title is-3" id="Evaluation" style="text-align: center;"> Data Sample </h2>
-				<div id="dialog-sample-container"></div>
-				<script>
-					const data = [
-					    {
-					        "group": "Group 1",
-					        "examples": [
-					          {
-					            "model": "Janus",
-					            "title": "Example 1",
-					            "prompt": "What immediate actions would you recommend for the local authorities to take in response to the situation depicted in the image, and why?",
-					            "response": "The image depicts a flooded area, with water covering the street and reflecting surrounding trees and buildings. The floodwater appears to be at a significant depth, potentially affecting traffic and access to homes. Immediate actions for local authorities to take in response to this situation would include: 1. Evacuation and Safety Measures: Ensure the safety of residents by providing alternative shelters and evacuation routes. This includes setting up emergency shelters and coordinating with local emergency services. 2. Flood Control and Drainage: Activate flood control measures such as opening storm drains and releasing water from nearby reservoirs or flood management systems to reduce water accumulation. 3. Communication and Coordination: Establish communication channels with affected residents to provide updates on the flood situation, safety instructions, and resources available. 4. Damage Assessment and Repair: Send teams to assess the extent of the damage and initiate repair efforts to restore infrastructure, such as roads, bridges, and utilities. 5. Environmental Monitoring: Monitor water quality and potential contamination risks to ensure public health and safety.",
-					            "image": ".\\assets\\diag_sample\\image1.jpg"
-					          },
-					          {
-					            "model": "Janus",
-					            "title": "Example 2",
-					            "prompt": "Please tell me how to build temporary roads or bridges, and generate one in the diagram.",
-					            "response": "To build temporary roads or bridges, follow these steps: 1. Assessment and Planning: Evaluate the flood-affected area to determine the most suitable locations for temporary roads or bridges. Consider factors such as water depth, flow velocity, and structural stability. 2. Materials and Equipment: Gather materials like steel beams, concrete blocks, and construction tools. Ensure that the equipment is suitable for the water conditions, such as using waterproof materials and equipment. 3. Foundation Preparation: Prepare the ground by clearing debris and leveling the surface. Ensure that the foundation is stable and can support the weight of the temporary structure. 4. Construction: Construct the temporary road or bridge using the prepared materials. Use strong materials to ensure durability and safety. 5. Testing and Maintenance: Test the temporary structure for stability and safety. Regularly maintain it to ensure it remains functional and safe for use.",
-					            "image": ".\\assets\\diag_sample\\image2.jpg"
-					          },
-					          {
-					            "model": "Janus",
-					            "title": "Example 3",
-					            "prompt": "How long does it take to build such a bridge?",
-					            "response": "Building a temporary bridge or road in flood-affected areas requires careful planning and execution. The time taken depends on several factors, including the complexity of the structure, the depth of the water, and the availability of materials and equipment. 1. Planning and Assessment: This phase typically takes a few days to a week. It involves assessing the flood conditions, determining the best location for the bridge or road, and planning the construction process. 2. Material Procurement: Gathering materials such as steel beams, concrete blocks, and construction tools can take a few days. 3. Construction: Building the bridge or road can take several weeks to a few months, depending on the complexity and the number of workers involved. 4. Testing and Maintenance: Once completed, the bridge or road needs to be tested for safety and durability. Regular maintenance is required to ensure its longevity. Overall, the construction of a temporary bridge or road in flood-affected areas can take anywhere from a few weeks to several months.",
-					            "image": ".\\assets\\diag_sample\\image3.png"
-					          },
-					          {
-					            "model": "Gemini",
-					            "title": "Example 4",
-					            "prompt": "What immediate actions would you recommend for the local authorities to take in response to the situation depicted in the image, and why?",
-					            "response": "1. Issue Emergency Alerts and Warnings: Utilize all available channels (sirens, SMS, social media, radio, television) to inform residents about the dangerous flooding and advise them to seek higher ground immediately. Emphasize the risks of driving or walking through floodwaters. 2. Activate Emergency Response Teams: Deploy police, fire department, and emergency medical services to the affected areas. Their immediate priorities should be: Life Safety: Conducting search and rescue operations for individuals trapped in homes or vehicles; Medical Assistance: Providing aid to anyone injured; Security: Securing the flooded areas to prevent looting and ensure public safety. 3. Establish Shelters: Open designated emergency shelters (schools, community centers, etc.) for displaced residents, providing them with temporary housing, food, water, and essential supplies. 4. Assess the Situation and Infrastructure: Begin assessing the extent of the damage to roads, bridges, power lines, and other critical infrastructure. This will help in understanding the scope of the disaster and planning the subsequent response. 5. Block Off Affected Roads: Close roads leading into and within the flooded areas to prevent further traffic and potential accidents in the dangerous conditions.",
-					            "image": ".\\assets\\diag_sample\\image4.png"
-					          },
-					          {
-					            "model": "Gemini",
-					            "title": "Example 5",
-					            "prompt": "In addition to these immediate actions, what long-term strategies could the local authorities implement to prevent or mitigate future flooding incidents in this area?",
-					            "response": "Implementing flood-prevention measures such as improving drainage systems, raising roads, emergency response plans, and regular maintenance checks.",
-					            "image": ".\\assets\\diag_sample\\image5.png"
-					          },
-					          {
-					            "model": "Gemini",
-					            "title": "Example 6",
-					            "prompt": "Could you elaborate on how the local authorities might go about 'improving the city’s drainage system'?",
-					            "response": "1. Upgrading and Expanding Drainage Infrastructure, 2. Implementing Green Infrastructure, 3. Advanced Hydrological Modeling, 4. Sensor-Based Monitoring Systems, 5. Public Awareness and Engagement.",
-					            "image": ".\\assets\\diag_sample\\image6.png"
-					          }
-					        ]
-					    },
-					    {
-					        "group": "Group 2",
-					        "examples": [
-					          {
-					            "model": "From Dataset",
-					            "title": "Example 7",
-					            "prompt": "What immediate actions would you recommend for the local authorities to take in response to the situation depicted in the image, and why?",
-					            "response": "The image shows a flooded street with water reaching the curb and partially submerging parked vehicles. Prompt and coordinated evacuation is essential to ensure resident safety. Emergency services should be deployed to assist vulnerable populations, while barriers and signage can prevent vehicles from entering hazardous areas. In parallel, assessing drainage system blockages and deploying pumps could help reduce water levels and restore access. Continuous monitoring of water quality is also necessary to prevent health risks.",
-					            "image": "#"
-					          },
-					          {
-					            "model": "From Dataset",
-					            "title": "Example 8",
-					            "prompt": "In addition to these immediate actions, what long-term strategies could the local authorities implement to prevent or mitigate future flooding incidents in this area?",
-					            "response": "Based on the previous response, I would recommend a combination of gray and green infrastructure upgrades. This includes enlarging stormwater drains, constructing retention basins, and restoring wetlands to act as natural buffers. Implementing permeable pavements and urban green spaces can help absorb runoff. Regular maintenance schedules for clearing debris and public education campaigns on proper waste disposal will further ensure the resilience of the flood management system.",
-					            "image": "#"
-					          },
-					          {
-					            "model": "From Dataset",
-					            "title": "Example 9",
-					            "prompt": "That's a great overview. Could you elaborate on how the local authorities might go about 'improving the city's drainage system'? What specific improvements or technologies might be considered?",
-					            "response": "To improve the city's drainage system, authorities can retrofit existing pipes with larger-diameter conduits and install smart sensors to monitor flow rates in real time. Incorporating automated pump stations that activate during peak flows ensures rapid response. Advanced hydrological modeling can identify bottlenecks, guiding targeted upgrades. Finally, integrating rainwater harvesting systems in public buildings can reduce the burden on sewers during heavy storms.",
-					            "image": ".\\assets\\diag_sample\\image6.png"
-					          },
-					          {
-					            "model": "Gemini",
-					            "title": "Example 10",
-					            "prompt": "Considering the cleanliness and arrangement, what can you infer about the maintenance of this bathroom?",
-					            "response": "The bathroom appears meticulously cleaned and well-organized, with spotless surfaces and neatly arranged toiletries. The grout lines are free of mold, and no clutter is visible on countertops, indicating regular upkeep by diligent maintenance staff or homeowners. Such attention to detail suggests a strong commitment to hygiene and order.",
-					            "image":".\\assets\\diag_sample\\image7.png"
-					          },
-					          {
-					            "model": "Gemini",
-					            "title": "Example 11",
-					            "prompt": "The bathroom image you generated looks a bit cluttered and cramped. What additions could enhance the bathroom's functionality or aesthetics?",
-					            "response": "To improve functionality and aesthetics, consider adding wall-mounted shelving or recessed niches for storage to clear countertop space. A larger mirror with integrated LED lighting can visually expand the space and boost illumination. Slimline cabinets under the sink would hide essentials, while decorative accents—such as a stylish soap dispenser or potted plant—add personality without overcrowding.",
-					            "image": ".\\assets\\diag_sample\\image8.png"
-					          },
-					          {
-					            "model": "Gemini",
-					            "title": "Example 12",
-					            "prompt": "That's helpful! Considering the potential for adding items, how would you prioritize these additions based on cost-effectiveness and impact on the bathroom's overall appeal?",
-					            "response": "First, install wall-mounted shelves or storage niches—these are low-cost but free up valuable counter space. Next, upgrade lighting with an LED-backlit mirror to enhance brightness and modernize the look. Then, add slimline cabinetry under the sink for hidden storage. Decorative touches like a soap dispenser and small plant come last, as they have lower impact on functionality but boost aesthetic appeal.",
-					            "image": ".\\assets\\diag_sample\\image9.png"
-					          },
-					          {
-					            "model": "Janus",
-					            "title": "Example 13",
-					            "prompt": "Considering the cleanliness and arrangement, what can you infer about the maintenance of this bathroom?",
-					            "response": "The bathroom appears to be well-maintained, with uniformly clean surfaces and minimal clutter. The arrangement of toiletries and towels is orderly, suggesting that regular cleaning routines are followed. Overall, the space reflects a high standard of hygiene and organization.",
-					            "image": ".\\assets\\diag_sample\\image10.png"
-					          },
-					          {
-					            "model": "Janus",
-					            "title": "Example 14",
-					            "prompt": "The toilet picture you generated looks dark and plain. What additions could enhance the bathroom's functionality or aesthetics?",
-					            "response": "To enhance the space:\n1. **Lighting:** Add a brighter, modern fixture above the mirror to improve visibility.\n2. **Storage Solutions:** Install floating shelves or a slim cabinet for toiletries.\n3. **Decorative Elements:** Introduce a framed mirror or artwork to add character.\n4. **Color Scheme:** Apply an accent tile backsplash or fresh paint to liven the walls.\n5. **Mirror Frame:** Add a decorative frame around the mirror for a cohesive, elegant look.",
-					            "image": ".\\assets\\diag_sample\\image11.png"
-					          },
-					          {
-					            "model": "Janus",
-					            "title": "Example 15",
-					            "prompt": "Please present the complete scene of this toilet to me, not just the sink.",
-					            "response": "The complete scene includes a compact vanity with a sleek faucet, a pedestal toilet with a soft-close lid, and a corner-mounted towel rack. The floor features light-gray porcelain tiles, while walls are painted in a soft off-white. A small potted plant sits on the windowsill to add a touch of greenery, making the space both functional and inviting.",
-					            "image":".\\assets\\diag_sample\\image12.png"
-					          },
-					          {
-					            "model": "From Dataset",
-					            "title": "Example 16",
-					            "prompt": "Considering the cleanliness and arrangement, what can you infer about the maintenance of this bathroom?",
-					            "response": "Based on the cleanliness of the sink area and the orderly arrangement of items, the bathroom seems to be maintained regularly. Surfaces are free of stains, and fixtures show no signs of wear, indicating consistent care and upkeep.",
-					            "image": ".\\assets\\diag_sample\\image13.png"
-					          },
-					          {
-					            "model": "From Dataset",
-					            "title": "Example 17",
-					            "prompt": "You mentioned that the bathroom might need to be updated. What additions could enhance the bathroom's functionality or aesthetics?",
-					            "response": "Updating or finishing the empty wall space with floating shelves or a slim cabinet could add storage without crowding the floor. A new mirror above the sink would improve both function and visual space. Simple decorative elements—like a patterned rug or matching soap dispenser—can add warmth and personality.",
-					            "image": ".\\assets\\diag_sample\\image14.png"
-					          },
-					          {
-					            "model": "From Dataset",
-					            "title": "Example 18",
-					            "prompt": "That's helpful! Considering the potential for adding items, how would you prioritize these additions based on cost-effectiveness and impact on the bathroom's overall appeal?",
-					            "response": "1. **Additional Storage:** Floating shelves offer high utility at low cost.\n2. **Mirror Above Sink:** Increases perceived space and brightness.\n3. **Decorative Elements:** Small accents like soap dispensers add style affordably.\n4. **Lighting Upgrade:** LED fixtures save energy and improve ambiance.\n5. **Tile Accents:** A backsplash refreshes the look without full renovation.",
-					            "image": ".\\assets\\diag_sample\\image15.jpg"
-					          }
-					        ]
-					      }
-					      
-					];
-					
-					// 解析内嵌编号列表（例如“1. xxx 2. xxx”）
-					function splitInlineNumberedList(text) {
-					  const listStart = text.search(/\d+\.\s/);
-					  if (listStart === -1) return { intro: text.trim(), list: null };
-					
-					  const intro = text.slice(0, listStart).trim();
-					  const pointsStr = text.slice(listStart);
-					
-					  // 使用正则匹配编号项，支持换行和中文逗号结尾清理
-					  const regex = /\d+\.\s([\s\S]*?)(?=\d+\.|$)/g;
-					  let match;
-					  const list = [];
-					  while ((match = regex.exec(pointsStr)) !== null) {
-					    list.push(match[1].trim().replace(/[,，]\s*$/, ''));
-					  }
-					  return { intro, list };
-					}
-					
-					// 打字机效果，支持简单HTML标签（不拆分标签，仅处理文本）
-					function typeWriter(target, htmlText, speed = 20, callback = null) {
-					  let i = 0;
-					  const text = htmlText;
-					  target.innerHTML = '';
-					
-					  function type() {
-					    if (i < text.length) {
-					      target.innerHTML += text.charAt(i);
-					      i++;
-					      setTimeout(type, speed);
-					    } else if (callback) {
-					      callback();
-					    }
-					  }
-					  type();
-					}
-					
-					// 渲染单条对话，打字机后显示图片和列表
-					function renderDialogItem(item, container, doneCallback) {
-					  const dialogItem = document.createElement('div');
-					  dialogItem.className = 'dialog-sample-item';
-					
-					  const promptP = document.createElement('p');
-					  promptP.innerHTML = `<strong>Q:</strong> ${item.prompt}`;
-					  dialogItem.appendChild(promptP);
-					
-					  const answerDiv = document.createElement('div');
-					  answerDiv.innerHTML = '<strong>A:</strong> ';
-					  dialogItem.appendChild(answerDiv);
-					
-					  const { intro, list } = splitInlineNumberedList(item.response);
-					
-					  const span = document.createElement('span');
-					  answerDiv.appendChild(span);
-					
-					  typeWriter(span, intro + (list ? ' ' : ''), 20, () => {
-					    if (list) {
-					      const ol = document.createElement('ol');
-					      list.forEach(point => {
-					        const li = document.createElement('li');
-					        li.textContent = point;
-					        ol.appendChild(li);
-					      });
-					      answerDiv.appendChild(ol);
-					    }
-					    if (item.image && item.image !== "#") {
-					      const img = document.createElement('img');
-					      img.src = item.image;
-					      img.alt = 'Response Image';
-					      dialogItem.appendChild(img);
-					    }
-					    doneCallback();
-					  });
-					
-					  container.appendChild(dialogItem);
-					}
-					
-					// 根据模型分类，生成折叠面板，点击加载内容
-					function renderDialogs() {
-					  const container = document.getElementById('dialog-sample-container');
-					  container.innerHTML = '';
-					
-					  // 收集所有示例到一个数组，方便过滤
-					  let allExamples = [];
-					  data.forEach(group => {
-					    group.examples.forEach(ex => {
-					      allExamples.push(ex);
-					    });
-					  });
-					
-					  // 需要展示的模型列表
-					  const models = ["Janus", "Gemini"];
-					
-					  models.forEach(model => {
-					    const groupDiv = document.createElement('div');
-					    groupDiv.className = 'dialog-sample-group';
-					
-					    const header = document.createElement('div');
-					    header.className = 'dialog-sample-header';
-					    header.textContent = `${model} - Click to Expand`;
-					
-					    const content = document.createElement('div');
-					    content.className = 'dialog-content';
-					    content.style.display = 'none'; // 默认折叠
-					
-					    groupDiv.appendChild(header);
-					    groupDiv.appendChild(content);
-					    container.appendChild(groupDiv);
-					
-					    let loaded = false;  // 防止多次加载
-					
-					    header.addEventListener('click', () => {
-					      if (content.style.display === 'flex') {
-					        content.style.display = 'none';
-					      } else {
-					        content.style.display = 'flex';
-					        if (!loaded) {
-					          // 按模型过滤数据
-					          const filteredExamples = allExamples.filter(e => e.model === model);
-					          let index = 0;
-					
-					          function next() {
-					            if (index >= filteredExamples.length) return;
-					            renderDialogItem(filteredExamples[index], content, () => {
-					              index++;
-					              next();
-					            });
-					          }
-					          next();
-					          loaded = true;
-					        }
-					      }
-					    });
-					  });
-					}
-					
-					// 页面DOM加载完成后执行
-					document.addEventListener('DOMContentLoaded', renderDialogs);
-				</script>
-			</section>
-			<!-- @PAN TODO: bibtex -->
-			<section class="section" id="BibTeX">
-				<div class="container is-max-desktop content">
-					<h2 class="title is-3 has-text-centered">BibTeX</h2>
-					<pre><code>@article{chen2025intermt,
+		</section>
+		<section>
+			<h2 class="title is-3" id="Evaluation" style="text-align: center;"> Data Sample </h2>
+			<div id="dialog-sample-container"></div>
+			<script>
+				const data = [
+				    {
+				        "group": "Group 1",
+				        "examples": [
+				          {
+				            "model": "Janus",
+				            "title": "Example 1",
+				            "prompt": "What immediate actions would you recommend for the local authorities to take in response to the situation depicted in the image, and why?",
+				            "response": "The image depicts a flooded area, with water covering the street and reflecting surrounding trees and buildings. The floodwater appears to be at a significant depth, potentially affecting traffic and access to homes. Immediate actions for local authorities to take in response to this situation would include: 1. Evacuation and Safety Measures: Ensure the safety of residents by providing alternative shelters and evacuation routes. This includes setting up emergency shelters and coordinating with local emergency services. 2. Flood Control and Drainage: Activate flood control measures such as opening storm drains and releasing water from nearby reservoirs or flood management systems to reduce water accumulation. 3. Communication and Coordination: Establish communication channels with affected residents to provide updates on the flood situation, safety instructions, and resources available. 4. Damage Assessment and Repair: Send teams to assess the extent of the damage and initiate repair efforts to restore infrastructure, such as roads, bridges, and utilities. 5. Environmental Monitoring: Monitor water quality and potential contamination risks to ensure public health and safety.",
+				            "image": ".\\assets\\diag_sample\\image1.jpg"
+				          },
+				          {
+				            "model": "Janus",
+				            "title": "Example 2",
+				            "prompt": "Please tell me how to build temporary roads or bridges, and generate one in the diagram.",
+				            "response": "To build temporary roads or bridges, follow these steps: 1. Assessment and Planning: Evaluate the flood-affected area to determine the most suitable locations for temporary roads or bridges. Consider factors such as water depth, flow velocity, and structural stability. 2. Materials and Equipment: Gather materials like steel beams, concrete blocks, and construction tools. Ensure that the equipment is suitable for the water conditions, such as using waterproof materials and equipment. 3. Foundation Preparation: Prepare the ground by clearing debris and leveling the surface. Ensure that the foundation is stable and can support the weight of the temporary structure. 4. Construction: Construct the temporary road or bridge using the prepared materials. Use strong materials to ensure durability and safety. 5. Testing and Maintenance: Test the temporary structure for stability and safety. Regularly maintain it to ensure it remains functional and safe for use.",
+				            "image": ".\\assets\\diag_sample\\image2.jpg"
+				          },
+				          {
+				            "model": "Janus",
+				            "title": "Example 3",
+				            "prompt": "How long does it take to build such a bridge?",
+				            "response": "Building a temporary bridge or road in flood-affected areas requires careful planning and execution. The time taken depends on several factors, including the complexity of the structure, the depth of the water, and the availability of materials and equipment. 1. Planning and Assessment: This phase typically takes a few days to a week. It involves assessing the flood conditions, determining the best location for the bridge or road, and planning the construction process. 2. Material Procurement: Gathering materials such as steel beams, concrete blocks, and construction tools can take a few days. 3. Construction: Building the bridge or road can take several weeks to a few months, depending on the complexity and the number of workers involved. 4. Testing and Maintenance: Once completed, the bridge or road needs to be tested for safety and durability. Regular maintenance is required to ensure its longevity. Overall, the construction of a temporary bridge or road in flood-affected areas can take anywhere from a few weeks to several months.",
+				            "image": ".\\assets\\diag_sample\\image3.png"
+				          },
+				          {
+				            "model": "Gemini",
+				            "title": "Example 4",
+				            "prompt": "What immediate actions would you recommend for the local authorities to take in response to the situation depicted in the image, and why?",
+				            "response": "1. Issue Emergency Alerts and Warnings: Utilize all available channels (sirens, SMS, social media, radio, television) to inform residents about the dangerous flooding and advise them to seek higher ground immediately. Emphasize the risks of driving or walking through floodwaters. 2. Activate Emergency Response Teams: Deploy police, fire department, and emergency medical services to the affected areas. Their immediate priorities should be: Life Safety: Conducting search and rescue operations for individuals trapped in homes or vehicles; Medical Assistance: Providing aid to anyone injured; Security: Securing the flooded areas to prevent looting and ensure public safety. 3. Establish Shelters: Open designated emergency shelters (schools, community centers, etc.) for displaced residents, providing them with temporary housing, food, water, and essential supplies. 4. Assess the Situation and Infrastructure: Begin assessing the extent of the damage to roads, bridges, power lines, and other critical infrastructure. This will help in understanding the scope of the disaster and planning the subsequent response. 5. Block Off Affected Roads: Close roads leading into and within the flooded areas to prevent further traffic and potential accidents in the dangerous conditions.",
+				            "image": ".\\assets\\diag_sample\\image4.png"
+				          },
+				          {
+				            "model": "Gemini",
+				            "title": "Example 5",
+				            "prompt": "In addition to these immediate actions, what long-term strategies could the local authorities implement to prevent or mitigate future flooding incidents in this area?",
+				            "response": "Implementing flood-prevention measures such as improving drainage systems, raising roads, emergency response plans, and regular maintenance checks.",
+				            "image": ".\\assets\\diag_sample\\image5.png"
+				          },
+				          {
+				            "model": "Gemini",
+				            "title": "Example 6",
+				            "prompt": "Could you elaborate on how the local authorities might go about 'improving the city’s drainage system'?",
+				            "response": "1. Upgrading and Expanding Drainage Infrastructure, 2. Implementing Green Infrastructure, 3. Advanced Hydrological Modeling, 4. Sensor-Based Monitoring Systems, 5. Public Awareness and Engagement.",
+				            "image": ".\\assets\\diag_sample\\image6.png"
+				          }
+				        ]
+				    },
+				    {
+				        "group": "Group 2",
+				        "examples": [
+				          {
+				            "model": "From Dataset",
+				            "title": "Example 7",
+				            "prompt": "What immediate actions would you recommend for the local authorities to take in response to the situation depicted in the image, and why?",
+				            "response": "The image shows a flooded street with water reaching the curb and partially submerging parked vehicles. Prompt and coordinated evacuation is essential to ensure resident safety. Emergency services should be deployed to assist vulnerable populations, while barriers and signage can prevent vehicles from entering hazardous areas. In parallel, assessing drainage system blockages and deploying pumps could help reduce water levels and restore access. Continuous monitoring of water quality is also necessary to prevent health risks.",
+				            "image": "#"
+				          },
+				          {
+				            "model": "From Dataset",
+				            "title": "Example 8",
+				            "prompt": "In addition to these immediate actions, what long-term strategies could the local authorities implement to prevent or mitigate future flooding incidents in this area?",
+				            "response": "Based on the previous response, I would recommend a combination of gray and green infrastructure upgrades. This includes enlarging stormwater drains, constructing retention basins, and restoring wetlands to act as natural buffers. Implementing permeable pavements and urban green spaces can help absorb runoff. Regular maintenance schedules for clearing debris and public education campaigns on proper waste disposal will further ensure the resilience of the flood management system.",
+				            "image": "#"
+				          },
+				          {
+				            "model": "From Dataset",
+				            "title": "Example 9",
+				            "prompt": "That's a great overview. Could you elaborate on how the local authorities might go about 'improving the city's drainage system'? What specific improvements or technologies might be considered?",
+				            "response": "To improve the city's drainage system, authorities can retrofit existing pipes with larger-diameter conduits and install smart sensors to monitor flow rates in real time. Incorporating automated pump stations that activate during peak flows ensures rapid response. Advanced hydrological modeling can identify bottlenecks, guiding targeted upgrades. Finally, integrating rainwater harvesting systems in public buildings can reduce the burden on sewers during heavy storms.",
+				            "image": ".\\assets\\diag_sample\\image6.png"
+				          },
+				          {
+				            "model": "Gemini",
+				            "title": "Example 10",
+				            "prompt": "Considering the cleanliness and arrangement, what can you infer about the maintenance of this bathroom?",
+				            "response": "The bathroom appears meticulously cleaned and well-organized, with spotless surfaces and neatly arranged toiletries. The grout lines are free of mold, and no clutter is visible on countertops, indicating regular upkeep by diligent maintenance staff or homeowners. Such attention to detail suggests a strong commitment to hygiene and order.",
+				            "image":".\\assets\\diag_sample\\image7.png"
+				          },
+				          {
+				            "model": "Gemini",
+				            "title": "Example 11",
+				            "prompt": "The bathroom image you generated looks a bit cluttered and cramped. What additions could enhance the bathroom's functionality or aesthetics?",
+				            "response": "To improve functionality and aesthetics, consider adding wall-mounted shelving or recessed niches for storage to clear countertop space. A larger mirror with integrated LED lighting can visually expand the space and boost illumination. Slimline cabinets under the sink would hide essentials, while decorative accents—such as a stylish soap dispenser or potted plant—add personality without overcrowding.",
+				            "image": ".\\assets\\diag_sample\\image8.png"
+				          },
+				          {
+				            "model": "Gemini",
+				            "title": "Example 12",
+				            "prompt": "That's helpful! Considering the potential for adding items, how would you prioritize these additions based on cost-effectiveness and impact on the bathroom's overall appeal?",
+				            "response": "First, install wall-mounted shelves or storage niches—these are low-cost but free up valuable counter space. Next, upgrade lighting with an LED-backlit mirror to enhance brightness and modernize the look. Then, add slimline cabinetry under the sink for hidden storage. Decorative touches like a soap dispenser and small plant come last, as they have lower impact on functionality but boost aesthetic appeal.",
+				            "image": ".\\assets\\diag_sample\\image9.png"
+				          },
+				          {
+				            "model": "Janus",
+				            "title": "Example 13",
+				            "prompt": "Considering the cleanliness and arrangement, what can you infer about the maintenance of this bathroom?",
+				            "response": "The bathroom appears to be well-maintained, with uniformly clean surfaces and minimal clutter. The arrangement of toiletries and towels is orderly, suggesting that regular cleaning routines are followed. Overall, the space reflects a high standard of hygiene and organization.",
+				            "image": ".\\assets\\diag_sample\\image10.png"
+				          },
+				          {
+				            "model": "Janus",
+				            "title": "Example 14",
+				            "prompt": "The toilet picture you generated looks dark and plain. What additions could enhance the bathroom's functionality or aesthetics?",
+				            "response": "To enhance the space:\n1. **Lighting:** Add a brighter, modern fixture above the mirror to improve visibility.\n2. **Storage Solutions:** Install floating shelves or a slim cabinet for toiletries.\n3. **Decorative Elements:** Introduce a framed mirror or artwork to add character.\n4. **Color Scheme:** Apply an accent tile backsplash or fresh paint to liven the walls.\n5. **Mirror Frame:** Add a decorative frame around the mirror for a cohesive, elegant look.",
+				            "image": ".\\assets\\diag_sample\\image11.png"
+				          },
+				          {
+				            "model": "Janus",
+				            "title": "Example 15",
+				            "prompt": "Please present the complete scene of this toilet to me, not just the sink.",
+				            "response": "The complete scene includes a compact vanity with a sleek faucet, a pedestal toilet with a soft-close lid, and a corner-mounted towel rack. The floor features light-gray porcelain tiles, while walls are painted in a soft off-white. A small potted plant sits on the windowsill to add a touch of greenery, making the space both functional and inviting.",
+				            "image":".\\assets\\diag_sample\\image12.png"
+				          },
+				          {
+				            "model": "From Dataset",
+				            "title": "Example 16",
+				            "prompt": "Considering the cleanliness and arrangement, what can you infer about the maintenance of this bathroom?",
+				            "response": "Based on the cleanliness of the sink area and the orderly arrangement of items, the bathroom seems to be maintained regularly. Surfaces are free of stains, and fixtures show no signs of wear, indicating consistent care and upkeep.",
+				            "image": ".\\assets\\diag_sample\\image13.png"
+				          },
+				          {
+				            "model": "From Dataset",
+				            "title": "Example 17",
+				            "prompt": "You mentioned that the bathroom might need to be updated. What additions could enhance the bathroom's functionality or aesthetics?",
+				            "response": "Updating or finishing the empty wall space with floating shelves or a slim cabinet could add storage without crowding the floor. A new mirror above the sink would improve both function and visual space. Simple decorative elements—like a patterned rug or matching soap dispenser—can add warmth and personality.",
+				            "image": ".\\assets\\diag_sample\\image14.png"
+				          },
+				          {
+				            "model": "From Dataset",
+				            "title": "Example 18",
+				            "prompt": "That's helpful! Considering the potential for adding items, how would you prioritize these additions based on cost-effectiveness and impact on the bathroom's overall appeal?",
+				            "response": "1. **Additional Storage:** Floating shelves offer high utility at low cost.\n2. **Mirror Above Sink:** Increases perceived space and brightness.\n3. **Decorative Elements:** Small accents like soap dispensers add style affordably.\n4. **Lighting Upgrade:** LED fixtures save energy and improve ambiance.\n5. **Tile Accents:** A backsplash refreshes the look without full renovation.",
+				            "image": ".\\assets\\diag_sample\\image15.jpg"
+				          }
+				        ]
+				      }
+				      
+				];
+				
+				// 解析内嵌编号列表（例如“1. xxx 2. xxx”）
+				function splitInlineNumberedList(text) {
+				  const listStart = text.search(/\d+\.\s/);
+				  if (listStart === -1) return { intro: text.trim(), list: null };
+				
+				  const intro = text.slice(0, listStart).trim();
+				  const pointsStr = text.slice(listStart);
+				
+				  // 使用正则匹配编号项，支持换行和中文逗号结尾清理
+				  const regex = /\d+\.\s([\s\S]*?)(?=\d+\.|$)/g;
+				  let match;
+				  const list = [];
+				  while ((match = regex.exec(pointsStr)) !== null) {
+				    list.push(match[1].trim().replace(/[,，]\s*$/, ''));
+				  }
+				  return { intro, list };
+				}
+				
+				// 打字机效果，支持简单HTML标签（不拆分标签，仅处理文本）
+				function typeWriter(target, htmlText, speed = 20, callback = null) {
+				  let i = 0;
+				  const text = htmlText;
+				  target.innerHTML = '';
+				
+				  function type() {
+				    if (i < text.length) {
+				      target.innerHTML += text.charAt(i);
+				      i++;
+				      setTimeout(type, speed);
+				    } else if (callback) {
+				      callback();
+				    }
+				  }
+				  type();
+				}
+				
+				// 渲染单条对话，打字机后显示图片和列表
+				function renderDialogItem(item, container, doneCallback) {
+				  const dialogItem = document.createElement('div');
+				  dialogItem.className = 'dialog-sample-item';
+				
+				  const promptP = document.createElement('p');
+				  promptP.innerHTML = `<strong>Q:</strong> ${item.prompt}`;
+				  dialogItem.appendChild(promptP);
+				
+				  const answerDiv = document.createElement('div');
+				  answerDiv.innerHTML = '<strong>A:</strong> ';
+				  dialogItem.appendChild(answerDiv);
+				
+				  const { intro, list } = splitInlineNumberedList(item.response);
+				
+				  const span = document.createElement('span');
+				  answerDiv.appendChild(span);
+				
+				  typeWriter(span, intro + (list ? ' ' : ''), 20, () => {
+				    if (list) {
+				      const ol = document.createElement('ol');
+				      list.forEach(point => {
+				        const li = document.createElement('li');
+				        li.textContent = point;
+				        ol.appendChild(li);
+				      });
+				      answerDiv.appendChild(ol);
+				    }
+				    if (item.image && item.image !== "#") {
+				      const img = document.createElement('img');
+				      img.src = item.image;
+				      img.alt = 'Response Image';
+				      dialogItem.appendChild(img);
+				    }
+				    doneCallback();
+				  });
+				
+				  container.appendChild(dialogItem);
+				}
+				
+				// 根据模型分类，生成折叠面板，点击加载内容
+				function renderDialogs() {
+				  const container = document.getElementById('dialog-sample-container');
+				  container.innerHTML = '';
+				
+				  // 收集所有示例到一个数组，方便过滤
+				  let allExamples = [];
+				  data.forEach(group => {
+				    group.examples.forEach(ex => {
+				      allExamples.push(ex);
+				    });
+				  });
+				
+				  // 需要展示的模型列表
+				  const models = ["Janus", "Gemini"];
+				
+				  models.forEach(model => {
+				    const groupDiv = document.createElement('div');
+				    groupDiv.className = 'dialog-sample-group';
+				
+				    const header = document.createElement('div');
+				    header.className = 'dialog-sample-header';
+				    header.textContent = `${model} - Click to Expand`;
+				
+				    const content = document.createElement('div');
+				    content.className = 'dialog-content';
+				    content.style.display = 'none'; // 默认折叠
+				
+				    groupDiv.appendChild(header);
+				    groupDiv.appendChild(content);
+				    container.appendChild(groupDiv);
+				
+				    let loaded = false;  // 防止多次加载
+				
+				    header.addEventListener('click', () => {
+				      if (content.style.display === 'flex') {
+				        content.style.display = 'none';
+				      } else {
+				        content.style.display = 'flex';
+				        if (!loaded) {
+				          // 按模型过滤数据
+				          const filteredExamples = allExamples.filter(e => e.model === model);
+				          let index = 0;
+				
+				          function next() {
+				            if (index >= filteredExamples.length) return;
+				            renderDialogItem(filteredExamples[index], content, () => {
+				              index++;
+				              next();
+				            });
+				          }
+				          next();
+				          loaded = true;
+				        }
+				      }
+				    });
+				  });
+				}
+				
+				// 页面DOM加载完成后执行
+				document.addEventListener('DOMContentLoaded', renderDialogs);
+			</script>
+		</section>
+		<!-- @PAN TODO: bibtex -->
+		<section class="section" id="BibTeX">
+			<div class="container is-max-desktop content">
+				<h2 class="title is-3 has-text-centered">BibTeX</h2>
+				<pre><code>@article{chen2025intermt,
   title={InterMT: Multi-Turn Interleaved Preference Alignment with Human Feedback},
   author={Boyuan Chen and Donghai Hong and Jiaming Ji and Jiacheng Zheng and Bowen Dong and Jiayi Zhou and Kaile Wang and Josef Dai and Xuyao Wang and Wenqi Chen and Qirui Zheng and Wenxin Li and Sirui Han and Yike Guo and Yaodong Yang},
   year={2025},
@@ -1388,32 +1394,32 @@
   url={https://pku-intermt.github.io},
   keywords={Multimodal Learning, Multi-Turn Interaction, Human Feedback, Preference Alignment}
 }</code></pre>
-				</div>
-			</section>
-			<section>
-				<div class="section" id="org-banners" style="display: flex; align-items: center;">
-					<a href="https://www.pku.edu.cn/" target="_blank" rel="external" style="margin-right: 20px;">
-						<img class="center-block org-banner" src="./assets/PKU_logo.png" style="width: 150px; height: 150px;">
-					</a>
-					<a href="https://hkust.edu.hk/" target="_blank" class="ext-link" style="margin-left: 20px;">
-						<img class="center-block org-banner" src="./assets/HKUST-STD.svg" style="width: 400px; height: 200px;">
-					</a>
-				</div>
-			</section>
-			<footer class="footer">
-				<!-- <div class="container"> -->
-				<div class="content has-text-centered">
-				</div>
-				<div class="columns is-centered">
-					<div class="column is-8">
-						<div class="content">
-							<p> This website is website adapted from <a href="https://nerfies.github.io/">Nerfies</a>, licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>. </p>
-						</div>
-					</div>
-				</div>
-				<!-- </div> -->
-			</footer>
 			</div>
 		</section>
-		</body>
+		<section>
+			<div class="section" id="org-banners" style="display: flex; align-items: center;">
+				<a href="https://www.pku.edu.cn/" target="_blank" rel="external" style="margin-right: 20px;">
+					<img class="center-block org-banner" src="./assets/PKU_logo.png" style="width: 150px; height: 150px;">
+				</a>
+				<a href="https://hkust.edu.hk/" target="_blank" class="ext-link" style="margin-left: 20px;">
+					<img class="center-block org-banner" src="./assets/HKUST-STD.svg" style="width: 400px; height: 200px;">
+				</a>
+			</div>
+		</section>
+		<footer class="footer">
+			<!-- <div class="container"> -->
+			<div class="content has-text-centered">
+			</div>
+			<div class="columns is-centered">
+				<div class="column is-8">
+					<div class="content">
+						<p> This website is website adapted from <a href="https://nerfies.github.io/">Nerfies</a>, licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>. </p>
+					</div>
+				</div>
+			</div>
+			<!-- </div> -->
+		</footer>
+		</div>
+	</section>
+	</body>
 </html>
