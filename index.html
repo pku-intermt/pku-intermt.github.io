@@ -1260,187 +1260,187 @@
 			</div>
 			<script>
 				const data = [
-				    {
-				        "model": "Janus",
-				        "title": "Case 1",
-				        "figures": 1,
-				        "prompt": "What immediate actions would you recommend for the local authorities to take in response to the situation depicted in the image, and why?",
-				        "response": "The image depicts a flooded area, with water covering the street and reflecting surrounding trees and buildings. The floodwater appears to be at a significant depth, potentially affecting traffic and access to homes. Immediate actions for local authorities to take in response to this situation would include:\n1. **Evacuation and Safety Measures**: Ensure the safety of residents by providing alternative shelters and evacuation routes. This includes setting up emergency shelters and coordinating with local emergency services.\n2. **Flood Control and Drainage**: Activate flood control measures such as opening storm drains and releasing water from nearby reservoirs or flood management systems to reduce water accumulation.\n3. **Communication and Coordination**: Establish communication channels with affected residents to provide updates on the flood situation, safety instructions, and resources available.\n4. **Damage Assessment and Repair**: Send teams to assess the extent of the damage and initiate repair efforts to restore infrastructure, such as roads, bridges, and utilities.\n5. **Environmental Monitoring**: Monitor water quality and potential contamination risks to ensure public health and safety.",
-				        "imageR": "./assets/diag_sample/image1.jpg",
-				        "imageP": "#",
-				        "color": "default" // Note: 'color' in data is not directly used for class assignment anymore, classes are hardcoded by model
-				      },
-				      {
-				        "model": "Janus",
-				        "title": "Case 2",
-				        "figures": 1,
-				        "prompt": "Please tell me how to build temporary roads or bridges, and generate one in the diagram.",
-				        "response": "To build temporary roads or bridges, follow these steps:\n1. **Assessment and Planning**: Evaluate the flood-affected area to determine the most suitable locations for temporary roads or bridges. Consider factors such as water depth, flow velocity, and structural stability.\n2. **Materials and Equipment**: Gather materials like steel beams, concrete blocks, and construction tools. Ensure that the equipment is suitable for the water conditions, such as using waterproof materials and equipment.\n3. **Foundation Preparation**: Prepare the ground by clearing debris and leveling the surface. Ensure that the foundation is stable and can support the weight of the temporary structure.\n4. **Construction**: Construct the temporary road or bridge using the prepared materials. Use strong materials to ensure durability and safety.\n5. **Testing and Maintenance**: Test the temporary structure for stability and safety. Regularly maintain it to ensure it remains functional and safe for use.",
-				        "imageR": "./assets/diag_sample/image2.jpg",
-				        "imageP": "#",
-				        "color": "default"
-				      },
-				      {
-				        "model": "Janus",
-				        "title": "Case 3",
-				        "figures": 3,
-				        "prompt": "How long does it take to build such a bridge?",
-				        "response": "Building a temporary bridge or road in flood-affected areas requires careful planning and execution. The time taken depends on several factors, including the complexity of the structure, the depth of the water, and the availability of materials and equipment.\n1. **Planning and Assessment**: This phase typically takes a few days to a week. It involves assessing the flood conditions, determining the best location for the bridge or road, and planning the construction process.\n2. **Material Procurement**: Gathering materials such as steel beams, concrete blocks, and construction tools can take a few days.\n3. **Construction**: Building the bridge or road can take several weeks to a few months, depending on the complexity and the number of workers involved.\n4. **Testing and Maintenance**: Once completed, the bridge or road needs to be tested for safety and durability. Regular maintenance is required to ensure its longevity.\nOverall, the construction of a temporary bridge or road in flood-affected areas can take anywhere from a few weeks to several months.",
-				        "imageR": "#",
-				        "imageP": "#",
-				        "color": "default"
-				      },
-				      {
-				        "model": "Gemini",
-				        "title": "Case 1",
-				        "figures": 1,
-				        "prompt": "What immediate actions would you recommend for the local authorities to take in response to the situation depicted in the image, and why?",
-				        "response": "The image depicts a street scene with significant floodwater inundating buildings and vehicles. Some vehicles appear partially submerged. **Immediate Actions for Local Authorities:**\n1. **Issue Emergency Alerts and Warnings:** Utilize all available channels (sirens, SMS, social media, radio, television) to inform residents about the dangerous flooding and advise them to seek higher ground immediately. Emphasize the risks of driving or walking through floodwaters.\n2. **Activate Emergency Response Teams:** Deploy police, fire department, and emergency medical services to the affected areas. Their immediate priorities should be:\n  * **Life Safety:** Conducting search and rescue operations for individuals trapped in homes or vehicles.\n  * **Medical Assistance:** Providing aid to anyone injured.\n  * **Security:** Securing the flooded areas to prevent looting and ensure public safety.\n3. **Establish Shelters:** Open designated emergency shelters (schools, community centers, etc.) for displaced residents, providing them with temporary housing, food, water, and essential supplies.\n4. **Assess the Situation and Infrastructure:** Begin assessing the extent of the damage to roads, bridges, power lines, and other critical infrastructure. This will help in understanding the scope of the disaster and planning the subsequent response.\n5. **Block Off Affected Roads:** Close roads leading into and within the flooded areas to prevent further traffic and potential accidents in the dangerous conditions.\n\n**Why These Actions Are Crucial:**\nThese immediate actions prioritize the safety and well-being of the affected population. Swift warnings and the deployment of emergency services are essential to minimize casualties and injuries. Providing shelter addresses the immediate needs of those displaced from their homes. Assessing the damage and securing the area lays the groundwork for a coordinated and effective longer-term recovery effort. Preventing access to flooded areas reduces the risk of further harm and allows emergency responders to work more efficiently.",
-				        "imageR": "./assets/diag_sample/image3.png",
-				        "imageP": "#",
-				        "color": "default"
-				      },
-				      {
-				        "model": "Gemini",
-				        "title": "Case 2",
-				        "figures": 1,
-				        "prompt": "In addition to these immediate actions, what long-term strategies could the local authorities implement to prevent or mitigate future flooding incidents in this area?",
-				        "response": "I will generate an image depicting a flooded street scene to help illustrate potential immediate actions for local authorities.",
-				        "imageR": "./assets/diag_sample/image4.png",
-				        "imageP": "#",
-				        "color": "default"
-				      },
-				      {
-				        "model": "Gemini",
-				        "title": "Case 3",
-				        "figures": 1,
-				        "prompt": "It seems that your image does not show any long-term strategies, please supplement with textual description.",
-				        "response": "Immediate Actions:\n* Emergency Response Activation: Deploy emergency services, including police, fire department, and ambulance, to the affected areas.\n* Evacuation and Shelter: Initiate evacuation procedures for residents in high-risk zones, providing safe shelter and essential supplies.\n* Road Closure and Traffic Management: Close flooded roads and manage traffic flow to ensure safety and allow access for emergency vehicles.\n* Damage Assessment: Begin preliminary assessments of the extent of the flooding and damage to infrastructure and property.\n* Communication and Information: Keep the public informed about the situation, safety measures, and available assistance through various channels.\n* Resource Mobilization: Activate and coordinate resources, including personnel, equipment, and supplies, for rescue and relief efforts.",
-				        "imageR": "./assets/diag_sample/image5.png",
-				        "imageP": "#",
-				        "color": "default"
-				      },
-				      {
-				        "model": "Ours",
-				        "title": "Case 1",
-				        "figures": 3,
-				        "prompt": "What immediate actions would you recommend for the local authorities to take in response to the situation depicted in the image, and why?",
-				        "response": "The image shows a flooded street with a traffic light and power lines submerged in water. Based on the current state, I would recommend that the local authorities take immediate actions to ensure the safety of residents and maintain traffic flow.\n\nFirst and foremost, they should deploy emergency personnel to the affected areas to rescue people that might be in danger and ensure their safety. Given the possible risk of electrocution from the submerged power lines, it is vital to shut off and secure the power supply to the area.\n\nNext, the local authorities should assess the traffic light's functionality and ensure it remains operational to manage the flow of vehicles and pedestrians. If necessary, they may need to replace or repair the damaged traffic light and lines to restore proper functionality.\n\nFurthermore, they should work on clearing and draining the water accumulated in the streets to minimize the risk of infections and to restore normality to daily life. They might consider using specialized machinery and personnel for this task, if the situation is severe or widespread.\n\nLastly, the local authorities should communicate their actions and plans effectively to the public via social media, emergency alerts, and notifications to keep residents informed about the situation and any assistance or resources available.\n\nConclusion: Look for opportunities to improve the traffic flow, safety, and well-being of the community during the recovery process.",
-				        "imageR": "#",
-				        "imageP": "#",
-				        "color": "yellow"
-				      },
-				      {
-				        "model": "Ours",
-				        "title": "Case 2",
-				        "figures": 3,
-				        "prompt": "In addition to these immediate actions, what long-term strategies could the local authorities implement to prevent or mitigate future flooding incidents in this area?",
-				        "response": "Based on the previous response, I would recommend that the local authorities in the area take immediate actions to ensure the safety of residents and maintain traffic flow in the flooded street. To achieve this, they should deploy emergency personnel to rescue people that may be in danger and ensure their safety. Given the possible risk of electrocution from the submerged power lines, it is crucial to shut off and secure the power supply to the area. \n\nIn addition to these immediate actions, long-term strategies could include implementing flood-prevention measures, such as improving the city's drainage system, raising roads and infrastructure to minimize the impact of flooding, creating emergency response plans, and conducting regular maintenance checks on traffic lights and power lines to reduce the risk of damage during extreme weather events.\n\nThe implementation of these measures can help prevent or mitigate future flooding incidents in the area, ensuring the safety and well-being of residents and minimizing the disruption to daily life.",
-				        "imageR": "#",
-				        "imageP": "#",
-				        "color": "yellow"
-				      },
-				      {
-				        "model": "Ours",
-				        "title": "Case 3",
-				        "figures": 1,
-				        "prompt": "That's a great overview. Could you elaborate on how the local authorities might go about 'improving the city's drainage system'? What specific improvements or technologies might be considered?",
-				        "response": "To improve the city's drainage system and mitigate future flooding effectively, local authorities can consider several specific improvements and technologies:\n\n1. **Upgrading and Expanding Drainage Infrastructure**: By increasing the capacity of existing drainage systems and constructing additional channels, the city can better accommodate heavy rainfall and reduce flood risk. This might involve widening culverts, enlarging stormwater pipes, and constructing detention basins to manage water flow more effectively.\n2. **Implementing Green Infrastructure**: Integrating green technology such as rain gardens, permeable pavements, and green roofs can help absorb and divert rainwater naturally. These solutions not only reduce immediate drainage loads but also improve urban aesthetics and biodiversity.\n3. **Advanced Hydrological Modeling**: Utilizing sophisticated software to simulate rainfall scenarios can help identify potential weaknesses in drainage and plan infrastructure improvements more strategically. This modeling aids in efficient planning and resource allocation.\n4. **Sensor-Based Monitoring Systems**: Implementing sensor technology in critical drainage locations can provide real-time data on water levels and system performance. This allows for proactive management and quick responses during heavy rain events.\n5. **Public Awareness and Engagement**: Educating citizens about flood risks and encouraging practices that reduce blockage in drainage systems, like proper disposal of waste, can significantly improve overall efficiency.\n6. **Regular Maintenance and Cleaning**: Conducting frequent checks and cleaning of drainage systems ensures they remain clear of debris, reducing the likelihood of blockages during storms.\n7. **Infrastructure Integration**: Consideration of multi-use designs that integrate drainage systems with urban features can both save space and enhance functionality, such as park spaces that double as flood basins.\n\nThese strategies, when combined, can create a robust drainage system tailored to the city's unique needs, reducing the impact of future flooding events. \n\n<Image, diagram showing improved drainage system and green infrastructure technologies> \n\nWould you like more information on the benefits of green infrastructure?",
-				        "imageR": "./assets/diag_sample/image6.png",
-				        "imageP": "#",
-				        "color": "yellow"
-				      },
-				      {
-				        "model": "Gemini",
-				        "title": "Case 4",
-				        "figures": 2,
-				        "prompt": "Considering the cleanliness and arrangement, what can you infer about the maintenance of this bathroom?",
-				        "response": "The bathroom appears to be meticulously maintained. The surfaces are clear of clutter and look clean, suggesting regular tidying. The arrangement of items seems deliberate and organized, further indicating a commitment to upkeep.",
-				        "imageR": "./assets/diag_sample/image8.png",
-				        "imageP": "./assets/diag_sample/image7.png",
-				        "color": "default"
-				      },
-				      {
-				        "model": "Gemini",
-				        "title": "Case 5",
-				        "figures": 0,
-				        "prompt": "The bathroom image you generated looks a bit cluttered. What kind of updates or additions could enhance the bathroom's functionality or aesthetics?",
-				        "response": "The current image shows a bathroom with some items on the counter and a few things in the shower area. Updates to enhance functionality and aesthetics could include adding closed storage like drawers or cabinets to reduce visible clutter, incorporating a consistent color scheme for towels and accessories, and perhaps a larger mirror to visually expand the space.",
-				        "imageR": "#",
-				        "imageP": "./assets/diag_sample/image9.png",
-				        "color": "default"
-				      },
-				      {
-				        "model": "Gemini",
-				        "title": "Case 6",
-				        "figures": 1,
-				        "prompt": "That's helpful! Considering the potential for adding storage or decorative elements, how would you prioritize these additions based on cost-effectiveness and impact on the bathroom's overall appeal?",
-				        "response": "The image displays a clean and relatively well-maintained bathroom. The sink area is tidy, and the surfaces appear to be clear of excessive clutter. This suggests a regular cleaning routine. The presence of what looks like a toothbrush holder and a neatly placed hand towel indicates attention to organization.",
-				        "imageR": "./assets/diag_sample/image10.png",
-				        "imageP": "#",
-				        "color": "default"
-				      },
-				      {
-				        "model": "Janus",
-				        "title": "Case 4",
-				        "figures": 2,
-				        "prompt": "Considering the cleanliness and arrangement, what can you infer about the maintenance of this bathroom?",
-				        "response": "The bathroom appears to be well-maintained, as evidenced by the cleanliness of the tiles, the organized placement of items, and the absence of visible dirt or clutter. The mirror is clean, and the sink and surrounding area are tidy, suggesting regular upkeep. The presence of a trash bin and a toilet paper holder further indicates attention to cleanliness and organization.",
-				        "imageR": "./assets/diag_sample/image12.png",
-				        "imageP": "./assets/diag_sample/image11.png",
-				        "color": "default"
-				      },
-				      {
-				        "model": "Janus",
-				        "title": "Case 5",
-				        "figures": 1,
-				        "prompt": "The toilet picture you generated looks dark and plain. What kind of updates or additions could enhance the bathroom's functionality or aesthetics?",
-				        "response": "To enhance the functionality and aesthetics of the bathroom, several updates or additions could be considered:\n\n1. Lighting: Adding a brighter or more modern light fixture above the mirror could improve visibility and create a more inviting atmosphere.\n2. Storage Solutions: Installing additional shelves or cabinets could provide more storage space for toiletries and other bathroom essentials.\n3. Decorative Elements: Introducing decorative elements such as a small plant, artwork, or a stylish soap dispenser could add personality and warmth to the space.\n4. Color Scheme: Updating the tiles or adding colorful accents could refresh the overall look and feel of the bathroom.\n5. Mirror Frame: A decorative frame for the mirror could add a touch of elegance and make the space feel more cohesive.",
-				        "imageR": "./assets/diag_sample/image13.png",
-				        "imageP": "#",
-				        "color": "default"
-				      },
-				      {
-				        "model": "Janus",
-				        "title": "Case 6",
-				        "figures": 3,
-				        "prompt": "Please present the complete scene of this toilet to me, not just the sink.",
-				        "response": "The complete scene of this toilet includes a white ceramic toilet with a standard flush mechanism, positioned against tiled walls. Above the toilet, there is a rectangular mirror with a simple frame, reflecting part of the room. To the right of the toilet, there is a wall-mounted metal rack with a wire basket, likely intended for holding toilet paper rolls. The floor is tiled in a light color, matching the walls, and there is a small trash bin with a lid located near the toilet. The overall design is functional and minimalistic, with a focus on cleanliness and practicality.",
-				        "imageR": "#",
-				        "imageP": "#",
-				        "color": "default"
-				      },
-				      {
-				        "model": "Ours",
-				        "title": "Case 4",
-				        "figures": 1,
-				        "prompt": "Considering the cleanliness and arrangement, what can you infer about the maintenance of this bathroom?",
-				        "response": "Based on the cleanliness of the sink area, bright white room, and mirror, it can be inferred that the bathroom is well-maintained. The white sink, white tiles, and white curtains contribute to a clean and organized appearance, which suggests that the space is cared for. Another notable aspect of the bathroom is the empty wall space, also shown in the image, which could indicate that the bathroom might need to be updated or finished. Overall, the cleanliness and arrangement of the bathroom seem to show good maintenance practices.",
-				        "imageR": "#",
-				        "imageP": "./assets/diag_sample/image14.png",
-				        "color": "yellow"
-				      },
-				      {
-				        "model": "Ours",
-				        "title": "Case 5",
-				        "figures": 1,
-				        "prompt": "You mentioned that the bathroom might need to be updated or finished due to the empty wall space. What kind of updates or additions could enhance the bathroom's functionality or aesthetics?",
-				        "response": "Updating or finishing the empty wall space in the bathroom could enhance its functionality and aesthetics. Some possible additions or updates could include installing additional storage, such as shelves or cabinets, to organize toiletries and accessories; installing a mirror above the sink to create the illusion of a larger space; or even incorporating decorative elements like artwork or plants to add visual interest and make the bathroom feel more inviting.",
-				        "imageR": "./assets/diag_sample/image15.png",
-				        "imageP": "#",
-				        "color": "yellow"
-				      },
-				      {
-				        "model": "Ours",
-				        "title": "Case 6",
-				        "figures": 3,
-				        "prompt": "That's helpful! Considering the potential for adding storage or decorative elements, how would you prioritize these additions based on cost-effectiveness and impact on the bathroom's overall appeal?",
-				        "response": "To prioritize additions based on cost-effectiveness and impact on the bathroom's overall appeal, I recommend starting with functional improvements that also enhance aesthetics. Here are some suggestions:\n\n1. Additional Storage: Installing floating shelves or a vanity with built-in cabinets can provide much-needed storage while maintaining a sleek look. This is both practical and visually appealing.\n\n2. Mirror Above Sink: Adding a mirror above the sink not only serves a practical purpose but also makes the space feel larger and brighter.\n\n3. Decorative Elements: Incorporating small, affordable items like a plant or a piece of artwork can add personality and warmth to the bathroom without breaking the bank.\n\n4. Lighting: Upgrading the lighting fixture can significantly improve the ambiance of the bathroom. Opt for energy-efficient LED lights that offer both cost savings and better illumination.\n\n5. Tile Accents: Adding a tile backsplash or border can give the bathroom a fresh look without requiring a full renovation.\n\nEach of these additions can be tailored to fit your budget and style preferences, ensuring a balanced approach to enhancing both functionality and aesthetics. Would you like to see some visual examples of these ideas?",
-				        "imageR": "#",
-				        "imageP": "#",
-				        "color": "yellow"
-				      }
-				    ];
+							{
+				"model": "Janus",
+				"title": "Case 1",
+				"figures": 1,
+				"prompt": "What immediate actions would you recommend for the local authorities to take in response to the situation depicted in the image, and why?",
+				"response": "The image depicts a flooded area, with water covering the street and reflecting surrounding trees and buildings. The floodwater appears to be at a significant depth, potentially affecting traffic and access to homes. Immediate actions for local authorities to take in response to this situation would include: 1. *Evacuation and Safety Measures*: Ensure the safety of residents by providing alternative shelters and evacuation routes. This includes setting up emergency shelters and coordinating with local emergency services. 2. *Flood Control and Drainage*: Activate flood control measures such as opening storm drains and releasing water from nearby reservoirs or flood management systems to reduce water accumulation. 3. *Communication and Coordination*: Establish communication channels with affected residents to provide updates on the flood situation, safety instructions, and resources available. 4. *Damage Assessment and Repair*: Send teams to assess the extent of the damage and initiate repair efforts to restore infrastructure, such as roads, bridges, and utilities. 5. *Environmental Monitoring*: Monitor water quality and potential contamination risks to ensure public health and safety.",
+				"imageR": ".\\assets\\diag_sample\\image1.jpg",
+				"imageP": "#",
+				"color": "default"
+							},
+							{
+				"model": "Janus",
+				"title": "Case 1",
+				"figures": 1,
+				"prompt": "Please tell me how to build temporary roads or bridges, and generate one in the diagram.",
+				"response": "To build temporary roads or bridges, follow these steps: 1. *Assessment and Planning*: Evaluate the flood-affected area to determine the most suitable locations for temporary roads or bridges. Consider factors such as water depth, flow velocity, and structural stability. 2. *Materials and Equipment*: Gather materials like steel beams, concrete blocks, and construction tools. Ensure that the equipment is suitable for the water conditions, such as using waterproof materials and equipment. 3. *Foundation Preparation*: Prepare the ground by clearing debris and leveling the surface. Ensure that the foundation is stable and can support the weight of the temporary structure. 4. *Construction*: Construct the temporary road or bridge using the prepared materials. Use strong materials to ensure durability and safety. 5. *Testing and Maintenance*: Test the temporary structure for stability and safety. Regularly maintain it to ensure it remains functional and safe for use.",
+				"imageR": ".\\assets\\diag_sample\\image2.jpg",
+				"imageP": "#",
+				"color": "default"
+							},
+							{
+				"model": "Janus",
+				"title": "Case 1",
+				"figures": 3,
+				"prompt": "How long does it take to build such a bridge?",
+				"response": "Building a temporary bridge or road in flood-affected areas requires careful planning and execution. The time taken depends on several factors, including the complexity of the structure, the depth of the water, and the availability of materials and equipment. 1. *Planning and Assessment*: This phase typically takes a few days to a week. It involves assessing the flood conditions, determining the best location for the bridge or road, and planning the construction process. 2. *Material Procurement*: Gathering materials such as steel beams, concrete blocks, and construction tools can take a few days. 3. *Construction*: Building the bridge or road can take several weeks to a few months, depending on the complexity and the number of workers involved. 4. *Testing and Maintenance*: Once completed, the bridge or road needs to be tested for safety and durability. Regular maintenance is required to ensure its longevity. Overall, the construction of a temporary bridge or road in flood-affected areas can take anywhere from a few weeks to several months.",
+				"imageR": "#",
+				"imageP": "#",
+				"color": "default"
+							},
+							{
+				"model": "Gemini",
+				"title": "Case 1",
+				"figures": 1,
+				"prompt": "What immediate actions would you recommend for the local authorities to take in response to the situation depicted in the image, and why?",
+				"response": "The image depicts a street scene with significant floodwater inundating buildings and vehicles. Some vehicles appear partially submerged. *Immediate Actions for Local Authorities:* 1. *Issue Emergency Alerts and Warnings:* Utilize all available channels (sirens, SMS, social media, radio, television) to inform residents about the dangerous flooding and advise them to seek higher ground immediately. Emphasize the risks of driving or walking through floodwaters. 2. *Activate Emergency Response Teams:* Deploy police, fire department, and emergency medical services to the affected areas. Their immediate priorities should be: * *Life Safety:* Conducting search and rescue operations for individuals trapped in homes or vehicles. * *Medical Assistance:* Providing aid to anyone injured. * *Security:* Securing the flooded areas to prevent looting and ensure public safety. 3. *Establish Shelters:* Open designated emergency shelters (schools, community centers, etc.) for displaced residents, providing them with temporary housing, food, water, and essential supplies. 4. *Assess the Situation and Infrastructure:* Begin assessing the extent of the damage to roads, bridges, power lines, and other critical infrastructure. This will help in understanding the scope of the disaster and planning the subsequent response. 5. *Block Off Affected Roads:* Close roads leading into and within the flooded areas to prevent further traffic and potential accidents in the dangerous conditions. *Why These Actions Are Crucial:* These immediate actions prioritize the safety and well-being of the affected population. Swift warnings and the deployment of emergency services are essential to minimize casualties and injuries. Providing shelter addresses the immediate needs of those displaced from their homes. Assessing the damage and securing the area lays the groundwork for a coordinated and effective longer-term recovery effort. Preventing access to flooded areas reduces the risk of further harm and allows emergency responders to work more efficiently.",
+				"imageR": ".\\assets\\diag_sample\\image3.png",
+				"imageP": "#",
+				"color": "default"
+							},
+							{
+				"model": "Gemini",
+				"title": "Case 1",
+				"figures": 1,
+				"prompt": "In addition to these immediate actions, what long-term strategies could the local authorities implement to prevent or mitigate future flooding incidents in this area?",
+				"response": "I will generate an image depicting a flooded street scene to help illustrate potential immediate actions for local authorities.",
+				"imageR": ".\\assets\\diag_sample\\image4.png",
+				"imageP": "#",
+				"color": "default"
+							},
+							{
+				"model": "Gemini",
+				"title": "Case 1",
+				"figures": 1,
+				"prompt": "It seems that your image does not show any long-term strategies, please supplement with textual description.",
+				"response": "Immediate Actions:\n* Emergency Response Activation: Deploy emergency services, including police, fire department, and ambulance, to the affected areas.\n* Evacuation and Shelter: Initiate evacuation procedures for residents in high-risk zones, providing safe shelter and essential supplies.\n* Road Closure and Traffic Management: Close flooded roads and manage traffic flow to ensure safety and allow access for emergency vehicles.\n* Damage Assessment: Begin preliminary assessments of the extent of the flooding and damage to infrastructure and property.\n* Communication and Information: Keep the public informed about the situation, safety measures, and available assistance through various channels.\n* Resource Mobilization: Activate and coordinate resources, including personnel, equipment, and supplies, for rescue and relief efforts.",
+				"imageR": ".\\assets\\diag_sample\\image5.png",
+				"imageP": "#",
+				"color": "default"
+							},
+							{
+				"model": "Ours",
+				"title": "Case 1",
+				"figures": 3,
+				"prompt": "What immediate actions would you recommend for the local authorities to take in response to the situation depicted in the image, and why?",
+				"response": "The image shows a flooded street with a traffic light and power lines submerged in water. Based on the current state, I would recommend that the local authorities take immediate actions to ensure the safety of residents and maintain traffic flow.\n\nFirst and foremost, they should deploy emergency personnel to the affected areas to rescue people that might be in danger and ensure their safety. Given the possible risk of electrocution from the submerged power lines, it is vital to shut off and secure the power supply to the area.\n\nNext, the local authorities should assess the traffic light's functionality and ensure it remains operational to manage the flow of vehicles and pedestrians. If necessary, they may need to replace or repair the damaged traffic light and lines to restore proper functionality.\n\nFurthermore, they should work on clearing and draining the water accumulated in the streets to minimize the risk of infections and to restore normality to daily life. They might consider using specialized machinery and personnel for this task, if the situation is severe or widespread.\n\nLastly, the local authorities should communicate their actions and plans effectively to the public via social media, emergency alerts, and notifications to keep residents informed about the situation and any assistance or resources available.\n\nConclusion: Look for opportunities to improve the traffic flow, safety, and well-being of the community during the recovery process.",
+				"imageR": "#",
+				"imageP": "#",
+				"color": "yellow"
+							},
+							{
+				"model": "Ours",
+				"title": "Case 1",
+				"figures": 3,
+				"prompt": "In addition to these immediate actions, what long-term strategies could the local authorities implement to prevent or mitigate future flooding incidents in this area?",
+				"response": "Based on the previous response, I would recommend that the local authorities in the area take immediate actions to ensure the safety of residents and maintain traffic flow in the flooded street. To achieve this, they should deploy emergency personnel to rescue people that may be in danger and ensure their safety. Given the possible risk of electrocution from the submerged power lines, it is crucial to shut off and secure the power supply to the area. \n\nIn addition to these immediate actions, long-term strategies could include implementing flood-prevention measures, such as improving the city's drainage system, raising roads and infrastructure to minimize the impact of flooding, creating emergency response plans, and conducting regular maintenance checks on traffic lights and power lines to reduce the risk of damage during extreme weather events.\n\nThe implementation of these measures can help prevent or mitigate future flooding incidents in the area, ensuring the safety and well-being of residents and minimizing the disruption to daily life.",
+				"imageR": "#",
+				"imageP": "#",
+				"color": "yellow"
+							},
+							{
+				"model": "Ours",
+				"title": "Case 1",
+				"figures": 1,
+				"prompt": "That's a great overview. Could you elaborate on how the local authorities might go about 'improving the city's drainage system'? What specific improvements or technologies might be considered?",
+				"response": "To improve the city's drainage system and mitigate future flooding effectively, local authorities can consider several specific improvements and technologies:\n\n1. *Upgrading and Expanding Drainage Infrastructure*: By increasing the capacity of existing drainage systems and constructing additional channels, the city can better accommodate heavy rainfall and reduce flood risk. This might involve widening culverts, enlarging stormwater pipes, and constructing detention basins to manage water flow more effectively.\n\n2. *Implementing Green Infrastructure*: Integrating green technology such as rain gardens, permeable pavements, and green roofs can help absorb and divert rainwater naturally. These solutions not only reduce immediate drainage loads but also improve urban aesthetics and biodiversity.\n\n3. *Advanced Hydrological Modeling*: Utilizing sophisticated software to simulate rainfall scenarios can help identify potential weaknesses in drainage and plan infrastructure improvements more strategically. This modeling aids in efficient planning and resource allocation.\n\n4. *Sensor-Based Monitoring Systems*: Implementing sensor technology in critical drainage locations can provide real-time data on water levels and system performance. This allows for proactive management and quick responses during heavy rain events.\n\n5. *Public Awareness and Engagement*: Educating citizens about flood risks and encouraging practices that reduce blockage in drainage systems, like proper disposal of waste, can significantly improve overall efficiency.\n\n6. *Regular Maintenance and Cleaning*: Conducting frequent checks and cleaning of drainage systems ensures they remain clear of debris, reducing the likelihood of blockages during storms.\n\n7. *Infrastructure Integration*: Consideration of multi-use designs that integrate drainage systems with urban features can both save space and enhance functionality, such as park spaces that double as flood basins.\n\nThese strategies, when combined, can create a robust drainage system tailored to the city's unique needs, reducing the impact of future flooding events. \n\n<Image, diagram showing improved drainage system and green infrastructure technologies>  \n\nWould you like more information on the benefits of green infrastructure?",
+				"imageR": ".\\assets\\diag_sample\\image6.png",
+				"imageP": "#",
+				"color": "yellow"
+							},
+							{
+				"model": "Gemini",
+				"title": "Case 2",
+				"figures": 2,
+				"prompt": "Considering the cleanliness and arrangement, what can you infer about the maintenance of this bathroom?",
+				"response": "The bathroom appears to be meticulously maintained. The surfaces are clear of clutter and look clean, suggesting regular tidying. The arrangement of items seems deliberate and organized, further indicating a commitment to upkeep.",
+				"imageR": ".\\assets\\diag_sample\\image8.png",
+				"imageP": ".\\assets\\diag_sample\\image7.png",
+				"color": "default"
+							},
+							{
+				"model": "Gemini",
+				"title": "Case 2",
+				"figures": 0,
+				"prompt": "The bathroom image you generated looks a bit cluttered. What kind of updates or additions could enhance the bathroom's functionality or aesthetics?",
+				"response": "The current image shows a bathroom with some items on the counter and a few things in the shower area. Updates to enhance functionality and aesthetics could include adding closed storage like drawers or cabinets to reduce visible clutter, incorporating a consistent color scheme for towels and accessories, and perhaps a larger mirror to visually expand the space.",
+				"imageR": "#",
+				"imageP": ".\\assets\\diag_sample\\image9.png",
+				"color": "default"
+							},
+							{
+				"model": "Gemini",
+				"title": "Case 2",
+				"figures": 1,
+				"prompt": "That's helpful! Considering the potential for adding storage or decorative elements, how would you prioritize these additions based on cost-effectiveness and impact on the bathroom's overall appeal?",
+				"response": "The image displays a clean and relatively well-maintained bathroom. The sink area is tidy, and the surfaces appear to be clear of excessive clutter. This suggests a regular cleaning routine. The presence of what looks like a toothbrush holder and a neatly placed hand towel indicates attention to organization.",
+				"imageR": ".\\assets\\diag_sample\\image10.png",
+				"imageP": "#",
+				"color": "default"
+							},
+							{
+				"model": "Janus",
+				"title": "Case 2",
+				"figures": 2,
+				"prompt": "Considering the cleanliness and arrangement, what can you infer about the maintenance of this bathroom?",
+				"response": "The bathroom appears to be well-maintained, as evidenced by the cleanliness of the tiles, the organized placement of items, and the absence of visible dirt or clutter. The mirror is clean, and the sink and surrounding area are tidy, suggesting regular upkeep. The presence of a trash bin and a toilet paper holder further indicates attention to cleanliness and organization.",
+				"imageR": ".\\assets\\diag_sample\\image12.png",
+				"imageP": ".\\assets\\diag_sample\\image11.png",
+				"color": "default"
+							},
+							{
+				"model": "Janus",
+				"title": "Case 2",
+				"figures": 1,
+				"prompt": "The toilet picture you generated looks dark and plain. What kind of updates or additions could enhance the bathroom's functionality or aesthetics?",
+				"response": "To enhance the functionality and aesthetics of the bathroom, several updates or additions could be considered:\n\n1. Lighting: Adding a brighter or more modern light fixture above the mirror could improve visibility and create a more inviting atmosphere.\n2. Storage Solutions: Installing additional shelves or cabinets could provide more storage space for toiletries and other bathroom essentials.\n3. Decorative Elements: Introducing decorative elements such as a small plant, artwork, or a stylish soap dispenser could add personality and warmth to the space.\n4. Color Scheme: Updating the tiles or adding colorful accents could refresh the overall look and feel of the bathroom.\n5. Mirror Frame: A decorative frame for the mirror could add a touch of elegance and make the space feel more cohesive.",
+				"imageR": ".\\assets\\diag_sample\\image13.png",
+				"imageP": "#",
+				"color": "default"
+							},
+							{
+				"model": "Janus",
+				"title": "Case 2",
+				"figures": 3,
+				"prompt": "Please present the complete scene of this toilet to me, not just the sink.",
+				"response": "The complete scene of this toilet includes a white ceramic toilet with a standard flush mechanism, positioned against tiled walls. Above the toilet, there is a rectangular mirror with a simple frame, reflecting part of the room. To the right of the toilet, there is a wall-mounted metal rack with a wire basket, likely intended for holding toilet paper rolls. The floor is tiled in a light color, matching the walls, and there is a small trash bin with a lid located near the toilet. The overall design is functional and minimalistic, with a focus on cleanliness and practicality.",
+				"imageR": "#",
+				"imageP": "#",
+				"color": "default"
+							},
+							{
+				"model": "Ours",
+				"title": "Case 2",
+				"figures": 1,
+				"prompt": "Considering the cleanliness and arrangement, what can you infer about the maintenance of this bathroom?",
+				"response": "Based on the cleanliness of the sink area, bright white room, and mirror, it can be inferred that the bathroom is well-maintained. The white sink, white tiles, and white curtains contribute to a clean and organized appearance, which suggests that the space is cared for. Another notable aspect of the bathroom is the empty wall space, also shown in the image, which could indicate that the bathroom might need to be updated or finished. Overall, the cleanliness and arrangement of the bathroom seem to show good maintenance practices.",
+				"imageR": "#",
+				"imageP": ".\\assets\\diag_sample\\image14.png",
+				"color": "yellow"
+							},
+							{
+				"model": "Ours",
+				"title": "Case 2",
+				"figures": 1,
+				"prompt": "You mentioned that the bathroom might need to be updated or finished due to the empty wall space. What kind of updates or additions could enhance the bathroom's functionality or aesthetics?",
+				"response": "Updating or finishing the empty wall space in the bathroom could enhance its functionality and aesthetics. Some possible additions or updates could include installing additional storage, such as shelves or cabinets, to organize toiletries and accessories; installing a mirror above the sink to create the illusion of a larger space; or even incorporating decorative elements like artwork or plants to add visual interest and make the bathroom feel more inviting.",
+				"imageR": ".\\assets\\diag_sample\\image15.png",
+				"imageP": "#",
+				"color": "yellow"
+							},
+							{
+				"model": "Ours",
+				"title": "Case 2",
+				"figures": 3,
+				"prompt": "That's helpful! Considering the potential for adding storage or decorative elements, how would you prioritize these additions based on cost-effectiveness and impact on the bathroom's overall appeal?",
+				"response": "To prioritize additions based on cost-effectiveness and impact on the bathroom's overall appeal, I recommend starting with functional improvements that also enhance aesthetics. Here are some suggestions:\n\n1. Additional Storage: Installing floating shelves or a vanity with built-in cabinets can provide much-needed storage while maintaining a sleek look. This is both practical and visually appealing.\n\n2. Mirror Above Sink: Adding a mirror above the sink not only serves a practical purpose but also makes the space feel larger and brighter.\n\n3. Decorative Elements: Incorporating small, affordable items like a plant or a piece of artwork can add personality and warmth to the bathroom without breaking the bank.\n\n4. Lighting: Upgrading the lighting fixture can significantly improve the ambiance of the bathroom. Opt for energy-efficient LED lights that offer both cost savings and better illumination.\n\n5. Tile Accents: Adding a tile backsplash or border can give the bathroom a fresh look without requiring a full renovation.\n\nEach of these additions can be tailored to fit your budget and style preferences, ensuring a balanced approach to enhancing both functionality and aesthetics. Would you like to see some visual examples of these ideas?",
+				"imageR": "#",
+				"imageP": "#",
+				"color": "yellow"
+							}
+							];
 				
 				const exampleSelect = document.getElementById('exampleSelect');
 				const uniqueTitles = [...new Set(data.map(item => item.title))];
