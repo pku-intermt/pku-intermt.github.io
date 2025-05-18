@@ -32,6 +32,261 @@
 		    margin-bottom: 10px;
 		}
 	</style>
+	<style>
+		.data-card {
+		    background-color: #f8f9fa;
+		    border: 1px solid #e1e5e9;
+		    border-radius: 12px;
+		    padding: 25px;
+		    margin: 25px 0;
+		    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+		    transition: transform 0.3s ease, box-shadow 0.3s ease;
+		}
+		
+		.data-card:hover {
+		    transform: translateY(-5px);
+		    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+		}
+		
+		.data-card h4 {
+		    margin-top: 0;
+		    color: #2c3e50;
+		    border-left: none;
+		    padding-left: 0;
+		    display: flex;
+		    align-items: center;
+		}
+		
+		.data-card h4::before {
+		    content: '📊';
+		    margin-right: 10px;
+		    font-size: 1.2em;
+		}
+		
+		.data-card ul {
+		    margin: 15px 0;
+		    padding-left: 20px;
+		}
+		
+		.data-card li {
+		    margin-bottom: 12px;
+		    text-align: justify;
+		    position: relative;
+		}
+		
+		.data-card li::marker {
+		    color: #1b2f3d;
+		    font-weight: bold;
+		}
+		
+		.dimensions-table {
+		    margin: 25px 0;
+		    background-color: #f8f9fa;
+		    padding: 20px;
+		    border-radius: 12px;
+		    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+		    overflow: hidden;
+		}
+		
+		.dimensions-table h4 {
+		    margin-top: 0;
+		    text-align: center;
+		    color: #2c3e50;
+		    border-left: none;
+		    padding-left: 0;
+		}
+		
+		.dimensions-table table {
+		    width: 100%;
+		    border-collapse: collapse;
+		    background-color: white;
+		    border-radius: 8px;
+		    overflow: hidden;
+		    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+		}
+		
+		.dimensions-table th {
+		    background: linear-gradient(135deg, #3498db, #2980b9);
+		    color: white;
+		    padding: 15px;
+		    text-align: left;
+		    font-weight: bold;
+		    border-bottom: 3px solid #2980b9;
+		    position: relative;
+		}
+		
+		.dimensions-table th::after {
+		    content: '';
+		    position: absolute;
+		    top: 0;
+		    left: 0;
+		    right: 0;
+		    bottom: 0;
+		    background: rgba(255,255,255,0.1);
+		    opacity: 0;
+		    transition: opacity 0.3s ease;
+		}
+		
+		.dimensions-table th:hover::after {
+		    opacity: 1;
+		}
+		
+		.dimensions-table td {
+		    padding: 12px 15px;
+		    border-bottom: 1px solid #ecf0f1;
+		    color: #2c3e50;
+		    font-weight: 500;
+		    transition: background-color 0.3s ease;
+		}
+		
+		.dimensions-table tr:nth-child(even) {
+		    background-color: #f8f9fa;
+		}
+		
+		.dimensions-table tr:hover {
+		    background-color: #e8f4f8;
+		    transform: scale(1.02);
+		    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+		}
+		
+		.dimensions-table tr:last-child td {
+		    border-bottom: none;
+		}
+		
+		.section-intro {
+		    background: linear-gradient(135deg, #e8f4f8, #dbeafe);
+		    padding: 25px;
+		    border-radius: 12px;
+		    margin-bottom: 30px;
+		    border-left: 6px solid #3498db;
+		    position: relative;
+		    overflow: hidden;
+		}
+		
+		.section-intro::before {
+		    content: '';
+		    position: absolute;
+		    top: 0;
+		    left: 0;
+		    right: 0;
+		    bottom: 0;
+		    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%23ffffff" stroke-width="0.5" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+		    pointer-events: none;
+		}
+		
+		.math-formula {
+		    background-color: #f8f9fa;
+		    padding: 15px;
+		    border-radius: 8px;
+		    border-left: 4px solid #3498db;
+		    margin: 20px 0;
+		    font-family: 'Courier New', monospace;
+		}
+		
+		.warning {
+		    background-color: #fff3cd;
+		    border: 1px solid #ffeaa7;
+		    color: #856404;
+		    padding: 15px;
+		    border-radius: 8px;
+		    margin: 20px 0;
+		    border-left: 4px solid #f39c12;
+		}
+		
+		.info {
+		    background-color: #d1ecf1;
+		    border: 1px solid #bee5eb;
+		    color: #0c5460;
+		    padding: 15px;
+		    border-radius: 8px;
+		    margin: 20px 0;
+		    border-left: 4px solid #17a2b8;
+		}
+		
+		.success {
+		    background-color: #d4edda;
+		    border: 1px solid #c3e6cb;
+		    color: #155724;
+		    padding: 15px;
+		    border-radius: 8px;
+		    margin: 20px 0;
+		    border-left: 4px solid #28a745;
+		}
+		
+		/* 加载动画 */
+		.loading {
+		    display: inline-block;
+		    width: 20px;
+		    height: 20px;
+		    border: 3px solid rgba(52, 152, 219, 0.3);
+		    border-radius: 50%;
+		    border-top-color: #3498db;
+		    animation: spin 1s ease-in-out infinite;
+		}
+		
+		@keyframes spin {
+		    to { transform: rotate(360deg); }
+		}
+		
+		/* 响应式设计 */
+		@media (max-width: 768px) {
+		    body {
+		        padding: 15px;
+		    }
+		    
+		    .container {
+		        padding: 20px;
+		    }
+		    
+		    .dimensions-table table {
+		        font-size: 14px;
+		    }
+		    
+		    .dimensions-table th,
+		    .dimensions-table td {
+		        padding: 10px 8px;
+		    }
+		    
+		    .data-card {
+		        padding: 15px;
+		    }
+		}
+		
+		@media (max-width: 480px) {
+		    .dimensions-table {
+		        overflow-x: auto;
+		    }
+		    
+		    .dimensions-table table {
+		        min-width: 500px;
+		    }
+		}
+		
+		/* 打印样式 */
+		@media print {
+		    body {
+		        background-color: white;
+		        padding: 0;
+		    }
+		    
+		    .container {
+		        box-shadow: none;
+		        padding: 20px;
+		    }
+		    
+		    .data-card,
+		    .dimensions-table {
+		        box-shadow: none;
+		        border: 1px solid #ccc;
+		    }
+		    
+		    .data-card:hover,
+		    .dimensions-table tr:hover {
+		        transform: none;
+		        box-shadow: none;
+		    }
+		}
+	</style>
 	<!-- 表格样式css文件 -->
 	<style>
 		/* 表格基础样式 */
@@ -83,7 +338,7 @@
 		}
 		
 		.highlight {
-			background-color: #fffde7;
+			color: #d02907;
 		}
 		
 		/* 表格对齐 */
@@ -94,11 +349,6 @@
 	</style>
 	<!-- 对话css文件 -->
 	<style>
-		/* body {
-		  font-family: Arial, sans-serif;
-		  margin: 20px;
-		  background-color: #f0f0f0;
-		} */
 		.diag-dropdown-container {
 		  margin-bottom: 15px;
 		  padding: 10px;
@@ -265,6 +515,27 @@
 			}
 	</style>
 	<!-- 引入js文件 -->
+	<script>
+		window.MathJax = {
+		    tex: {
+		        inlineMath: [['$', '$'], ['\\(', '\\)']],
+		        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+		        packages: {'[+]': ['ams', 'newcommand', 'configmacros']}
+		    },
+		    options: {
+		        processHtmlClass: 'tex2jax_process',
+		        processScriptType: 'text/tex',
+		        ignoreHtmlClass: 'tex2jax_ignore'
+		    },
+		    startup: {
+		        ready: function () {
+		            MathJax.startup.defaultReady();
+		            console.log('MathJax is loaded and ready to go!');
+		        }
+		    }
+		};
+	</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js"></script>
 	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 	<script type="text/javascript" src="./assets/sort-table.js" defer=""></script>
@@ -526,43 +797,18 @@
 	</div>
 </section>
 <section class="section">
-	<div class="container">
-		<center>
-			<h2 class="title is-3">Data Construction</h2>
-		</center>
-		<div class="columns is-centered">
-			<div class="column is-half">
-				<div class="content has-text-justified">
-					<section id="dataset">
-						<h4>Dataset</h4>
-						<p>Our core contribution is the introduction of a human preference dataset designed for <span style="color:#8B0000;">multi-turn</span>, multimodal <span style="color:#00008B;">understanding</span> and <span style="color:#006400;">generation</span> tasks. This section outlines
-							the dataset's composition, the collection of prompts and multi-turn QA instances, and the human annotation process.</p>
-						<section id="composition">
-							<h4>Dataset Composition</h4>
-							<p>The dataset comprises two primary data types: (1) <em>Seed Questions</em> for initiating <span style="color:#8B0000;">multi-turn</span> conversations, and (2) human preference annotations at both the local and global levels. Prompts are refined using principles from
-								linguistics and cognitive psychology to simulate realistic multimodal <span style="color:#8B0000;">multi-turn</span> tasks effectively.</p>
-						</section>
-						<section id="qa-construction">
-							<h4>Multi-turn QA Construction</h4>
-							<p>A tool-augmented workflow is employed to simulate human-like dialogues across various <span style="color:#8B0000;">multi-turn</span> tasks, integrating large models (e.g., GPT-4o, Qwen2.5-VL) with multimodal tools for image generation, editing, and retrieval.</p>
-						</section>
-						<section id="annotation">
-							<h4>Preference Annotation</h4>
-							<p>Human annotation includes local and global evaluations of conversation quality, focusing on <span style="color:#00008B;">understanding</span>-<span style="color:#006400;">generation</span> alignment, coherence, and completeness.</p>
-						</section>
-					</section>
-				</div>
-			</div>
-			<div class="column is-half">
+	<center>
+		<h2 class="title is-3">Data Construction</h2>
+	</center>
+	<div class="columns is-centered has-text-centered">
+		<div class="column is-four-fifths">
+			<div class="content has-text-justified">
 				<div class="carousel results-carousel">
 					<div class="carousel-item">
 						<div class="box m-5">
 							<div class="content has-text-centered">
-								<img src="./assets/Figure2.png" style="width: 100%;" onclick="openFullscreenImage(this.src)">
+								<img src="./assets/Figure2.png" style="width: 70%;" onclick="openFullscreenImage(this.src)">
 								<p style="margin-bottom: 30px;">
-									<span class="icon">
-										<img src="./assets/logo_transp.png" alt="HuggingFace" style="width: 1em; height: 1em;" />
-									</span>
 									<b>InterMT</b> includes over 15 tasks in vision-language scenarios, capturing communication examples across diverse multi-turn settings.
 								</p>
 							</div>
@@ -571,45 +817,136 @@
 					<div class="carousel-item">
 						<div class="box m-5">
 							<div class="content has-text-centered">
-								<img src="./assets/Figure3-0515_00.png" style="width: 100%;" onclick="openFullscreenImage(this.src)">
-								<p style="margin-bottom: 30px;">Overview of the four-stage pipeline for constructing <span class="icon">
-										<img src="./assets/logo_transp.png" alt="HuggingFace" style="width: 1em; height: 1em;" />
-									</span>
-									<b>InterMT</b>. The pipeline covers data harvesting, model-generated expansion, human annotation, and final QA tree assembly.
-								</p>
+								<img src="./assets/Figure3-0515_00.png" style="width: 70%;" onclick="openFullscreenImage(this.src)">
+								<p style="margin-bottom: 30px;"> Overview of the four-stage pipeline for constructing <b>InterMT</b>. The pipeline covers data harvesting, model-generated expansion, human annotation, and final QA tree assembly. </p>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-			<!-- Fullscreen Image Modal -->
-			<div id="fullscreen-image-modal" class="modal" style="display: none;">
-				<div class="modal-content" style="position: relative;">
-					<span class="close" onclick="closeFullscreenImage()" style="position: absolute; top: 10px; right: 10px; cursor: pointer; font-size: 24px;">&times;</span>
-					<img id="fullscreen-image" src="" style="width: 100%; height: auto;">
+			<div class="container">
+				<div class="columns is-centered has-text-centered">
+					<div class="column is-four-fifths">
+						<div class="content has-text-justified">
+							<h4>Dataset</h4>
+							<p1>Our core contribution is the introduction of a human preference dataset designed for multi-turn, multimodal understanding and generation tasks. This section outlines the dataset's composition, the collection of prompts and multi-turn QA instances, and human annotation
+								process.</p1>
+							<br>
+							<h4>Dataset Composition</h4>
+							<p1>The dataset includes: <strong>(1)</strong> carefully crafted seed questions for multi-turn, multimodal conversations, and <strong>(2)</strong> fine-grained human preference annotations at both local and global conversation levels. The seed questions are rigorously
+								selected and refined to enable more faithful simulation of real-world tasks.</p1>
+							<p1>We collect preference data through score evaluations and pairwise comparisons of multi-modal responses at each conversation turn, based on four sub-dimensions. Global conversation helpfulness is then evaluated via five sub-dimensions. Incorporating natural language
+								feedback further improves annotation quality and alignment with human intent.</p>
+								<h4>Data Card</h4>
+								<ul1>
+									<li>The dataset is built from a corpus of <span class="highlight">100k</span> image-text examples, comprising <span class="highlight">72.1%</span> from open-source vision-language datasets, <span class="highlight">22.8%</span> from web data, and <span
+											class="highlight">5.1%</span> from human-written content. All prompts are refined following constitutional guidelines to improve multi-turn compatibility, resulting in <span class="highlight">15604</span> unique seed questions.</li>
+									<li>Each seed question is expanded via an agent-based multi-turn QA construction workflow, producing at least <span class="highlight">8</span> multi-turn QA instances per prompt. After pruning and filtering, we obtain <span class="highlight">52.6k</span>
+										high-quality multi-turn QA instances, with <span class="highlight">41.92%</span> containing five or more turns.</li>
+									<li>The resulting <span class="highlight">52.6k</span> QA instances cover <span class="highlight">15+</span> vision-language <span class="highlight">understanding</span> and <span class="highlight">generation</span> tasks, such as image editing and visual
+										tutorials. Each instance features interleaved textual and visual content in both inputs and outputs, with an average of <span class="highlight">5.33</span> images per conversation.</li>
+									<li>The dataset features <span class="highlight">32,459</span> human preference annotations, organized as score evaluation pairwise comparisons at both the local and global levels. Preferences are decomposed into <span class="highlight">9</span> dimensions of
+										helpfulness, accompanied by human-written critiques, refinement suggestions, and rationales.</li>
+								</ul1>
+								<h4>Multi-turn QA Construction</h4>
+								<h4>Prompt Collection</h4>
+								<p1>The dataset is constructed from <span class="highlight">100,000</span> image-text QA instances collected from three primary sources: <span class="highlight">72.1%</span> from public datasets; <span class="highlight">22.8%</span> from legally scraped web content;
+									and the remaining <span class="highlight">5.1%</span> from researcher-curated, human-written prompts. These instances span diverse vision-language tasks, such as activity generation, data visualization, and table analysis.</p>
+									<p1>Drawing upon cognitive psychology theories, we identify <span class="highlight">5</span> common scenarios that give rise to multi-turn conversations in real-world multimodal settings. Based on these scenarios, we filter, diversify, and rewrite the original
+										image-text QA instances, resulting in <span class="highlight">15,604</span> unique <span class="italic">seed questions</span>. These questions serve as the initial round for generating multi-turn conversation data.</p>
+										<h4>Tool-Augmented Agent Workflow for QA Construction</h4>
+										<p1>We identify two core challenges in constructing multi-turn QA instances that capture realistic scenarios of multimodal understanding and generation: <strong>(1)</strong> How to effectively simulate realistic human multi-turn conversations in multimodal
+											contexts? <strong>(2)</strong> Given that current MLLMs lack interleaved understanding and generation capabilities, how to construct interleaved QA instances that generalize across diverse real-world tasks?</p>
+											<p1>To address these challenges, we propose a tool-augmented agent workflow that integrates powerful open-source and API-based models with image-centric tools. Within this framework, each agent simulates human-like conversations by either responding to the
+												current query or generating follow-up questions based on the previous answer. Agents can invoke tools to generate, edit, or retrieve images, enabling the recursive construction of tree-structured, multi-turn interleaved image–text QA instances.</p>
+												<h4>Agent Construction</h4>
+												<p1>The agent workflow is built upon a combination of strong open-source models alongside leading API-based models. To support diverse multimodal operations, <span class="highlight">3</span> types of image-centric tools are integrated:</p>
+													<ul1>
+														<li><span class="bold">Text-to-image generators</span> (e.g., FLUX.1-Schnell and Stable-Diffusion) for producing high-quality images based on prompts</li>
+														<li><span class="bold">Image editing API</span> (e.g., Gemini-2.0</span>-flash) capable of cropping, highlighting, and modifying images</li>
+														<li><span class="bold">Web-based retrieval interfaces</span> for sourcing real-world visuals</li>
+													</ul1>
+													<p1>During multi-turn QA generation, agents embed structured tokens such as <code>&lt;Image,<em>caption</em>&gt;</code> within the text to denote visual references after which GPT-4o serves as a double classifier and verifier, automatically
+														determining the appropriate tool call based on the image intent and context.</p>
+														<h4>Iteratively Question and Response Generation</h4>
+														<p1>We begin with carefully crafted <span class="italic">seed questions</span> to initiate extended multimodal dialogues; at each turn, diverse agents generate a pool of <span class="highlight">10</span> candidate follow-ups via a Socratic
+															strategy, from which $\mathcal{M}$ (typically 1–3) high-quality, non-redundant questions are selected using textual similarity ranking and regex filtering, ensuring contextual coherence and, when needed, visual clarification.</p>
+															<p1>Each selected follow-up is then answered by sampling over <span class="highlight">10</span> candidate responses paired with multiple visual options, from which $\mathcal{N}$ (typically 2–4) responses are chosen based on relevance and
+																multimodal quality, with optional user-guided continuations to enhance satisfaction. Repeating this selection process for $n$ rounds yields a tree-structured QA dataset of size $\prod_{i=1}^{n}\mathcal{M}_i\times\mathcal{N}_i$.</p>
+																<h4>Quality Control and Pruning</h4>
+																<p1>We apply a filtering strategy from multiple perspectives with two key components: the <span class="bold">image(-text) Filter</span>, which evaluates each candidate image for visual quality and semantic relevance, and the <span
+																		class="bold">Consistency Filter</span>, which preserves content and stylistic coherence across dialogue turns. Finally, we prune the multi-turn paths based on overall quality, coherence, and diversity, yielding a refined set of
+																	QA instances for annotation.</p>
+																	<h4>Human Annotation</h4>
+																	<p1>Defining high-quality multi-turn multimodal dialogues is inherently challenging, as it requires assessing response correctness, the coherence of image-text interleaving, and the dynamic nature of human preferences throughout the
+																		conversation. We conduct multiple rounds of in-depth discussions with our annotation team regarding existing open-source datasets and prior work on MLLMs.</p>
+																		<p1>We then identify the following <span class="highlight">9</span> annotation dimensions:</p>
+																			<div class="dimensions-table">
+																				<table>
+																					<thead>
+																						<tr>
+																							<th style="color: #ffffff;">Global Dimensions</th>
+																							<th style="color: #ffffff;">Local Dimensions</th>
+																						</tr>
+																					</thead>
+																					<tbody>
+																						<tr>
+																							<td>G1: Context Awareness</td>
+																							<td>L1: Local Image-Text Consistency</td>
+																						</tr>
+																						<tr>
+																							<td>G2: Helpfulness and Completeness</td>
+																							<td>L2: Visual Perceptual Quality</td>
+																						</tr>
+																						<tr>
+																							<td>G3: Crucial Step Recognition</td>
+																							<td>L3: Contextual Coherence</td>
+																						</tr>
+																						<tr>
+																							<td>G4: Global Image-Text Consistency</td>
+																							<td>L4: Text Quality</td>
+																						</tr>
+																						<tr>
+																							<td>G5: Style Coherence</td>
+																							<td></td>
+																						</tr>
+																					</tbody>
+																				</table>
+																			</div>
+																			<p1>Crowdworkers first rate individual turns and then evaluate entire conversations from both local and global perspectives. A <span class="bold">Dual Verification</span> stage combines dedicated annotator efforts with
+																				professional quality control reviews to ensure guideline adherence. Structured <span class="bold">Language Feedback</span>, which offers concise explanations of scoring rationale, focused critiques, and refinement
+																				suggestions, further guides response improvement and substantially enhances annotation reliability.</p>
+						</div>
+					</div>
 				</div>
-			</div>
-			<script>
-				function openFullscreenImage(imageSrc) {
-				    const modal = document.getElementById('fullscreen-image-modal');
-				    const fullscreenImage = document.getElementById('fullscreen-image');
-				    fullscreenImage.src = imageSrc;
-				    modal.style.display = 'block';
-				}
-				
-				function closeFullscreenImage() {
-				    const modal = document.getElementById('fullscreen-image-modal');
-				    modal.style.display = 'none';
-				}
-				
-				// Close the modal when clicking outside the modal content
-				window.onclick = function(event) {
-				    const modal = document.getElementById('fullscreen-image-modal');
-				    if (event.target === modal) {
-				        modal.style.display = 'none';
-				    }
-				}
-			</script>
+				<!-- Fullscreen Image Modal -->
+				<div id="fullscreen-image-modal" class="modal" style="display: none;">
+					<div class="modal-content" style="position: relative;">
+						<span class="close" onclick="closeFullscreenImage()" style="position: absolute; top: 10px; right: 10px; cursor: pointer; font-size: 24px;">&times;</span>
+						<img id="fullscreen-image" src="" style="width: 100%; height: auto;">
+					</div>
+				</div>
+				<script>
+					function openFullscreenImage(imageSrc) {
+					    const modal = document.getElementById('fullscreen-image-modal');
+					    const fullscreenImage = document.getElementById('fullscreen-image');
+					    fullscreenImage.src = imageSrc;
+					    modal.style.display = 'block';
+					}
+					
+					function closeFullscreenImage() {
+					    const modal = document.getElementById('fullscreen-image-modal');
+					    modal.style.display = 'none';
+					}
+					
+					// Close the modal when clicking outside the modal content
+					window.onclick = function(event) {
+					    const modal = document.getElementById('fullscreen-image-modal');
+					    if (event.target === modal) {
+					        modal.style.display = 'none';
+					    }
+					}
+				</script>
 </section>
 <section class="hero is-light is-small">
 	<div class="hero-body has-text-centered">
@@ -645,12 +982,12 @@
 						</div>
 						<div class="content has-text-centered">
 							<img src="./assets/Figure4-0516_00.jpg" style="width: 75%;">
-							<p>This figure illustrates the relationship between global and local preference annotation dimensions. We identify three key findings: <br><strong>(1) Modality perception precedes effective modality fusion</strong>: for both the local-local and local-global correlation,
-								the evaluation of image-text consistency is strongly correlated with visual perceptual quality (up to 0.81). This suggests that before assessing multimodal information, human evaluators tend to prioritize a clear understanding of each individual modality, indicating
-								that a clear perception of individual modalities is a prerequisite for reliable multimodal judgment. <br><strong>(2) Long-horizon evaluations hinge on coherence and temporal consistency</strong>: for the global-global correlation, metrics such as helpfulness and
-								completeness strongly align with context awareness and global visual consistency, underscoring the importance of maintaining coherent semantics, multimodal information, and consistency with prior conversational context over extended interactions. <br><strong>(3)
-									Intent grounding drives long-horizon crucial step recognition</strong>: in multi-turn scenarios, models may deviate from the user’s core intentions, producing self-directed responses. Despite locally high-scoring and plausible outputs, this leads to stylistic
-								drift and omission of key steps over extended interactions, as demonstrated in the local-global setting.</p>
+							<p>This figure illustrates the relationship between global and local preference annotation dimensions. We identify three key findings: <br><strong><strong>(1)</strong> Modality perception precedes effective modality fusion</strong>: for both the local-local and
+								local-global correlation, the evaluation of image-text consistency is strongly correlated with visual perceptual quality (up to 0.81). This suggests that before assessing multimodal information, human evaluators tend to prioritize a clear understanding of each
+								individual modality, indicating that a clear perception of individual modalities is a prerequisite for reliable multimodal judgment. <br><strong><strong>(2)</strong> Long-horizon evaluations hinge on coherence and temporal consistency</strong>: for the global-global
+								correlation, metrics such as helpfulness and completeness strongly align with context awareness and global visual consistency, underscoring the importance of maintaining coherent semantics, multimodal information, and consistency with prior conversational context over
+								extended interactions. <br><strong><strong>(3)</strong> Intent grounding drives long-horizon crucial step recognition</strong>: in multi-turn scenarios, models may deviate from the user’s core intentions, producing self-directed responses. Despite locally high-scoring
+								and plausible outputs, this leads to stylistic drift and omission of key steps over extended interactions, as demonstrated in the local-global setting.</p>
 						</div>
 						<div class="content has-text-centered">
 							<img src="./assets/Figure5.png" style="width: 60%;">
@@ -1201,8 +1538,8 @@
 		</section>
 		<section>
 			<h2 class="title is-3" id="Evaluation" style="text-align: center;"> Case Study </h2>
-			<p style="text-align: center;">In this case study, we evaluated two models and identified deficiencies in image-text consistency, instruction following fidelity, and output quality. <strong>In contrast, our dataset provides high-quality multi-turn multimodal dialogue samples that
-					demonstrate robust image-text alignment and strong adherence to instruction prompts throughout the interaction.</strong></p>
+			<p style="text-align: center;">This case study revealed that the two models fall short in image-text consistency, instruction following, and image quality. By contrast, our dataset enables <strong>better adherence to user intent through high-quality multimodal understanding and
+					generation.</strong></p>
 			<div id="dialog-sample-container"></div>
 			<svg style="display:none;">
 				<symbol id="icon-gemini" viewBox="0 0 24 24">
@@ -1250,7 +1587,7 @@
 						<svg>
 							<use xlink:href="#icon-gemini"></use>
 						</svg>
-						<span>Gemini ▼</span>
+						<span class="highlight">Gemini ▼</span>
 					</div>
 					<div class="diag-content"></div>
 				</div>
@@ -1259,7 +1596,7 @@
 						<svg>
 							<use xlink:href="#icon-janus"></use>
 						</svg>
-						<span>Janus ▼</span>
+						<span class="highlight">Janus ▼</span>
 					</div>
 					<div class="diag-content"></div>
 				</div>
@@ -1268,7 +1605,7 @@
 						<svg>
 							<use xlink:href="#icon-dataset"></use>
 						</svg>
-						<span>Ours ▼</span>
+						<span class="highlight">Ours ▼</span>
 					</div>
 					<div class="diag-content"></div>
 				</div>
