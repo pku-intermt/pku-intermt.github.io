@@ -412,7 +412,7 @@
 <section class="hero teaser">
 	<div class="container is-max-desktop">
 		<div class="content has-text-centered">
-			<img src="./assets/figure1_0515.png" alt="geometric reasoning" width="100%" style="box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); border-radius: 8px;">
+			<img src="./assets/figure1-0516_00.jpg" alt="geometric reasoning" width="100%" style="box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); border-radius: 8px;">
 			<h2 style="text-align: center;">Abstract</h2>
 			<p> As multimodal large models (MLLMs) continue to advance across challenging tasks, a key question emerges: <strong><em>What essential capabilities are still missing?</em></strong> A critical aspect of human learning is continuous interaction with the environment -- not limited to
 				language, but also involving multimodal understanding and generation. To move closer to human-level intelligence, models must similarly support <strong>multi-turn</strong>, <strong>multimodal interaction</strong>. In particular, they should comprehend interleaved multimodal contexts
@@ -470,7 +470,13 @@
 						<img src="./assets/logo_transp.png" alt="HuggingFace" style="width: 1em; height: 1em;" />
 					</span>InterMT targets vision-language interaction scenarios involving interleaved understanding and generation. To model dynamic human preferences, <span class="icon">
 						<img src="./assets/logo_transp.png" alt="HuggingFace" style="width: 1em; height: 1em;" />
-					</span>InterMT comprises 15604 seed questions that elicit multi-turn, multimodal conversations spanning 15+ domains. Helpfulness is then decomposed into 9 sub-dimensions, capturing both global (conversation-level) and local (turn-level) aspects of human feedback.</p>
+					</span>InterMT comprises <strong>
+						<font color="red">15604</font>
+					</strong> seed questions that elicit multi-turn, multimodal conversations spanning <strong>
+						<font color="red">15+</font>
+					</strong> domains. Helpfulness is then decomposed into <strong>
+						<font color="red">9</font>
+					</strong> sub-dimensions, capturing both global (conversation-level) and local (turn-level) aspects of human feedback.</p>
 				<p><strong><u style="color:#C6011F">Our key contributions are summarized as follows:<svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
 								<path
 									d="M13.09 3.294c1.924.95 3.422 1.69 5.472.692a1 1 0 0 1 1.438.9v9.54a1 1 0 0 1-.562.9c-2.981 1.45-5.382.24-7.25-.701a38.739 38.739 0 0 0-.622-.31c-1.033-.497-1.887-.812-2.756-.77-.76.036-1.672.357-2.81 1.396V21a1 1 0 1 1-2 0V4.971a1 1 0 0 1 .297-.71c1.522-1.506 2.967-2.185 4.417-2.255 1.407-.068 2.653.453 3.72.967.225.108.443.216.655.32Z" />
@@ -479,8 +485,13 @@
 				<ul>
 					<li><strong>The First Multi-turn Interleaved Preference Dataset:</strong> To the best of our knowledge, <span class="icon">
 							<img src="./assets/logo_transp.png" alt="HuggingFace" style="width: 1em; height: 1em;" />
-						</span>InterMT is the first dataset that captures real human preferences for tasks involving multi-turn and interleaved multimodal understanding and generation. It contains 15604 unique seed questions across diverse categories, 52.6k multi-turn interleaved vision-language QA
-						instances, and 32,459 sets of multi-dimensional human preference annotations.</li>
+						</span>InterMT is the first dataset that captures real human preferences for tasks involving multi-turn and interleaved multimodal understanding and generation. It contains <strong>
+							<font color="red">15604</font>
+						</strong> unique seed questions across diverse categories, <strong>
+							<font color="red">52.6k</font>
+						</strong> multi-turn interleaved vision-language QA instances, and <strong>
+							<font color="red">32459</font>
+						</strong> sets of multi-dimensional human preference annotations.</li>
 					<li><strong>Agent-based Construction Workflow:</strong> <span class="icon">
 							<img src="./assets/logo_transp.png" alt="HuggingFace" style="width: 1em; height: 1em;" />
 						</span>InterMT employs a carefully designed agent-based multi-turn QA construction workflow that leverages strong MLLMs augmented with external tools to simulate high-quality real multi-turn interactions.</li>
@@ -488,12 +499,14 @@
 							<img src="./assets/logo_transp.png" alt="HuggingFace" style="width: 1em; height: 1em;" />
 						</span>InterMT decomposes the concept of helpfulness for multi-turn, multimodal interactions into two distinct levels: local (turn-level) and global (conversation-level). Furthermore, <span class="icon">
 							<img src="./assets/logo_transp.png" alt="HuggingFace" style="width: 1em; height: 1em;" />
-						</span>InterMT breaks down helpfulness into 9 specific dimensions, allowing for a detailed and nuanced evaluation of multi-turn, multi-modal interactions.</li>
+						</span>InterMT breaks down helpfulness into <strong>
+							<font color="red">9</font>
+						</strong> specific dimensions, allowing for a detailed and nuanced evaluation of multi-turn, multi-modal interactions.</li>
 					<li><strong>Effective for Multi-turn Alignment:</strong> Building on <span class="icon">
 							<img src="./assets/logo_transp.png" alt="HuggingFace" style="width: 1em; height: 1em;" />
 						</span>InterMT, we investigate methods to model long-horizon values and align dynamic human values. Our findings reveal the phenomenon of preference transfer in multi-turn multimodal interactions, which facilitates preference modeling for predicting human judgments.
 						Additionally, we identify a scaling phenomenon in multi-turn multimodal judge moderation.</li>
-					<li><strong>One More Thing</strong> We introduce \oureval{} to evaluate the ability of MLLMs in assisting judges across multi-turn, multimodal tasks, encompassing three parts: Scoring Evaluation, Pair Comparison, and Crucial Step Recognition. Despite strong reasoning
+					<li><strong>One More Thing</strong> We introduce InterMT-Bench to evaluate the ability of MLLMs in assisting judges across multi-turn, multimodal tasks, encompassing three parts: Scoring Evaluation, Pair Comparison, and Crucial Step Recognition. Despite strong reasoning
 						capabilities, advanced MLLMs fail to align with human values in judgment tasks. However, they show potential in identifying crucial steps in long-context scenarios.</li>
 				</ul>
 			</div>
@@ -515,26 +528,26 @@
 <section class="section">
 	<div class="container">
 		<center>
-			<h2 class="title is-3">Overview</h2>
+			<h2 class="title is-3">Data Construction</h2>
 		</center>
 		<div class="columns is-centered">
 			<div class="column is-half">
 				<div class="content has-text-justified">
 					<section id="dataset">
-						<h2>Dataset</h2>
+						<h4>Dataset</h4>
 						<p>Our core contribution is the introduction of a human preference dataset designed for <span style="color:#8B0000;">multi-turn</span>, multimodal <span style="color:#00008B;">understanding</span> and <span style="color:#006400;">generation</span> tasks. This section outlines
 							the dataset's composition, the collection of prompts and multi-turn QA instances, and the human annotation process.</p>
 						<section id="composition">
-							<h3>Dataset Composition</h3>
+							<h4>Dataset Composition</h4>
 							<p>The dataset comprises two primary data types: (1) <em>Seed Questions</em> for initiating <span style="color:#8B0000;">multi-turn</span> conversations, and (2) human preference annotations at both the local and global levels. Prompts are refined using principles from
 								linguistics and cognitive psychology to simulate realistic multimodal <span style="color:#8B0000;">multi-turn</span> tasks effectively.</p>
 						</section>
 						<section id="qa-construction">
-							<h3>Multi-turn QA Construction</h3>
+							<h4>Multi-turn QA Construction</h4>
 							<p>A tool-augmented workflow is employed to simulate human-like dialogues across various <span style="color:#8B0000;">multi-turn</span> tasks, integrating large models (e.g., GPT-4o, Qwen2.5-VL) with multimodal tools for image generation, editing, and retrieval.</p>
 						</section>
 						<section id="annotation">
-							<h3>Preference Annotation</h3>
+							<h4>Preference Annotation</h4>
 							<p>Human annotation includes local and global evaluations of conversation quality, focusing on <span style="color:#00008B;">understanding</span>-<span style="color:#006400;">generation</span> alignment, coherence, and completeness.</p>
 						</section>
 					</section>
@@ -1188,6 +1201,8 @@
 		</section>
 		<section>
 			<h2 class="title is-3" id="Evaluation" style="text-align: center;"> Case Study </h2>
+			<p style="text-align: center;">In this case study, we evaluated two models and identified deficiencies in image-text consistency, instruction following fidelity, and output quality. <strong>In contrast, our dataset provides high-quality multi-turn multimodal dialogue samples that
+					demonstrate robust image-text alignment and strong adherence to instruction prompts throughout the interaction.</strong></p>
 			<div id="dialog-sample-container"></div>
 			<svg style="display:none;">
 				<symbol id="icon-gemini" viewBox="0 0 24 24">
