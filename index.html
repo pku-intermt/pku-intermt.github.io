@@ -834,330 +834,330 @@
 			<h2 class="title is-3">Data Overview</h2>
 		</center>
 		<div class="columns is-centered has-text-centered">
-			<div class="column is-four-fifths">
-				<div class="content has-text-justified">
-					<div class="carousel results-carousel">
-						<div class="carousel-item">
-							<div class="box m-5">
-								<div class="content has-text-centered">
-									<img src="./assets/Figure2.png" style="width: 70%;" onclick="openFullscreenImage(this.src)">
-									<p style="margin-bottom: 30px;">
-										<span class="icon">
-										<img src="./assets/logo_transp.png" alt="HuggingFace" style="width: 1em; height: 1em;" />
-										</span><b>InterMT</b> includes over 15 tasks in vision-language scenarios, capturing communication examples across diverse settings. These examples demonstrate <span style="color: #8B0000;">multi-turn</span>, interleaved <span style="color: #00008B;">understanding</span> and <span style="color: #006400;">generation</span> in six representative domains.
-									</p>
-								</div>
+		<div class="column is-four-fifths">
+			<div class="content has-text-justified">
+				<div class="carousel results-carousel">
+					<div class="carousel-item">
+						<div class="box m-5">
+							<div class="content has-text-centered">
+								<img src="./assets/Figure2.png" style="width: 70%;" onclick="openFullscreenImage(this.src)">
+								<p style="margin-bottom: 30px;">
+									<span class="icon">
+									<img src="./assets/logo_transp.png" alt="HuggingFace" style="width: 1em; height: 1em;" />
+									</span><b>InterMT</b> includes over 15 tasks in vision-language scenarios, capturing communication examples across diverse settings. These examples demonstrate <span style="color: #8B0000;">multi-turn</span>, interleaved <span style="color: #00008B;">understanding</span> and <span style="color: #006400;">generation</span> in six representative domains.
+								</p>
 							</div>
 						</div>
-						<div class="carousel-item">
-							<div class="box m-5">
-								<div class="content has-text-centered">
-									<img src="./assets/Figure3-0515_00.png" style="width: 70%;" onclick="openFullscreenImage(this.src)">
-									<p style="margin-bottom: 30px;"> 
-									<p>
-										Overview of the four‐stage pipeline for constructing<span class="icon">
-										<img src="./assets/logo_transp.png" alt="HuggingFace" style="width: 1em; height: 1em;" />
-										</span><b>InterMT</b>.<br>
-										<strong style="font-weight: bold;">Stage I:</strong> seed questions are harvested from open‐source corpora, websites, and human writing, then filtered for perceptual quality, diversity, and
-										multi‐turn potential.
-										<strong style="font-weight: bold;">Stage II:</strong> iterative calls to large models and external tools (<em>e.g.</em> retrieve, generate) produce answer expansions and follow-up questions, forming a candidate QA tree.
-										<strong style="font-weight: bold;">Stage III:</strong> human annotators perform per‐turn (local) and conversation-level (global) evaluations—covering quality, coherence, context awareness, and completeness—to prune and select preferred branches.
-										<strong style="font-weight: bold;">Stage IV:</strong> the retained branches are reassembled into deep, coherent QA trees (depth &ge; 5) yielding the final multi‐turn QA pairs for model training.
-									</p>
-								</div>
+					</div>
+					<div class="carousel-item">
+						<div class="box m-5">
+							<div class="content has-text-centered">
+								<img src="./assets/Figure3-0515_00.png" style="width: 70%;" onclick="openFullscreenImage(this.src)">
+								<p style="margin-bottom: 30px;"> 
+								<p>
+									Overview of the four‐stage pipeline for constructing<span class="icon">
+									<img src="./assets/logo_transp.png" alt="HuggingFace" style="width: 1em; height: 1em;" />
+									</span><b>InterMT</b>.<br>
+									<strong style="font-weight: bold;">Stage I:</strong> seed questions are harvested from open‐source corpora, websites, and human writing, then filtered for perceptual quality, diversity, and
+									multi‐turn potential.
+									<strong style="font-weight: bold;">Stage II:</strong> iterative calls to large models and external tools (<em>e.g.</em> retrieve, generate) produce answer expansions and follow-up questions, forming a candidate QA tree.
+									<strong style="font-weight: bold;">Stage III:</strong> human annotators perform per‐turn (local) and conversation-level (global) evaluations—covering quality, coherence, context awareness, and completeness—to prune and select preferred branches.
+									<strong style="font-weight: bold;">Stage IV:</strong> the retained branches are reassembled into deep, coherent QA trees (depth &ge; 5) yielding the final multi‐turn QA pairs for model training.
+								</p>
 							</div>
 						</div>
 					</div>
 				</div>
-				<div class="container">
-					<div class="columns is-centered has-text-centered">
-						<div class="column is-four-fifths">
-							<div class="content has-text-justified">
-								<h4>Dataset Composition</h4>
-								<p1>The dataset includes: <strong>(1)</strong> carefully crafted seed questions for multi-turn, multimodal conversations, and <strong>(2)</strong> fine-grained human preference annotations at both local and global conversation levels. The seed questions are rigorously
-									selected and refined to enable more faithful simulation of real-world tasks.
-								</p1>
-								<p1>
-								We collect preference data through score evaluations and pairwise comparisons of multi-modal responses at each conversation turn, based on four sub-dimensions. Global conversation helpfulness is then evaluated via five sub-dimensions. Incorporating natural language
-								feedback further improves annotation quality and alignment with human intent.</p>
-								<h4>Data Card</h4>
-								<ul1>
-									<li>The dataset is built from a corpus of <span class="highlight">100k</span> image-text examples, comprising <span class="highlight">72.1%</span> from open-source vision-language datasets, <span class="highlight">22.8%</span> from web data, and <span
-										class="highlight">5.1%</span> from human-written content. All prompts are refined following constitutional guidelines to improve multi-turn compatibility, resulting in <span class="highlight">15604</span> unique seed questions.</li>
-									<li>Each seed question is expanded via an agent-based multi-turn QA construction workflow, producing at least <span class="highlight">8</span> multi-turn QA instances per prompt. After pruning and filtering, we obtain <span class="highlight">52.6k</span>
-										high-quality multi-turn QA instances, with <span class="highlight">41.92%</span> containing five or more turns.
-									</li>
-									<li>The resulting <span class="highlight">52.6k</span> QA instances cover <span class="highlight">15+</span> vision-language <span class="highlight">understanding</span> and <span class="highlight">generation</span> tasks, such as image editing and visual
-										tutorials. Each instance features interleaved textual and visual content in both inputs and outputs, with an average of <span class="highlight">5.33</span> images per conversation.
-									</li>
-									<li>The dataset features <span class="highlight">32,459</span> human preference annotations, organized as score evaluation pairwise comparisons at both the local and global levels. Preferences are decomposed into <span class="highlight">9</span> dimensions of
-										helpfulness, accompanied by human-written critiques, refinement suggestions, and rationales.
-									</li>
-								</ul1>
-								<h4>Human Annotation</h4>
-								<p1>
-								Defining high-quality multi-turn multimodal dialogues is inherently challenging, as it requires assessing response correctness, the coherence of image-text interleaving, and the dynamic nature of human preferences throughout the
-								conversation. We conduct multiple rounds of in-depth discussions with our annotation team regarding existing open-source datasets and prior work on MLLMs.</p>
-								<p1>
-								We then identify the following <span class="highlight">9</span> annotation dimensions:</p>
-								<div class="dimensions-table">
-									<table class="w-full border-collapse bg-white shadow-md rounded-lg">
-										<thead>
-											<tr class="bg-gray-800 text-white">
-												<th class="p-4 text-left">Global Dimensions</th>
-												<th class="p-4 text-left">Local Dimensions</th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<td class="p-4 border-t" data-dimension="G1">G1: Context Awareness</td>
-												<td class="p-4 border-t" data-dimension="L1">L1: Local Image-Text Consistency</td>
-											</tr>
-											<tr>
-												<td class="p-4 border-t" data-dimension="G2">G2: Helpfulness and Completeness</td>
-												<td class="p-4 border-t" data-dimension="L2">L2: Visual Perceptual Quality</td>
-											</tr>
-											<tr>
-												<td class="p-4 border-t" data-dimension="G3">G3: Crucial Step Recognition</td>
-												<td class="p-4 border-t" data-dimension="L3">L3: Contextual Coherence</td>
-											</tr>
-											<tr>
-												<td class="p-4 border-t" data-dimension="G4">G4: Global Image-Text Consistency</td>
-												<td class="p-4 border-t" data-dimension="L4">L4: Text Quality</td>
-											</tr>
-											<tr>
-												<td class="p-4 border-t" data-dimension="G5">G5: Style Coherence</td>
-												<td class="p-4 border-t"></td>
-											</tr>
-										</tbody>
-									</table>
-								</div>
-								<!-- Modal for displaying definitions -->
-								<div id="definitionModal" class="modal">
-									<div class="modal-content">
-										<span class="close">&times;</span>
-										<div id="definitionContent" class="prose"></div>
-									</div>
-								</div>
-								<script>
-									// Definitions object
-									const definitions = {
-									    G1: {
-									        title: "Context Awareness",
-									        definition: "The model should retain and understand the dialogue history to ensure contextual coherence, rather than treating each turn as an isolated interaction.",
-									        examples: [
-									            "In <i>visual storytelling</i> tasks, the model should maintain consistent characters, settings, and plot lines.",
-									            "In <i>design revision</i> tasks, the model should remember the user's previous requests and avoid repeating suggestions that were previously rejected."
-									        ],
-									        scoring: [
-									            "<b>0 points</b>: The model completely ignores the context; responses are irrelevant or contradict the dialogue history.",
-									            "<b>1 point</b>: The model partially recalls context but exhibits noticeable information loss or inconsistency in roles.",
-									            "<b>2 points</b>: Context is mostly preserved, with occasional minor inconsistencies.",
-									            "<b>3 points</b>: Full understanding of context; responses are logically coherent, with no information loss or contradictions."
-									        ]
-									    },
-									    G2: {
-									        title: "Helpfulness and Completeness",
-									        definition: "Measures how well the model’s textual and visual outputs follow task instructions and provide complete information to fulfill the user’s request. This also includes the logical structure of the response. In multi-turn image-text interactions, the model should accurately follow all instructions and ultimately deliver a complete solution.",
-									        examples: [
-									            "<b>Task</b>: Cake design improvement",
-									            "&nbsp;&nbsp;- <i>User</i>: Please help me improve this design (uploads image)",
-									            "&nbsp;&nbsp;- <i>AI</i>: Suggests adding frosting (but no new image generated) → Deduct points",
-									            "&nbsp;&nbsp;- <i>User</i>: Please show me the modified 3D rendering",
-									            "&nbsp;&nbsp;- <i>AI</i>: [Generates an image of the cake with frosting] → Full score"
-									        ],
-									        scoring: [
-									            "<b>0 points</b>: The model fails to meet the user’s needs; responses are irrelevant or severely incorrect, making the task unachievable.",
-									            "<b>1 point</b>: Partially satisfies the user’s request but lacks critical content or contains major errors that hinder task completion.",
-									            "<b>2 points</b>: Largely completes the task but has minor omissions or inaccuracies that affect the final outcome.",
-									            "<b>3 points</b>: Fully and accurately fulfills all user requirements; information is comprehensive, logically structured, and free from errors or omissions."
-									        ]
-									    },
-									    G3: {
-									        title: "Crucial Step Recognition",
-									        definition: "In multi-turn interactions, the model must accurately identify and complete crucial steps, avoiding irrelevant or incorrect information.",
-									        examples: [
-									            "<b>Task</b>: Step-by-step guidance for drawing a cat",
-									            "&nbsp;&nbsp;- <b>Crucial steps</b>: Sketch outline → Refine facial features → Adjust proportions → Apply color",
-									            "&nbsp;&nbsp;- <i>Incorrect</i>: Model asks the user to color before the outline is drawn",
-									            "&nbsp;&nbsp;- <i>Correct</i>: Model guides the user through steps in a logical order"
-									        ],
-									        scoring: [
-									            "<b>0 points</b>: Key steps are entirely incorrect or omitted, preventing task completion.",
-									            "<b>1 point</b>: Some steps are inaccurate, though the task may still proceed with effort.",
-									            "<b>2 points</b>: Overall step sequence is reasonable, with minor deviations or logical flaws.",
-									            "<b>3 points</b>: All crucial steps are correctly identified and ordered, with no redundancy or omissions."
-									        ]
-									    },
-									    G4: {
-									        title: "Global Image-Text Consistency",
-									        definition: "In multi-turn image-text interactions, textual descriptions should align closely with the generated images. Inconsistencies between text and images, or failing to generate images when required, result in lower scores.",
-									        examples: [
-									            "<b>Task</b>: AI-generated interior design plan",
-									            "&nbsp;&nbsp;- <i>User</i>: Please provide a modern-style living room design",
-									            "&nbsp;&nbsp;- <i>AI</i>: [Generates image, but the style does not match] → Deduct points",
-									            "&nbsp;&nbsp;- <i>User</i>: Please change the sofa color to dark grey",
-									            "&nbsp;&nbsp;- <i>AI</i>: [Generates image with dark grey sofa] → Full score"
-									        ],
-									        scoring: [
-									            "<b>0 points</b>: Images are completely unrelated to the text, or necessary images are missing.",
-									            "<b>1 point</b>: Partial relevance, but with significant mismatches (e.g., incorrect color or structure).",
-									            "<b>2 points</b>: Largely consistent, with minor deviations.",
-									            "<b>3 points</b>: Perfect alignment between text and images, with no inconsistencies."
-									        ]
-									    },
-									    G5: {
-									        title: "Style Coherence",
-									        definition: "Assesses the consistency of style and subject representation across generated images, including texture, color harmony, lighting, rendering style, physical properties, clothing, and behavior. It penalizes visual repetition, such as overly similar outputs or duplicated elements within a single image. In multi-turn interactions, generated images should exhibit stylistic coherence across turns, with smooth transitions and no abrupt changes.",
-									        examples: [
-									            "<b>Special Case</b>: If only one turn includes an image while the other does not, visual style coherence is <b>not</b> affected. In such cases, assign a <b>default score of 3 points</b>."
-									        ],
-									        scoring: [
-									            "<b>–1 point</b>: The task required image generation, but none was provided.",
-									            "<b>0 points</b>: Images exhibit entirely different styles, tones, rendering, or subject traits, resulting in visual dissonance.",
-									            "<b>1 point</b>: Some stylistic or subject consistency, but with clear discrepancies (e.g., sudden tone changes, mismatched rendering, or inconsistent subject traits).",
-									            "<b>2 points</b>: Style, tone, and subject representation are generally consistent, with minor variations that do not affect overall coherence.",
-									            "<b>3 points</b>: All images are highly consistent in style, tone, quality, and subject representation; visual transitions are smooth and contextually appropriate."
-									        ]
-									    },
-									    L1: {
-									        title: "Local Image-Text Consistency",
-									        definition: "In a single dialogue turn, the textual description should closely match the generated image(s), ensuring the text accurately reflects the visual content without ambiguity or misleading information.",
-									        examples: [
-									            "If the turn includes multiple images, evaluate the overall consistency of the text with all images. Individual image feedback can be added as needed (e.g., [3,1] Image 1: accurate; Image 2: inconsistent).",
-									            "If no image is generated, evaluate based on task requirements:",
-									            "&nbsp;&nbsp;- If image generation was expected but omitted, assess the inconsistency between the text and the missing visual content.",
-									            "&nbsp;&nbsp;- If the task (e.g., Visual Analysis) does not require image generation, assess consistency between the input image and the text.",
-									            "Otherwise, default evaluation compares the answer text with the image(s) generated in that turn."
-									        ],
-									        scoring: [
-									            "<b>0 points</b>: Text is irrelevant to the image(s) or contains major factual errors; Key descriptions are missing or completely incorrect (e.g., referencing nonexistent objects or scenes); Text may cause significant misunderstanding.",
-									            "<b>1 point</b>: Text is partially related to the image(s), but includes clear errors or misleading descriptions; Covers part of the image content but omits or misrepresents key details or relationships; Reader must infer or adjust understanding to align with the image(s).",
-									            "<b>2 points</b>: Text generally matches the image(s), with minor local inaccuracies (e.g., imprecise attribute descriptions or slight omissions); Does not hinder overall comprehension, but lacks precision upon close inspection.",
-									            "<b>3 points</b>: Text is highly aligned with the image(s), covering all key elements and details; Free from factual errors or ambiguity; the description is natural and coherent."
-									        ]
-									    },
-									    L2: {
-									        title: "Visual Perceptual Quality",
-									        definition: "Evaluates the visual realism, naturalness, and absence of distortion or artifacts in the generated image(s). Focuses on whether the image structure, colors, and composition realistically simulate the physical world, avoiding unnatural artifacts.",
-									        examples: [
-									            "In multi-image outputs, assign a unified score for overall quality. If image quality varies significantly, provide per-image feedback as needed (e.g., [3,1] Image 1: good; Image 2: distorted).",
-									            "If no image is generated, assess any image provided in the user prompt. If the image has issues, point them out in the textual answer."
-									        ],
-									        scoring: [
-									            "<b>0 points</b>: Obvious artifacts (e.g., disconnections, misalignments), severe distortions (e.g., highly unrealistic shapes), or structural errors (e.g., unbalanced proportions, illogical composition); Unnatural color rendering (e.g., harsh color blocks, abnormal tones); Lighting does not follow physical laws, severely affecting image recognizability.",
-									            "<b>1 point</b>: Image is mostly recognizable but contains localized severe flaws; Examples: anatomical errors (e.g., limb dislocation), inconsistent local color (e.g., banding, strong noise), or small rendering failures; Overall naturalness is compromised, affecting visual coherence.",
-									            "<b>2 points</b>: Image is generally natural and coherent; structure, color, and lighting are mostly reasonable; Minor local imperfections such as rough edges, small artifacts, or slight blurring that do not affect overall perceptual quality.",
-									            "<b>3 points</b>: Image is visually realistic and natural; Well-structured, smooth color transitions, physically consistent lighting; No visible artifacts, distortions, or flaws; overall aesthetics and details are excellent."
-									        ]
-									    },
-									    L3: {
-									        title: "Contextual Coherence",
-									        definition: "Assesses whether the response in this turn logically continues the dialogue history and remains consistent with prior content, avoiding contradictions.",
-									        examples: [],
-									        scoring: [
-									            "<b>0 points</b>: Completely irrelevant or logically inconsistent with previous context.",
-									            "<b>1 point</b>: Partially relevant but includes clear inconsistencies.",
-									            "<b>2 points</b>: Mostly coherent, with minor deviations.",
-									            "<b>3 points</b>: Fully consistent with prior dialogue; no contradictions."
-									        ]
-									    },
-									    L4: {
-									        title: "Text Quality",
-									        definition: "Measures the clarity, coherence, and correctness of the output text. Includes grammar, spelling, readability, consistency with instructions and context, and absence of redundancy. Responses should be logically sound, well-structured, and clearly expressed, avoiding abrupt transitions or repetition.",
-									        examples: [],
-									        scoring: [
-									            "<b>0 points</b>: Text is disorganized, lacks logic, and is hard to understand; may contain numerous grammar or spelling errors or repetitive content.",
-									            "<b>1 point</b>: Some parts are logically clear, but the text includes noticeable jumps, omissions, or contradictions that hurt overall readability; may include frequent language errors or redundant expressions.",
-									            "<b>2 points</b>: The overall logic is reasonable and the flow mostly smooth, but there are minor incoherences; some sentences may require optimization to improve readability.",
-									            "<b>3 points</b>: Text is logically rigorous, clearly expressed, well-organized, and naturally structured; no obvious jumps or repetition; grammar and spelling are correct, providing a good reading experience."
-									        ]
-									    }
-									};
-									
-									// Get modal elements
-									const modal = document.getElementById('definitionModal');
-									const modalContent = document.getElementById('definitionContent');
-									const closeBtn = document.getElementsByClassName('close')[0];
-									
-									// Add click event listeners to table cells
-									document.querySelectorAll('td[data-dimension]').forEach(cell => {
-									    cell.addEventListener('click', () => {
-									        const dimension = cell.getAttribute('data-dimension');
-									        const def = definitions[dimension];
-									        if (def) {
-									            // Build HTML for the definition
-									            let html = `<h2 class="text-xl font-bold mb-2">${def.title}</h2>`;
-									            html += `<h3 class="text-lg font-semibold">Definition</h3>`;
-									            html += `<p class="mb-4">${def.definition}</p>`;
-									            if (def.examples && def.examples.length > 0) {
-									                html += `<h3 class="text-lg font-semibold">Examples</h3>`;
-									                html += `<ul class="list-disc pl-5 mb-4">`;
-									                def.examples.forEach(example => {
-									                    html += `<li>${example}</li>`;
-									                });
-									                html += `</ul>`;
-									            }
-									            html += `<h3 class="text-lg font-semibold">Scoring Criteria</h3>`;
-									            html += `<ul class="list-disc pl-5">`;
-									            def.scoring.forEach(criterion => {
-									                html += `<li>${criterion}</li>`;
-									            });
-									            html += `</ul>`;
-									            modalContent.innerHTML = html;
-									            modal.style.display = 'block';
-									        }
-									    });
-									});
-									
-									// Close modal when clicking the close button
-									closeBtn.addEventListener('click', () => {
-									    modal.style.display = 'none';
-									});
-									
-									// Close modal when clicking outside the modal content
-									window.addEventListener('click', (event) => {
-									    if (event.target === modal) {
-									        modal.style.display = 'none';
-									    }
-									});
-								</script>
-							</div>
+			</div>
+			<div class="container">
+				<div class="columns is-centered has-text-centered">
+					<div class="column is-four-fifths">
+						<div class="content has-text-justified">
+							<h4>Dataset Composition</h4>
+							<p1>The dataset includes: <strong>(1)</strong> carefully crafted seed questions for multi-turn, multimodal conversations, and <strong>(2)</strong> fine-grained human preference annotations at both local and global conversation levels. The seed questions are rigorously
+								selected and refined to enable more faithful simulation of real-world tasks.
+							</p1>
 							<p1>
-							Crowdworkers first rate individual turns and then evaluate entire conversations from both local and global perspectives. A <span class="bold">Dual Verification</span> stage combines dedicated annotator efforts with
-							professional quality control reviews to ensure guideline adherence. Structured <span class="bold">Language Feedback</span>, which offers concise explanations of scoring rationale, focused critiques, and refinement
-							suggestions, further guides response improvement and substantially enhances annotation reliability.</p>
+							We collect preference data through score evaluations and pairwise comparisons of multi-modal responses at each conversation turn, based on four sub-dimensions. Global conversation helpfulness is then evaluated via five sub-dimensions. Incorporating natural language
+							feedback further improves annotation quality and alignment with human intent.</p>
+							<h4>Data Card</h4>
+							<ul1>
+								<li>The dataset is built from a corpus of <span class="highlight">100k</span> image-text examples, comprising <span class="highlight">72.1%</span> from open-source vision-language datasets, <span class="highlight">22.8%</span> from web data, and <span
+									class="highlight">5.1%</span> from human-written content. All prompts are refined following constitutional guidelines to improve multi-turn compatibility, resulting in <span class="highlight">15604</span> unique seed questions.</li>
+								<li>Each seed question is expanded via an agent-based multi-turn QA construction workflow, producing at least <span class="highlight">8</span> multi-turn QA instances per prompt. After pruning and filtering, we obtain <span class="highlight">52.6k</span>
+									high-quality multi-turn QA instances, with <span class="highlight">41.92%</span> containing five or more turns.
+								</li>
+								<li>The resulting <span class="highlight">52.6k</span> QA instances cover <span class="highlight">15+</span> vision-language <span class="highlight">understanding</span> and <span class="highlight">generation</span> tasks, such as image editing and visual
+									tutorials. Each instance features interleaved textual and visual content in both inputs and outputs, with an average of <span class="highlight">5.33</span> images per conversation.
+								</li>
+								<li>The dataset features <span class="highlight">32,459</span> human preference annotations, organized as score evaluation pairwise comparisons at both the local and global levels. Preferences are decomposed into <span class="highlight">9</span> dimensions of
+									helpfulness, accompanied by human-written critiques, refinement suggestions, and rationales.
+								</li>
+							</ul1>
+							<h4>Human Annotation</h4>
+							<p1>
+							Defining high-quality multi-turn multimodal dialogues is inherently challenging, as it requires assessing response correctness, the coherence of image-text interleaving, and the dynamic nature of human preferences throughout the
+							conversation. We conduct multiple rounds of in-depth discussions with our annotation team regarding existing open-source datasets and prior work on MLLMs.</p>
+							<p1>
+							We then identify the following <span class="highlight">9</span> annotation dimensions:</p>
+							<div class="dimensions-table">
+								<table class="w-full border-collapse bg-white shadow-md rounded-lg">
+									<thead>
+										<tr class="bg-gray-800 text-white">
+											<th class="p-4 text-left">Global Dimensions</th>
+											<th class="p-4 text-left">Local Dimensions</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td class="p-4 border-t" data-dimension="G1">G1: Context Awareness</td>
+											<td class="p-4 border-t" data-dimension="L1">L1: Local Image-Text Consistency</td>
+										</tr>
+										<tr>
+											<td class="p-4 border-t" data-dimension="G2">G2: Helpfulness and Completeness</td>
+											<td class="p-4 border-t" data-dimension="L2">L2: Visual Perceptual Quality</td>
+										</tr>
+										<tr>
+											<td class="p-4 border-t" data-dimension="G3">G3: Crucial Step Recognition</td>
+											<td class="p-4 border-t" data-dimension="L3">L3: Contextual Coherence</td>
+										</tr>
+										<tr>
+											<td class="p-4 border-t" data-dimension="G4">G4: Global Image-Text Consistency</td>
+											<td class="p-4 border-t" data-dimension="L4">L4: Text Quality</td>
+										</tr>
+										<tr>
+											<td class="p-4 border-t" data-dimension="G5">G5: Style Coherence</td>
+											<td class="p-4 border-t"></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<!-- Modal for displaying definitions -->
+							<div id="definitionModal" class="modal">
+								<div class="modal-content">
+									<span class="close">&times;</span>
+									<div id="definitionContent" class="prose"></div>
+								</div>
+							</div>
+							<script>
+								// Definitions object
+								const definitions = {
+								    G1: {
+								        title: "Context Awareness",
+								        definition: "The model should retain and understand the dialogue history to ensure contextual coherence, rather than treating each turn as an isolated interaction.",
+								        examples: [
+								            "In <i>visual storytelling</i> tasks, the model should maintain consistent characters, settings, and plot lines.",
+								            "In <i>design revision</i> tasks, the model should remember the user's previous requests and avoid repeating suggestions that were previously rejected."
+								        ],
+								        scoring: [
+								            "<b>0 points</b>: The model completely ignores the context; responses are irrelevant or contradict the dialogue history.",
+								            "<b>1 point</b>: The model partially recalls context but exhibits noticeable information loss or inconsistency in roles.",
+								            "<b>2 points</b>: Context is mostly preserved, with occasional minor inconsistencies.",
+								            "<b>3 points</b>: Full understanding of context; responses are logically coherent, with no information loss or contradictions."
+								        ]
+								    },
+								    G2: {
+								        title: "Helpfulness and Completeness",
+								        definition: "Measures how well the model’s textual and visual outputs follow task instructions and provide complete information to fulfill the user’s request. This also includes the logical structure of the response. In multi-turn image-text interactions, the model should accurately follow all instructions and ultimately deliver a complete solution.",
+								        examples: [
+								            "<b>Task</b>: Cake design improvement",
+								            "&nbsp;&nbsp;- <i>User</i>: Please help me improve this design (uploads image)",
+								            "&nbsp;&nbsp;- <i>AI</i>: Suggests adding frosting (but no new image generated) → Deduct points",
+								            "&nbsp;&nbsp;- <i>User</i>: Please show me the modified 3D rendering",
+								            "&nbsp;&nbsp;- <i>AI</i>: [Generates an image of the cake with frosting] → Full score"
+								        ],
+								        scoring: [
+								            "<b>0 points</b>: The model fails to meet the user’s needs; responses are irrelevant or severely incorrect, making the task unachievable.",
+								            "<b>1 point</b>: Partially satisfies the user’s request but lacks critical content or contains major errors that hinder task completion.",
+								            "<b>2 points</b>: Largely completes the task but has minor omissions or inaccuracies that affect the final outcome.",
+								            "<b>3 points</b>: Fully and accurately fulfills all user requirements; information is comprehensive, logically structured, and free from errors or omissions."
+								        ]
+								    },
+								    G3: {
+								        title: "Crucial Step Recognition",
+								        definition: "In multi-turn interactions, the model must accurately identify and complete crucial steps, avoiding irrelevant or incorrect information.",
+								        examples: [
+								            "<b>Task</b>: Step-by-step guidance for drawing a cat",
+								            "&nbsp;&nbsp;- <b>Crucial steps</b>: Sketch outline → Refine facial features → Adjust proportions → Apply color",
+								            "&nbsp;&nbsp;- <i>Incorrect</i>: Model asks the user to color before the outline is drawn",
+								            "&nbsp;&nbsp;- <i>Correct</i>: Model guides the user through steps in a logical order"
+								        ],
+								        scoring: [
+								            "<b>0 points</b>: Key steps are entirely incorrect or omitted, preventing task completion.",
+								            "<b>1 point</b>: Some steps are inaccurate, though the task may still proceed with effort.",
+								            "<b>2 points</b>: Overall step sequence is reasonable, with minor deviations or logical flaws.",
+								            "<b>3 points</b>: All crucial steps are correctly identified and ordered, with no redundancy or omissions."
+								        ]
+								    },
+								    G4: {
+								        title: "Global Image-Text Consistency",
+								        definition: "In multi-turn image-text interactions, textual descriptions should align closely with the generated images. Inconsistencies between text and images, or failing to generate images when required, result in lower scores.",
+								        examples: [
+								            "<b>Task</b>: AI-generated interior design plan",
+								            "&nbsp;&nbsp;- <i>User</i>: Please provide a modern-style living room design",
+								            "&nbsp;&nbsp;- <i>AI</i>: [Generates image, but the style does not match] → Deduct points",
+								            "&nbsp;&nbsp;- <i>User</i>: Please change the sofa color to dark grey",
+								            "&nbsp;&nbsp;- <i>AI</i>: [Generates image with dark grey sofa] → Full score"
+								        ],
+								        scoring: [
+								            "<b>0 points</b>: Images are completely unrelated to the text, or necessary images are missing.",
+								            "<b>1 point</b>: Partial relevance, but with significant mismatches (e.g., incorrect color or structure).",
+								            "<b>2 points</b>: Largely consistent, with minor deviations.",
+								            "<b>3 points</b>: Perfect alignment between text and images, with no inconsistencies."
+								        ]
+								    },
+								    G5: {
+								        title: "Style Coherence",
+								        definition: "Assesses the consistency of style and subject representation across generated images, including texture, color harmony, lighting, rendering style, physical properties, clothing, and behavior. It penalizes visual repetition, such as overly similar outputs or duplicated elements within a single image. In multi-turn interactions, generated images should exhibit stylistic coherence across turns, with smooth transitions and no abrupt changes.",
+								        examples: [
+								            "<b>Special Case</b>: If only one turn includes an image while the other does not, visual style coherence is <b>not</b> affected. In such cases, assign a <b>default score of 3 points</b>."
+								        ],
+								        scoring: [
+								            "<b>–1 point</b>: The task required image generation, but none was provided.",
+								            "<b>0 points</b>: Images exhibit entirely different styles, tones, rendering, or subject traits, resulting in visual dissonance.",
+								            "<b>1 point</b>: Some stylistic or subject consistency, but with clear discrepancies (e.g., sudden tone changes, mismatched rendering, or inconsistent subject traits).",
+								            "<b>2 points</b>: Style, tone, and subject representation are generally consistent, with minor variations that do not affect overall coherence.",
+								            "<b>3 points</b>: All images are highly consistent in style, tone, quality, and subject representation; visual transitions are smooth and contextually appropriate."
+								        ]
+								    },
+								    L1: {
+								        title: "Local Image-Text Consistency",
+								        definition: "In a single dialogue turn, the textual description should closely match the generated image(s), ensuring the text accurately reflects the visual content without ambiguity or misleading information.",
+								        examples: [
+								            "If the turn includes multiple images, evaluate the overall consistency of the text with all images. Individual image feedback can be added as needed (e.g., [3,1] Image 1: accurate; Image 2: inconsistent).",
+								            "If no image is generated, evaluate based on task requirements:",
+								            "&nbsp;&nbsp;- If image generation was expected but omitted, assess the inconsistency between the text and the missing visual content.",
+								            "&nbsp;&nbsp;- If the task (e.g., Visual Analysis) does not require image generation, assess consistency between the input image and the text.",
+								            "Otherwise, default evaluation compares the answer text with the image(s) generated in that turn."
+								        ],
+								        scoring: [
+								            "<b>0 points</b>: Text is irrelevant to the image(s) or contains major factual errors; Key descriptions are missing or completely incorrect (e.g., referencing nonexistent objects or scenes); Text may cause significant misunderstanding.",
+								            "<b>1 point</b>: Text is partially related to the image(s), but includes clear errors or misleading descriptions; Covers part of the image content but omits or misrepresents key details or relationships; Reader must infer or adjust understanding to align with the image(s).",
+								            "<b>2 points</b>: Text generally matches the image(s), with minor local inaccuracies (e.g., imprecise attribute descriptions or slight omissions); Does not hinder overall comprehension, but lacks precision upon close inspection.",
+								            "<b>3 points</b>: Text is highly aligned with the image(s), covering all key elements and details; Free from factual errors or ambiguity; the description is natural and coherent."
+								        ]
+								    },
+								    L2: {
+								        title: "Visual Perceptual Quality",
+								        definition: "Evaluates the visual realism, naturalness, and absence of distortion or artifacts in the generated image(s). Focuses on whether the image structure, colors, and composition realistically simulate the physical world, avoiding unnatural artifacts.",
+								        examples: [
+								            "In multi-image outputs, assign a unified score for overall quality. If image quality varies significantly, provide per-image feedback as needed (e.g., [3,1] Image 1: good; Image 2: distorted).",
+								            "If no image is generated, assess any image provided in the user prompt. If the image has issues, point them out in the textual answer."
+								        ],
+								        scoring: [
+								            "<b>0 points</b>: Obvious artifacts (e.g., disconnections, misalignments), severe distortions (e.g., highly unrealistic shapes), or structural errors (e.g., unbalanced proportions, illogical composition); Unnatural color rendering (e.g., harsh color blocks, abnormal tones); Lighting does not follow physical laws, severely affecting image recognizability.",
+								            "<b>1 point</b>: Image is mostly recognizable but contains localized severe flaws; Examples: anatomical errors (e.g., limb dislocation), inconsistent local color (e.g., banding, strong noise), or small rendering failures; Overall naturalness is compromised, affecting visual coherence.",
+								            "<b>2 points</b>: Image is generally natural and coherent; structure, color, and lighting are mostly reasonable; Minor local imperfections such as rough edges, small artifacts, or slight blurring that do not affect overall perceptual quality.",
+								            "<b>3 points</b>: Image is visually realistic and natural; Well-structured, smooth color transitions, physically consistent lighting; No visible artifacts, distortions, or flaws; overall aesthetics and details are excellent."
+								        ]
+								    },
+								    L3: {
+								        title: "Contextual Coherence",
+								        definition: "Assesses whether the response in this turn logically continues the dialogue history and remains consistent with prior content, avoiding contradictions.",
+								        examples: [],
+								        scoring: [
+								            "<b>0 points</b>: Completely irrelevant or logically inconsistent with previous context.",
+								            "<b>1 point</b>: Partially relevant but includes clear inconsistencies.",
+								            "<b>2 points</b>: Mostly coherent, with minor deviations.",
+								            "<b>3 points</b>: Fully consistent with prior dialogue; no contradictions."
+								        ]
+								    },
+								    L4: {
+								        title: "Text Quality",
+								        definition: "Measures the clarity, coherence, and correctness of the output text. Includes grammar, spelling, readability, consistency with instructions and context, and absence of redundancy. Responses should be logically sound, well-structured, and clearly expressed, avoiding abrupt transitions or repetition.",
+								        examples: [],
+								        scoring: [
+								            "<b>0 points</b>: Text is disorganized, lacks logic, and is hard to understand; may contain numerous grammar or spelling errors or repetitive content.",
+								            "<b>1 point</b>: Some parts are logically clear, but the text includes noticeable jumps, omissions, or contradictions that hurt overall readability; may include frequent language errors or redundant expressions.",
+								            "<b>2 points</b>: The overall logic is reasonable and the flow mostly smooth, but there are minor incoherences; some sentences may require optimization to improve readability.",
+								            "<b>3 points</b>: Text is logically rigorous, clearly expressed, well-organized, and naturally structured; no obvious jumps or repetition; grammar and spelling are correct, providing a good reading experience."
+								        ]
+								    }
+								};
+								
+								// Get modal elements
+								const modal = document.getElementById('definitionModal');
+								const modalContent = document.getElementById('definitionContent');
+								const closeBtn = document.getElementsByClassName('close')[0];
+								
+								// Add click event listeners to table cells
+								document.querySelectorAll('td[data-dimension]').forEach(cell => {
+								    cell.addEventListener('click', () => {
+								        const dimension = cell.getAttribute('data-dimension');
+								        const def = definitions[dimension];
+								        if (def) {
+								            // Build HTML for the definition
+								            let html = `<h2 class="text-xl font-bold mb-2">${def.title}</h2>`;
+								            html += `<h3 class="text-lg font-semibold">Definition</h3>`;
+								            html += `<p class="mb-4">${def.definition}</p>`;
+								            if (def.examples && def.examples.length > 0) {
+								                html += `<h3 class="text-lg font-semibold">Examples</h3>`;
+								                html += `<ul class="list-disc pl-5 mb-4">`;
+								                def.examples.forEach(example => {
+								                    html += `<li>${example}</li>`;
+								                });
+								                html += `</ul>`;
+								            }
+								            html += `<h3 class="text-lg font-semibold">Scoring Criteria</h3>`;
+								            html += `<ul class="list-disc pl-5">`;
+								            def.scoring.forEach(criterion => {
+								                html += `<li>${criterion}</li>`;
+								            });
+								            html += `</ul>`;
+								            modalContent.innerHTML = html;
+								            modal.style.display = 'block';
+								        }
+								    });
+								});
+								
+								// Close modal when clicking the close button
+								closeBtn.addEventListener('click', () => {
+								    modal.style.display = 'none';
+								});
+								
+								// Close modal when clicking outside the modal content
+								window.addEventListener('click', (event) => {
+								    if (event.target === modal) {
+								        modal.style.display = 'none';
+								    }
+								});
+							</script>
 						</div>
+						<p1>
+						Crowdworkers first rate individual turns and then evaluate entire conversations from both local and global perspectives. A <span class="bold">Dual Verification</span> stage combines dedicated annotator efforts with
+						professional quality control reviews to ensure guideline adherence. Structured <span class="bold">Language Feedback</span>, which offers concise explanations of scoring rationale, focused critiques, and refinement
+						suggestions, further guides response improvement and substantially enhances annotation reliability.</p>
 					</div>
 				</div>
-				<!-- Fullscreen Image Modal -->
-				<div id="fullscreen-image-modal" class="modal" style="display: none;">
-					<div class="modal-content" style="position: relative;">
-						<span class="close" onclick="closeFullscreenImage()" style="position: absolute; top: 10px; right: 10px; cursor: pointer; font-size: 24px;">&times;</span>
-						<img id="fullscreen-image" src="" style="width: 100%; height: auto;">
-					</div>
+			</div>
+			<!-- Fullscreen Image Modal -->
+			<div id="fullscreen-image-modal" class="modal" style="display: none;">
+				<div class="modal-content" style="position: relative;">
+					<span class="close" onclick="closeFullscreenImage()" style="position: absolute; top: 10px; right: 10px; cursor: pointer; font-size: 24px;">&times;</span>
+					<img id="fullscreen-image" src="" style="width: 100%; height: auto;">
 				</div>
-				<script>
-					function openFullscreenImage(imageSrc) {
-					    const modal = document.getElementById('fullscreen-image-modal');
-					    const fullscreenImage = document.getElementById('fullscreen-image');
-					    fullscreenImage.src = imageSrc;
-					    modal.style.display = 'block';
-					}
-					
-					function closeFullscreenImage() {
-					    const modal = document.getElementById('fullscreen-image-modal');
-					    modal.style.display = 'none';
-					}
-					
-					// Close the modal when clicking outside the modal content
-					window.onclick = function(event) {
-					    const modal = document.getElementById('fullscreen-image-modal');
-					    if (event.target === modal) {
-					        modal.style.display = 'none';
-					    }
-					}
-				</script>
+			</div>
+			<script>
+				function openFullscreenImage(imageSrc) {
+				    const modal = document.getElementById('fullscreen-image-modal');
+				    const fullscreenImage = document.getElementById('fullscreen-image');
+				    fullscreenImage.src = imageSrc;
+				    modal.style.display = 'block';
+				}
+				
+				function closeFullscreenImage() {
+				    const modal = document.getElementById('fullscreen-image-modal');
+				    modal.style.display = 'none';
+				}
+				
+				// Close the modal when clicking outside the modal content
+				window.onclick = function(event) {
+				    const modal = document.getElementById('fullscreen-image-modal');
+				    if (event.target === modal) {
+				        modal.style.display = 'none';
+				    }
+				}
+			</script>
 	</section>
 	<section class="hero is-light is-small">
 	<div class="hero-body has-text-centered">
@@ -1294,38 +1294,6 @@
 	performance for <em>k+1 → T</em> turns, but this effect diminishes as the number of turns increases. The decline
 	is due to three factors: diminishing returns as the model struggles with long-term preferences, contextual drift
 	as earlier turns lose relevance, and the evolving interaction between user intentions and latent preferences.
-	</p>
-	</div>
-	<!-- 第三页内容：Evaluation Setup -->
-	<div class="content has-text-centered">
-	<h4>Multi-turn Scaling Law of Turn-based Judge Moderation</h4>
-	<p>
-	<em>Can we accurately capture users' intentions and latent preferences with a limited number of conversational
-	turns, thereby improving the modeling of long-term values?</em> Such capabilities are crucial for building
-	general-purpose AI assistants, which need to understand and predict users' needs across diverse contexts,
-	adapting to changing preferences over time. We investigate whether the discriminative power of judge models,
-	trained on the first <code style="color:#000000;">k</code> turns, improves in subsequent turns (from <code style="color:#000000;">k+1</code> to <code style="color:#000000;">N</code>) and exhibits <em>scaling laws</em>.
-	</p>
-	<figure style="width: 75%; margin: 0 auto;">
-	<img src="./assets/Figure8-v1_00.jpg" style="width: 70%;">
-	</figure>
-	<p style="margin-left: auto; margin-right: auto; width: 75%;">
-	The dataset includes multi-turn multimodal interleaved communication histories and human-annotated ground truth.
-	Evaluated models must assess the conversation at both the turn and conversation levels across nine dimensions,
-	following a set of guidelines.
-	</p>
-	<p style="margin-left: auto; margin-right: auto; width: 75%;">
-	<em>Scoring Evaluation</em> requires the model to assign scores on a 0–3 scale, with evaluation based on
-	agreement and Pearson similarity.
-	</p>
-	<p style="margin-left: auto; margin-right: auto; width: 75%;">
-	<em>Pair Comparison</em> directly compares two individual turns or entire conversations, without considering
-	ties, and is evaluated for accuracy against human judgments.
-	</p>
-	<p style="margin-left: auto; margin-right: auto; width: 75%;">
-	<em>Crucial Step Recognition</em> addresses a key challenge in multi-turn conversations: accurately identifying
-	the user’s intent and determining whether it has been fulfilled, evaluated by the score provided by the judge
-	according to the human-annotated reference answers.
 	</p>
 	</div>
 	</div>
@@ -1826,15 +1794,22 @@
 	</div>
 	<div class="content has-text-centered">
 	<h4>Results and Takeaways</h4>
+	<div class="content">
+	<div style="display: flex; align-items: center; justify-content: center; gap: 2rem; flex-wrap: wrap;">
+	<!-- Image on the left -->
+	<div style="flex: 1; min-width: 300px; text-align: center;">
+	<figure>
+	<img src="./assets/crucial_step_recognition_score_00.jpg" alt="Crucial Step Recognition" style="width: 100%; max-width: 400px; border-radius: 8px;">
+	</figure>
+	</div>
+	<!-- Text on the right -->
+	<div style="flex: 2; min-width: 300px;">
 	<p>
 	We evaluated <span style="color:#C6011F">6</span> advanced MLLMs for their ability to assist in judgment for multi-turn multimodal interactions,
 	considering the nine dimensions proposed above. The results reveal key observations:
 	<strong>Existing models still face challenges in aligning with long-horizon human values, but they perform more accurately in evaluating local, fine-grained preferences</strong>.
 	As shown in the table, all models exhibit significant gaps in performance
-	compared to humans in both <em>Score Evaluation</em> and <em>Pair Comparison</em> tasks.<figure>
-	<img src="./assets/crucial_step_recognition_score_00.jpg" style="width: 50%;">
-	</figure>
-	<p>
+	compared to humans in both <em>Score Evaluation</em> and <em>Pair Comparison</em> tasks.
 	However, the models demonstrate better accuracy when assessing local dimensions rather than global dimensions,
 	suggesting that capturing fine-grained (<em>e.g.</em>, turn-level) human preferences is crucial for both evaluation and alignment with human dynamic and long-horizon values.
 	</p>
@@ -1842,6 +1817,28 @@
 	However, there is cause for optimism: current MLLMs exhibit near-human-level performance (<span style="color:#C6011F">4.38/5</span>) in recognizing task completion and aligning with human intent
 	(<em>i.e.</em>, <em>Crucial Step Recognition</em>), providing potential solutions for long-term value alignment.
 	</p>
+	<p>
+	</div>
+	<!-- 第三页内容：Evaluation Setup -->
+	<div class="content has-text-centered">
+	<h4>Induced Bias and Hallucination</h4>
+	<p>
+	We identified issues related to bias and hallucination:
+	<strong>Position Bias</strong>, where models consistently favor responses in specific positions
+	(<em>e.g.</em>, the first answer), often influenced by training data that places correct answers
+	at the beginning or end of prompts;
+	and <strong>High-Score Bias</strong>, where models tend to assign
+	higher scores to entire multi-turn communications.
+	</p>
+	<figure style="width: 75%; margin: 0 auto;">
+	<img src="./assets/Figure8-v1_00.jpg" style="width: 100%;">
+	</figure>
+	<p style="margin-left: auto; margin-right: auto; width: 75%;">
+	These issues, particularly in long-horizon tasks, may hinder the model’s ability to capture differences between extended conversations,
+	thereby posing challenges in modeling long-horizon human values and potentially leading to safety concerns.
+	</p>
+	</div>
+	</div>
 	</div>
 	</section>
 	<section>
