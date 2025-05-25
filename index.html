@@ -1813,7 +1813,31 @@
 						</svg>
 						<span class="highlight">Dataset Examples</span>
 					</div>
-					<div class="diag-content" id="diag-content"></div>
+					<div class="diag-content" id="diag-content">
+						<div class="columns is-multiline" style="margin-top: 2em;">
+							<!-- Group 1 -->
+							<div class="column is-one-third" style="padding: 1em;">
+								<div class="card" style="border-radius: 8px; padding: 1em; box-shadow: 0 2px 10px rgba(0,0,0,0.1); background-color: white;">
+									<h3 style="color: #ff6600; text-align: center; margin-bottom: 1em;">Group 1</h3>
+									<div id="group1Content"></div>
+								</div>
+							</div>
+							<!-- Group 2 -->
+							<div class="column is-one-third" style="padding: 1em;">
+								<div class="card" style="border-radius: 8px; padding: 1em; box-shadow: 0 2px 10px rgba(0,0,0,0.1); background-color: white;">
+									<h3 style="color: #007acc; text-align: center; margin-bottom: 1em;">Group 2</h3>
+									<div id="group2Content"></div>
+								</div>
+							</div>
+							<!-- Group 3 -->
+							<div class="column is-one-third" style="padding: 1em;">
+								<div class="card" style="border-radius: 8px; padding: 1em; box-shadow: 0 2px 10px rgba(0,0,0,0.1); background-color: white;">
+									<h3 style="color: #5cb45c; text-align: center; margin-bottom: 1em;">Group 3</h3>
+									<div id="group3Content"></div>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -1822,6 +1846,7 @@
 <script>
 	const dataexamples = [
 					{
+					"group":1,
 					"figures": 0,
 					"prompt": "If you were to create a new dish inspired by this one, what ingredients would you use?",
 					"response": "I understand that you are asking for suggestions to create a new dish inspired by the featured plate of mac and cheese. First, let's take into consideration the current ingredients on the plate, including macaroni and cheese, carrots, celery, and onions. For a new dish, I would suggest combining these elements while adding some new and creative twists.\n\nFor example, you could create a fusion of pasta dishes by incorporating other types of pasta, such as shells, penne, or rotini, along with a creamy sauce that combines elements of Alfredo, pesto, or cheese-based dishes like fettuccine alfredo. In addition, you could introduce a variety of vegetables like mushrooms, spinach, zucchini, or artichokes, as well as other protein sources such as chicken, ground beef, or even a bean-based option for vegetarians.\n\nFor a beverage, consider pairing the new dish with a crisp white wine, such as Pinot Grigio or Sauvignon Blanc, both of which can complement the flavors of pasta, cheese, and vegetables. To enhance the dining experience, you could also include a side salad, a lightly dressed green salad, or perhaps even a small serving of garlic bread.\n\nRemember to adjust the quantities of ingredients based on personal preferences and dietary requirements. Enjoy creating your own unique pasta dish inspired by the ingredients seen in the previous questions' images.",
@@ -1830,6 +1855,7 @@
 					"color": "default"
 				},
 				{
+					"group":1,
 					"figures": 1,
 					"prompt": "That sounds delicious! How would you recommend seasoning or spicing the new dish to enhance its flavors even further?",
 					"response": "Sure, here's an image to help you visualize the new dish idea:\nImage, artist's concept of a fusion dish combining mac and cheese, seafood, and vegetables",
@@ -1838,6 +1864,7 @@
 					"color": "default"
 				},
 				{
+					"group":1,
 					"figures": 3,
 					"prompt": "The AI provided an image of the fusion dish. I should probably ask a question about the visual representation to keep the conversation going. That image is quite helpful! Are there any specific elements in the image, like the seafood or vegetables used, that you think contribute most to the overall flavor profile of the dish?",
 					"response": "To enhance the flavors of your new dish, consider using a combination of herbs and spices that complement the ingredients you've chosen. For instance, if you're using seafood, you might want to add some lemon zest, parsley, and dill to bring out the natural flavors of the fish. If you're using vegetables like mushrooms or spinach, try adding garlic, thyme, and a pinch of nutmeg to give it a rich, earthy taste.\n\nFor the pasta, you can season it with a bit of grated Parmesan cheese, black pepper, and a touch of salt to balance the creaminess of the sauce. If you're using a bean-based protein source, consider adding cumin, coriander, and a hint of chili powder to give it a warm, spicy kick.\n\nRemember to taste and adjust the seasoning as you go to ensure the flavors are balanced and harmonious. Enjoy experimenting with different combinations to find your perfect blend!",
@@ -1846,7 +1873,7 @@
 					"color": "default"
 				},
 				{
-			
+					"group":1,
 					"figures": 3,
 					"prompt": "That's great advice. Considering the image you provided, and the suggested seasonings, what kind of sauce would best tie together the seafood, vegetables, and pasta in this fusion dish?",
 					"response": "To tie together the seafood, vegetables, and pasta in this fusion dish, I recommend using a creamy garlic and herb sauce. This type of sauce will complement the flavors of the seafood and vegetables while also enhancing the pasta. You can make the sauce by sautéing garlic and herbs (such as parsley, thyme, and basil) in butter or olive oil, then adding heavy cream and letting it simmer until it thickens. Season with salt and pepper to taste, and you'll have a delicious sauce that brings all the components of your dish together.\n\nWould you like some suggestions on how to prepare the seafood and vegetables for this dish?",
@@ -1855,7 +1882,7 @@
 					"color": "default"
 				},
 				{
-				
+					"group":1,
 					"figures": 3,
 					"prompt": "Yes, please! Specifically, could you suggest a cooking method for the seafood and vegetables that would best complement the creamy garlic and herb sauce you recommended?",
 					"response": "To prepare the seafood and vegetables for this dish, you can follow these steps:\n\n1. Seafood: Choose your preferred type of seafood, such as shrimp, scallops, or fish fillets. Season with salt, pepper, and any desired herbs or spices. Sauté in a pan with a bit of olive oil or butter until cooked through.\n\n2. Vegetables: Select a variety of vegetables that complement the seafood and pasta, such as bell peppers, zucchini, and cherry tomatoes. Slice or chop them into bite-sized pieces. Sauté in a pan with a bit of olive oil or butter until tender but still slightly crisp.\n\n3. Pasta: Cook the pasta according to package instructions until al dente. Drain and set aside.\n\n4. Sauce: Prepare the creamy garlic and herb sauce as previously mentioned.\n\n5. Assembly: In a large pan, combine the cooked seafood, vegetables, and pasta. Pour the sauce over the mixture and toss gently to coat everything evenly.\n\nServe hot and enjoy your delicious fusion dish!\n\nWould you like some ideas for side dishes or beverages to pair with this meal?",
@@ -1864,7 +1891,7 @@
 					"color": "default"
 				},
 				{
-					
+					"group":1,
 					"figures": 1,
 					"prompt": "Yes, please! Specifically, could you suggest a cooking method for the seafood and vegetables that would best complement the creamy garlic and herb sauce you recommended?",
 					"response": "Certainly! To complement the creamy garlic and herb sauce, I suggest the following cooking methods for your seafood and vegetables:\n\nSeafood:\n- Sautéing: Sautéing is a quick and easy method that works well with seafood like shrimp, scallops, or diced fish. Heat some olive oil or butter in a pan over medium-high heat, then add the seafood and cook until it's just cooked through. Be careful not to overcook it, as seafood can become rubbery.\n- Grilling: Grilling adds a smoky flavor to seafood. Brush the seafood with olive oil and season with salt, pepper, and any other desired spices. Grill over medium heat until cooked through, flipping once.\n- Poaching: Poaching is a gentle method that's great for delicate fish fillets. Submerge the fish in simmering liquid (such as vegetable broth or white wine) until cooked through.\n\nVegetables:\n- Roasting: Roasting brings out the natural sweetness of vegetables. Toss the vegetables with olive oil, salt, pepper, and herbs, then spread them out on a baking sheet and roast in a preheated oven until tender and slightly caramelized. Image, roasted vegetables on a baking sheet\n- Steaming: Steaming is a healthy way to cook vegetables, as it helps retain their nutrients. Place the vegetables in a steamer basket over boiling water and steam until tender-crisp.\n- Blanching: Blanching involves briefly cooking vegetables in boiling water, then immediately plunging them into ice water to stop the cooking process. This method helps preserve their color and texture.\n\nThese methods will help bring out the best flavors and textures in your seafood and vegetables, making them a perfect match for the creamy garlic and herb sauce. Would you like some specific recommendations for which seafood and vegetables pair best with this type of sauce?",
@@ -1873,7 +1900,7 @@
 					"color": "default"
 				},
 				{
-	
+					"group":1,
 					"figures": 1,
 					"prompt": "Yes, please! Specifically, could you suggest a cooking method for the seafood and vegetables that would best complement the creamy garlic and herb sauce you recommended?",
 					"response": "To best complement the creamy garlic and herb sauce, a great cooking method for the seafood and vegetables would be to lightly sauté them. Sautéing will retain their natural flavors while creating a pleasing texture that pairs well with the pasta. Start by heating some olive oil or butter in a pan over medium heat. Add the seafood, such as shrimp or scallops, and cook until they are just done and opaque. Remove them from the pan and set aside. Then, sauté your choice of vegetables, like bell peppers, zucchini, or asparagus, until they're tender yet crisp. Once the vegetables are cooked, return the seafood to the pan, add the prepared creamy garlic and herb sauce, toss with cooked pasta, and serve.\n\nThis method ensures a harmonious blend of flavors and textures, enhancing the dish's overall experience.\nImage, illustrated steps for sautéing seafood and vegetables\n\nWould you like to see some plating ideas for serving this dish?",
@@ -1882,7 +1909,7 @@
 					"color": "default"
 				},
 				{
-	
+					"group":2,
 					"figures": 0,
 					"prompt": "If you were to plan a road trip using this map, which cities or landmarks would you include in your itinerary?",
 					"response": "Dependent on the specific road trip, the cities and landmarks included in the itinerary might range from a few to multiple destinations. To help, I can provide recommendations based on popular road trip routes covering various cities and landmarks. For example, the Great American Road Trip or the Pacific Coast Highway routes include famous American cities such as San Francisco, Los Angeles, Santa Cruz, San Diego, and unique landmarks like the Golden Gate Bridge, Big Sur, and the Redwood Forest. If the trip is aimed at reaching more Canadian cities, options like the Trans-Canada Highway route might include cities like Vancouver, Victoria, Banff, and Calgary with natural wonders like the Rocky Mountains, Victoria Island, and picturesque lakes. To find more customized itineraries, please visit bestoftheroad.com and explore travel reviews, photos, and videos from around the United States and Canada.",
@@ -1891,7 +1918,7 @@
 					"color": "default"
 				},
 				{
-	
+					"group":2,
 					"figures": 3,
 					"prompt": "That sounds exciting! Are there any specific activities or attractions you'd recommend experiencing along these routes?",
 					"response": "Recommended road trips vary depending on the interests of the travelers, so BestOfTheRoad.com offers tailored itineraries to suit specific preferences. Furthermore, the site features diverse travel reviews, photos, and videos to provide in-depth experiences and guide trippers in their choices. Additionally, BestOfTheRoad.com allows users to input their preferred locations, landmarks, or cities alongside their travel preferences, making for a unique road trip experience. Explore BestOfTheRoad.com to plan your next road trip and discover the best routes to your desired destinations.",
@@ -1900,7 +1927,7 @@
 					"color": "default"
 				},
 				{
-	
+					"group":2,
 					"figures": 3,
 					"prompt": "That's great that BestOfTheRoad.com offers so many options. Does it also provide information on the best times of year to visit certain locations, considering weather or seasonal events?",
 					"response": "Yes, BestOfTheRoad.com does offer information on the best times to visit certain locations, taking into account weather conditions and seasonal events. They provide detailed travel reviews, photos, and videos that can help you plan your trip according to your preferences. Would you like some suggestions on the best time to visit New York State based on the map you provided?",
@@ -1909,7 +1936,7 @@
 					"color": "default"
 				},
 				{
-	
+					"group":2,
 					"figures": 1,
 					"prompt": "Yes, please! I'm curious to know about the best time to visit New York State, especially considering the map I provided. What kind of seasonal events or weather conditions should I be aware of? Also, does BestOfTheRoad.com highlight any specific regions or attractions within New York State based on the time of year?",
 					"response": "New York State has a diverse climate, with each season offering unique experiences. Spring (March to May) is ideal for hiking and exploring the state's parks, while summer (June to August) is perfect for beach visits and outdoor festivals. Fall (September to November) brings stunning foliage, and winter (December to February) offers skiing and snowboarding opportunities. Image, a collage of New York State in different seasons BestOfTheRoad.com highlights various regions and attractions throughout the year, such as the Finger Lakes wine region in spring, the Adirondack Mountains in summer, the Catskills in fall, and Lake Placid in winter. Would you like more information on specific events or attractions during your preferred season?",
@@ -1918,7 +1945,7 @@
 					"color": "default"
 				},
 				{
-	
+					"group":2,
 					"figures": 1,
 					"prompt": "That's a helpful overview of New York State's seasons! Given the image and your recommendations, could you elaborate on the Finger Lakes wine region in the spring? Specifically, what kind of events or activities are popular during that time, and what makes it a good time to visit that area?",
 					"response": "In the spring, the Finger Lakes wine region becomes a popular destination for wine enthusiasts and nature lovers alike. The region hosts several events and activities during this time, including wine tastings, vineyard tours, and the annual Finger Lakes Wine Festival. The mild temperatures and blooming flowers create a picturesque setting for exploring the wineries and scenic landscapes. It's a great time to visit because the crowds are smaller compared to peak tourist seasons, allowing for a more intimate and relaxed experience. Image, a photo of the Finger Lakes wine region in spring\n\nWould you like to know more about specific wineries or events happening in the Finger Lakes wine region during the spring?",
@@ -1927,7 +1954,7 @@
 					"color": "default"
 				},
 				{
-	
+					"group":2,
 					"figures": 1,
 					"prompt": "That's a helpful overview of New York State's seasons! Given the image and your recommendations, could you elaborate on the Finger Lakes wine region in the spring? Specifically, what kind of events or activities are popular during that time, and what makes it a good time to visit that area?",
 					"response": "Spring is a fantastic time to visit the Finger Lakes wine region! The weather is starting to warm up, the vineyards are coming back to life, and there are fewer crowds compared to the summer and fall.\n\nPopular events and activities include:\n- Wine tasting: Many wineries begin to release their new vintages in the spring.\n- Spring festivals: Some towns host festivals celebrating the season with food, crafts, and live music.\n- Outdoor activities: Hiking, biking, and kayaking are all great ways to enjoy the natural beauty of the region as the weather improves.\n\nWhat makes it a good time to visit:\n- Beautiful scenery: The vineyards are lush and green, and the lakes are sparkling in the sunshine.\n- Pleasant weather: The temperatures are mild, making it comfortable to explore the region.\n- Fewer crowds: You'll have more space to relax and enjoy the wineries and attractions.\n\nImage, A photograph showcasing vineyards in the Finger Lakes region during spring, with budding vines and clear blue skies.\n\nWould you like some specific winery or event recommendations for a spring visit to the Finger Lakes?",
@@ -1936,7 +1963,7 @@
 					"color": "default"
 				},
 				{
-	
+					"group":2,
 					"figures": 1,
 					"prompt": "That's a helpful overview of New York State's seasons! Given the image and your recommendations, could you elaborate on the Finger Lakes wine region in the spring? Specifically, what kind of events or activities are popular during that time, and what makes it a good time to visit that area?",
 					"response": "The Finger Lakes wine region is an excellent destination in the spring for several reasons. As the snow melts and the temperatures rise, the vineyards begin to bud, offering a picturesque landscape and promising a new season of wine production. Spring is a perfect time for wine enthusiasts to visit, as many wineries host special events such as wine tastings and vineyard tours that highlight their new releases.\n\nPopular events during this time include the Wine & Herb Festival, where visitors can pair wines with herbs and explore the culinary side of the Finger Lakes. Additionally, many wineries and local businesses participate in Earth Day events focused on sustainability and the environment, creating a unique opportunity to engage with local culture and initiatives.\n\nSpring also brings more moderate weather, making it ideal for outdoor activities like hiking and exploring the region's natural beauty, including the lakes themselves. For those interested in cultural experiences, spring often features local festivals and craft fairs, providing a vibrant mix of art, food, and entertainment.\n\nImage, scenic view of blooming vineyards in the Finger Lakes wine region during spring\n\nWould you like to know about specific wineries to visit or additional activities that complement your trip in the Finger Lakes?",
@@ -1945,7 +1972,7 @@
 					"color": "default"
 				},
 				{
-	
+					"group":3,
 					"figures": 0,
 					"prompt": "How would you enhance the functionality and aesthetic appeal of this bathroom using a minimal budget? Please provide specific suggestions for changes or additions.",
 					"response": "Based on the image, here are some budget-friendly suggestions to enhance the functionality and aesthetic appeal of the bathroom:\n\n- New Shower Curtain: Replace the existing shower curtain with a more modern and visually appealing one. Consider a bold pattern or color to add a focal point.\n- Updated Hardware: Swapping out the existing faucet, shower head, and cabinet hardware (if applicable) with more stylish and modern options can make a big difference. Look for affordable options at hardware stores or online.\n- Mirror Upgrade: If possible, replace the existing mirror with a larger, more decorative one. A framed mirror can add a touch of elegance. If replacing isn't feasible, consider adding a frame to the existing mirror.\n- Declutter and Organize: Remove any unnecessary items from the countertops and shelves. Use attractive storage containers to keep toiletries and other items organized and out of sight.\n- Fresh Paint: If the walls are looking tired, consider a fresh coat of paint. Choose a light and airy color to brighten up the space.\n- New Accessories: Add a few new accessories such as a stylish soap dispenser, toothbrush holder, and a small plant to add some personality to the space.\n- Improved Lighting: Assess the existing lighting and consider adding additional light sources, such as a vanity light or a small lamp, to brighten up the space and create a more inviting atmosphere.\n\nHere is an image of a possible upgrade.\nImage, showing a bathroom with stylish shower curtain, updated hardware, framed mirror, and decluttered countertop\n\nWould you like some specific product recommendations for any of these suggestions?",
@@ -1954,7 +1981,7 @@
 					"color": "default"
 				},
 				{
-	
+					"group":3,
 					"figures": 1,
 					"prompt": "These are great suggestions! What are some affordable ways to improve the lighting in a bathroom?",
 					"response": "To improve lighting in the bathroom on a budget, consider adding a stylish vanity light above the sink. There are many affordable options available, such as this one:\nImage, showing a bathroom with a stylish vanity light positioned above the sink\n\nWould you like more lighting ideas or other product recommendations?",
@@ -1963,7 +1990,7 @@
 					"color": "default"
 				},
 				{
-	
+					"group":3,
 					"figures": 1,
 					"prompt": "That's a great start. Besides the vanity light, are there any other affordable lighting options that could significantly improve the overall brightness and ambiance of the bathroom, perhaps focusing on ambient or accent lighting?",
 					"response": "For affordable lighting options, you could consider adding LED strip lights under the cabinets or around the mirror for ambient lighting. Another option is to install a dimmer switch to control the brightness of the existing light fixture. Additionally, placing a small table lamp on a shelf or countertop can provide accent lighting and create a cozy atmosphere. Here's an example of how LED strip lights can be used in a bathroom:\nImage, showing a bathroom with LED strip lights installed under the cabinets and around the mirror\n\nWould you like more information on installing LED strip lights or other lighting solutions?",
@@ -1972,7 +1999,7 @@
 					"color": "default"
 				},
 				{
-	
+					"group":3,
 					"figures": 1,
 					"prompt": "That's helpful! What are some things to consider when selecting the color temperature for LED strip lights in a bathroom to achieve a specific ambiance?",
 					"response": "When selecting the color temperature for LED strip lights in a bathroom, consider the following factors to achieve a specific ambiance:\n\n1. Purpose: Determine the primary function of the bathroom - whether it's for relaxation, grooming, or both. This will help you decide if you need warm, cool, or neutral white lighting.\n\n2. Mood: Warm white (2700K-3000K) creates a cozy and relaxing atmosphere, ideal for a spa-like experience. Cool white (4000K-5000K) provides a brighter, more energizing environment suitable for grooming tasks. Neutral white (3500K-4000K) offers a balanced look that works well for general illumination.\n\n3. Existing Decor: Match the color temperature of the LED strip lights to the existing decor and fixtures in the bathroom. For example, if you have warm-toned materials like wood or beige tiles, warm white lighting will complement them better.\n\n4. Energy Efficiency: LED strip lights are energy-efficient, but choosing the right color temperature can further reduce energy consumption. Warmer tones tend to consume less energy compared to cooler tones.\n\n5. Dimmability: Opt for dimmable LED strip lights to adjust the brightness and color temperature according to your needs and preferences throughout the day.\n\nHere's an example of how different color temperatures can affect the ambiance of a bathroom:\nImage, showing a bathroom with warm white, neutral white, and cool white LED strip lights\n\nWould you like more information on how to install LED strip lights in your bathroom or any other lighting-related questions?",
@@ -1981,7 +2008,7 @@
 					"color": "default"
 				},
 				{
-	
+					"group":3,
 					"figures": 0,
 					"prompt": "That's a very comprehensive guide to choosing the right color temperature! Considering the points you've made, especially regarding the existing decor, what are some potential pitfalls or common mistakes people make when selecting LED strip light color temperatures for their bathrooms, and how can they be avoided?",
 					"response": "Potential pitfalls or common mistakes people make when selecting LED strip light color temperatures for their bathrooms include:\n\n1. Ignoring the existing decor: Choosing a color temperature that doesn't match the existing decor can result in an unharmonious and unappealing appearance. It's essential to consider the colors and materials present in the bathroom when selecting LED strip lights.\n\n2. Overlooking the purpose of the bathroom: Failing to consider the primary function of the bathroom can lead to inappropriate lighting choices. For instance, using cool white lighting in a bathroom meant for relaxation might not create the desired ambiance.\n\n3. Neglecting energy efficiency: Some people might overlook the energy-saving benefits of certain color temperatures. Warmer tones generally consume less energy than cooler tones, so choosing the right color temperature can contribute to energy savings.\n\n4. Not considering dimmability: Dimmable LED strip lights allow users to adjust the brightness and color temperature according to their needs and preferences. Ignoring this feature can limit the versatility and functionality of the lighting setup.\n\nTo avoid these pitfalls, carefully assess the existing decor, the purpose of the bathroom, and your personal preferences before selecting LED strip light color temperatures. Additionally, consider the energy efficiency and dimmability of the lights to ensure a well-rounded and functional lighting solution.\n\nWould you like more information on how to choose the right LED strip lights for your bathroom or any other lighting-related questions?",
@@ -1990,7 +2017,7 @@
 					"color": "default"
 				},
 				{
-	
+					"group":3,
 					"figures": 1,
 					"prompt": "That's a very comprehensive guide to choosing the right color temperature! Considering the points you've made, especially regarding the existing decor, what are some potential pitfalls or common mistakes people make when selecting LED strip light color temperatures for their bathrooms, and how can they be avoided?",
 					"response": "Here are some common pitfalls and how to avoid them when selecting LED strip light color temperatures for bathrooms:\n\n- Mismatched Tones: A common mistake is choosing a color temperature that clashes with the existing bathroom finishes. For example, pairing cool white lights with warm-toned beige tiles (as seen in the original image) can make the space feel unbalanced and sterile. Solution: Carefully consider the existing color palette and choose a color temperature that complements it. In this case, warm white or neutral white might be better choices.\n\n- Overlooking Functionality: Selecting a color temperature solely based on aesthetics can compromise functionality. For instance, using overly warm lighting can make it difficult to see clearly when applying makeup or shaving. Solution: Consider the tasks performed in the bathroom and choose a color temperature that provides adequate illumination for those tasks. A combination of lighting types (e.g., neutral white for the vanity area and warm white for ambient lighting) can be an effective compromise.\n\n- Ignoring Room Size: The size of the bathroom also influences the ideal color temperature. In small bathrooms, overly cool lighting can feel harsh and clinical, while overly warm lighting can make the space feel cramped. Solution: Adjust the color temperature and brightness of the LED strip lights to suit the size of the bathroom. Dimmable LED strip lights can be particularly useful in smaller spaces, allowing you to adjust the lighting to your liking.\n\n- Uneven Lighting Distribution: Installing LED strip lights without considering the overall lighting scheme can result in uneven light distribution and shadows. Solution: Plan the placement of the LED strip lights carefully to ensure that they provide adequate and even illumination throughout the bathroom. Consider using multiple strips of lights to create a more balanced effect.\n\n- Neglecting Light Reflectance: The color of the walls and other surfaces in the bathroom can affect how the light is reflected and perceived. Darker colors absorb light, while lighter colors reflect it. Solution: Choose a color temperature that takes into account the light reflectance of the bathroom surfaces. If the bathroom has dark walls or fixtures, you may need to use brighter or cooler lighting to compensate.\n\nImage, showing a bathroom with a combination of warm and cool LED strip lights, highlighting different areas and functions\n\nWould you like to explore specific placement ideas for LED strip lights in the bathroom, considering these pitfalls?",
@@ -1999,7 +2026,7 @@
 					"color": "default"
 				},
 				{
-	
+					"group":3,
 					"figures": 1,
 					"prompt": "That's a very comprehensive guide to choosing the right color temperature! Considering the points you've made, especially regarding the existing decor, what are some potential pitfalls or common mistakes people make when selecting LED strip light color temperatures for their bathrooms, and how can they be avoided?",
 					"response": "When selecting LED strip light color temperatures for bathrooms, there are some common pitfalls and mistakes that you might want to avoid:\n\n1. Ignoring the Purpose: One major mistake is not considering the bathroom's primary use. If the bathroom is used mainly for grooming, a cooler color temperature (between 4000K-5000K) will provide brighter, clearer light suited for tasks. For relaxation, warmer temperatures (2700K-3000K) create a cozy ambiance.\n\n2. Clashing with Decor: Selecting a color temperature that doesn't complement existing decor can result in an unpleasant mismatch. For instance, cool whites can clash with warm-toned decors such as warm wood and beige tiles, as seen in your bathroom image.\n\n3. Not Testing Light in the Space: Failing to test the chosen LED light in the actual bathroom space can lead to poor results. Lighting can look different in various environments, so a test can ensure the temperature suits the decor and functional needs.\n\n4. Ignoring Dimmability: Choosing non-dimmable LED strips can limit flexibility. Dimmable options allow you to adjust the brightness to create the desired ambiance at different times.\n\n5. Overlooking CRI (Color Rendering Index): Low CRI LEDs might not accurately render the colors in your bathroom, affecting makeup application and decor appearance. Ensure the LED strips have a CRI of at least 80 for accurate color depiction.\n\nBy being mindful of these aspects, you can avoid these pitfalls and select the perfect LED lighting for your bathroom.\n\nImage, showing how different LED color temperatures can affect the bathroom's ambiance\n\nWould you like advice on specific brands or types of LED strip lights that would suit your bathroom's decor and function?",
@@ -2008,7 +2035,7 @@
 					"color": "default"
 				},
 				{
-	
+					"group":3,
 					"figures": 0,
 					"prompt": "What can you infer about the time of day based on the lighting and the activities in the image?",
 					"response": "From the scene, I can infer that it is a casual time of day, most likely during daytime, as there is lighting coming through the windows, allowing for indoor activities such as reading a newspaper or spending leisure time sharing a meal. Additionally, the man and woman are comfortably seated at a dining table, which suggests a relaxed and informal setting.",
@@ -2017,7 +2044,7 @@
 					"color": "default"
 				},
 				{
-	
+					"group":3,
 					"figures": 3,
 					"prompt": "Is there anything specific about the attire or objects in the image that can give further clues about the time of day or the occasion?",
 					"response": "The attire, specifically the bathrobes, suggests a relaxed morning setting, possibly breakfast or brunch. The presence of a newspaper also supports the idea of a leisurely morning. The food on the table indicates a casual meal rather than a formal occasion.\n\nWould you like to explore what kind of food is on the table?",
@@ -2026,7 +2053,7 @@
 					"color": "default"
 				},
 				{
-	
+					"group":3,
 					"figures": 3,
 					"prompt": "Yes, please tell me more about the food on the table. What kind of meal does it appear to be, and does that provide any further clues about the time of day or occasion?",
 					"response": "The meal appears to be a light breakfast or brunch, featuring items such as toast, fruit, and juice. The casual setting and attire suggest it might be a weekend or a day off. The presence of a newspaper and the relaxed posture of the individuals imply a leisurely morning. Would you like to know more about the types of food typically served during brunch?",
@@ -2035,7 +2062,7 @@
 					"color": "default"
 				},
 				{
-	
+					"group":3,
 					"figures": 3,
 					"prompt": "You mentioned the food and attire suggest it might be a weekend or a day off. Are there any other visual cues in the image, such as the presence or absence of work-related items, that further support this inference?",
 					"response": "The meal appears to be a light breakfast or brunch, featuring items such as toast, fruit, and juice. The casual setting and attire suggest it might be a weekend or a day off. The presence of a newspaper and the relaxed posture of the individuals imply a leisurely morning. Would you like to know more about the types of food typically served during brunch?",
@@ -2044,7 +2071,7 @@
 					"color": "default"
 				},
 				{
-	
+					"group":3,
 					"figures": 3,
 					"prompt": "Before we delve into brunch foods, could you analyze the surroundings for any visual cues related to work? For instance, are there any briefcases, laptops, or other office-related items that might suggest otherwise?",
 					"response": "The image shows a couple enjoying a meal together in a bright, sunlit room. There are no visible briefcases, laptops, or other office-related items in the scene. The setting appears to be a relaxed and informal environment, suggesting that they are not engaged in work-related activities at the moment. Would you like to discuss the types of food typically served during brunch?",
@@ -2053,7 +2080,7 @@
 					"color": "default"
 				},
 				{
-	
+					"group":3,
 					"figures": 3,
 					"prompt": "Before we delve into brunch foods, could you analyze the surroundings for any visual cues related to work? For instance, are there any briefcases, laptops, or other office-related items that might suggest otherwise?",
 					"response": "Based on the image, there are no visible briefcases, laptops, or other office-related items. This absence reinforces the idea of a relaxed setting, consistent with a weekend or day off, as previously inferred from the attire and the meal. Would you like to explore some brunch food options?",
@@ -2062,7 +2089,7 @@
 					"color": "default"
 				},
 				{
-	
+					"group":3,
 					"figures": 1,
 					"prompt": "Before we delve into brunch foods, could you analyze the surroundings for any visual cues related to work? For instance, are there any briefcases, laptops, or other office-related items that might suggest otherwise?",
 					"response": "Analyzing the surroundings for work-related visual cues, there are no apparent office-related items such as briefcases, laptops, or any other work-related tools visible in the image. The setting is very much conducive to relaxation, with elements such as a leisurely breakfast table set with fruit, juice, and toast, suggesting a casual morning or brunch atmosphere. The attire—bathrobes—and the presence of a newspaper further reinforce the idea of leisure time, perhaps during a weekend or a day off. Would you like to explore more about typical brunch settings or dishes?",
@@ -2073,74 +2100,102 @@
 				];
 	
 	
-	const container = document.getElementById('diag-content');
+	// 创建三个组的容器
+	const group1Content = document.getElementById('group1Content');
+	const group2Content = document.getElementById('group2Content');
+	const group3Content = document.getElementById('group3Content');
 	
-	dataexamples.forEach((item, index) => {
-	const roundNumber = index + 1;
+	// 函数：处理单个对话并返回 HTML 元素
+	function createDialogueElement(item, roundNumber) {
+	    const roundDiv = document.createElement('div');
+	    roundDiv.style.marginBottom = '1.5em';
+	    roundDiv.style.padding = '0.5em';
+	    roundDiv.style.borderBottom = '1px solid #eee';
 	
-	const roundDiv = document.createElement('div');
-	roundDiv.style.marginBottom = '2em';
+	    // Prompt 标题
+	    const promptTitle = document.createElement('h4');
+	    promptTitle.textContent = `Round ${roundNumber} Prompt`;
+	    promptTitle.style.color = '#666';
+	    promptTitle.style.marginBottom = '0.3em';
+	    promptTitle.style.fontSize = '0.95em';
 	
-	// Prompt 标题
-	const promptTitle = document.createElement('h3');
-	promptTitle.textContent = `Round ${roundNumber} Prompt`;
-	promptTitle.style.color = '#ff6600';  // 橙色突出标题
-	promptTitle.style.marginBottom = '0.3em';
+	    // Prompt 文本
+	    const promptText = document.createElement('p');
+	    promptText.textContent = item.prompt;
+	    promptText.style.fontWeight = 'bold';
+	    promptText.style.marginBottom = '0.5em';
+	    promptText.style.fontSize = '0.95em';
 	
-	// Prompt 文本
-	const promptText = document.createElement('p');
-	promptText.textContent = item.prompt;
-	promptText.style.fontWeight = 'bold';
-	promptText.style.marginBottom = '0.3em';
+	    // Response 标题
+	    const responseTitle = document.createElement('h4');
+	    responseTitle.textContent = `Round ${roundNumber} Response`;
+	    responseTitle.style.color = '#666';
+	    responseTitle.style.marginBottom = '0.3em';
+	    responseTitle.style.fontSize = '0.95em';
 	
-	// Response 标题
-	const responseTitle = document.createElement('h3');
-	responseTitle.textContent = `Round ${roundNumber} Response`;
-	responseTitle.style.color = '#007acc';  // 蓝色突出标题
-	responseTitle.style.marginBottom = '0.3em';
+	    // Response 文本
+	    const responseText = document.createElement('p');
+	    responseText.textContent = item.response;
+	    responseText.style.marginBottom = '0.5em';
+	    responseText.style.fontSize = '0.95em';
 	
-	// Response 文本
-	const responseText = document.createElement('p');
-	responseText.textContent = item.response;
+	    // 组装 Prompt 区域
+	    roundDiv.appendChild(promptTitle);
+	    roundDiv.appendChild(promptText);
 	
-	// 组装 Prompt 区域
-	roundDiv.appendChild(promptTitle);
-	roundDiv.appendChild(promptText);
+	    // 如果 Prompt 有图片，显示图片（固定大小）
+	    if (item.imageP && item.imageP !== '#') {
+	        const promptImg = document.createElement('img');
+	        promptImg.src = item.imageP.replace(/\\/g, '/');
+	        promptImg.alt = `Round ${roundNumber} Prompt Image`;
+	        promptImg.style.width = '100%';
+	        promptImg.style.height = '150px';
+	        promptImg.style.objectFit = 'cover';
+	        promptImg.style.marginBottom = '0.5em';
+	        promptImg.style.borderRadius = '4px';
+	        roundDiv.appendChild(promptImg);
+	    }
 	
-	// 如果 Prompt 有图片，显示图片（固定大小）
-	if (item.imageP && item.imageP !== '#') {
-	  const promptImg = document.createElement('img');
-	  promptImg.src = item.imageP.replace(/\\/g, '/');
-	  promptImg.alt = `Round ${roundNumber} Prompt Image`;
-	  promptImg.style.width = '400px';
-	  promptImg.style.height = '400px';
-	  promptImg.style.objectFit = 'cover';
-	  promptImg.style.marginBottom = '0.8em';
-	  roundDiv.appendChild(promptImg);
+	    // 组装 Response 区域
+	    roundDiv.appendChild(responseTitle);
+	    roundDiv.appendChild(responseText);
+	
+	    // 如果 Response 有图片，显示图片（固定大小）
+	    if (item.imageR && item.imageR !== '#') {
+	        const responseImg = document.createElement('img');
+	        responseImg.src = item.imageR.replace(/\\/g, '/');
+	        responseImg.alt = `Round ${roundNumber} Response Image`;
+	        responseImg.style.width = '100%';
+	        responseImg.style.height = '150px';
+	        responseImg.style.objectFit = 'cover';
+	        responseImg.style.marginTop = '0.5em';
+	        responseImg.style.borderRadius = '4px';
+	        roundDiv.appendChild(responseImg);
+	    }
+	
+	    return roundDiv;
 	}
 	
-	// 组装 Response 区域
-	roundDiv.appendChild(responseTitle);
-	roundDiv.appendChild(responseText);
+	// 按组处理数据并添加到对应的容器
+	let group1Round = 1;
+	let group2Round = 1;
+	let group3Round = 1;
 	
-	// 如果 Response 有图片，显示图片（固定大小）
-	if (item.imageR && item.imageR !== '#') {
-	  const responseImg = document.createElement('img');
-	  responseImg.src = item.imageR.replace(/\\/g, '/');
-	  responseImg.alt = `Round ${roundNumber} Response Image`;
-	  responseImg.style.width = '400px';
-	  responseImg.style.height = '400px';
-	  responseImg.style.objectFit = 'cover';
-	  responseImg.style.marginTop = '0.5em';
-	  roundDiv.appendChild(responseImg);
-	}
-	
-	// 将本轮内容添加到容器
-	container.appendChild(roundDiv);
+	dataexamples.forEach(item => {
+	    if (item.group === 1) {
+	        const element = createDialogueElement(item, group1Round);
+	        group1Content.appendChild(element);
+	        group1Round++;
+	    } else if (item.group === 2) {
+	        const element = createDialogueElement(item, group2Round);
+	        group2Content.appendChild(element);
+	        group2Round++;
+	    } else if (item.group === 3) {
+	        const element = createDialogueElement(item, group3Round);
+	        group3Content.appendChild(element);
+	        group3Round++;
+	    }
 	});
-	
-	
-	
 </script>
 <section>
 	<div class="container" style="margin-bottom: 2vh;">
