@@ -2097,67 +2097,64 @@
 		// 如果 Prompt 有图片，显示图片（固定大小）
 		if (item.imageP && item.imageP !== '#') {
 			console.log('Processing prompt image:', item.imageP, 'for category:', categoryName);
-			const promptImg = document.createElement('img');
-			// 构建正确的图片路径
-			let imagePath;
-			if (item.imageP.startsWith('./images/')) {
-				// 格式: "./images/1.png" -> "./multi_turn_qa_examples/categoryName/images/1.png"
-				imagePath = `./multi_turn_qa_examples/${categoryName}/images/${item.imageP.replace('./images/', '')}`;
-			} else if (item.imageP.startsWith('./')) {
-				// 格式: "./xxx" -> "./multi_turn_qa_examples/categoryName/xxx"
-				imagePath = `./multi_turn_qa_examples/${categoryName}/${item.imageP.replace('./', '')}`;
-			} else {
-				// 其他格式
-				imagePath = item.imageP;
-			}
-			console.log(`Setting prompt image path: ${imagePath} (original: ${item.imageP})`);
-			promptImg.src = imagePath;
-			console.log('Final prompt img.src set to:', promptImg.src);
-			promptImg.alt = `Round ${roundNumber} 图片`;
-			promptImg.style.width = '100%';
-			promptImg.style.height = '150px';
-			promptImg.style.objectFit = 'cover';
-			promptImg.style.marginBottom = '0.5em';
-			promptImg.style.borderRadius = '4px';
-			promptImg.onerror = function() {
-				this.style.display = 'none';
-				console.warn(`Image not found: ${this.src}`);
-			};
-			roundDiv.appendChild(promptImg);
+			
+			// 处理imageP可能是数组的情况
+			const imagePathsP = Array.isArray(item.imageP) ? item.imageP : [item.imageP];
+			
+			imagePathsP.forEach((imagePath, index) => {
+				const promptImg = document.createElement('img');
+				promptImg.src = imagePath.replace(/\\/g, '/');
+				promptImg.alt = `Prompt image ${index + 1}`;
+				promptImg.style.marginTop = index > 0 ? '0.5em' : '0';
+				promptImg.onerror = function() {
+					this.style.display = 'none';
+					console.warn(`Image not found: ${this.src}`);
+				};
+				promptDiv.appendChild(promptImg);
+			});
 		}
 
 		// 组装 Response 区域
 		roundDiv.appendChild(responseTitle);
+		
 		roundDiv.appendChild(responseText);
 
 		// 如果 Response 有图片，显示图片（固定大小）
 		if (item.imageR && item.imageR !== '#') {
-			const responseImg = document.createElement('img');
-			// 构建正确的图片路径
-			let imagePath;
-			if (item.imageR.startsWith('./images/')) {
-				// 格式: "./images/1.png" -> "./multi_turn_qa_examples/categoryName/images/1.png"
-				imagePath = `./multi_turn_qa_examples/${categoryName}/images/${item.imageR.replace('./images/', '')}`;
-			} else if (item.imageR.startsWith('./')) {
-				// 格式: "./xxx" -> "./multi_turn_qa_examples/categoryName/xxx"
-				imagePath = `./multi_turn_qa_examples/${categoryName}/${item.imageR.replace('./', '')}`;
-			} else {
-				// 其他格式
-				imagePath = item.imageR;
-			}
-			console.log(`Setting response image path: ${imagePath} (original: ${item.imageR})`);
-			responseImg.src = imagePath;
-			responseImg.alt = `Round ${roundNumber} 回复图片`;
-			responseImg.style.width = '100%';
+			// 处理imageR可能是数组的情况
+			const imagePathsR = Array.isArray(item.imageR) ? item.imageR : [item.imageR];
+			
+			imagePathsR.forEach((imagePath, index) => {
+				const responseImg = document.createElement('img');
+				// 构建正确的图片路径
+				let finalImagePath;
+				if (imagePath.startsWith('./images/')) {
+					// 格式: "./images/1.png" -> "./multi_turn_qa_examples/categoryName/images/1.png"
+					finalImagePath = `./multi_turn_qa_examples/${categoryName}/images/${imagePath.replace('./images/', '')}`;
+				} else if (imagePath.startsWith('./')) {
+					// 格式: "./xxx" -> "./multi_turn_qa_examples/categoryName/xxx"
+					finalImagePath = `./multi_turn_qa_examples/${categoryName}/${imagePath.replace('./', '')}`;
+				} else {
+					// 其他格式
+					finalImagePath = imagePath;
+				}
+				console.log(`Setting response image path: ${finalImagePath} (original: ${imagePath})`);
+				responseImg.src = finalImagePath;
+				responseImg.alt = `Round ${roundNumber} 回复图片 ${index + 1}`;
+				responseImg.style.width = '100%';
 				responseImg.style.height = '150px';
 				responseImg.style.objectFit = 'cover';
 				responseImg.style.marginTop = '0.5em';
 				responseImg.style.borderRadius = '4px';
+				if (index > 0) {
+					responseImg.style.marginBottom = '0.5em';
+				}
 				responseImg.onerror = function() {
 					this.style.display = 'none';
 					console.warn(`Image not found: ${this.src}`);
 				};
-			roundDiv.appendChild(responseImg);
+				roundDiv.appendChild(responseImg);
+			});
 		}
 
 		return roundDiv;
@@ -2573,14 +2570,20 @@
 					  dialogueContainer.appendChild(promptDiv);
 					
 					  if (item.imageP && item.imageP !== '#') {
-					    const promptImg = document.createElement('img');
-					    promptImg.src = item.imageP.replace(/\\/g, '/');
-					    promptImg.alt = "Prompt image";
-					    promptImg.onerror = function() {
-					      this.style.display = 'none';
-					      console.warn(`Image not found: ${this.src}`);
-					    };
-					    promptDiv.appendChild(promptImg);
+					    // 处理imageP可能是数组的情况
+					    const imagePathsP = Array.isArray(item.imageP) ? item.imageP : [item.imageP];
+					    
+					    imagePathsP.forEach((imagePath, index) => {
+					      const promptImg = document.createElement('img');
+					      promptImg.src = imagePath.replace(/\\/g, '/');
+					      promptImg.alt = `Prompt image ${index + 1}`;
+					      promptImg.style.marginTop = index > 0 ? '0.5em' : '0';
+					      promptImg.onerror = function() {
+					        this.style.display = 'none';
+					        console.warn(`Image not found: ${this.src}`);
+					      };
+					      promptDiv.appendChild(promptImg);
+					    });
 					  }
 					
 					  const responseContainer = document.createElement('div');
@@ -2589,32 +2592,40 @@
 					  const responseTextDiv = document.createElement('div');
 					  responseTextDiv.className = 'diag-response-text-area diag-typing-caret';
 					  
-					  let responseImgElement = null;
+					  let responseImgElements = [];
 					  if (item.imageR && item.imageR !== '#') {
-					    responseImgElement = document.createElement('img');
-					    responseImgElement.src = item.imageR.replace(/\\/g, '/');
-					    responseImgElement.alt = "Response image";
-					    responseImgElement.style.display = 'none';
-					    responseImgElement.onerror = function() {
-					      this.style.display = 'none';
-					      console.warn(`Image not found: ${this.src}`);
-					    };
+					    // 处理imageR可能是数组的情况
+					    const imagePathsR = Array.isArray(item.imageR) ? item.imageR : [item.imageR];
+					    
+					    imagePathsR.forEach((imagePath, index) => {
+					      const responseImgElement = document.createElement('img');
+					      responseImgElement.src = imagePath.replace(/\\/g, '/');
+					      responseImgElement.alt = `Response image ${index + 1}`;
+					      responseImgElement.style.display = 'none';
+					      responseImgElement.style.marginTop = index > 0 ? '0.5em' : '0';
+					      responseImgElement.onerror = function() {
+					        this.style.display = 'none';
+					        console.warn(`Image not found: ${this.src}`);
+					      };
+					      responseImgElements.push(responseImgElement);
+					    });
 					  }
 					
 					  responseContainer.appendChild(responseTextDiv);
-					  if (responseImgElement) {
-					      responseContainer.appendChild(responseImgElement);
-					  }
+					  responseImgElements.forEach(img => {
+					      responseContainer.appendChild(img);
+					  });
 					  
 					  dialogueContainer.appendChild(responseContainer);
+					
 					
 					  const processedResponseText = parseOrderedList(item.response);
 					
 					  typeWriter(processedResponseText, responseTextDiv, () => {
 					    responseTextDiv.classList.remove('diag-typing-caret');
-					    if (responseImgElement) {
-					      responseImgElement.style.display = 'block';
-					    }
+					    responseImgElements.forEach(img => {
+					      img.style.display = 'block';
+					    });
 					  });
 					
 					  return dialogueContainer;
