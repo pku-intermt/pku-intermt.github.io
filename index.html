@@ -153,16 +153,7 @@
 		left: 0;
 		right: 0;
 		bottom: 0;
-		background: url('data:image/svg+xml,
-		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-			<defs>
-				<pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
-					<path d="M 10 0 L 0 0 0 10" fill="none" stroke="%23ffffff" stroke-width="0.5" opacity="0.1"/>
-				</pattern>
-			</defs>
-			<rect width="100" height="100" fill="url(%23grid)"/>
-		</svg>
-		');
+		background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%23ffffff" stroke-width="0.5" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
 		pointer-events: none;
 		}
 		.math-formula {
@@ -935,7 +926,7 @@
 								    },
 								    G2: {
 								        title: "Helpfulness and Completeness",
-								        definition: "Measures how well the model’s textual and visual outputs follow task instructions and provide complete information to fulfill the user’s request. This also includes the logical structure of the response. In multi-turn image-text interactions, the model should accurately follow all instructions and ultimately deliver a complete solution.",
+								        definition: "Measures how well the model's textual and visual outputs follow task instructions and provide complete information to fulfill the user's request. This also includes the logical structure of the response. In multi-turn image-text interactions, the model should accurately follow all instructions and ultimately deliver a complete solution.",
 								        examples: [
 								            "<b>Task</b>: Cake design improvement",
 								            "&nbsp;&nbsp;- <i>User</i>: Please help me improve this design (uploads image)",
@@ -944,8 +935,8 @@
 								            "&nbsp;&nbsp;- <i>AI</i>: [Generates an image of the cake with frosting] → Full score"
 								        ],
 								        scoring: [
-								            "<b>0 points</b>: The model fails to meet the user’s needs; responses are irrelevant or severely incorrect, making the task unachievable.",
-								            "<b>1 point</b>: Partially satisfies the user’s request but lacks critical content or contains major errors that hinder task completion.",
+								            "<b>0 points</b>: The model fails to meet the user's needs; responses are irrelevant or severely incorrect, making the task unachievable.",
+								            "<b>1 point</b>: Partially satisfies the user's request but lacks critical content or contains major errors that hinder task completion.",
 								            "<b>2 points</b>: Largely completes the task but has minor omissions or inaccuracies that affect the final outcome.",
 								            "<b>3 points</b>: Fully and accurately fulfills all user requirements; information is comprehensive, logically structured, and free from errors or omissions."
 								        ]
@@ -1174,7 +1165,7 @@
 									of maintaining coherent semantics, multimodal information, and consistency with prior conversational context over extended interactions.
 								</li>
 								<li>
-									<strong>Intent grounding drives long-horizon crucial step recognition</strong>: in multi-turn scenarios, models may deviate from the user’s core intentions, producing self-directed responses. Despite locally high-scoring and plausible outputs, this leads to
+									<strong>Intent grounding drives long-horizon crucial step recognition</strong>: in multi-turn scenarios, models may deviate from the user's core intentions, producing self-directed responses. Despite locally high-scoring and plausible outputs, this leads to
 									stylistic drift and omission of key steps over extended interactions, as demonstrated in the local-global setting.
 								</li>
 							</ol>
@@ -1191,8 +1182,8 @@
 		<img src="./assets/Figure6_00.jpg" style="width: 65%;">
 		<p style="margin-left: auto; margin-right: auto; width: 75%;">Our findings, presented in this figure, suggest that modeling fine-grained <em>local (turn-level)</em> preferences is more effective in capturing human values and achieving better alignment. In contrast,
 			directly modeling <em>global (conversation-level)</em> preferences often fails to reflect these nuanced preferences, especially in complex, long-horizon scenarios. We examine the bidirectional transfer between turn-level (<em>local</em>) and conversation-level
-			(<em>global</em>) human preferences. Both <em>local-to-global</em> and <em>global-to-local</em> transfers are effective, since multi-turn questions typically hinge on the seed question’s intent. However, <em>global-to-local</em> transfer is consistently easier and
-			better aligned with actual preferences. We attribute this to the greater stability of global preferences—reflecting users’ overarching tendencies—whereas local preferences are short-term and more context-dependent, making <em>local-to-global</em> transfer more
+			(<em>global</em>) human preferences. Both <em>local-to-global</em> and <em>global-to-local</em> transfers are effective, since multi-turn questions typically hinge on the seed question's intent. However, <em>global-to-local</em> transfer is consistently easier and
+			better aligned with actual preferences. We attribute this to the greater stability of global preferences—reflecting users' overarching tendencies—whereas local preferences are short-term and more context-dependent, making <em>local-to-global</em> transfer more
 			challenging.</p>
 		</div> -->
 					</div>
@@ -1243,7 +1234,7 @@
 					<img src="./assets/Figure6_00.jpg" style="width: 100%;">
 				</figure>
 				<p> We examine the bidirectional transfer between turn-level (<em>local</em>) and conversation-level (<em>global</em>) human preferences. As shown in the figure, both <em>local-to-global</em> and <em>global-to-local</em> transfers are effective, since multi-turn questions typically
-					hinge on the seed question’s intent. However, <em>global-to-local</em> transfer is consistently easier and better aligned with actual preferences. We attribute this to the greater stability of global preferences—reflecting users’ overarching tendencies—whereas local preferences
+					hinge on the seed question's intent. However, <em>global-to-local</em> transfer is consistently easier and better aligned with actual preferences. We attribute this to the greater stability of global preferences—reflecting users' overarching tendencies—whereas local preferences
 					are short-term and more context-dependent, making <em>local-to-global</em> transfer more challenging. </p>
 			</div>
 			<!-- 第二页内容：Scaling Laws -->
@@ -1790,7 +1781,7 @@
 							<figure style="width: 75%; margin: 0 auto;">
 								<img src="./assets/Figure8-v1_00.jpg" style="width: 100%;">
 							</figure>
-							<p style="margin-left: auto; margin-right: auto; width: 75%;"> These issues, particularly in long-horizon tasks, may hinder the model’s ability to capture differences between extended conversations, thereby posing challenges in modeling long-horizon human values and
+							<p style="margin-left: auto; margin-right: auto; width: 75%;"> These issues, particularly in long-horizon tasks, may hinder the model's ability to capture differences between extended conversations, thereby posing challenges in modeling long-horizon human values and
 								potentially leading to safety concerns. </p>
 						</div>
 					</div>
