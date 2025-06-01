@@ -2185,6 +2185,12 @@
 				<h2 class="title is-3" id="Evaluation" style="text-align: center;"> Case Study </h2>
 				<p style="text-align: justify;">This case study revealed that the two models fall short in image-text consistency, instruction following, multi-turn interaction, and image quality. By contrast, our dataset enables <strong>better adherence to user intent through high-quality
 						multimodal understanding and generation.</strong></p>
+				<p style="text-align: justify;">
+					For example, in Case Study 1, Gemini's second-round dialogue did not generate a reply "What long-term measures should be taken to prevent" but instead generated an irrelevant image, indicating <strong>weak instruction following capabilities</strong>. Janus's second-round response did not follow the user's request for "temporary bridge" and "generate a bridge in the image," not only lacking strong instruction following but also <strong>failing to maintain consistency and coherence between images and text</strong>.
+				</p>
+				<p style="text-align: justify;">
+					Similarly, in Case Study 2, both Gemini and Janus failed to pay close attention to the image, and Janus's generated image did not match the style of the initial user-provided image. Throughout subsequent rounds of dialogue, Janus and Gemini exhibited <strong>inconsistent image generation</strong> and <strong>low user instruction completion</strong>, while our dataset maintained </strong>coherence</strong>, effectively prompting users to ask questions and address their initial concerns.
+				</p>
 				<div id="dialog-sample-container"></div>
 				<svg style="display:none;">
 					<symbol id="icon-gemini" viewBox="0 0 24 24">
